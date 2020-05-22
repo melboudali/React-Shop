@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.sass';
+import '../src/components/assets/style/semantic.min.css';
 
 function App() {
   return (
