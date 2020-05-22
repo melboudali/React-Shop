@@ -1,16 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import { Button } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 
 const Home = props => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  return (
+    <div>
+      <Button primary>Primary</Button>
+      <Button secondary>Secondary</Button>
+    </div>
+  );
+};
 
-Home.propTypes = {
+Home.propTypes = {};
 
-}
-
-export default Home
+export default Home;

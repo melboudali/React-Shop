@@ -1,13 +1,8 @@
 import React from 'react';
 import './App.sass';
-import '../src/components/assets/style/semantic.min.css';
+// import '../src/components/assets/style/semantic.min.css';
+import Home from './components/Home';
 
-function App() {
-  return (
-    <div className='App'>
-      <h1>React Ecom</h1>
-    </div>
-  );
-}
+const App = () => <Home />;
 
 export default App;
