@@ -5,11 +5,15 @@ const Navbar = ({ Container }) => {
   return (
     <div className='Navbar'>
       <Container>
-        <img
-          className='logo'
-          src='https://cdn.shopify.com/assets/images/logos/shopify-bag.png'
-          alt='logo'
-        />
+        <h3>
+          <img
+            className='logo'
+            src='https://cdn.shopify.com/assets/images/logos/shopify-bag.png'
+            alt='logo'
+          />
+          React Store
+        </h3>
+
         <ul>
           <li>Home</li>
           <li>Categories</li>
