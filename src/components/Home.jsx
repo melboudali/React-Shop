@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Button } from 'semantic-ui-react';
+import { Button, Container } from '@material-ui/core';
 import Navbar from './layouts/Navbar';
 import PropTypes from 'prop-types';
 
@@ -8,8 +8,14 @@ const Home = props => {
     <>
       <Navbar Container={Container} />
       <Container>
-        <Button primary>Primary</Button>
-        <Button secondary>Secondary</Button>
+        <Button color='primary'>
+          <i className='far fa-save' />
+          save
+        </Button>
+        <Button color='secondary'>
+          <i className='fas fa-times' />
+          cancel
+        </Button>
       </Container>
     </>
   );
