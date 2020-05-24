@@ -13,7 +13,7 @@ const Home = props => {
           save
         </Button>
         <Button color='secondary'>
-          <i className='fas fa-times' />
+          <i className='fab fa-github-square' />
           cancel
         </Button>
       </Container>

@@ -154,9 +154,8 @@ const Navbar = ({ Container }) => {
   );
 
   return (
-    <div className='Navbar'>
-      <Container>
-        {/* <ul>
+    <>
+      {/* <ul>
           <li>Home</li>
           <li>Categories</li>
           <li>Account</li>
@@ -165,7 +164,8 @@ const Navbar = ({ Container }) => {
           <li>Login/Register</li>
           <li>Cart</li>
         </ul> */}
-        <AppBar position='static'>
+      <AppBar position='static'>
+        <Container>
           <Toolbar>
             <IconButton
               edge='start'
@@ -230,11 +230,11 @@ const Navbar = ({ Container }) => {
               </IconButton>
             </div>
           </Toolbar>
-        </AppBar>
-        {renderMobileMenu}
-        {renderMenu}
-      </Container>
-    </div>
+        </Container>
+      </AppBar>
+      {renderMobileMenu}
+      {renderMenu}
+    </>
   );
 };
 
