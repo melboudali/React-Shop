@@ -127,7 +127,7 @@ const Navbar = ({ Container }) => {
       <MenuItem>
         <IconButton aria-label='show 4 new mails' color='inherit'>
           <Badge badgeContent={4} color='secondary'>
-            <i className='far fa-envelope'></i>
+            <i className='fal fa-envelope'></i>
           </Badge>
         </IconButton>
         <p>Messages</p>
@@ -135,7 +135,7 @@ const Navbar = ({ Container }) => {
       <MenuItem>
         <IconButton aria-label='show 11 new notifications' color='inherit'>
           <Badge badgeContent={11} color='secondary'>
-            <i className='far fa-bell'></i>
+            <i className='fal fa-bell'></i>
           </Badge>
         </IconButton>
         <p>Notifications</p>
@@ -146,7 +146,12 @@ const Navbar = ({ Container }) => {
           aria-controls='primary-search-account-menu'
           aria-haspopup='true'
           color='inherit'>
-          <i className='far fa-user-circle'></i>
+          {/* <i className='fal fa-user'></i> */}
+          <img
+            src='https://cdn130.picsart.com/268656304018211.png?type=webp&to=min&r=640'
+            alt='profile'
+            style={{ width: '30px' }}
+          />
         </IconButton>
         <p>Profile</p>
       </MenuItem>
@@ -172,7 +177,7 @@ const Navbar = ({ Container }) => {
               className={classes.menuButton}
               color='inherit'
               aria-label='open drawer'>
-              <i className='fas fa-bars'></i>
+              <i className='fal fa-bars'></i>
             </IconButton>
             <Typography className={classes.title} variant='h6' noWrap>
               <img
@@ -182,9 +187,10 @@ const Navbar = ({ Container }) => {
               />
               React Store
             </Typography>
+            <div className={classes.grow} />
             <div className={classes.search}>
               <div className={classes.searchIcon}>
-                <i className='fas fa-search'></i>
+                <i className='fad fa-search'></i>
               </div>
               <InputBase
                 placeholder='Search…'
@@ -195,28 +201,38 @@ const Navbar = ({ Container }) => {
                 inputProps={{ 'aria-label': 'search' }}
               />
             </div>
-            <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-              <IconButton aria-label='show 4 new mails' color='inherit'>
-                <Badge badgeContent={4} color='secondary'>
-                  <i className='far fa-envelope'></i>
-                </Badge>
-              </IconButton>
               <IconButton
-                aria-label='show 17 new notifications'
-                color='inherit'>
-                <Badge badgeContent={17} color='secondary'>
-                  <i className='far fa-bell'></i>
-                </Badge>
-              </IconButton>
-              <IconButton
-                edge='end'
+                className='profile'
                 aria-label='account of current user'
                 aria-controls={menuId}
                 aria-haspopup='true'
                 onClick={handleProfileMenuOpen}
                 color='inherit'>
-                <i className='far fa-user-circle'></i>
+                {/* <i className='fal fa-user'></i> */}
+                <img
+                  src='https://cdn130.picsart.com/268656304018211.png?type=webp&to=min&r=640'
+                  alt='profile'
+                  style={{ width: '24px' }}
+                />
+                <ul className='menu'>
+                  <li>Profile</li>
+                  <li>My Account</li>
+                  <li>Logout</li>
+                </ul>
+              </IconButton>
+              <IconButton aria-label='show 4 new mails' color='inherit'>
+                <Badge badgeContent={4} color='secondary'>
+                  <i className='fal fa-envelope'></i>
+                </Badge>
+              </IconButton>
+              <IconButton
+                edge='end'
+                aria-label='show 3 new items'
+                color='inherit'>
+                <Badge badgeContent={3} color='secondary'>
+                  <i className='fal fa-shopping-cart'></i>
+                </Badge>
               </IconButton>
             </div>
             <div className={classes.sectionMobile}>
@@ -226,7 +242,7 @@ const Navbar = ({ Container }) => {
                 aria-haspopup='true'
                 onClick={handleMobileMenuOpen}
                 color='inherit'>
-                <i className='fas fa-ellipsis-v'></i>
+                <i className='fal fa-ellipsis-v'></i>
               </IconButton>
             </div>
           </Toolbar>
