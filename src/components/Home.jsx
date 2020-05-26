@@ -8,14 +8,7 @@ const Home = props => {
     <>
       <Navbar Container={Container} />
       <Container>
-        <Button color='primary'>
-          <i className='far fa-save' />
-          save
-        </Button>
-        <Button color='secondary'>
-          <i className='fab fa-github-square' />
-          cancel
-        </Button>
+       {/* Sections */}
       </Container>
     </>
   );

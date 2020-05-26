@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -8,6 +8,7 @@ import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import Hidden from '@material-ui/core/Hidden';
 import PropTypes from 'prop-types';
 
 const useStyles = makeStyles(theme => ({
@@ -76,8 +77,8 @@ const useStyles = makeStyles(theme => ({
 
 const Navbar = ({ Container }) => {
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -171,14 +172,16 @@ const Navbar = ({ Container }) => {
         </ul> */}
       <AppBar position='static'>
         <Container>
-          <Toolbar>
-            <IconButton
-              edge='start'
-              className={classes.menuButton}
-              color='inherit'
-              aria-label='open drawer'>
-              <i className='fal fa-bars'></i>
-            </IconButton>
+          <Toolbar style={{ padding: 0 }}>
+            <Hidden mdUp>
+              <IconButton
+                edge='start'
+                className={classes.menuButton}
+                color='inherit'
+                aria-label='open drawer'>
+                <i className='fal fa-bars'></i>
+              </IconButton>
+            </Hidden>
             <Typography className={classes.title} variant='h6' noWrap>
               <img
                 className='logo'
@@ -188,20 +191,11 @@ const Navbar = ({ Container }) => {
               React Store
             </Typography>
             <div className={classes.grow} />
-            <div className={classes.search}>
-              <div className={classes.searchIcon}>
-                <i className='fad fa-search'></i>
-              </div>
-              <InputBase
-                placeholder='Search…'
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput
-                }}
-                inputProps={{ 'aria-label': 'search' }}
-              />
-            </div>
             <div className={classes.sectionDesktop}>
+              <IconButton aria-label='show 4 new mails' color='inherit'>
+                <i class='fal fa-search'></i>
+              </IconButton>
+
               <IconButton
                 className='profile'
                 aria-label='account of current user'
