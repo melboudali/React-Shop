@@ -22,17 +22,16 @@
   }
 
   &::before {
-    padding: 10px;
     background-color: black;
     content: '';
-    height: 100%;
+    height: 97%;
     position: absolute;
-    width: 100%;
+    width: 97%;
     z-index: 2;
     opacity: 0;
-    -webkit-transition: opacity 0.5s ease-in;
-    -ms-transition: opacity 0.5s ease-in;
-    transition: opacity 0.5s ease-in;
+    -webkit-transition: opacity 0.4s ease-in;
+    -ms-transition: opacity 0.4s ease-in;
+    transition: opacity 0.4s ease-in;
   }
 
   &:hover {
@@ -40,7 +39,8 @@
 
     .background-image {
       transform: scale(1.1);
-      transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+      // transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+      transition: transform 6s cubic-bezier(0, 1.31, 1, 1);
     }
 
     .content {
@@ -70,6 +70,8 @@
 
   .content {
     position: absolute;
+    left: 1.5%;
+    bottom: 1.5%;
     height: 90px;
     padding: 0 25px;
     display: flex;
