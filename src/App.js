@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from '@material-ui/core';
-import Navbar from './Components/layouts/Navbar';
+import Navbar from './Components/Layouts/Navbar';
 import Home from './Components/Home';
 import './App.scss';
 
