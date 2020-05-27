@@ -1,7 +1,14 @@
 import React from 'react';
-import './App.sass';
+import { Container } from '@material-ui/core';
+import Navbar from './components/layouts/Navbar';
 import Home from './components/Home';
+import './App.scss';
 
-const App = () => <Home />;
+const App = () => (
+  <>
+    <Navbar Container={Container} />
+    <Home />
+  </>
+);
 
 export default App;

@@ -1,0 +1,12 @@
+@import './components/layouts/Navbar';
+@import './components/Home.style';
+
+html {
+  min-height: '100%';
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto';
+}
