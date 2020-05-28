@@ -9,7 +9,6 @@ const App = () => (
   <>
     <Navbar Container={Container} />
     <Route exact path='/' component={Home} />
-    <Route path='/lol' component={() => <h1>Hello World</h1>} />
   </>
 );
 
