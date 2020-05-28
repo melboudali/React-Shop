@@ -2,11 +2,10 @@ import React from 'react';
 import Directory from '../../Components/Directory/Directory';
 import PropTypes from 'prop-types';
 
-const Home = ({ hello }) => {
+const Home = props => {
   return (
     <div className='Home'>
       <Directory />
-      <h1>{hello}</h1>
     </div>
   );
 };
