@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import CollectionPreview from '../../Components/CollectionPreview/CollectionPreview';
 import ShopData from './ShopData';
 import PropTypes from 'prop-types';
 
 const Shop = props => {
+  const [shopData, setShopData] = useState(ShopData);
   return (
-    <div>
-      <h1>Shop Page</h1>
+    <div className='shop-page'>
+      {shopData.map(({ id, ...shopData }) => (
+        <CollectionPreview key={id} {...shopData} />
+      ))}
     </div>
   );
 };
