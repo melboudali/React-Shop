@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -75,7 +76,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Navbar = ({ Container }) => {
+const Navbar = ({ Container, history }) => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
@@ -193,7 +194,7 @@ const Navbar = ({ Container }) => {
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
               <IconButton aria-label='show 4 new mails' color='inherit'>
-                <i class='fal fa-search'></i>
+                <i className='fal fa-search'></i>
               </IconButton>
 
               <IconButton
@@ -210,7 +211,7 @@ const Navbar = ({ Container }) => {
                   style={{ width: '24px' }}
                 />
                 <ul className='menu'>
-                  <li>Profile</li>
+                  <li onClick={() => history.push('/profile')}>Profile</li>
                   <li>My Account</li>
                   <li>Logout</li>
                 </ul>
@@ -250,4 +251,4 @@ const Navbar = ({ Container }) => {
 
 Navbar.propTypes = {};
 
-export default Navbar;
+export default withRouter(Navbar);

@@ -39,14 +39,8 @@ const Directory = props => {
   ]);
   return (
     <div className='directory-menu'>
-      {getSections.map(({ id, title, imageUrl, size }) => (
-        <MenuItem
-          title={title}
-          imageUrl={imageUrl}
-          size={size}
-          key={id}
-          subtitle='SHOP NOW'
-        />
+      {getSections.map(({ id, ...getSections }) => (
+        <MenuItem key={id} subtitle='SHOP NOW' {...getSections} />
       ))}
     </div>
   );
