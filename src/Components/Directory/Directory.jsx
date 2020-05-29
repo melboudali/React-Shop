@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import MenuItem from '../Menu-Item/MenuItem';
+import MenuItem from '../MenuItem/MenuItem';
 import PropTypes from 'prop-types';
 
 const Directory = props => {
