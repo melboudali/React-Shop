@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -193,16 +193,44 @@ const Navbar = ({ Container, history }) => {
             </Typography>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-              <IconButton aria-label='show 4 new mails' color='inherit'>
+              <Typography
+                variant='h7'
+                component={Link}
+                to='/'
+                style={{ padding: '12px', color: 'white', textDecoration: 'none' }}>
+                Home
+              </Typography>
+              <Typography
+                variant='h7'
+                style={{ padding: '12px', color: 'white', textDecoration: 'none' }}>
+                Categories
+              </Typography>
+              <Typography
+                variant='h7'
+                component={Link}
+                to='/Shop'
+                style={{ padding: '12px', color: 'white', textDecoration: 'none' }}>
+                Shop
+              </Typography>
+              <Typography
+                variant='h7'
+                style={{ padding: '12px', color: 'white', textDecoration: 'none' }}>
+                Account
+              </Typography>
+              <Typography
+                variant='h7'
+                style={{ padding: '12px', color: 'white', textDecoration: 'none' }}>
+                Support
+              </Typography>
+              <IconButton color='inherit'>
                 <i className='fal fa-search'></i>
               </IconButton>
-
               <IconButton
                 className='profile'
                 aria-label='account of current user'
                 aria-controls={menuId}
-                aria-haspopup='true'
-                onClick={handleProfileMenuOpen}
+                // aria-haspopup='true'
+                // onClick={handleProfileMenuOpen}
                 color='inherit'>
                 {/* <i className='fal fa-user'></i> */}
                 <img
