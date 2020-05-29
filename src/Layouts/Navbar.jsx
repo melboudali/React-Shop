@@ -221,10 +221,7 @@ const Navbar = ({ Container, history }) => {
                   <i className='fal fa-envelope'></i>
                 </Badge>
               </IconButton>
-              <IconButton
-                edge='end'
-                aria-label='show 3 new items'
-                color='inherit'>
+              <IconButton edge='end' aria-label='show 3 new items' color='inherit'>
                 <Badge badgeContent={3} color='secondary'>
                   <i className='fal fa-shopping-cart'></i>
                 </Badge>
