@@ -1,0 +1,47 @@
+.CollectionItem {
+  width: 22%;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  align-items: center;
+  &:hover {
+    .CollectionImage {
+      transform: scale(1.1);
+      // transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+      transition: transform 6s cubic-bezier(0, 1.31, 1, 1);
+    }
+  }
+}
+
+.ImageContainer {
+  width: 100%;
+  height: 95%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 5px;
+}
+
+.CollectionImage {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.CollectionFooter {
+  width: 100%;
+  height: 5%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+
+  .name {
+    width: 90%;
+    margin-bottom: 15px;
+  }
+
+  .price {
+    width: 10%;
+  }
+}

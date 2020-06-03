@@ -162,15 +162,6 @@ const Navbar = ({ Container, history }) => {
 
   return (
     <>
-      {/* <ul>
-          <li>Home</li>
-          <li>Categories</li>
-          <li>Account</li>
-          <li>Support</li>
-          <li>Search</li>
-          <li>Login/Register</li>
-          <li>Cart</li>
-        </ul> */}
       <AppBar position='static'>
         <Container>
           <Toolbar style={{ padding: 0 }}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const MenuItem = ({ title, imageUrl, subtitle, size, linkUrl, history, match: { url } }) => (

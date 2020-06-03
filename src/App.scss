@@ -4,6 +4,7 @@
 @import './Components/Directory/Directory';
 @import './Components/MenuItem/MenuItem';
 @import './Components/CollectionPreview/CollectionPreview';
+@import './Components/CollectionItem/CollectionItem';
 
 html {
   min-height: '100%';
@@ -17,4 +18,5 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto';
+  padding: 0;
 }
