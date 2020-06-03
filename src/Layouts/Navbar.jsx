@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -16,50 +16,11 @@ const useStyles = makeStyles(theme => ({
   grow: {
     flexGrow: 1
   },
-  menuButton: {
-    marginRight: theme.spacing(2)
-  },
+
   title: {
     display: 'none',
     [theme.breakpoints.up('sm')]: {
       display: 'block'
-    }
-  },
-  search: {
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25)
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
-      width: 'auto'
-    }
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  inputRoot: {
-    color: 'inherit'
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch'
     }
   },
   sectionDesktop: {
@@ -83,6 +44,27 @@ const Navbar = ({ Container, history }) => {
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const [getShowNav, setShowNav] = useState(false);
+  const [getNavScrollDown, setNavScrollDown] = useState(false);
+
+  useEffect(() => {
+    let windowOffset = 0;
+    window.onscroll = () => {
+      let currentScroll = window.scrollY;
+      if (currentScroll > 70) {
+        setShowNav(true);
+        if (currentScroll < windowOffset) {
+          setNavScrollDown(true);
+        } else {
+          setNavScrollDown(false);
+        }
+      } else {
+        setShowNav(false);
+      }
+      windowOffset = window.pageYOffset;
+    };
+  }, []);
 
   const handleProfileMenuOpen = event => {
     setAnchorEl(event.currentTarget);
@@ -127,17 +109,9 @@ const Navbar = ({ Container, history }) => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}>
       <MenuItem>
-        <IconButton aria-label='show 4 new mails' color='inherit'>
-          <Badge badgeContent={4} color='secondary'>
-            <i className='fal fa-envelope'></i>
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
         <IconButton aria-label='show 11 new notifications' color='inherit'>
           <Badge badgeContent={11} color='secondary'>
-            <i className='fal fa-bell'></i>
+            <i className='fal fa-bell NavIcons'></i>
           </Badge>
         </IconButton>
         <p>Notifications</p>
@@ -162,19 +136,19 @@ const Navbar = ({ Container, history }) => {
 
   return (
     <>
-      <AppBar position='static'>
+      <AppBar
+        position='static'
+        className={
+          getShowNav ? (getNavScrollDown ? 'showNavbar Navbar' : 'hideNavbar Navbar') : 'Navbar'
+        }>
         <Container>
           <Toolbar style={{ padding: 0 }}>
             <Hidden mdUp>
-              <IconButton
-                edge='start'
-                className={classes.menuButton}
-                color='inherit'
-                aria-label='open drawer'>
+              <IconButton edge='start' color='inherit' aria-label='open drawer'>
                 <i className='fal fa-bars'></i>
               </IconButton>
             </Hidden>
-            <Typography className={classes.title} variant='h6' noWrap>
+            <Typography className='NavbarMenu' variant='h6' noWrap>
               <img
                 className='logo'
                 src='https://cdn.shopify.com/assets/images/logos/shopify-bag.png'
@@ -184,37 +158,23 @@ const Navbar = ({ Container, history }) => {
             </Typography>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-              <Typography
-                variant='h7'
-                component={Link}
-                to='/'
-                style={{ padding: '12px', color: 'white', textDecoration: 'none' }}>
+              <Typography className='NavbarMenu' variant='h7' component={Link} to='/'>
                 Home
               </Typography>
-              <Typography
-                variant='h7'
-                style={{ padding: '12px', color: 'white', textDecoration: 'none' }}>
+              <Typography className='NavbarMenu' variant='h7'>
                 Categories
               </Typography>
-              <Typography
-                variant='h7'
-                component={Link}
-                to='/Shop'
-                style={{ padding: '12px', color: 'white', textDecoration: 'none' }}>
+              <Typography className='NavbarMenu' variant='h7' component={Link} to='/Shop'>
                 Shop
               </Typography>
-              <Typography
-                variant='h7'
-                style={{ padding: '12px', color: 'white', textDecoration: 'none' }}>
+              <Typography className='NavbarMenu' variant='h7'>
                 Account
               </Typography>
-              <Typography
-                variant='h7'
-                style={{ padding: '12px', color: 'white', textDecoration: 'none' }}>
+              <Typography className='NavbarMenu' variant='h7'>
                 Support
               </Typography>
               <IconButton color='inherit'>
-                <i className='fal fa-search'></i>
+                <i className='fal fa-search NavIcons'></i>
               </IconButton>
               <IconButton
                 className='profile'
@@ -235,14 +195,9 @@ const Navbar = ({ Container, history }) => {
                   <li>Logout</li>
                 </ul>
               </IconButton>
-              <IconButton aria-label='show 4 new mails' color='inherit'>
-                <Badge badgeContent={4} color='secondary'>
-                  <i className='fal fa-envelope'></i>
-                </Badge>
-              </IconButton>
               <IconButton edge='end' aria-label='show 3 new items' color='inherit'>
                 <Badge badgeContent={3} color='secondary'>
-                  <i className='fal fa-shopping-cart'></i>
+                  <i className='fal fa-shopping-cart NavIcons'></i>
                 </Badge>
               </IconButton>
             </div>
@@ -253,7 +208,7 @@ const Navbar = ({ Container, history }) => {
                 aria-haspopup='true'
                 onClick={handleMobileMenuOpen}
                 color='inherit'>
-                <i className='fal fa-ellipsis-v'></i>
+                <i className='fal fa-ellipsis-v NavIcons'></i>
               </IconButton>
             </div>
           </Toolbar>

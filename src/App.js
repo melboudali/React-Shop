@@ -9,6 +9,7 @@ import './App.scss';
 const App = () => (
   <>
     <Navbar Container={Container} />
+    <div className='NavBarSpace' />
     <Switch>
       <Route exact path='/' component={Home} />
       <Route exact path='/Shop' component={Shop} />
