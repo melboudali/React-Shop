@@ -9,7 +9,9 @@ const CollectionItem = ({ name, price, imageUrl }) => {
       </div>
       <div className='CollectionFooter'>
         <span className='name'>{name}</span>
-        <span className='price'>{price}</span>
+        <span className='price'>
+          {price}.00 <i className='fal fa-usd-circle' />
+        </span>
       </div>
     </div>
   );

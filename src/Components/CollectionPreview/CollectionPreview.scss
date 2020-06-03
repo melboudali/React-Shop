@@ -5,8 +5,11 @@
   padding: 20px 60px;
 
   .title {
+    width: max-content;
     font-size: 28px;
     margin-bottom: 25px;
+    color: rgb(48, 48, 48);
+    border-bottom: 1px solid rgb(172, 172, 172);
   }
 
   .preview {
