@@ -159,23 +159,23 @@ const Navbar = ({ Container, history }) => {
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
               <Typography className='NavbarMenu' variant='h7' component={Link} to='/'>
-                Home
+                HOME
               </Typography>
               <Typography className='NavbarMenu' variant='h7'>
-                Categories
+                NEW ARRIVALS
               </Typography>
               <Typography className='NavbarMenu' variant='h7' component={Link} to='/Shop'>
-                Shop
+                SHOP
               </Typography>
               <Typography className='NavbarMenu' variant='h7'>
-                Account
+                ABOUT
               </Typography>
               <Typography className='NavbarMenu' variant='h7'>
-                Support
+                FAQS
               </Typography>
-              <IconButton color='inherit'>
-                <i className='fal fa-search NavIcons'></i>
-              </IconButton>
+              <Typography className='NavbarMenu' variant='h7'>
+                CONTACT
+              </Typography>
               <IconButton
                 className='profile'
                 aria-label='account of current user'
@@ -194,6 +194,9 @@ const Navbar = ({ Container, history }) => {
                   <li>My Account</li>
                   <li>Logout</li>
                 </ul>
+              </IconButton>
+              <IconButton color='inherit'>
+                <i className='fal fa-search NavIcons'></i>
               </IconButton>
               <IconButton edge='end' aria-label='show 3 new items' color='inherit'>
                 <Badge badgeContent={3} color='secondary'>
