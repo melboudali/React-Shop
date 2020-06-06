@@ -174,7 +174,7 @@ const Navbar = ({ Container, history }) => {
                 FAQS
               </Typography>
               <Typography className='NavbarMenu' variant='h7'>
-                CONTACT US
+                CONTACT
               </Typography>
               <IconButton
                 className='profile'
