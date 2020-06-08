@@ -164,7 +164,7 @@ const Navbar = ({ Container, history }) => {
               <Typography className='NavbarMenu' variant='h7'>
                 NEW ARRIVALS
               </Typography>
-              <Typography className='NavbarMenu' variant='h7' component={Link} to='/Shop'>
+              <Typography className='NavbarMenu' variant='h7' component={Link} to='/shop'>
                 SHOP
               </Typography>
               <Typography className='NavbarMenu' variant='h7'>
@@ -174,7 +174,10 @@ const Navbar = ({ Container, history }) => {
                 FAQS
               </Typography>
               <Typography className='NavbarMenu' variant='h7'>
-                CONTACT us
+                CONTACT
+              </Typography>
+              <Typography className='NavbarMenu' variant='h7' component={Link} to='/sign'>
+                Sign in
               </Typography>
               <IconButton
                 className='profile'
