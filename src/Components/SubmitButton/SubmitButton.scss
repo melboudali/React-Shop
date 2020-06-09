@@ -1,12 +1,12 @@
 .SubmitButton {
-  min-width: 50% !important;
+  min-width: 48% !important;
   width: auto !important;
   height: 50px;
-  margin: 5px 0 0 0 !important;
-  letter-spacing: 3px !important;
+  margin: 5px 1% !important;
+  letter-spacing: 1px !important;
   line-height: 50px;
   padding: 0 35px 0 35px;
-  font-size: 13px !important;
+  font-size: 12px !important;
   background-color: rgb(39, 39, 39) !important;
   color: rgb(241, 241, 241) !important;
   text-transform: uppercase;
@@ -18,5 +18,9 @@
     background-color: rgb(241, 241, 241) !important;
     color: rgb(39, 39, 39) !important;
     border: 1px solid rgb(39, 39, 39) !important;
+  }
+  img{
+    width: 15px;
+    margin: -2px 5px 0 0;
   }
 }

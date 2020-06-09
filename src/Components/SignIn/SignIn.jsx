@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import { signInWithGoogle } from '../../Firebase/Firebase.utils';
 import FormInput from '../FormInput/FormInput';
 import Submit from '../SubmitButton/SubmitButton';
 import PropTypes from 'prop-types';
 import './SignIn.scss';
 
 const SignIn = props => {
-  const [getEmail, setEmail] = useState('');
-  const [getPassword, setPassword] = useState('');
+  const [getEmail, setEmail] = useState(null);
+  const [getPassword, setPassword] = useState(null);
 
   const onEmailChange = e => setEmail(e.target.value);
   const onPasswordChange = e => setPassword(e.target.value);
@@ -42,7 +43,11 @@ const SignIn = props => {
           handleChange={onPasswordChange}
           required
         />
-        <Submit type='submit'> Sign In </Submit>
+        <Submit type='submit'>Sign In</Submit>
+        <Submit onClick={signInWithGoogle}>
+          <img src='https://pluspng.com/img-png/google-logo-png-open-2000.png' alt='google' />
+          Sign in with google
+        </Submit>
       </form>
     </div>
   );
