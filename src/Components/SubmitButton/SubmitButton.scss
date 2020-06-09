@@ -1,0 +1,22 @@
+.SubmitButton {
+  min-width: 50% !important;
+  width: auto !important;
+  height: 50px;
+  margin: 5px 0 0 0 !important;
+  letter-spacing: 3px !important;
+  line-height: 50px;
+  padding: 0 35px 0 35px;
+  font-size: 13px !important;
+  background-color: rgb(39, 39, 39) !important;
+  color: rgb(241, 241, 241) !important;
+  text-transform: uppercase;
+  border: 1px solid rgb(39, 39, 39) !important;
+  border-radius: 0 !important;
+  cursor: pointer !important;
+  transition: all 0.6s !important;
+  &:hover {
+    background-color: rgb(241, 241, 241) !important;
+    color: rgb(39, 39, 39) !important;
+    border: 1px solid rgb(39, 39, 39) !important;
+  }
+}

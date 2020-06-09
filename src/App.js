@@ -11,12 +11,14 @@ const App = () => (
   <>
     <Navbar Container={Container} />
     <div className='NavBarSpace' />
-    <Switch>
-      <Route exact path='/' component={Home} />
-      <Route exact path='/shop' component={Shop} />
-      <Route exact path='/sign' component={Sign} />
-      <Route exact path='/profile' component={() => <h1>Hello profile</h1>} />
-    </Switch>
+    <Container>
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/shop' component={Shop} />
+        <Route exact path='/sign' component={Sign} />
+        <Route exact path='/profile' component={() => <h1>Hello profile</h1>} />
+      </Switch>
+    </Container>
   </>
 );
 

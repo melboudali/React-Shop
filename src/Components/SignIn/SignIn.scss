@@ -1,4 +1,12 @@
-.SignIn{
-    color: rgb(92, 92, 92);
-    width: 30vw;
+.SignIn {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  .title {
+    margin: 10px 0;
+    color: rgb(87, 87, 87);
+  }
+  .subtitle {
+    color: rgb(114, 113, 113);
+  }
 }

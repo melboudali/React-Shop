@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import FormInput from '../FormInput/FormInput';
-import Button from '@material-ui/core/Button';
+import Submit from '../SubmitButton/SubmitButton';
 import PropTypes from 'prop-types';
 import './SignIn.scss';
 
@@ -18,8 +18,8 @@ const SignIn = props => {
   };
   return (
     <div className='SignIn'>
-      <h2>I already have an account</h2>
-      <span>Sign in with your email and password</span>
+      <h2 className='title'>I already have an account</h2>
+      <span className='subtitle'>Sign in with your email and password</span>
       <form action='' method='post' onSubmit={onSubmit}>
         {/* <label htmlFor='email'>Email</label> */}
         <FormInput
@@ -42,7 +42,7 @@ const SignIn = props => {
           handleChange={onPasswordChange}
           required
         />
-        <Button type='submit'> Sign In </Button>
+        <Submit type='submit'> Sign In </Submit>
       </form>
     </div>
   );
