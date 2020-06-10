@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { auth } from '../Firebase/Firebase.utils';
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
@@ -169,7 +168,7 @@ const Navbar = ({ Container, history, CurrentUser }) => {
               <Typography className='NavbarMenu'>ABOUT</Typography>
               <Typography className='NavbarMenu'>FAQS</Typography>
               <Typography className='NavbarMenu'>CONTACT</Typography>
-              <IconButton color='inherit'>
+              <IconButton className='navbarSvg' color='inherit'>
                 <i className='fal fa-search NavIcons'></i>
               </IconButton>
               {CurrentUser ? (
@@ -177,15 +176,8 @@ const Navbar = ({ Container, history, CurrentUser }) => {
                   className='profile'
                   aria-label='account of current user'
                   aria-controls={menuId}
-                  // aria-haspopup='true'
-                  // onClick={handleProfileMenuOpen}
                   color='inherit'>
-                  {/* <i className='fal fa-user'></i> */}
-                  <img
-                    src={CurrentUser.photoURL}
-                    alt='profile'
-                    style={{ width: '24px', borderRadius: '100%' }}
-                  />
+                  <img src={CurrentUser.photoURL} alt='profile' />
                   <ul className='menu'>
                     <li onClick={() => history.push('/profile')}>Profile</li>
                     <li>My Account</li>
@@ -197,7 +189,11 @@ const Navbar = ({ Container, history, CurrentUser }) => {
                   Sign in
                 </Typography>
               )}
-              <IconButton edge='end' aria-label='show 3 new items' color='inherit'>
+              <IconButton
+                className='navbarSvg'
+                edge='end'
+                aria-label='show 3 new items'
+                color='inherit'>
                 <Badge badgeContent={3} color='secondary'>
                   <i className='fal fa-shopping-cart NavIcons'></i>
                 </Badge>
