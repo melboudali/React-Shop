@@ -1,5 +1,5 @@
 .SignIn {
-  width: 30vw;
+  width: 380px;
   display: flex;
   flex-direction: column;
   .title {
@@ -8,5 +8,11 @@
   }
   .subtitle {
     color: rgb(114, 113, 113);
+  }
+  .buttons {
+    width: 100%;
+    text-align: center;
+  //   display: flex;
+  //   justify-content: space-between;
   }
 }

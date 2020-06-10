@@ -30,7 +30,6 @@ const SignIn = props => {
           id='email' //for label
           value={getEmail}
           handleChange={onEmailChange}
-          required
         />
         {/* PAssword */}
         {/* <label htmlFor='password'>Password</label> */}
@@ -41,13 +40,14 @@ const SignIn = props => {
           id='password'
           value={getPassword}
           handleChange={onPasswordChange}
-          required
         />
-        <Submit type='submit'>Sign In</Submit>
-        <Submit onClick={signInWithGoogle}>
-          <img src='https://pluspng.com/img-png/google-logo-png-open-2000.png' alt='google' />
-          Sign in with google
-        </Submit>
+        <div className='buttons'>
+          <Submit type='submit'>Sign In</Submit>
+          <Submit onClick={signInWithGoogle}>
+            <img src='https://pluspng.com/img-png/google-logo-png-open-2000.png' alt='google' />
+            Sign in with google
+          </Submit>
+        </div>
       </form>
     </div>
   );

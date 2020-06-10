@@ -12,7 +12,7 @@ function SubmitButton({ children, ...moreProps }) {
 }
 
 SubmitButton.propTypes = {
-  children: PropTypes.string.isRequired
+  children: PropTypes.node.isRequired
 };
 
 export default SubmitButton;

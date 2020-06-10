@@ -5,7 +5,7 @@ import './FormInput.scss';
 const FormInput = ({ handleChange, label, value, ...otherProps }) => {
   return (
     <div className='group'>
-      <input type='text' className='formInput' onChange={handleChange} {...otherProps} />
+      <input className='formInput' onChange={handleChange} {...otherProps} autoComplete="on" required/>
       {label ? <label className={`${value ? 'shrink' : ''} formInputLabel`}>{label}</label> : null}
     </div>
   );

@@ -13,11 +13,13 @@ const App = () => {
 
   useEffect(() => {
     auth.onAuthStateChanged(user => setUser(user));
+    console.log(process.env.REACT_APP_APIKEY)
+    console.log("mama");
   }, []);
 
   return (
     <>
-      <Navbar Container={Container} />
+      <Navbar Container={Container} CurrentUser={getUser} />
       <div className='NavBarSpace' />
       <Container>
         <Switch>

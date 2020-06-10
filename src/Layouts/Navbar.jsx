@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { withRouter, Link } from 'react-router-dom';
+import { auth } from '../Firebase/Firebase.utils';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -37,7 +38,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Navbar = ({ Container, history }) => {
+const Navbar = ({ Container, history, CurrentUser }) => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
@@ -158,49 +159,44 @@ const Navbar = ({ Container, history }) => {
             </Typography>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-              <Typography className='NavbarMenu' variant='h7' component={Link} to='/'>
+              <Typography className='NavbarMenu' variant='h6' component={Link} to='/'>
                 HOME
               </Typography>
-              <Typography className='NavbarMenu' variant='h7'>
-                NEW ARRIVALS
-              </Typography>
-              <Typography className='NavbarMenu' variant='h7' component={Link} to='/shop'>
+              <Typography className='NavbarMenu'>NEW ARRIVALS</Typography>
+              <Typography className='NavbarMenu' component={Link} to='/shop'>
                 SHOP
               </Typography>
-              <Typography className='NavbarMenu' variant='h7'>
-                ABOUT
-              </Typography>
-              <Typography className='NavbarMenu' variant='h7'>
-                FAQS
-              </Typography>
-              <Typography className='NavbarMenu' variant='h7'>
-                CONTACT
-              </Typography>
-              <Typography className='NavbarMenu' variant='h7' component={Link} to='/sign'>
-                Sign in
-              </Typography>
-              <IconButton
-                className='profile'
-                aria-label='account of current user'
-                aria-controls={menuId}
-                // aria-haspopup='true'
-                // onClick={handleProfileMenuOpen}
-                color='inherit'>
-                {/* <i className='fal fa-user'></i> */}
-                <img
-                  src='https://cdn130.picsart.com/268656304018211.png?type=webp&to=min&r=640'
-                  alt='profile'
-                  style={{ width: '24px' }}
-                />
-                <ul className='menu'>
-                  <li onClick={() => history.push('/profile')}>Profile</li>
-                  <li>My Account</li>
-                  <li>Logout</li>
-                </ul>
-              </IconButton>
+              <Typography className='NavbarMenu'>ABOUT</Typography>
+              <Typography className='NavbarMenu'>FAQS</Typography>
+              <Typography className='NavbarMenu'>CONTACT</Typography>
               <IconButton color='inherit'>
                 <i className='fal fa-search NavIcons'></i>
               </IconButton>
+              {CurrentUser ? (
+                <IconButton
+                  className='profile'
+                  aria-label='account of current user'
+                  aria-controls={menuId}
+                  // aria-haspopup='true'
+                  // onClick={handleProfileMenuOpen}
+                  color='inherit'>
+                  {/* <i className='fal fa-user'></i> */}
+                  <img
+                    src={CurrentUser.photoURL}
+                    alt='profile'
+                    style={{ width: '24px', borderRadius: '100%' }}
+                  />
+                  <ul className='menu'>
+                    <li onClick={() => history.push('/profile')}>Profile</li>
+                    <li>My Account</li>
+                    <li onClick={() => auth.signOut()}>Logout</li>
+                  </ul>
+                </IconButton>
+              ) : (
+                <Typography className='NavbarMenu' variant='h6' component={Link} to='/sign'>
+                  Sign in
+                </Typography>
+              )}
               <IconButton edge='end' aria-label='show 3 new items' color='inherit'>
                 <Badge badgeContent={3} color='secondary'>
                   <i className='fal fa-shopping-cart NavIcons'></i>
