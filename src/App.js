@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { auth } from './Firebase/Firebase.utils';
+import { auth, createUserProfileDoc } from './Firebase/Firebase.utils';
 import { Switch, Route } from 'react-router-dom';
 import { Container } from '@material-ui/core';
 import Navbar from './Layouts/Navbar';
@@ -12,9 +12,12 @@ const App = () => {
   const [getUser, setUser] = useState(null);
 
   useEffect(() => {
-    auth.onAuthStateChanged(user => setUser(user));
-    console.log(process.env.REACT_APP_APIKEY)
-    console.log("mama");
+    auth.onAuthStateChanged(async userAuth => {
+      if (userAuth) {
+        setUser(userAuth);
+        createUserProfileDoc(userAuth);
+      }
+    });
   }, []);
 
   return (

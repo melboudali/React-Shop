@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { signInWithGoogle } from '../../Firebase/Firebase.utils';
+import {
+  signInWithGoogle,
+  signInWithFacebook,
+  signInWithGithub
+} from '../../Firebase/Firebase.utils';
 import FormInput from '../FormInput/FormInput';
 import Submit from '../SubmitButton/SubmitButton';
 import PropTypes from 'prop-types';
@@ -46,6 +50,22 @@ const SignIn = props => {
           <Submit onClick={signInWithGoogle}>
             <img src='https://pluspng.com/img-png/google-logo-png-open-2000.png' alt='google' />
             Sign in with google
+          </Submit>
+        </div>
+        <div className='buttons'>
+          <Submit onClick={signInWithFacebook}>
+            <img
+              src='https://cdn.iconscout.com/icon/free/png-256/facebook-logo-2019-1597680-1350125.png'
+              alt='facebook'
+            />
+            Sign in with FB
+          </Submit>
+          <Submit onClick={signInWithGithub}>
+            <img
+              src='https://git.xmr.pm/trezor/trezor-common/raw/commit/4e2741505a448075178a4fb7a90aa4f9ace880a2/defs/webauthn/apps/github.png'
+              alt='github'
+            />
+            Sign in with Github
           </Submit>
         </div>
       </form>
