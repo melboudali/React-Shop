@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Navbar = ({ Container, history, CurrentUser }) => {
+const Navbar = ({ Container, history, CurrentUser = null }) => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
@@ -64,7 +64,7 @@ const Navbar = ({ Container, history, CurrentUser }) => {
       }
       windowOffset = window.pageYOffset;
     };
-  }, []);
+  }, [CurrentUser]);
 
   const handleProfileMenuOpen = event => {
     setAnchorEl(event.currentTarget);

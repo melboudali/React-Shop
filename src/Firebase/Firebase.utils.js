@@ -18,31 +18,34 @@ firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
-// Google Signin method
+// Google Signin method TODO: Add error handler email alredy exist
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+export const signInWithGoogle = () =>
+  auth.signInWithPopup(provider).catch(error => console.log(error.message));
 
-// Facebook Signin method
+// Facebook Signin method TODO: Add error handler email alredy exist
 const fbProvider = new firebase.auth.FacebookAuthProvider();
 fbProvider.setCustomParameters({ prompt: 'select_account' });
-export const signInWithFacebook = () => auth.signInWithPopup(fbProvider);
+export const signInWithFacebook = () =>
+  auth.signInWithPopup(fbProvider).catch(error => console.log(error.message));
 
-// Github Signin method
+// Github Signin method TODO: Add error handler email alredy exist
 const GHProvider = new firebase.auth.GithubAuthProvider();
 GHProvider.setCustomParameters({ prompt: 'select_account' });
-export const signInWithGithub = () => auth.signInWithPopup(GHProvider);
+export const signInWithGithub = () =>
+  auth
+    .signInWithPopup(GHProvider)
+    .catch(({ email, message }) => console.log(`email '${email}' already exist in our DataBase.`));
 
 // get Date from firestore
 export const createUserProfileDoc = async (userAuth, additionalData) => {
-  if (!userAuth) return;
   const userRef = firestore.collection('users').doc(`${userAuth.uid}`);
   const snapShot = await userRef.get();
   if (!snapShot.exists) {
-    const { uid, displayName, email, emailVerified, phoneNumber, photoURL } = userAuth;
+    const { displayName, email, emailVerified, phoneNumber, photoURL } = userAuth;
     try {
       await userRef.set({
-        uid,
         displayName,
         email,
         emailVerified,
