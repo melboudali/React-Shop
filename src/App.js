@@ -12,25 +12,21 @@ const App = () => {
   const [getUser, setUser] = useState(null);
 
   useEffect(() => {
-    try {
-      auth.onAuthStateChanged(async userAuth => {
-        if (userAuth) {
-          const userRef = await createUserProfileDoc(userAuth);
-          userRef.onSnapshot(snapShot => {
-            setUser({
-              CurrentUser: {
-                id: snapShot.id,
-                ...snapShot.data()
-              }
-            });
+    auth.onAuthStateChanged(async userAuth => {
+      if (userAuth) {
+        const userRef = await createUserProfileDoc(userAuth);
+        userRef.onSnapshot(snapShot => {
+          setUser({
+            CurrentUser: {
+              id: snapShot.id,
+              ...snapShot.data()
+            }
           });
-        } else {
-          setUser(null);
-        }
-      });
-    } catch (error) {
-      console.log('Error Email already exist: ', error.message);
-    }
+        });
+      } else {
+        setUser(null);
+      }
+    });
   }, []);
 
   return (
@@ -42,7 +38,7 @@ const App = () => {
           <Route exact path='/' component={Home} />
           <Route exact path='/shop' component={Shop} />
           <Route exact path='/sign' component={Sign} />
-  <Route exact path='/profile' component={() => <h1>Hello {getUser.CurrentUser.displayName}</h1>} />
+          <Route exact path='/profile' component={() => <h1>Hello </h1>} />
         </Switch>
       </Container>
     </>
