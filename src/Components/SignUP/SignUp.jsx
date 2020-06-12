@@ -37,10 +37,9 @@ const SignUp = props => {
       <form className='SignUpForm' onSubmit={onSubmit}>
         <FormInput
           type='text'
-          id='displayName'
           name='displayName'
           label='Display Name'
-          value={getUser ? getUser.displayName : ''}
+          value={(getUser && getUser.displayName) || ''}
           handleChange={onHandlechange}
         />
         <FormInput
@@ -48,7 +47,7 @@ const SignUp = props => {
           id='email'
           name='email'
           label='Email'
-          value={getUser ? getUser.email : ''}
+          value={(getUser && getUser.email) || ''}
           handleChange={onHandlechange}
         />
         <FormInput
@@ -56,7 +55,7 @@ const SignUp = props => {
           id='password'
           name='password'
           label='Password'
-          value={getUser ? getUser.password : ''}
+          value={(getUser && getUser.password) || ''}
           handleChange={onHandlechange}
         />
         <FormInput
@@ -64,7 +63,7 @@ const SignUp = props => {
           id='confirmPassword'
           name='confirmPassword'
           label='Confirm Password'
-          value={getUser ? getUser.confirmPassword : ''}
+          value={(getUser && getUser.confirmPassword) || ''}
           handleChange={onHandlechange}
         />
         <div className='buttons'>

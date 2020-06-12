@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {
+  auth,
   signInWithGoogle,
   signInWithFacebook,
   signInWithGithub
@@ -16,10 +17,15 @@ const SignIn = props => {
   const onEmailChange = e => setEmail(e.target.value);
   const onPasswordChange = e => setPassword(e.target.value);
 
-  const onSubmitHandler = e => {
+  const onSubmitHandler = async e => {
     e.preventDefault();
-    setEmail('');
-    setPassword('');
+    try {
+      await auth.signInWithEmailAndPassword(getEmail, getPassword);
+      setEmail('');
+      setPassword('');
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   return (
