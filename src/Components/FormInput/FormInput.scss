@@ -23,6 +23,7 @@ $main-color: rgb(167, 167, 167);
     border-radius: 0;
     border-bottom: 1px solid $sub-color;
     margin: 25px 0;
+    color: rgb(65, 65, 65);
 
     &:focus {
       outline: none;
@@ -51,4 +52,14 @@ $main-color: rgb(167, 167, 167);
       @include shrinkLabel();
     }
   }
+}
+
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
+  -webkit-box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
+  -webkit-text-fill-color: rgb(65, 65, 65) !important;
 }

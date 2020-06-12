@@ -1,12 +1,14 @@
 import React from 'react';
 import SignIn from '../../Components/SignIn/SignIn';
+import SignUp from '../../Components/SignUP/SignUp';
 import PropTypes from 'prop-types';
 import './SignInSignUp.scss';
 
 const SignInSignUp = props => {
   return (
-    <div>
+    <div className="SignContainer">
       <SignIn />
+      <SignUp />
     </div>
   );
 };
