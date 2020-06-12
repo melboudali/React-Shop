@@ -185,8 +185,8 @@ const Navbar = ({ Container, history, CurrentUser = null }) => {
                   </ul>
                 </IconButton>
               ) : (
-                <Typography className='NavbarMenu' variant='h6' component={Link} to='/sign'>
-                  Sign in
+                <Typography className='NavbarMenu' component={Link} to='/sign'>
+                  SIGN IN
                 </Typography>
               )}
               <IconButton
