@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import MenuItem from '../MenuItem/MenuItem';
 import PropTypes from 'prop-types';
+import './Directory.scss';
 
 const Directory = props => {
   const [getSections, setSections] = useState([

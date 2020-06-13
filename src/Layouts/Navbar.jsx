@@ -11,6 +11,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import Hidden from '@material-ui/core/Hidden';
 import PropTypes from 'prop-types';
+import './Navbar.scss';
 
 const useStyles = makeStyles(theme => ({
   grow: {

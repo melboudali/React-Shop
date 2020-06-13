@@ -1,7 +1,8 @@
 import React from 'react';
 import CollectionItem from '../CollectionItem/CollectionItem';
-import PropTypes from 'prop-types';
 import { Button } from '@material-ui/core';
+import PropTypes from 'prop-types';
+import './CollectionPreview.scss';
 
 const CollectionPreview = ({ title, items }) => {
   return (

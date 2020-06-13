@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CollectionPreview from '../../Components/CollectionPreview/CollectionPreview';
 import ShopData from './ShopData';
 import PropTypes from 'prop-types';
+import './Shop.scss';
 
 const Shop = props => {
   const [shopData, setShopData] = useState(ShopData);
