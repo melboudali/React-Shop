@@ -1,7 +1,7 @@
 .SignUp {
-  width: 380px;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  padding: 0 70px;
+
   .title {
     margin: 10px 0;
     color: rgb(87, 87, 87);
@@ -12,7 +12,7 @@
   .buttons {
     width: 100%;
     text-align: center;
-  //   display: flex;
-  //   justify-content: space-between;
+    //   display: flex;
+    //   justify-content: space-between;
   }
 }

@@ -1,39 +1,43 @@
 import React, { useState } from 'react';
 import MenuItem from '../../Components/MenuItem/MenuItem';
 import Grid from '@material-ui/core/Grid';
-import PropTypes from 'prop-types';
 import './Home.scss';
 
-const Home = props => {
+const Home = () => {
   const [getSections, setSections] = useState([
     {
       title: 'hats',
-      imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+      imageUrl:
+        'https://images.unsplash.com/photo-1580850963861-5f1e80589f7c?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
       id: 1,
       linkUrl: 'shop/hats'
     },
     {
       title: 'jackets',
-      imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+      imageUrl:
+        'https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80',
       id: 2,
       linkUrl: 'shop/jackets'
     },
     {
       title: 'sneakers',
-      imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+      imageUrl:
+        'https://images.unsplash.com/photo-1529810313688-44ea1c2d81d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=553&q=80',
       id: 3,
       linkUrl: 'shop/sneakers'
     },
     {
       title: 'womens',
-      imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+      imageUrl:
+        'https://images.unsplash.com/photo-1579298911698-f23a4d9dc3d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80',
       size: 'large',
       id: 4,
       linkUrl: 'shop/womens'
     },
     {
       title: 'mens',
-      imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+      imageUrl:
+        'https://images.unsplash.com/photo-1530062329328-9734c43ae31b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80',
       size: 'large',
       id: 5,
       linkUrl: 'shop/mens'
@@ -59,7 +63,5 @@ const Home = props => {
     </div>
   );
 };
-
-Home.propTypes = {};
 
 export default Home;

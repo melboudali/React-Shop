@@ -1,14 +1,16 @@
 .SignIn {
-  width: 380px;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  padding: 0 10%;
+
   .title {
     margin: 10px 0;
     color: rgb(87, 87, 87);
   }
+
   .subtitle {
     color: rgb(114, 113, 113);
   }
+
   .buttons {
     width: 100%;
     text-align: center;

@@ -67,7 +67,7 @@ const SignIn = props => {
           </Submit>
           <Submit onClick={signInWithGithub}>
             <img
-              src='https://git.xmr.pm/trezor/trezor-common/raw/commit/4e2741505a448075178a4fb7a90aa4f9ace880a2/defs/webauthn/apps/github.png'
+              src='https://pluspng.com/img-png/128x128-px-github-icon-256x256-png-256.png'
               alt='github'
             />
             Sign in with Github
