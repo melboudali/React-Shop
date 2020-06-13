@@ -1,24 +1,15 @@
-.menu-item {
+.MenuItem {
   position: relative;
-  min-width: 30%;
   height: 240px;
   flex: 1 1 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 7.5px 15px;
+  margin: 0 7.5px 15px 7.5px;
   overflow: hidden;
 
   &.large {
     height: 380px;
-  }
-
-  &:first-child {
-    margin-right: 7.5px;
-  }
-
-  &:last-child {
-    margin-left: 7.5px;
   }
 
   &::before {

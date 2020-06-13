@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { auth, createUserProfileDoc } from './Firebase/Firebase.utils';
 import { Switch, Route } from 'react-router-dom';
-import { Container, Snackbar } from '@material-ui/core';
+import { Container } from '@material-ui/core';
 import Navbar from './Layouts/Navbar';
 import Home from './Pages/Home/Home';
 import Shop from './Pages/Shop/Shop';
@@ -32,7 +32,7 @@ const App = () => {
   return (
     <>
       <Navbar Container={Container} {...getUser} />
-      <div className='NavBarSpace' />
+      <div className='NavbarDivider' />
       <Container>
         <Switch>
           <Route exact path='/' component={Home} />
