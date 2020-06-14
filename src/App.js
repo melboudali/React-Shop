@@ -62,7 +62,7 @@ const App = () => {
           horizontal: 'left'
         }}
         open={open}
-        autoHideDuration={10000}
+        autoHideDuration={6000}
         onClose={handleClose}
         message={getUser && `Welcome ${getUser.CurrentUser.displayName}!`}
         action={
