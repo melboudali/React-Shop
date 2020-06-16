@@ -43,7 +43,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Navbar = ({ Container, history, User }) => {
+const Navbar = ({ Container, history, currentUser }) => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
@@ -177,13 +177,13 @@ const Navbar = ({ Container, history, User }) => {
               <IconButton className='navbarSvg' color='inherit'>
                 <i className='fal fa-search NavIcons'></i>
               </IconButton>
-              {User ? (
+              {currentUser ? (
                 <IconButton
                   className='profile'
                   aria-label='account of current user'
                   aria-controls={menuId}
                   color='inherit'>
-                  <img src={User.photoURL} alt='profile' />
+                  <img src={currentUser.photoURL} alt='profile' />
                   <ul className='menu'>
                     <li onClick={() => history.push('/profile')}>Profile</li>
                     <li>My Account</li>
@@ -227,7 +227,7 @@ const Navbar = ({ Container, history, User }) => {
 Navbar.propTypes = {};
 
 const mapStateToProps = state => ({
-  User: state.User.currentUser
+  currentUser: state.User.currentUser
 });
 
 export default connect(mapStateToProps)(withRouter(Navbar));

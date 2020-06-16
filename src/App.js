@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { auth, createUserProfileDoc } from './Firebase/Firebase.utils';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { Container, Snackbar, Button } from '@material-ui/core';
 import Navbar from './Layouts/Navbar';
 import Home from './Pages/Home/Home';
@@ -9,8 +9,9 @@ import Sign from './Pages/SignIn-SingUp/SignInSignUp';
 import './App.scss';
 import { setCurrentUser } from './Redux/User/UserActions';
 import { connect } from 'react-redux';
+import AuthPrivateRoute from './Routes/AuthPrivateRoute';
 
-const App = ({ setCurrentUser }) => {
+const App = ({ setCurrentUser, currentUser }) => {
   const [getUser, setUser] = useState(null);
 
   const [open, setOpen] = useState(true);
@@ -50,9 +51,11 @@ const App = ({ setCurrentUser }) => {
       <div className='NavbarDivider' />
       <Container>
         <Switch>
+          {/* Private Routes */}
+          <AuthPrivateRoute exact path='/sign' component={Sign} />
+          {/* Public Routes */}
           <Route exact path='/' component={Home} />
           <Route exact path='/shop' component={Shop} />
-          <Route exact path='/sign' component={Sign} />
           <Route exact path='/profile' component={() => <h1>Hello </h1>} />
         </Switch>
       </Container>
@@ -64,7 +67,7 @@ const App = ({ setCurrentUser }) => {
         open={open}
         autoHideDuration={10000}
         onClose={handleClose}
-        message={getUser && `Welcome ${getUser.CurrentUser.displayName}!`}
+        message={currentUser && `Welcome ${currentUser.displayName}!`}
         action={
           <>
             <Button color='secondary' size='small' onClick={handleClose}>
@@ -78,8 +81,12 @@ const App = ({ setCurrentUser }) => {
   );
 };
 
+const mapStateToProps = state => ({
+  currentUser: state.User.currentUser
+});
+
 const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
