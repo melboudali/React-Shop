@@ -12,6 +12,11 @@ import Menu from '@material-ui/core/Menu';
 import Hidden from '@material-ui/core/Hidden';
 import PropTypes from 'prop-types';
 import './Navbar.scss';
+// scss modules in order to use same classes and ids with other component
+// import {classe1, class2 ... } from './Navbar.module.scss';
+// OR
+// import moduleClass from './Navbar.module.scss';
+
 
 const useStyles = makeStyles(theme => ({
   grow: {
