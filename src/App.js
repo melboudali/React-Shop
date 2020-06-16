@@ -7,8 +7,10 @@ import Home from './Pages/Home/Home';
 import Shop from './Pages/Shop/Shop';
 import Sign from './Pages/SignIn-SingUp/SignInSignUp';
 import './App.scss';
+import { setCurrentUser } from './Redux/User/UserActions';
+import { connect } from 'react-redux';
 
-const App = () => {
+const App = ({ setCurrentUser }) => {
   const [getUser, setUser] = useState(null);
 
   const [open, setOpen] = useState(true);
@@ -30,23 +32,21 @@ const App = () => {
       if (userAuth) {
         const userRef = await createUserProfileDoc(userAuth);
         userRef.onSnapshot(snapShot => {
-          setUser({
-            CurrentUser: {
-              id: snapShot.id,
-              ...snapShot.data()
-            }
+          setCurrentUser({
+            id: snapShot.id,
+            ...snapShot.data()
           });
           setOpen(true);
         });
       } else {
-        setUser(null);
+        setCurrentUser(null);
       }
     });
   }, []);
 
   return (
     <>
-      <Navbar Container={Container} {...getUser} />
+      <Navbar Container={Container} />
       <div className='NavbarDivider' />
       <Container>
         <Switch>
@@ -78,4 +78,8 @@ const App = () => {
   );
 };
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  setCurrentUser: user => dispatch(setCurrentUser(user))
+});
+
+export default connect(null, mapDispatchToProps)(App);

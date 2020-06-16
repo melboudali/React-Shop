@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { auth } from '../Firebase/Firebase.utils';
+import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -16,7 +17,6 @@ import './Navbar.scss';
 // import {classe1, class2 ... } from './Navbar.module.scss';
 // OR
 // import moduleClass from './Navbar.module.scss';
-
 
 const useStyles = makeStyles(theme => ({
   grow: {
@@ -43,7 +43,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Navbar = ({ Container, history, CurrentUser = null }) => {
+const Navbar = ({ Container, history, User }) => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
@@ -70,7 +70,7 @@ const Navbar = ({ Container, history, CurrentUser = null }) => {
       }
       windowOffset = window.pageYOffset;
     };
-  }, [CurrentUser]);
+  }, []);
 
   const handleProfileMenuOpen = event => {
     setAnchorEl(event.currentTarget);
@@ -177,13 +177,13 @@ const Navbar = ({ Container, history, CurrentUser = null }) => {
               <IconButton className='navbarSvg' color='inherit'>
                 <i className='fal fa-search NavIcons'></i>
               </IconButton>
-              {CurrentUser ? (
+              {User ? (
                 <IconButton
                   className='profile'
                   aria-label='account of current user'
                   aria-controls={menuId}
                   color='inherit'>
-                  <img src={CurrentUser.photoURL} alt='profile' />
+                  <img src={User.photoURL} alt='profile' />
                   <ul className='menu'>
                     <li onClick={() => history.push('/profile')}>Profile</li>
                     <li>My Account</li>
@@ -226,4 +226,8 @@ const Navbar = ({ Container, history, CurrentUser = null }) => {
 
 Navbar.propTypes = {};
 
-export default withRouter(Navbar);
+const mapStateToProps = state => ({
+  User: state.User.currentUser
+});
+
+export default connect(mapStateToProps)(withRouter(Navbar));
