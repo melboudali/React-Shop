@@ -24,13 +24,21 @@ export const firestore = firebase.firestore();
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });
 export const signInWithGoogle = () =>
-  auth.signInWithPopup(provider).catch(error => console.log(error.message));
+  auth
+    .signInWithPopup(provider)
+    .catch(() =>
+      Store.dispatch(setAuthError(`Email already exist. Please try again with another one!`))
+    );
 
 // Facebook Signin method TODO: Add error handler email alredy exist
 const fbProvider = new firebase.auth.FacebookAuthProvider();
 fbProvider.setCustomParameters({ prompt: 'select_account' });
 export const signInWithFacebook = () =>
-  auth.signInWithPopup(fbProvider).catch(error => console.log(error.message));
+  auth
+    .signInWithPopup(fbProvider)
+    .catch(() =>
+      Store.dispatch(setAuthError(`Email already exist. Please try again with another one!`))
+    );
 
 // Github Signin method TODO: Add error handler email alredy exist
 const GHProvider = new firebase.auth.GithubAuthProvider();
