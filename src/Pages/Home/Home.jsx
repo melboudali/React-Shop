@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import './Home.scss';
 
 const Home = () => {
-  const [getSections, setSections] = useState([
+  const [getSections, ] = useState([
     {
       title: 'hats',
       imageUrl:

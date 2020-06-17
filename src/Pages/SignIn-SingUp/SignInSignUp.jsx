@@ -19,12 +19,14 @@ const SignInSignUp = ({ authErrors }) => {
         </Grid>
       </Grid>
       {authErrors.length > 0 &&
-        authErrors.map((id, error) => <Snackbar key={id} message={error} />)}
+        authErrors.map((error, id) => <Snackbar key={id} message={error} />)}
     </div>
   );
 };
 
-SignInSignUp.propTypes = {};
+SignInSignUp.propTypes = {
+  authErrors: PropTypes.array.isRequired
+};
 
 const mapStateToProps = state => ({
   authErrors: state.User.authErrors

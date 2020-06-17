@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { setAuthError } from '../../../Redux/User/UserActions';
 import { auth, createUserProfileDoc } from '../../../Firebase/Firebase.utils';
 import FormInput from '../FormInput/FormInput';
 import SubmitBtn from '../SubmitButton/SubmitButton';
 import './SignUp.scss';
 import PropTypes from 'prop-types';
 
-const SignUp = props => {
+const SignUp = ({ setAuthError }) => {
   const [getUser, setUser] = useState(null);
 
   const onHandlechange = e => {
@@ -17,7 +19,8 @@ const SignUp = props => {
     e.preventDefault();
     const { displayName, email, password, confirmPassword } = getUser;
     if (password !== confirmPassword) {
-      alert("Passwods don't match!");
+      setUser(null);
+      setAuthError("Passwods don't match!");
       return;
     }
 
@@ -25,8 +28,9 @@ const SignUp = props => {
       const { user } = await auth.createUserWithEmailAndPassword(email, password);
       await createUserProfileDoc(user, { displayName });
       setUser(null);
-    } catch (error) {
-      console.log('Error creating new user, ', error.message);
+    } catch (err) {
+      setUser(null);
+      setAuthError('The email address is already in use by another account.');
     }
   };
 
@@ -37,6 +41,7 @@ const SignUp = props => {
       <form className='SignUpForm' onSubmit={onSubmit}>
         <FormInput
           type='text'
+          id='displayName'
           name='displayName'
           label='Display Name'
           value={(getUser && getUser.displayName) || ''}
@@ -74,6 +79,6 @@ const SignUp = props => {
   );
 };
 
-SignUp.propTypes = {};
+SignUp.propTypes = { setAuthError: PropTypes.func.isRequired };
 
-export default SignUp;
+export default connect(null, { setAuthError })(SignUp);

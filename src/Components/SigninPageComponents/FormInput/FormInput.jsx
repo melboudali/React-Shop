@@ -13,11 +13,20 @@ const FormInput = ({ handleChange, label, value, id, ...otherProps }) => {
         required
         {...otherProps}
       />
-      {label ? <label htmlFor={id} className={`${value ? 'shrink' : ''} formInputLabel`}>{label}</label> : null}
+      {label ? (
+        <label htmlFor={id} className={`${value ? 'shrink' : ''} formInputLabel`}>
+          {label}
+        </label>
+      ) : null}
     </div>
   );
 };
 
-FormInput.propTypes = {};
+FormInput.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired
+};
 
 export default FormInput;

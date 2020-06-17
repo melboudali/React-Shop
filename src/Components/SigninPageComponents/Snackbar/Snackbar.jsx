@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Snackbar from '@material-ui/core/Snackbar';
 import PropTypes from 'prop-types';
+import './Snackbar.scss';
 
 const SnackbarComponent = ({ message = null }) => {
   const [open, setOpen] = useState(false);
-
-  //   useEffect(() => {
-  //     if (authErrors.length > 0) setOpen(true);
-  //   }, [authErrors]);
 
   useEffect(() => {
     if (message) setOpen(true);
@@ -44,6 +41,6 @@ const SnackbarComponent = ({ message = null }) => {
   );
 };
 
-SnackbarComponent.propTypes = {};
+SnackbarComponent.propTypes = { message: PropTypes.string };
 
 export default SnackbarComponent;

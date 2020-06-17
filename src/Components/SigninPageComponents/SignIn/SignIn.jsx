@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { setAuthError } from '../../../Redux/User/UserActions';
 import {
   auth,
   signInWithGoogle,
@@ -10,7 +12,7 @@ import Submit from '../SubmitButton/SubmitButton';
 import PropTypes from 'prop-types';
 import './SignIn.scss';
 
-const SignIn = props => {
+const SignIn = ({ setAuthError }) => {
   const [getEmail, setEmail] = useState('');
   const [getPassword, setPassword] = useState('');
 
@@ -24,7 +26,7 @@ const SignIn = props => {
       setEmail('');
       setPassword('');
     } catch (error) {
-      console.log(error.message);
+      setAuthError(error.message);
     }
   };
 
@@ -78,6 +80,8 @@ const SignIn = props => {
   );
 };
 
-SignIn.propTypes = {};
+SignIn.propTypes = {
+  setAuthError: PropTypes.func.isRequired
+};
 
-export default SignIn;
+export default connect(null, { setAuthError })(SignIn);

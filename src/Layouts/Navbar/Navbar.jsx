@@ -178,11 +178,11 @@ const Navbar = ({ Container, history, currentUser }) => {
                   disableFocusRipple
                   className='Profile'
                   aria-label='Current User'>
-                  <img src={currentUser.photoURL} alt='User Image' />
+                  <img src={currentUser.photoURL} alt='User' />
                   <div className='MenuContainer'>
                     <ul className='Menu'>
-                      <li onClick={() => history.push('/profile')}>{currentUser.displayName}</li>
-                      <li onClick={() => auth.signOut()}>Logout</li>
+                      <li onClick={() => history.push('/profile')}>MY PROFILE</li>
+                      <li onClick={() => auth.signOut()}>SIGN OUT</li>
                     </ul>
                   </div>
                 </IconButton>
@@ -222,7 +222,11 @@ const Navbar = ({ Container, history, currentUser }) => {
   );
 };
 
-Navbar.propTypes = {};
+Navbar.propTypes = {
+  Container: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired,
+  currentUser: PropTypes.object
+};
 
 const mapStateToProps = state => ({
   currentUser: state.User.currentUser
