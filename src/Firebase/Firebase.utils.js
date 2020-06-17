@@ -1,6 +1,8 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
+import Store from '../Redux/Store';
+import { setAuthError } from '../Redux/User/UserActions';
 
 const config = {
   apiKey: process.env.REACT_APP_APIKEY,
@@ -36,7 +38,9 @@ GHProvider.setCustomParameters({ prompt: 'select_account' });
 export const signInWithGithub = () =>
   auth
     .signInWithPopup(GHProvider)
-    .catch(({ email, message }) => console.log(`email '${email}' already exist in our DataBase.`));
+    .catch(() =>
+      Store.dispatch(setAuthError(`Email already exist. Please try again with another one!`))
+    );
 
 // get Date from firestore
 export const createUserProfileDoc = async (userAuth, additionalData) => {

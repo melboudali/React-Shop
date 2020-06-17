@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { auth, createUserProfileDoc } from '../../Firebase/Firebase.utils';
+import { auth, createUserProfileDoc } from '../../../Firebase/Firebase.utils';
 import FormInput from '../FormInput/FormInput';
 import SubmitBtn from '../SubmitButton/SubmitButton';
 import './SignUp.scss';

@@ -1,34 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Fragment } from 'react';
 import { auth, createUserProfileDoc } from './Firebase/Firebase.utils';
-import { Switch, Route, Redirect } from 'react-router-dom';
-import { Container, Snackbar, Button } from '@material-ui/core';
+import { Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { setCurrentUser } from './Redux/User/UserActions';
+import AuthPrivateRoute from './Routes/AuthPrivateRoute';
+import Container from '@material-ui/core/Container';
 import Announcement from './Layouts/Announcement/Announcement';
 import Navbar from './Layouts/Navbar/Navbar';
-import Home from './Pages/Home/Home';
-import Shop from './Pages/Shop/Shop';
-import Sign from './Pages/SignIn-SingUp/SignInSignUp';
+import HomePage from './Pages/Home/Home';
+import ShopPage from './Pages/Shop/Shop';
+import SigninSignupPage from './Pages/SignIn-SingUp/SignInSignUp';
 import './App.scss';
-import { setCurrentUser } from './Redux/User/UserActions';
-import { connect } from 'react-redux';
-import AuthPrivateRoute from './Routes/AuthPrivateRoute';
 
-const App = ({ setCurrentUser, currentUser }) => {
-  const [getUser, setUser] = useState(null);
-
-  const [open, setOpen] = useState(true);
-
-  const handleClick = () => {
-    setOpen(true);
-  };
-
-  const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-
-    setOpen(false);
-  };
-
+const App = ({ setCurrentUser }) => {
   useEffect(() => {
     auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
@@ -38,7 +22,6 @@ const App = ({ setCurrentUser, currentUser }) => {
             id: snapShot.id,
             ...snapShot.data()
           });
-          setOpen(true);
         });
       } else {
         setCurrentUser(null);
@@ -47,44 +30,21 @@ const App = ({ setCurrentUser, currentUser }) => {
   }, []);
 
   return (
-    <>
+    <Fragment>
       <Announcement />
       <Navbar Container={Container} />
       <div className='NavbarDivider' />
       <Container>
         <Switch>
           {/* Private Routes */}
-          <AuthPrivateRoute exact path='/sign' component={Sign} />
+          <AuthPrivateRoute exact path='/signin' component={SigninSignupPage} />
           {/* Public Routes */}
-          <Route exact path='/' component={Home} />
-          <Route exact path='/shop' component={Shop} />
-          <Route exact path='/profile' component={() => <h1>Hello </h1>} />
+          <Route exact path='/' component={HomePage} />
+          <Route exact path='/shop' component={ShopPage} />
         </Switch>
       </Container>
-      <Snackbar
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'left'
-        }}
-        open={open}
-        autoHideDuration={10000}
-        onClose={handleClose}
-        message={currentUser && `Welcome ${currentUser.displayName}!`}
-        action={
-          <>
-            <Button color='secondary' size='small' onClick={handleClose}>
-              CLOSE
-            </Button>
-            <i className='fal fa-times' onClick={handleClose} />
-          </>
-        }
-      />
-    </>
+    </Fragment>
   );
 };
 
-const mapStateToProps = state => ({
-  currentUser: state.User.currentUser
-});
-
-export default connect(mapStateToProps, { setCurrentUser })(App);
+export default connect(null, { setCurrentUser })(App);

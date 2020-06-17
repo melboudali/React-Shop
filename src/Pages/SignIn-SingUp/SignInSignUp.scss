@@ -2,3 +2,24 @@
   width: 100%;
   margin: 40px auto;
 }
+
+.MuiSnackbarContent-root {
+  background-color: rgb(224, 55, 55) !important;
+}
+
+.ErrorMessage {
+  color: #eee;
+  font-size: 0.9rem;
+  .errorIcon {
+    margin: 0 10px 0 0 !important;
+  }
+}
+
+.CloseBtn {
+  width: 30px;
+  text-align: center;
+  color: white;
+  &:hover {
+    cursor: pointer;
+  }
+}

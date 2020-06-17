@@ -13,6 +13,7 @@ import Menu from '@material-ui/core/Menu';
 import Hidden from '@material-ui/core/Hidden';
 import PropTypes from 'prop-types';
 import './Navbar.scss';
+import Logo from '../../Assets/Images/logo.png';
 // scss modules in order to use same classes and ids with other component
 // import {classe1, class2 ... } from './Navbar.module.scss';
 // OR
@@ -154,14 +155,8 @@ const Navbar = ({ Container, history, currentUser }) => {
                 <i className='fal fa-bars'></i>
               </IconButton>
             </Hidden>
-            <Typography className='NavbarMenu' variant='h6' noWrap>
-              <img
-                className='logo'
-                src='https://cdn.shopify.com/assets/images/logos/shopify-bag.png'
-                alt='logo'
-              />
-              React Store
-            </Typography>
+            <img src={Logo} className='logo' alt='logo' />
+
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
               <Typography className='NavbarMenu' variant='h6' component={Link} to='/'>
@@ -174,32 +169,35 @@ const Navbar = ({ Container, history, currentUser }) => {
               <Typography className='NavbarMenu'>ABOUT</Typography>
               <Typography className='NavbarMenu'>FAQS</Typography>
               <Typography className='NavbarMenu'>CONTACT</Typography>
-              <IconButton className='navbarSvg' color='inherit'>
+              <IconButton disableRipple disableFocusRipple className='Search' aria-label='Search'>
                 <i className='fal fa-search NavIcons'></i>
               </IconButton>
               {currentUser ? (
                 <IconButton
-                  className='profile'
-                  aria-label='account of current user'
-                  aria-controls={menuId}
-                  color='inherit'>
-                  <img src={currentUser.photoURL} alt='profile' />
-                  <ul className='menu'>
-                    <li onClick={() => history.push('/profile')}>Profile</li>
-                    <li>My Account</li>
-                    <li onClick={() => auth.signOut()}>Logout</li>
-                  </ul>
+                  disableRipple
+                  disableFocusRipple
+                  className='Profile'
+                  aria-label='Current User'>
+                  <img src={currentUser.photoURL} alt='User Image' />
+                  <div className='MenuContainer'>
+                    <ul className='Menu'>
+                      <li onClick={() => history.push('/profile')}>{currentUser.displayName}</li>
+                      <li onClick={() => auth.signOut()}>Logout</li>
+                    </ul>
+                  </div>
                 </IconButton>
               ) : (
-                <Typography className='NavbarMenu' component={Link} to='/sign'>
-                  SIGN IN
-                </Typography>
+                <IconButton
+                  disableRipple
+                  disableFocusRipple
+                  className='Signin'
+                  aria-label='Signin'
+                  component={Link}
+                  to='/signin'>
+                  <i className='fal fa-user'></i>
+                </IconButton>
               )}
-              <IconButton
-                className='navbarSvg'
-                edge='end'
-                aria-label='show 3 new items'
-                color='inherit'>
+              <IconButton disableRipple disableFocusRipple className='Cart' aria-label='Cart Items'>
                 <Badge badgeContent={3} color='secondary'>
                   <i className='fal fa-shopping-cart NavIcons'></i>
                 </Badge>
