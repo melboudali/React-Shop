@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import MenuItem from '../../Components/MenuItem/MenuItem';
+import MenuItem from '../../Components/HomePageComponents/MenuItem/MenuItem';
 import Grid from '@material-ui/core/Grid';
 import './Home.scss';
 
