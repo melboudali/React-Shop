@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { auth, createUserProfileDoc } from './Firebase/Firebase.utils';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { Container, Snackbar, Button } from '@material-ui/core';
-import Navbar from './Layouts/Navbar';
+import Announcement from './Layouts/Announcement/Announcement';
+import Navbar from './Layouts/Navbar/Navbar';
 import Home from './Pages/Home/Home';
 import Shop from './Pages/Shop/Shop';
 import Sign from './Pages/SignIn-SingUp/SignInSignUp';
@@ -47,6 +48,7 @@ const App = ({ setCurrentUser, currentUser }) => {
 
   return (
     <>
+      <Announcement />
       <Navbar Container={Container} />
       <div className='NavbarDivider' />
       <Container>
@@ -85,8 +87,4 @@ const mapStateToProps = state => ({
   currentUser: state.User.currentUser
 });
 
-const mapDispatchToProps = dispatch => ({
-  setCurrentUser: user => dispatch(setCurrentUser(user))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, { setCurrentUser })(App);

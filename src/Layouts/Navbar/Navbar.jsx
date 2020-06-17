@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import { auth } from '../Firebase/Firebase.utils';
+import { auth } from '../../Firebase/Firebase.utils';
 import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -51,7 +51,7 @@ const Navbar = ({ Container, history, currentUser }) => {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  const [getShowNav, setShowNav] = useState(false);
+  const [getShowNav, setShowNav] = useState(true);
   const [getNavScrollDown, setNavScrollDown] = useState(false);
 
   useEffect(() => {
@@ -59,14 +59,14 @@ const Navbar = ({ Container, history, currentUser }) => {
     window.onscroll = () => {
       let currentScroll = window.scrollY;
       if (currentScroll > 70) {
-        setShowNav(true);
+        setShowNav(false);
         if (currentScroll < windowOffset) {
           setNavScrollDown(true);
         } else {
           setNavScrollDown(false);
         }
       } else {
-        setShowNav(false);
+        setShowNav(true);
       }
       windowOffset = window.pageYOffset;
     };
@@ -145,7 +145,7 @@ const Navbar = ({ Container, history, currentUser }) => {
       <AppBar
         position='static'
         className={
-          getShowNav ? (getNavScrollDown ? 'showNavbar Navbar' : 'hideNavbar Navbar') : 'Navbar'
+          !getShowNav ? (getNavScrollDown ? 'showNavbar Navbar' : 'hideNavbar Navbar') : 'Navbar'
         }>
         <Container>
           <Toolbar style={{ padding: 0 }}>
