@@ -31,6 +31,7 @@ const SignInSignUp = ({ authErrors }) => {
         </Grid>
       </Grid>
 
+      {/* TODO: i need to create error handler component and map the array */}
       <Snackbar
         anchorOrigin={{
           vertical: 'bottom',
