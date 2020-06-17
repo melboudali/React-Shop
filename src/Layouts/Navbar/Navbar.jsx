@@ -156,7 +156,6 @@ const Navbar = ({ Container, history, currentUser }) => {
               </IconButton>
             </Hidden>
             <img src={Logo} className='logo' alt='logo' />
-
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
               <Typography className='NavbarMenu' variant='h6' component={Link} to='/'>
