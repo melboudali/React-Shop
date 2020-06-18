@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Fragment } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { auth } from '../../Firebase/Firebase.utils';
 import { connect } from 'react-redux';
@@ -143,7 +143,7 @@ const Navbar = ({ Container, history, currentUser }) => {
   );
 
   return (
-    <>
+    <Fragment>
       <AppBar
         position='static'
         className={
@@ -152,7 +152,7 @@ const Navbar = ({ Container, history, currentUser }) => {
         <Container>
           <Toolbar style={{ padding: 0 }}>
             <Hidden mdUp='true'>
-              <IconButton edge='start' color='inherit' aria-label='open drawer'>
+              <IconButton edge='start' color='secondary' aria-label='open drawer'>
                 <i className='fal fa-bars'></i>
               </IconButton>
             </Hidden>
@@ -213,14 +213,18 @@ const Navbar = ({ Container, history, currentUser }) => {
                   <i className='fal fa-user'></i>
                 </IconButton>
               )}
-              <CartIcon cartItems={10} />
+              <CartIcon
+                cartItems={10}
+                getShowNav={getShowNav}
+                getNavScrollDown={getNavScrollDown}
+              />
             </div>
           </Toolbar>
         </Container>
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
-    </>
+    </Fragment>
   );
 };
 
