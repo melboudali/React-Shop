@@ -5,11 +5,12 @@ import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import Badge from '@material-ui/core/Badge';
-import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import IconButton from '@material-ui/core/IconButton';
+import CartIcon from '../../Components/Navbar/CartIcon/CartIcon';
+import Badge from '@material-ui/core/Badge';
 import Hidden from '@material-ui/core/Hidden';
 import PropTypes from 'prop-types';
 import './Navbar.scss';
@@ -150,7 +151,7 @@ const Navbar = ({ Container, history, currentUser }) => {
         }>
         <Container>
           <Toolbar style={{ padding: 0 }}>
-            <Hidden mdUp>
+            <Hidden mdUp='true'>
               <IconButton edge='start' color='inherit' aria-label='open drawer'>
                 <i className='fal fa-bars'></i>
               </IconButton>
@@ -172,19 +173,35 @@ const Navbar = ({ Container, history, currentUser }) => {
                 <i className='fal fa-search NavIcons'></i>
               </IconButton>
               {currentUser ? (
-                <IconButton
-                  disableRipple
-                  disableFocusRipple
-                  className='Profile'
-                  aria-label='Current User'>
-                  <img src={currentUser.photoURL} alt='User' />
-                  <div className='MenuContainer'>
-                    <ul className='Menu'>
-                      <li onClick={() => history.push('/profile')}>MY PROFILE</li>
-                      <li onClick={() => auth.signOut()}>SIGN OUT</li>
-                    </ul>
-                  </div>
-                </IconButton>
+                currentUser.photoURL ? (
+                  <IconButton
+                    disableRipple
+                    disableFocusRipple
+                    className='Profile'
+                    aria-label='Current User'>
+                    <img src={currentUser.photoURL} alt='User' />
+                    <div className='MenuContainer'>
+                      <ul className='Menu'>
+                        <li onClick={() => history.push('/profile')}>MY PROFILE</li>
+                        <li onClick={() => auth.signOut()}>SIGN OUT</li>
+                      </ul>
+                    </div>
+                  </IconButton>
+                ) : (
+                  <IconButton
+                    disableRipple
+                    disableFocusRipple
+                    className='Profile'
+                    aria-label='Current User'>
+                    <i className='fal fa-user' />
+                    <div className='MenuContainer'>
+                      <ul className='Menu'>
+                        <li onClick={() => history.push('/profile')}>MY PROFILE</li>
+                        <li onClick={() => auth.signOut()}>SIGN OUT</li>
+                      </ul>
+                    </div>
+                  </IconButton>
+                )
               ) : (
                 <IconButton
                   disableRipple
@@ -196,21 +213,7 @@ const Navbar = ({ Container, history, currentUser }) => {
                   <i className='fal fa-user'></i>
                 </IconButton>
               )}
-              <IconButton disableRipple disableFocusRipple className='Cart' aria-label='Cart Items'>
-                <Badge badgeContent={3} color='secondary'>
-                  <i className='fal fa-shopping-cart NavIcons'></i>
-                </Badge>
-              </IconButton>
-            </div>
-            <div className={classes.sectionMobile}>
-              <IconButton
-                aria-label='show more'
-                aria-controls={mobileMenuId}
-                aria-haspopup='true'
-                onClick={handleMobileMenuOpen}
-                color='inherit'>
-                <i className='fal fa-ellipsis-v NavIcons'></i>
-              </IconButton>
+              <CartIcon cartItems={10} />
             </div>
           </Toolbar>
         </Container>
