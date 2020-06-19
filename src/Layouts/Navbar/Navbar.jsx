@@ -234,8 +234,8 @@ Navbar.propTypes = {
   currentUser: PropTypes.object
 };
 
-const mapStateToProps = state => ({
-  currentUser: state.User.currentUser
+const mapStateToProps = ({ User: { currentUser } }) => ({
+  currentUser
 });
 
 export default connect(mapStateToProps)(withRouter(Navbar));
