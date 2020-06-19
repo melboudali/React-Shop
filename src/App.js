@@ -17,6 +17,7 @@ const App = ({ setCurrentUser }) => {
   useEffect(() => {
     auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
+        console.log(userAuth);
         const userRef = await createUserProfileDoc(userAuth);
         userRef.onSnapshot(snapShot => {
           setCurrentUser({

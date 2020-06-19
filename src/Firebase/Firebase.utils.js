@@ -20,35 +20,38 @@ firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
-// Google Signin method TODO: Add error handler email alredy exist
-const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: 'select_account' });
-export const signInWithGoogle = () =>
-  auth
-    .signInWithPopup(provider)
-    .catch(() =>
-      Store.dispatch(setAuthError(`Email already exist. Please try again with another one!`))
-    );
+// Google Signin method
+const GGLProvider = new firebase.auth.GoogleAuthProvider();
+GGLProvider.setCustomParameters({ prompt: 'select_account' });
+export const signInWithGoogle = async () => {
+  try {
+    await auth.signInWithPopup(GGLProvider);
+  } catch (err) {
+    Store.dispatch(setAuthError(err.message));
+  }
+};
 
-// Facebook Signin method TODO: Add error handler email alredy exist
-const fbProvider = new firebase.auth.FacebookAuthProvider();
-fbProvider.setCustomParameters({ prompt: 'select_account' });
-export const signInWithFacebook = () =>
-  auth
-    .signInWithPopup(fbProvider)
-    .catch(() =>
-      Store.dispatch(setAuthError(`Email already exist. Please try again with another one!`))
-    );
+// Facebook Signin method
+const FBProvider = new firebase.auth.FacebookAuthProvider();
+FBProvider.setCustomParameters({ prompt: 'select_account' });
+export const signInWithFacebook = async () => {
+  try {
+    await auth.signInWithPopup(FBProvider);
+  } catch (err) {
+    Store.dispatch(setAuthError(err.message));
+  }
+};
 
-// Github Signin method TODO: Add error handler email alredy exist
+// Github Signin method
 const GHProvider = new firebase.auth.GithubAuthProvider();
 GHProvider.setCustomParameters({ prompt: 'select_account' });
-export const signInWithGithub = () =>
-  auth
-    .signInWithPopup(GHProvider)
-    .catch(() =>
-      Store.dispatch(setAuthError(`Email already exist. Please try again with another one!`))
-    );
+export const signInWithGithub = async () => {
+  try {
+    await auth.signInWithPopup(GHProvider);
+  } catch (err) {
+    Store.dispatch(setAuthError(err.message));
+  }
+};
 
 // get Date from firestore
 export const createUserProfileDoc = async (userAuth, additionalData) => {
@@ -64,8 +67,8 @@ export const createUserProfileDoc = async (userAuth, additionalData) => {
         createdAt: new Date(),
         ...additionalData
       });
-    } catch (error) {
-      console.log('Erro storing user: ', error.message);
+    } catch (err) {
+      Store.dispatch(setAuthError(err.message));
     }
   }
   return userRef;

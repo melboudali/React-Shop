@@ -151,7 +151,7 @@ const Navbar = ({ Container, history, currentUser }) => {
         }>
         <Container>
           <Toolbar style={{ padding: 0 }}>
-            <Hidden mdUp='true'>
+            <Hidden mdUp>
               <IconButton edge='start' color='secondary' aria-label='open drawer'>
                 <i className='fal fa-bars'></i>
               </IconButton>

@@ -24,7 +24,7 @@ const SnackbarComponent = ({ message = null }) => {
         horizontal: 'left'
       }}
       open={open}
-      autoHideDuration={6000}
+      autoHideDuration={8000}
       onClose={handleClose}
       message={
         <div className='ErrorMessage'>

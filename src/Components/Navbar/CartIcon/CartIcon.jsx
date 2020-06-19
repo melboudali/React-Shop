@@ -25,7 +25,7 @@ const CartIcon = ({ cartItems, getShowNav, getNavScrollDown }) => {
         edge='end'
         onClick={onClick}>
         <Badge badgeContent={cartItems} className='cartBadge' max={9}>
-          <i class='fal fa-shopping-cart NavIcons' />
+          <i className='fal fa-shopping-cart NavIcons' />
         </Badge>
       </IconButton>
       {(getShowNav || getNavScrollDown) && getShowDropdown && (
