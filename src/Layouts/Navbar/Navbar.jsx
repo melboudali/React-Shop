@@ -238,4 +238,9 @@ const mapStateToProps = ({ User: { currentUser } }) => ({
   currentUser
 });
 
+//old
+// const mapStateToProps = state => ({
+//   currentUser: state.User.currentUser
+// });
+
 export default connect(mapStateToProps)(withRouter(Navbar));
