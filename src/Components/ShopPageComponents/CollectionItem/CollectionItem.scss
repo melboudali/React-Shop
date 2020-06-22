@@ -1,10 +1,25 @@
 .CollectionItem {
-  width: 22%;
-  display: flex;
-  flex-direction: column;
   height: 350px;
-  align-items: center;
+}
+
+.ImageContainer {
+  position: relative;
+  width: 100%;
+  height: 95%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 5px;
   &:hover {
+    cursor: pointer;
+    .addToCart {
+      visibility: visible;
+      opacity: 1;
+      -webkit-transform: translateY(-50px);
+      -moz-transform: translateY(-50px);
+      -ms-transform: translateY(-50px);
+      transform: translateY(-50px);
+    }
     .CollectionImage {
       transform: scale(1.1);
       // transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
@@ -13,20 +28,36 @@
   }
 }
 
-.ImageContainer {
-  width: 100%;
-  height: 95%;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 5px;
-}
-
 .CollectionImage {
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
+}
+
+.addToCart {
+  position: absolute !important;
+  visibility: hidden;
+  opacity: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 2;
+  bottom: -50px;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 2px !important;
+  background-color: rgba(0, 0, 0, 0.87) !important;
+  color: rgb(212, 212, 212) !important;
+  border-radius: 0 !important;
+  transition: all 0.7s !important;
+  -webkit-transition: 0.7s !important;
+  -moz-transition: 0.7s !important;
+  -o-transition: 0.7s !important;
+  -webkit-transition: 0.7s !important;
+  &:hover {
+    background-color: rgba(39, 39, 39, 0.87) !important;
+    color: rgb(235, 235, 235) !important;
+  }
 }
 
 .CollectionFooter {
@@ -45,13 +76,10 @@
   }
 
   .price {
-    width: 30%;
+    width: 25%;
     font-size: 0.9rem;
     font-weight: 600;
     text-align: right;
-    color: rgb(255, 255, 255);
-    background-color: rgb(168, 168, 168);
-    text-align: center;
-    border-radius: 3px;
+    color: rgb(27, 27, 27);
   }
 }

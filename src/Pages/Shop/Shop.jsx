@@ -6,7 +6,7 @@ import './Shop.scss';
 const Shop = () => {
   const [shopData, ] = useState(ShopData);
   return (
-    <div className='shop-page'>
+    <div className='shopPage'>
       {shopData.map(({ id, ...shopData }) => (
         <CollectionPreview key={id} {...shopData} />
       ))}

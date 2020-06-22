@@ -1,10 +1,8 @@
 .CollectionPreview {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 5px;
-  padding: 20px 0;
+  margin-bottom: 50px;
 
   .title {
+    margin: 10px 0 20px;
     text-align: center;
     position: relative;
     width: 100%;
@@ -27,11 +25,6 @@
       display: inline-block;
       max-width: 70%;
     }
-  }
-
-  .preview {
-    display: flex;
-    justify-content: space-between;
   }
 
   .SeeMore {
