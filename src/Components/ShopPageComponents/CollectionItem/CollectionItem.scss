@@ -11,8 +11,16 @@
   background-position: center;
   margin-bottom: 5px;
   &:hover {
-    cursor: pointer;
+    cursor: auto;
     .addToCart {
+      visibility: visible;
+      opacity: 1;
+      -webkit-transform: translateY(-50px);
+      -moz-transform: translateY(-50px);
+      -ms-transform: translateY(-50px);
+      transform: translateY(-50px);
+    }
+    .moreDetails {
       visibility: visible;
       opacity: 1;
       -webkit-transform: translateY(-50px);
@@ -43,6 +51,31 @@
   height: 50px;
   z-index: 2;
   bottom: -50px;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 2px !important;
+  background-color: rgba(0, 0, 0, 0.87) !important;
+  color: rgb(212, 212, 212) !important;
+  border-radius: 0 !important;
+  transition: all 0.7s !important;
+  -webkit-transition: 0.7s !important;
+  -moz-transition: 0.7s !important;
+  -o-transition: 0.7s !important;
+  -webkit-transition: 0.7s !important;
+  &:hover {
+    background-color: rgba(39, 39, 39, 0.87) !important;
+    color: rgb(235, 235, 235) !important;
+  }
+}
+
+.moreDetails {
+  position: absolute !important;
+  visibility: hidden;
+  opacity: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 2;
+  bottom: 5px;
   font-size: 0.9rem !important;
   font-weight: 600 !important;
   letter-spacing: 2px !important;

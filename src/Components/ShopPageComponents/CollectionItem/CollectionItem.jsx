@@ -1,17 +1,31 @@
 import React from 'react';
+import { addItemToCart } from '../../../Redux/Cart/CartActions';
 import PropTypes from 'prop-types';
 import './CollectionItem.scss';
 import { Button, Grid } from '@material-ui/core';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const CollectionItem = ({ name, price, imageUrl, history }) => {
+const CollectionItem = ({ item: { id, name, price, imageUrl }, addItemToCart }) => {
+  const addToCart = () => {
+    addItemToCart({
+      id,
+      name,
+      price,
+      imageUrl
+    });
+  };
+
   return (
     <Grid item xs={12} sm={6} md={3} lg={3} xl={3}>
       <div className='CollectionItem'>
         {/* TODO: Fix clock on button trigger Imagecontainer onlcick */}
-        <div className='ImageContainer' onClick={() => history.push('/zebi')}>
-          <Button className='addToCart' component={Link} to='/sberdila'>
+        <div className='ImageContainer'>
+          <Button className='addToCart' onClick={addToCart}>
             add to cart
+          </Button>
+          <Button className='moreDetails' onClick={addToCart}>
+            more details
           </Button>
           <div className='CollectionImage' style={{ backgroundImage: `url(${imageUrl})` }} />
         </div>
@@ -25,7 +39,7 @@ const CollectionItem = ({ name, price, imageUrl, history }) => {
 };
 
 CollectionItem.propTypes = {
-  name: PropTypes.string.isRequired
+  name: PropTypes.string
 };
 
-export default withRouter(CollectionItem);
+export default connect(null, { addItemToCart })(withRouter(CollectionItem));

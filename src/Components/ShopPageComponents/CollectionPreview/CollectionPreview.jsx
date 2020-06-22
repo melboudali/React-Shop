@@ -13,8 +13,8 @@ const CollectionPreview = ({ title, items }) => {
       <Grid container direction='row' justify='center' alignItems='flex-start' spacing={3}>
         {items
           .filter((item, idx) => idx < 4)
-          .map(({ id, ...item }) => (
-              <CollectionItem key={id} {...item} />
+          .map(item => (
+            <CollectionItem key={item.id} item={item} />
           ))}
       </Grid>
       <Button className='SeeMore'>SEE MORE</Button>
