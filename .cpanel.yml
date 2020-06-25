@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/andrrnsj/all-repos/
+    - /bin/cp -R * $DEPLOYPATH
+    

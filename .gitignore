@@ -11,6 +11,9 @@
 # production
 /build
 
+# #Cpanel
+# .cpanel.yml
+
 # misc
 .DS_Store
 .env.local
