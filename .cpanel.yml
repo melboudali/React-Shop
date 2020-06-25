@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/andrrnsj/all-repos/react-shop
+    - export DEPLOYPATH=/home/andrrnsj/reactShop
     - /bin/cp -R * $DEPLOYPATH
     
