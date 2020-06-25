@@ -52,3 +52,5 @@ const App = ({ setCurrentUser }) => {
 };
 
 export default connect(null, { setCurrentUser })(App);
+
+// Test
