@@ -31,7 +31,7 @@ const CollectionItem = ({ item: { id, name, price, imageUrl }, addItemToCart }) 
         </div>
         <div className='CollectionFooter'>
           <span className='name'>{name}</span>
-          <span className='price'>{price}.00 $</span>
+          <span className='price'>${price}.00</span>
         </div>
       </div>
     </Grid>
