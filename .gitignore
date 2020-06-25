@@ -8,13 +8,11 @@
 # testing
 /coverage
 
-# Comment start
 # production
 /build
 
 #Cpanel
 .cpanel.yml
-# Comment end
 
 # misc
 .DS_Store
