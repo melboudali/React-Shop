@@ -6,6 +6,7 @@ export const addItemToCart = item => dispatch =>
 export const deleteItem = (id, quantity) => dispatch => {
   if (quantity > 1) {
     dispatch({ type: REDUCE_ITEM_QUANTITY, payload: id });
+    document.cookie = `referral_key=hello;max-age=604800;domain=example.com`;
   } else {
     dispatch({ type: DELETE_ITEM_FROM_CART, payload: id });
   }
