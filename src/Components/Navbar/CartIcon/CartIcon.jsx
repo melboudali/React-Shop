@@ -32,9 +32,7 @@ const CartIcon = ({ getShowNav, getNavScrollDown, cartCount }) => {
   );
 };
 
-CartIcon.propTypes = {
-  cartItems: PropTypes.number.isRequired
-};
+CartIcon.propTypes = {};
 
 const mapStateToProps = ({ Cart: { CartItems } }) => ({
   cartCount: CartItems.reduce(

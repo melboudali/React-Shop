@@ -13,11 +13,10 @@ import SigninSignupPage from './Pages/SignIn-SingUp/SignInSignUp';
 import NotFoundPage from './Pages/404/NotFound';
 import './App.scss';
 
-const App = ({ setCurrentUser }) => {
+const App = ({ setCurrentUser, CartItems }) => {
   useEffect(() => {
     auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
-        console.log(userAuth);
         const userRef = await createUserProfileDoc(userAuth);
         userRef.onSnapshot(snapShot => {
           setCurrentUser({
@@ -29,6 +28,8 @@ const App = ({ setCurrentUser }) => {
         setCurrentUser(null);
       }
     });
+    // TODO: if cart empty load data from localstorege
+    // if (CartItems.length === 0) console.log('empty cart items');
   }, [setCurrentUser]);
 
   return (
@@ -51,6 +52,7 @@ const App = ({ setCurrentUser }) => {
   );
 };
 
-export default connect(null, { setCurrentUser })(App);
+const mapStateToProps = ({ Cart: { CartItems } }) => ({ CartItems });
+export default connect(mapStateToProps, { setCurrentUser })(App);
 
 // Test

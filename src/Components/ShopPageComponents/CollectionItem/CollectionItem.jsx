@@ -14,19 +14,9 @@ const CollectionItem = ({ item: { id, name, price, imageUrl }, addItemToCart }) 
       price,
       imageUrl
     });
-    // localStorage.removeItem('cartItems');
-    const Items = [];
+    // TODO: Add cart item to local storage type: array
     let cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
-    cartItems.map(cartItem =>
-      cartItem.id === id
-        ? cartItems.push[{ ...cartItem, quantity: cartItem.quality + 1 }]
-        : cartItems.push[cartItem]
-    );
-    cartItems.map(item =>
-      item.id === id
-        ? localStorage.setItem('cartItems', JSON.stringify(Items))
-        : localStorage.setItem('cartItems', JSON.stringify([...Items, { id: id, guantity: 1 }]))
-    );
+    localStorage.setItem('cartItems', JSON.stringify([...cartItems, { id: id }]));
   };
 
   return (
