@@ -214,7 +214,6 @@ const Navbar = ({ Container, history, currentUser }) => {
                 </IconButton>
               )}
               <CartIcon
-                cartItems={10}
                 getShowNav={getShowNav}
                 getNavScrollDown={getNavScrollDown}
               />

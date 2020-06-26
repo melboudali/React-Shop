@@ -9,17 +9,18 @@ const CartDropdown = ({ closeButton, CartItems }) => {
   return (
     <div className='CartDropdown'>
       <div className='CartContainer'>
-        <div className='classItems'>
-          {/* <span className='closeButton' onClick={closeButton}>
-            <i className='fad fa-times-circle errorIcon' />
-          </span> */}
-          {CartItems.length > 0 ? (
-            CartItems.map(Item => <CartItem key={Item.id} Item={Item} />)
-          ) : (
+        {CartItems.length > 0 ? (
+          <>
+            <div className='classItems'>
+              {CartItems.map(Item => (
+                <CartItem key={Item.id} Item={Item} />
+              ))}
+            </div>
+            <Button>Go to checkout</Button>
+          </>
+        ) : (
             <span className='noItems'>no products in the cart.</span>
-          )}
-        </div>
-        {CartItems.length > 0 && <Button>Go to checkout</Button>}
+        )}
       </div>
     </div>
   );

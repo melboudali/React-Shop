@@ -1,13 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { deleteItem } from '../../../Redux/Cart/CartActions';
 import './CartItem.scss';
 import PropTypes from 'prop-types';
 
-const CartItem = ({ Item: { name, imageUrl, price, quantity } }) => {
+const CartItem = ({ Item: { id, name, imageUrl, price, quantity }, deleteItem }) => {
+  const deletingItem = () => {
+    deleteItem(id, quantity);
+  };
   return (
     <div className='CartItem'>
       <div className='imgContainer' style={{ backgroundImage: `url(${imageUrl})` }} />
       <div className='ItemDetails'>
-        <span className='closeButton'>
+        <span className='closeButton' onClick={deletingItem}>
           <i className='fad fa-trash' />
         </span>
         <span className='name'>{name}</span>
@@ -20,6 +25,13 @@ const CartItem = ({ Item: { name, imageUrl, price, quantity } }) => {
   );
 };
 
-CartItem.propTypes = {};
+CartItem.propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  imageUrl: PropTypes.string,
+  price: PropTypes.number,
+  quantity: PropTypes.number,
+  deleteItem: PropTypes.func
+};
 
-export default CartItem;
+export default connect(null, { deleteItem })(CartItem);

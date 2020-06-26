@@ -7,15 +7,11 @@ import Badge from '@material-ui/core/Badge';
 import PropTypes from 'prop-types';
 import './CartIcon.scss';
 
-const CartIcon = ({ cartItems, getShowNav, getNavScrollDown, cartCount }) => {
+const CartIcon = ({ getShowNav, getNavScrollDown, cartCount }) => {
   const [getShowDropdown, setShowDropdown] = useState(false);
 
-  const onClickAway = () => {
-    setShowDropdown(false);
-    console.log('Clicked away');
-  };
   return (
-    <ClickAwayListener onClickAway={onClickAway}>
+    <ClickAwayListener onClickAway={() => setShowDropdown(false)}>
       <div className='CartIconContainer'>
         <IconButton
           disableRipple

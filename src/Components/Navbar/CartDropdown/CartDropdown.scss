@@ -23,6 +23,18 @@
     -webkit-box-shadow: 0px 0px 5px 2px #0000002d;
     -moz-box-shadow: 0px 0px 5px 2px #0000002d;
     box-shadow: 0px 0px 5px 2px #0000002d;
+    .noItems {
+      position: absolute;
+      width: 100%;
+      font-size: 0.6rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgb(53, 53, 53);
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
   }
 
   .classItems {
@@ -30,28 +42,6 @@
     overflow-y: scroll;
     width: 100%;
     padding: 0;
-    .noItems {
-      position: absolute;
-      width: 100%;
-      font-size: 0.6rem;
-      padding: 4px 0 4px 4px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: rgb(53, 53, 53);
-      top: 50%;
-      transform: translateX(-50%);
-    }
-  }
-
-  .closeButton {
-    position: absolute;
-    color: rgb(48, 48, 48);
-    top: 0;
-    right: 0;
-    padding: 3px 5px;
-    margin: 5px;
-    cursor: pointer;
-    z-index: 7;
   }
 
   button {
