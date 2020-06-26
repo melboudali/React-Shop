@@ -10,9 +10,9 @@ const CartDropdown = ({ closeButton, CartItems }) => {
     <div className='CartDropdown'>
       <div className='CartContainer'>
         <div className='classItems'>
-          <span className='closeButton' onClick={closeButton}>
+          {/* <span className='closeButton' onClick={closeButton}>
             <i className='fad fa-times-circle errorIcon' />
-          </span>
+          </span> */}
           {CartItems.length > 0 ? (
             CartItems.map(Item => <CartItem key={Item.id} Item={Item} />)
           ) : (

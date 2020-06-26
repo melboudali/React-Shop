@@ -12,20 +12,21 @@
   background-color: none;
 
   .CartContainer {
-    max-height: 340px;
+    max-height: 317px;
     min-height: 60px;
     position: relative;
     width: 100%;
     padding: 0;
     text-align: center;
     background-color: white;
+    border-radius: 2px;
     -webkit-box-shadow: 0px 0px 5px 2px #0000002d;
     -moz-box-shadow: 0px 0px 5px 2px #0000002d;
     box-shadow: 0px 0px 5px 2px #0000002d;
   }
 
   .classItems {
-    max-height: 280px;
+    max-height: 257px;
     overflow-y: scroll;
     width: 100%;
     padding: 0;
@@ -50,6 +51,7 @@
     padding: 3px 5px;
     margin: 5px;
     cursor: pointer;
+    z-index: 7;
   }
 
   button {

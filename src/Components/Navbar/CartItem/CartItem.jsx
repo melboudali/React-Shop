@@ -7,6 +7,9 @@ const CartItem = ({ Item: { name, imageUrl, price, quantity } }) => {
     <div className='CartItem'>
       <div className='imgContainer' style={{ backgroundImage: `url(${imageUrl})` }} />
       <div className='ItemDetails'>
+        <span className='closeButton'>
+          <i className='fad fa-trash' />
+        </span>
         <span className='name'>{name}</span>
         <span className='price'>
           {quantity} x ${price}.00
