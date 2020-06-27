@@ -14,7 +14,7 @@ const CollectionItem = ({ item: { id, name, price, imageUrl }, addItemToCart }) 
       price,
       imageUrl
     });
-    // TODO: Add cart item to local storage type: array
+    // TODO: Add cart item to local storage type: array => i will use redux-persist
     let cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
     localStorage.setItem('cartItems', JSON.stringify([...cartItems, { id: id }]));
   };
