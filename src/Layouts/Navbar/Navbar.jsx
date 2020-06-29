@@ -1,6 +1,6 @@
 import React, { useEffect, useState, Fragment } from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import { auth } from '../../Firebase/Firebase.utils';
+import { auth } from '../../Utils/Firebase';
 import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -213,10 +213,7 @@ const Navbar = ({ Container, history, currentUser }) => {
                   <i className='fal fa-user'></i>
                 </IconButton>
               )}
-              <CartIcon
-                getShowNav={getShowNav}
-                getNavScrollDown={getNavScrollDown}
-              />
+              <CartIcon getShowNav={getShowNav} getNavScrollDown={getNavScrollDown} />
             </div>
           </Toolbar>
         </Container>

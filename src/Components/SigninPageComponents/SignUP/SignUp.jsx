@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { setAuthError } from '../../../Redux/User/UserActions';
-import { auth, createUserProfileDoc } from '../../../Firebase/Firebase.utils';
+import { auth, createUserProfileDoc } from '../../../Utils/Firebase';
 import FormInput from '../FormInput/FormInput';
 import SubmitBtn from '../SubmitButton/SubmitButton';
 import './SignUp.scss';

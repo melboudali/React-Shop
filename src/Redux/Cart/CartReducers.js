@@ -1,5 +1,5 @@
 import { ADD_ITEM_TO_CART, REDUCE_ITEM_QUANTITY, DELETE_ITEM_FROM_CART } from './CartTypes';
-import { addItemToCart } from '../../Utils/CartUtils';
+import { addItemToCart } from '../../Utils/Cart';
 
 const INITIAL_STATE = {
   CartItems: []

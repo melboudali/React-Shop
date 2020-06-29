@@ -6,7 +6,7 @@ import {
   signInWithGoogle,
   signInWithFacebook,
   signInWithGithub
-} from '../../../Firebase/Firebase.utils';
+} from '../../../Utils/Firebase';
 import FormInput from '../FormInput/FormInput';
 import Submit from '../SubmitButton/SubmitButton';
 import PropTypes from 'prop-types';

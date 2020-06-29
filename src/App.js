@@ -1,5 +1,5 @@
 import React, { useEffect, Fragment } from 'react';
-import { auth, createUserProfileDoc } from './Firebase/Firebase.utils';
+import { auth, createUserProfileDoc } from './Utils/Firebase';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setCurrentUser } from './Redux/User/UserActions';
