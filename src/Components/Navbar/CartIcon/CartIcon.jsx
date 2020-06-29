@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import CartDropdown from '../CartDropdown/CartDropdown';
 import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
+import { SelectCartItemsCount } from '../../../Redux/Cart/CartSelectors';
 import PropTypes from 'prop-types';
 import './CartIcon.scss';
 
@@ -34,11 +35,8 @@ const CartIcon = ({ getShowNav, getNavScrollDown, cartCount }) => {
 
 CartIcon.propTypes = {};
 
-const mapStateToProps = ({ Cart: { CartItems } }) => ({
-  cartCount: CartItems.reduce(
-    (accumulatedQuantity, cartItem) => accumulatedQuantity + cartItem.quantity,
-    0
-  )
+const mapStateToProps = state => ({
+  cartCount: SelectCartItemsCount(state)
 });
 
 export default connect(mapStateToProps)(CartIcon);

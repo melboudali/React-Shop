@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '../../SigninPageComponents/SubmitButton/SubmitButton';
 import { connect } from 'react-redux';
+import { SelectCartItems } from '../../../Redux/Cart/CartSelectors';
 import CartItem from '../CartItem/CartItem';
 import PropTypes from 'prop-types';
 import './CartDropdown.scss';
@@ -19,7 +20,7 @@ const CartDropdown = ({ closeButton, CartItems }) => {
             <Button>Go to checkout</Button>
           </>
         ) : (
-            <span className='noItems'>no products in the cart.</span>
+          <span className='noItems'>no products in the cart.</span>
         )}
       </div>
     </div>
@@ -29,7 +30,7 @@ const CartDropdown = ({ closeButton, CartItems }) => {
 CartDropdown.propTypes = {};
 
 const mapStateToProps = state => ({
-  CartItems: state.Cart.CartItems
+  CartItems: SelectCartItems(state)
 });
 
 export default connect(mapStateToProps, null)(CartDropdown);
