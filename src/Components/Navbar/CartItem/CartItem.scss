@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   height: 80px;
-  padding: 4px 0 0 4px;
+  padding: 4px;
   margin-top: 4px;
   background-color: rgb(245, 245, 245);
   color: rgb(95, 95, 95);
@@ -20,14 +20,14 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 10px 10px;
+    padding: 4px;
     text-align: left;
 
     .closeButton {
       position: absolute;
       top: 0;
       right: 0;
-      padding: 4px 6px 0 0;
+      padding: 0;
       margin: 0;
       cursor: pointer;
       font-size: 1rem;
@@ -36,7 +36,11 @@
     }
 
     .name {
+      width: 100%;
       font-size: 0.9rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .price {
@@ -48,8 +52,8 @@
       font-size: 0.7rem;
       bottom: 0;
       right: 0;
-      padding-right: 4px;
       margin: 0;
+      padding: 0;
     }
   }
 }
