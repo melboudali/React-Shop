@@ -5,6 +5,7 @@ import SignIn from '../../Components/SigninPageComponents/SignIn/SignIn';
 import SignUp from '../../Components/SigninPageComponents/SignUP/SignUp';
 import Snackbar from '../../Components/SigninPageComponents/Snackbar/Snackbar';
 import PropTypes from 'prop-types';
+import { SelectAuthErrors } from '../../Redux/User/UserSelectors';
 import './SignInSignUp.scss';
 
 const SignInSignUp = ({ authErrors }) => {
@@ -29,7 +30,7 @@ SignInSignUp.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  authErrors: state.User.authErrors
+  authErrors: SelectAuthErrors(state)
 });
 
 export default connect(mapStateToProps)(SignInSignUp);

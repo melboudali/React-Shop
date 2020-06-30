@@ -13,6 +13,7 @@ import CartIcon from '../../Components/Navbar/CartIcon/CartIcon';
 import Badge from '@material-ui/core/Badge';
 import Hidden from '@material-ui/core/Hidden';
 import PropTypes from 'prop-types';
+import { SelectCurrentUser } from '../../Redux/User/UserSelectors';
 import './Navbar.scss';
 import Logo from '../../Assets/Images/logo.png';
 // scss modules in order to use same classes and ids with other component
@@ -230,13 +231,12 @@ Navbar.propTypes = {
   currentUser: PropTypes.object
 };
 
-const mapStateToProps = ({ User: { currentUser } }) => ({
-  currentUser
+const mapStateToProps = state => ({
+  currentUser: SelectCurrentUser(state)
 });
 
-//old
-// const mapStateToProps = state => ({
-//   currentUser: state.User.currentUser
+// const mapStateToProps = ({ User: { currentUser } }) => ({
+//   currentUser
 // });
 
 export default connect(mapStateToProps)(withRouter(Navbar));

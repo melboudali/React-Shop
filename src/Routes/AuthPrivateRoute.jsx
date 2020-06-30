@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
+import { SelectCurrentUser } from '../Redux/User/UserSelectors';
 
 const AuthPrivateRoute = ({ component: Component, currentUser, ...rest }) => (
   <Route
@@ -10,7 +11,7 @@ const AuthPrivateRoute = ({ component: Component, currentUser, ...rest }) => (
 );
 
 const mapStateToProps = state => ({
-  currentUser: state.User.currentUser
+  currentUser: SelectCurrentUser(state)
 });
 
 export default connect(mapStateToProps)(AuthPrivateRoute);
