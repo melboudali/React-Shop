@@ -45,4 +45,4 @@ CollectionItem.propTypes = {
   name: PropTypes.string
 };
 
-export default connect(null, { addItemToCart })(withRouter(CollectionItem));
+export default withRouter(connect(null, { addItemToCart })(CollectionItem));

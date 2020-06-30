@@ -11,8 +11,10 @@ import './CartIcon.scss';
 const CartIcon = ({ getShowNav, getNavScrollDown, cartCount }) => {
   const [getShowDropdown, setShowDropdown] = useState(false);
 
+  const closeCart = () => setShowDropdown(false);
+
   return (
-    <ClickAwayListener onClickAway={() => setShowDropdown(false)}>
+    <ClickAwayListener onClickAway={closeCart}>
       <div className='CartIconContainer'>
         <IconButton
           disableRipple
@@ -26,7 +28,7 @@ const CartIcon = ({ getShowNav, getNavScrollDown, cartCount }) => {
           </Badge>
         </IconButton>
         {(getShowNav || getNavScrollDown) && getShowDropdown && (
-          <CartDropdown closeButton={() => setShowDropdown(false)} />
+          <CartDropdown closeCart={closeCart} />
         )}
       </div>
     </ClickAwayListener>

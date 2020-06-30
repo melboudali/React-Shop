@@ -14,6 +14,7 @@ import Badge from '@material-ui/core/Badge';
 import Hidden from '@material-ui/core/Hidden';
 import PropTypes from 'prop-types';
 import { SelectCurrentUser } from '../../Redux/User/UserSelectors';
+import { createStructuredSelector } from 'reselect';
 import './Navbar.scss';
 import Logo from '../../Assets/Images/logo.png';
 // scss modules in order to use same classes and ids with other component
@@ -231,12 +232,17 @@ Navbar.propTypes = {
   currentUser: PropTypes.object
 };
 
-const mapStateToProps = state => ({
-  currentUser: SelectCurrentUser(state)
+// We will use creaTeStructuredSelector if we have more selectors to call
+const mapStateToProps = createStructuredSelector({
+  currentUser: SelectCurrentUser
 });
+
+// const mapStateToProps = state => ({
+//   currentUser: SelectCurrentUser(state)
+// });
 
 // const mapStateToProps = ({ User: { currentUser } }) => ({
 //   currentUser
 // });
 
-export default connect(mapStateToProps)(withRouter(Navbar));
+export default withRouter(connect(mapStateToProps)(Navbar));

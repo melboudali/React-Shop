@@ -10,7 +10,9 @@ import Navbar from './Layouts/Navbar/Navbar';
 import HomePage from './Pages/Home/Home';
 import ShopPage from './Pages/Shop/Shop';
 import SigninSignupPage from './Pages/SignIn-SingUp/SignInSignUp';
+import CheckoutPage from './Pages/Checkout/Checkout';
 import NotFoundPage from './Pages/404/NotFound';
+import { SelectCartItems } from './Redux/Cart/CartSelectors';
 import './App.scss';
 
 const App = ({ setCurrentUser, CartItems }) => {
@@ -30,7 +32,7 @@ const App = ({ setCurrentUser, CartItems }) => {
     });
     // TODO: if cart empty load data from localstorege
     // if (CartItems.length === 0) console.log('empty cart items');
-  }, [setCurrentUser]);
+  }, []);
 
   return (
     <Fragment>
@@ -43,7 +45,8 @@ const App = ({ setCurrentUser, CartItems }) => {
           <AuthPrivateRoute exact path='/signin' component={SigninSignupPage} />
           {/* Public Routes */}
           <Route exact path='/' component={HomePage} />
-          <Route exact path='/shop' component={ShopPage} />
+          <Route path='/shop' component={ShopPage} />
+          <Route exact path='/checkout' component={CheckoutPage} />
           {/* 404 Not Found Route */}
           <Route exact path='*' component={NotFoundPage} />
         </Switch>
@@ -52,7 +55,7 @@ const App = ({ setCurrentUser, CartItems }) => {
   );
 };
 
-const mapStateToProps = ({ Cart: { CartItems } }) => ({ CartItems });
+const mapStateToProps = state => ({ CartItems: SelectCartItems(state) });
 export default connect(mapStateToProps, { setCurrentUser })(App);
 
 // Test
