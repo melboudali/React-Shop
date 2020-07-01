@@ -1,5 +1,5 @@
 import { ADD_ITEM_TO_CART, REDUCE_ITEM_QUANTITY, DELETE_ITEM_FROM_CART } from './CartTypes';
-import { addItemToCart } from '../../Utils/Cart';
+import { addToCart } from '../../Utils/Cart';
 
 const INITIAL_STATE = {
   CartItems: []
@@ -8,7 +8,7 @@ const INITIAL_STATE = {
 const CartReducers = (state = INITIAL_STATE, { type, payload }) => {
   switch (type) {
     case ADD_ITEM_TO_CART:
-      return { ...state, CartItems: addItemToCart(state.CartItems, payload) };
+      return { ...state, CartItems: addToCart(state.CartItems, payload) };
 
     case REDUCE_ITEM_QUANTITY:
       return {

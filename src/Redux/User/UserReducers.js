@@ -5,12 +5,12 @@ const INITIAL_STATE = {
   authErrors: []
 };
 
-const UserReducer = (state = INITIAL_STATE, { type, payload }) => {
-  switch (type) {
+const UserReducer = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
     case SET_CURRENT_USER:
-      return { ...state, currentUser: payload, authErrors: [] };
+      return { ...state, currentUser: action.payload, authErrors: [] };
     case SET_AUTH_ERROR:
-      return { ...state, authErrors: [...state.authErrors, payload] };
+      return { ...state, currentUser: null, authErrors: [...state.authErrors, action.payload] };
     default:
       return state;
   }
