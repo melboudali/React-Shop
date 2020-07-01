@@ -9,10 +9,11 @@ const CheckoutItem = ({ iid, name, price, imageUrl, quantity }) => {
         <img alt='item' src={imageUrl} />
       </div>
       <span className='name'>{name}</span>
-      <span className='quantity'>{quantity}</span>
+      <span className='quantity'>&#10092;{quantity}&#10093;</span>
       <span className='price'>${price}.00</span>
       <div className='RemoveBtn'>
-        <i className='fad fa-trash' />
+        {/* <i className='fad fa-trash' /> */}
+        &#10005;
       </div>
     </div>
   );
