@@ -32,7 +32,7 @@ const App = ({ setCurrentUser, CartItems }) => {
     });
     // TODO: if cart empty load data from localstorege
     // if (CartItems.length === 0) console.log('empty cart items');
-  }, []);
+  });
 
   return (
     <Fragment>
