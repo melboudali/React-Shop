@@ -6,6 +6,7 @@ import {
   SelectCartItemsCount,
   SelectCartTotal
 } from '../../Redux/Cart/CartSelectors';
+import CheckoutItem from '../../Components/CheckoutPageComponents/CheckoutItem/CheckoutItem';
 import PropTypes from 'prop-types';
 import './Checkout.scss';
 
@@ -21,7 +22,7 @@ const Checkout = ({ CartItems, CartCount, CartTotal }) => {
           <span>product</span>
         </div>
         <div className='HeaderBlock'>
-          <span>description</span>
+          <span>name</span>
         </div>
         <div className='HeaderBlock'>
           <span>quantity</span>
@@ -33,6 +34,9 @@ const Checkout = ({ CartItems, CartCount, CartTotal }) => {
           <span>remove</span>
         </div>
       </div>
+      {CartItems.map(({ ...CartItem }, id) => (
+        <CheckoutItem key={id} iid={id} {...CartItem} />
+      ))}
       <div className='total'>Total: ${CartTotal}.00</div>
     </div>
   );
