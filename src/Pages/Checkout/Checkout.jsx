@@ -34,9 +34,13 @@ const Checkout = ({ CartItems, CartCount, CartTotal }) => {
           <span>remove</span>
         </div>
       </div>
-      {CartItems.map((CartItem, id) => (
-        <CheckoutItem key={id} iid={id} {...CartItem} />
-      ))}
+      {CartItems.length ? (
+        CartItems.map((CartItem, id) => <CheckoutItem key={id} iid={id} {...CartItem} />)
+      ) : (
+        <div className='noItemsFound'>
+          <i className='fad fa-person-dolly-empty icon'/>no roducts in the cart.
+        </div>
+      )}
       <div className='total'>Total: ${CartTotal}.00</div>
     </div>
   );
