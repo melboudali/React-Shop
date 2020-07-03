@@ -12,10 +12,7 @@ const persistConfig = {
   whitelist: ['Cart'],
   transforms: [
     createEncryptor({
-      secretKey: 'my-super-secret-key',
-      onError: function (error) {
-        // Handle the error.
-      }
+      secretKey: 'doubt-is-death-to-the-creative-mind'
     })
   ]
 };
