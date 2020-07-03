@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
+import createEncryptor from 'redux-persist-transform-encrypt';
 import storage from 'redux-persist/lib/storage';
 import UserReducers from './User/UserReducers';
 import CartReducers from './Cart/CartReducers';
@@ -8,7 +9,15 @@ import CartReducers from './Cart/CartReducers';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['Cart']
+  whitelist: ['Cart'],
+  transforms: [
+    createEncryptor({
+      secretKey: 'my-super-secret-key',
+      onError: function (error) {
+        // Handle the error.
+      }
+    })
+  ]
 };
 
 const RootReducer = combineReducers({
