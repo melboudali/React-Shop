@@ -5,6 +5,7 @@ import storage from 'redux-persist/lib/storage';
 import HomeReducers from './Home/HomeReducers';
 import UserReducers from './User/UserReducers';
 import CartReducers from './Cart/CartReducers';
+import ShopReducers from './Shop/ShopReducers';
 
 // Add Cart reducer to whitelist without User cuz firebase handle it
 const persistConfig = {
@@ -21,7 +22,8 @@ const persistConfig = {
 const RootReducer = combineReducers({
   Home: HomeReducers,
   User: UserReducers,
-  Cart: CartReducers
+  Cart: CartReducers,
+  Shop: ShopReducers
 });
 
 export default persistReducer(persistConfig, RootReducer);
