@@ -1,10 +1,11 @@
 import React from 'react';
 import CollectionItem from '../CollectionItem/CollectionItem';
 import { Button, Grid } from '@material-ui/core';
+import { withRouter ,Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './CollectionPreview.scss';
 
-const CollectionPreview = ({ title, items }) => {
+const CollectionPreview = ({ title, items, routeName, match }) => {
   return (
     <div className='CollectionPreview'>
       <h1 className='title'>
@@ -17,7 +18,9 @@ const CollectionPreview = ({ title, items }) => {
             <CollectionItem key={item.id} item={item} />
           ))}
       </Grid>
-      <Button className='SeeMore'>SEE MORE</Button>
+      <Button className='SeeMore' to={`${match.path}/${routeName}`} component={Link}>
+        SEE MORE
+      </Button>
     </div>
   );
 };
@@ -27,4 +30,4 @@ CollectionPreview.propTypes = {
   items: PropTypes.array.isRequired
 };
 
-export default CollectionPreview;
+export default withRouter(CollectionPreview);

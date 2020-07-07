@@ -12,10 +12,9 @@ import ShopPage from './Pages/Shop/Shop';
 import SigninSignupPage from './Pages/SignIn-SingUp/SignInSignUp';
 import CheckoutPage from './Pages/Checkout/Checkout';
 import NotFoundPage from './Pages/404/NotFound';
-import { SelectCartItems } from './Redux/Cart/CartSelectors';
 import './App.scss';
 
-const App = ({ setCurrentUser, CartItems }) => {
+const App = ({ setCurrentUser }) => {
   useEffect(() => {
     auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
@@ -30,8 +29,6 @@ const App = ({ setCurrentUser, CartItems }) => {
         setCurrentUser(null);
       }
     });
-    // TODO: if cart empty load data from localstorege
-    // if (CartItems.length === 0) console.log('empty cart items');
   }, [setCurrentUser]);
 
   return (
@@ -55,7 +52,4 @@ const App = ({ setCurrentUser, CartItems }) => {
   );
 };
 
-const mapStateToProps = state => ({ CartItems: SelectCartItems(state) });
-export default connect(mapStateToProps, { setCurrentUser })(App);
-
-// Test
+export default connect(null, { setCurrentUser })(App);
