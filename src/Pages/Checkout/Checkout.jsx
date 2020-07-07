@@ -43,7 +43,10 @@ const Checkout = ({ CartItems, CartCount, CartTotal }) => {
           no roducts in the cart.
         </div>
       )}
-      <Stripe />
+      <div className='Stripe'>
+        <Stripe />
+      </div>
+
       <div className='total'>Total: ${CartTotal}.00</div>
     </div>
   );
