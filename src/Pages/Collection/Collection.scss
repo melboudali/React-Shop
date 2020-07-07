@@ -4,13 +4,16 @@
   .Breadcrumbs {
     margin-top: 10px;
     color: rgb(85, 85, 85);
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     font-weight: 500;
     letter-spacing: 3px;
     text-decoration: none;
     a {
-      color: rgb(117, 117, 117);
+      color: rgb(143, 143, 143);
       text-decoration: none;
+      .icon{
+        margin-right: 5px;
+      }
     }
   }
 

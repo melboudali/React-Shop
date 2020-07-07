@@ -13,14 +13,16 @@ import './Collection.scss';
 
 const Collection = ({ CurrentCollection, match, history }) => {
   const paths = history.location.pathname.toUpperCase().split('/');
-  console.log(paths);
   return CurrentCollection ? (
     <div className='CollectionPreview'>
       <Breadcrumbs
         className='Breadcrumbs'
         separator={<i className='far fa-chevron-right' />}
         aria-label='breadcrumb'>
-        <Link href='/'>HOME</Link>
+        <Link href='/'>
+          <i className='fad fa-home icon' />
+          HOME
+        </Link>
         <Link href={`/${paths[1].toLowerCase()}`}>{paths[1]}</Link>
         <span>{CurrentCollection.title.toUpperCase()}</span>
       </Breadcrumbs>
