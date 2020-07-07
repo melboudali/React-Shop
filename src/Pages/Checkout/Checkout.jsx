@@ -9,6 +9,7 @@ import {
 import CheckoutItem from '../../Components/CheckoutPageComponents/CheckoutItem/CheckoutItem';
 import PropTypes from 'prop-types';
 import './Checkout.scss';
+import Stripe from '../../Components/CheckoutPageComponents/Stripe/Stripe';
 
 const Checkout = ({ CartItems, CartCount, CartTotal }) => {
   return (
@@ -38,9 +39,11 @@ const Checkout = ({ CartItems, CartCount, CartTotal }) => {
         CartItems.map((CartItem, id) => <CheckoutItem key={id} iid={id} {...CartItem} />)
       ) : (
         <div className='noItemsFound'>
-          <i className='fad fa-person-dolly-empty icon'/>no roducts in the cart.
+          <i className='fad fa-person-dolly-empty icon' />
+          no roducts in the cart.
         </div>
       )}
+      <Stripe />
       <div className='total'>Total: ${CartTotal}.00</div>
     </div>
   );
