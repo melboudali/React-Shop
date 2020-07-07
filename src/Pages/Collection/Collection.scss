@@ -1,6 +1,19 @@
 .CollectionPreview {
   margin-bottom: 50px;
 
+  .Breadcrumbs {
+    margin-top: 10px;
+    color: rgb(85, 85, 85);
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-decoration: none;
+    a {
+      color: rgb(117, 117, 117);
+      text-decoration: none;
+    }
+  }
+
   .title {
     margin: 10px 0 20px;
     text-align: center;
