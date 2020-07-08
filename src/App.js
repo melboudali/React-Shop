@@ -15,7 +15,6 @@ import NotFoundPage from './Pages/404/NotFound';
 import './App.scss';
 
 const App = ({ setCurrentUser }) => {
-  console.log(process.env.NODE_ENV);
   useEffect(() => {
     auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
