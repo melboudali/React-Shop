@@ -2,7 +2,7 @@
   margin-bottom: 50px;
 
   .title {
-    margin: 10px 0 20px;
+    margin: 10px 0 30px !important;
     text-align: center;
     position: relative;
     width: 100%;
@@ -13,17 +13,35 @@
       top: 50%;
       left: 0;
       position: absolute;
-      background-color: rgb(116, 116, 116);
+      background-image: linear-gradient(
+        to right,
+        #fafafa,
+        #ebebeb,
+        #dddddd,
+        #cecece,
+        #c0c0c0,
+        #c0c0c0,
+        #c0c0c0,
+        #c0c0c0,
+        #cecece,
+        #dddddd,
+        #ebebeb,
+        #fafafa
+      );
     }
     span {
-      color: rgb(48, 48, 48);
+      color: rgb(250, 250, 250) !important;
       font-weight: 600;
       padding: 0 20px;
       position: relative;
       z-index: 1;
-      background-color: #fff;
+      background-color: rgb(49, 49, 49) !important;
       display: inline-block;
       max-width: 70%;
+      border-radius: 5px;
+      -webkit-box-shadow: 3px 3px 0px 2px rgb(173, 173, 173);
+      -moz-box-shadow: 3px 3px 0px 2px rgb(173, 173, 173);
+      box-shadow: 3px 3px 0px 2px rgb(173, 173, 173);
     }
   }
 
