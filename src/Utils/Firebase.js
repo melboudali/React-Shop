@@ -28,7 +28,7 @@ const prodConfig = {
 
 // firebase.initializeApp(process.env.NODE_ENV === 'production' ? prodConfig : devConfig);
 
-firebase.initializeApp(devConfig);
+firebase.initializeApp(prodConfig);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
