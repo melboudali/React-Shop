@@ -13,8 +13,8 @@ const middlewares = [ReduxThunk];
 const Store = createStore(
   RootReducer,
   process.env.NODE_ENV
-    ? applyMiddleware(...middlewares)
-    : composeWithDevTools(applyMiddleware(...middlewares, logger))
+  ? composeWithDevTools(applyMiddleware(...middlewares, logger))
+  : applyMiddleware(...middlewares)
 );
 
 const Persistor = persistStore(Store);
