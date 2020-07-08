@@ -9,6 +9,7 @@ import RootReducer from './RootReducer';
 // Logger must be the last or we get undefined actions
 const middlewares = [ReduxThunk];
 
+// remove redux-logger & redux-devtools-extension from production
 const Store = createStore(
   RootReducer,
   process.env.NODE_ENV === 'development'
