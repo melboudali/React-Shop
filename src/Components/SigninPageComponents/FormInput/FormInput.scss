@@ -13,7 +13,7 @@ $main-color: rgb(167, 167, 167);
 
   .formInput {
     background: none;
-    background-color: white;
+    background-color: rgb(249, 249, 249);
     color: $sub-color;
     font-size: 18px;
     padding: 10px 10px 10px 5px;
@@ -59,7 +59,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
-  -webkit-box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
+  box-shadow: 0 0 0 30px rgb(249, 249, 249) inset !important;
+  -webkit-box-shadow: 0 0 0 30px rgb(249, 249, 249) inset !important;
   -webkit-text-fill-color: rgb(65, 65, 65) !important;
 }

@@ -26,7 +26,7 @@ const prodConfig = {
   measurementId: process.env.MESUREMENTID
 };
 
-firebase.initializeApp(process.env.NODE_ENV ? devConfig : prodConfig);
+firebase.initializeApp(process.env.NODE_ENV === 'production' ? prodConfig : devConfig);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
