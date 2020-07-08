@@ -12,9 +12,9 @@ const middlewares = [ReduxThunk];
 // remove redux-logger & redux-devtools-extension from production
 const Store = createStore(
   RootReducer,
-  process.env.NODE_ENV
-  ? composeWithDevTools(applyMiddleware(...middlewares, logger))
-  : applyMiddleware(...middlewares)
+  process.env.NODE_ENV === 'production'
+    ? applyMiddleware(...middlewares)
+    : composeWithDevTools(applyMiddleware(...middlewares, logger))
 );
 
 const Persistor = persistStore(Store);
