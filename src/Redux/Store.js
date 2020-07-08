@@ -7,17 +7,15 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import RootReducer from './RootReducer';
 
 // Logger must be the last or we get undefined actions
-const middlewares = [ReduxThunk, logger];
+const middlewares = [ReduxThunk];
 
 // remove redux-logger & redux-devtools-extension from production
-// const Store = createStore(
-//   RootReducer,
-//   process.env.NODE_ENV === 'production'
-//     ? applyMiddleware(...middlewares)
-//     : composeWithDevTools(applyMiddleware(...middlewares, logger))
-// );
-
-const Store = createStore(RootReducer, composeWithDevTools(applyMiddleware(...middlewares)));
+const Store = createStore(
+  RootReducer,
+  process.env.NODE_ENV === 'production'
+    ? applyMiddleware(...middlewares)
+    : composeWithDevTools(applyMiddleware(...middlewares, logger))
+);
 
 const Persistor = persistStore(Store);
 

@@ -4,7 +4,7 @@ import 'firebase/auth';
 import Store from '../Redux/Store';
 import { setAuthError } from '../Redux/User/UserActions';
 
-const devConfig = {
+const Config = {
   apiKey: process.env.REACT_APP_APIKEY,
   authDomain: process.env.REACT_APP_AUTHDOMAIN,
   databaseURL: process.env.REACT_APP_DATABASEURL,
@@ -15,20 +15,7 @@ const devConfig = {
   measurementId: process.env.REACT_APP_MESUREMENTID
 };
 
-const prodConfig = {
-  apiKey: process.env.ENV_APIKEY,
-  authDomain: process.env.ENV_AUTHDOMAIN,
-  databaseURL: process.env.ENV_DATABASEURL,
-  projectId: process.env.ENV_PROJECTID,
-  storageBucket: process.env.ENV_STORAGEBUCKET,
-  messagingSenderId: process.env.ENV_MESSAGINGSENDERID,
-  appId: process.env.ENV_APPID,
-  measurementId: process.env.ENV_MESUREMENTID
-};
-
-// firebase.initializeApp(process.env.NODE_ENV === 'production' ? prodConfig : devConfig);
-
-firebase.initializeApp(prodConfig);
+firebase.initializeApp(Config);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
