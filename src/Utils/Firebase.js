@@ -16,14 +16,14 @@ const devConfig = {
 };
 
 const prodConfig = {
-  apiKey: process.env.APIKEY,
-  authDomain: process.env.AUTHDOMAIN,
-  databaseURL: process.env.DATABASEURL,
-  projectId: process.env.PROJECTID,
-  storageBucket: process.env.STORAGEBUCKET,
-  messagingSenderId: process.env.MESSAGINGSENDERID,
-  appId: process.env.APPID,
-  measurementId: process.env.MESUREMENTID
+  apiKey: process.env.ENV_APIKEY,
+  authDomain: process.env.ENV_AUTHDOMAIN,
+  databaseURL: process.env.ENV_DATABASEURL,
+  projectId: process.env.ENV_PROJECTID,
+  storageBucket: process.env.ENV_STORAGEBUCKET,
+  messagingSenderId: process.env.ENV_MESSAGINGSENDERID,
+  appId: process.env.ENV_APPID,
+  measurementId: process.env.ENV_MESUREMENTID
 };
 
 // firebase.initializeApp(process.env.NODE_ENV === 'production' ? prodConfig : devConfig);
