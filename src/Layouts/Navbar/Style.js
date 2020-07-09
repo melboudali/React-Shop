@@ -17,6 +17,8 @@ export const NavbarContainer = styled(AppBar)`
   z-index: 4;
   transition: all 0.3s !important;
   box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.2) !important;
+  transform: ${({ getShowNav, getNavScrollDown }) =>
+    !getShowNav && (getNavScrollDown ? 'translate3d(0, 0, 0)' : 'translate3d(0, -60px, 0)')};
   .MuiToolbar-regular {
     min-height: 56px !important;
     height: 56px !important;
