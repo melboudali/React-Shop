@@ -13,8 +13,6 @@ import SigninSignupPage from './Pages/SignIn-SingUp/SignInSignUp';
 import CheckoutPage from './Pages/Checkout/Checkout';
 import NotFoundPage from './Pages/404/NotFound';
 import './App.scss';
-import './all.min.css';
-import './all.min.js';
 
 const App = ({ setCurrentUser }) => {
   useEffect(() => {
