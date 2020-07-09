@@ -72,13 +72,7 @@
     justify-content: center;
     text-transform: uppercase;
     background-color: rgba(255, 255, 255, 0);
-    background-image: linear-gradient(
-      32deg,
-      transparent,
-      transparent 50%,
-      #c4c4c4a8 50%,
-      #c4c4c4
-    );
+    background-image: linear-gradient(32deg, transparent, transparent 50%, #c4c4c4a8 50%, #c4c4c4);
     background-position: 100% 0;
     background-size: 320% 100%;
     -webkit-transition: background 0.5s ease-in;
