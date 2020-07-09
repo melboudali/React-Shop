@@ -13,6 +13,12 @@ import SigninSignupPage from './Pages/SignIn-SingUp/SignInSignUp';
 import CheckoutPage from './Pages/Checkout/Checkout';
 import NotFoundPage from './Pages/404/NotFound';
 import './App.scss';
+import GlobalStyle from './App.style';
+import Styled from 'styled-components';
+
+const NavbarDivider = Styled.div`
+  padding-top: 75px;
+`;
 
 const App = ({ setCurrentUser }) => {
   useEffect(() => {
@@ -33,9 +39,10 @@ const App = ({ setCurrentUser }) => {
 
   return (
     <Fragment>
+      <GlobalStyle />
       <Announcement />
       <Navbar Container={Container} />
-      <div className='NavbarDivider' />
+      <NavbarDivider />
       <Container>
         <Switch>
           {/* Private Routes */}
