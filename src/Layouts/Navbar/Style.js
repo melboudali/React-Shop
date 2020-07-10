@@ -1,12 +1,25 @@
 import styled, { css } from 'styled-components';
-import { AppBar, Typography, IconButton } from '@material-ui/core';
+import { AppBar, Typography, IconButton, Toolbar } from '@material-ui/core';
+import MediaQueries from '../../Config/StyledComponents';
 
-export const grayColo = css`
+const {
+  extraSmallDevices,
+  smallDevices,
+  mediumDevices,
+  largeDevices,
+  extraLargeDevices
+} = MediaQueries;
+
+export const grayColor = css`
   color: rgb(85, 85, 85);
 `;
 
 const backgroundNone = css`
   background: none !important;
+`;
+
+const hideComponent = css`
+  display: none !important;
 `;
 
 export const NavbarContainer = styled(AppBar)`
@@ -25,12 +38,42 @@ export const NavbarContainer = styled(AppBar)`
   }
 `;
 
+export const ToolbarContainer = styled(Toolbar)`
+  padding: 0 !important;
+`;
+
+export const Hamburger = styled(IconButton)`
+  display: block !important;
+
+  &::hover {
+    ${backgroundNone}
+  }
+
+  ${largeDevices} {
+    ${hideComponent}
+  }
+  ${extraLargeDevices} {
+    ${hideComponent}
+  }
+`;
+
 export const Logo = styled.img`
   height: 50px;
 `;
 
+export const DesktopMenu = styled.div`
+  display: none;
+  ${largeDevices} {
+    display: flex;
+  }
+`;
+
+export const Grow = styled.div`
+  flex-grow: 1;
+`;
+
 export const NavbarMenu = styled(Typography)`
-  ${grayColo}
+  ${grayColor}
   font-size: 0.9rem !important;
   padding: 13px !important;
   letter-spacing: 1px;
@@ -43,7 +86,7 @@ export const NavbarMenu = styled(Typography)`
 `;
 
 export const Signin = styled(IconButton)`
-  ${grayColo}
+  ${grayColor}
   padding: 0 !important;
   margin: 0 12px !important;
   width: 30px !important;

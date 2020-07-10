@@ -2,17 +2,17 @@ import React, { useEffect, useState, Fragment } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { auth } from '../../Utils/Firebase';
 import { connect } from 'react-redux';
-import { makeStyles } from '@material-ui/core/styles';
-import Toolbar from '@material-ui/core/Toolbar';
 import CartIcon from '../../Components/Navbar/CartIcon/CartIcon';
-import Hidden from '@material-ui/core/Hidden';
-import PropTypes from 'prop-types';
-import { SelectCurrentUser } from '../../Redux/User/UserSelectors';
 import { createStructuredSelector } from 'reselect';
+import { SelectCurrentUser } from '../../Redux/User/UserSelectors';
 import LogoImage from '../../Assets/Images/logo.png';
 import {
   NavbarContainer,
+  ToolbarContainer,
+  Hamburger,
   Logo,
+  DesktopMenu,
+  Grow,
   NavbarMenu,
   Signin,
   Search,
@@ -20,25 +20,13 @@ import {
   MenuContainer,
   Menu
 } from './Style';
+import PropTypes from 'prop-types';
 // scss modules in order to use same classes and ids with other component
 // import {classe1, class2 ... } from './Navbar.module.scss';
 // OR
 // import moduleClass from './Navbar.module.scss';
 
-const useStyles = makeStyles(theme => ({
-  grow: {
-    flexGrow: 1
-  },
-  sectionDesktop: {
-    display: 'none',
-    [theme.breakpoints.up('md')]: {
-      display: 'flex'
-    }
-  }
-}));
-
 const Navbar = ({ Container, history, currentUser }) => {
-  const classes = useStyles();
   const [getShowNav, setShowNav] = useState(true);
   const [getNavScrollDown, setNavScrollDown] = useState(false);
 
@@ -64,15 +52,13 @@ const Navbar = ({ Container, history, currentUser }) => {
     <Fragment>
       <NavbarContainer getShowNav={getShowNav} getNavScrollDown={getNavScrollDown}>
         <Container>
-          <Toolbar style={{ padding: 0 }}>
-            {/* <Hidden mdUp>
-              <IconButton edge='start' color='secondary' aria-label='open drawer'>
-                <i className='fal fa-bars'></i>
-              </IconButton>
-            </Hidden> */}
+          <ToolbarContainer>
+            <Hamburger edge='start'>
+              <i className='fal fa-bars'></i>
+            </Hamburger>
             <Logo src={LogoImage} alt='logo' />
-            <div className={classes.grow} />
-            <div className={classes.sectionDesktop}>
+            <Grow />
+            <DesktopMenu>
               <NavbarMenu variant='h6' component={Link} to='/'>
                 HOME
               </NavbarMenu>
@@ -119,8 +105,8 @@ const Navbar = ({ Container, history, currentUser }) => {
                 </Signin>
               )}
               <CartIcon getShowNav={getShowNav} getNavScrollDown={getNavScrollDown} />
-            </div>
-          </Toolbar>
+            </DesktopMenu>
+          </ToolbarContainer>
         </Container>
       </NavbarContainer>
     </Fragment>
