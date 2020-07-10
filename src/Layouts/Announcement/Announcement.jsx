@@ -19,7 +19,8 @@ const AnnouncementContainer = styled.div`
   padding: 0;
   z-index: 3;
   text-align: center;
-  background-color: black;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(3px);
   h1 {
     width: 100%;
     position: absolute;

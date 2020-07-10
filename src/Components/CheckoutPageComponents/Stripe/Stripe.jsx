@@ -26,6 +26,7 @@ const Stripe = ({ CurrentUser, CartTotal }) => {
       image={StripeLogo} // the pop-in header image (default none)
       ComponentClass='StripeCheckouts'
       stripeKey='pk_test_FrJ9GSBiXNyC8vKmMf3u20Rk'
+      // TODO: change this to string latter
       label={
         <div>
           <i className='fab fa-cc-visa icon' />

@@ -29,6 +29,7 @@ import PropTypes from 'prop-types';
 const Navbar = ({ Container, history, currentUser }) => {
   const [getShowNav, setShowNav] = useState(true);
   const [getNavScrollDown, setNavScrollDown] = useState(false);
+  const [profileImage, setProfileImage] = useState('');
 
   useEffect(() => {
     let windowOffset = 0;
@@ -46,11 +47,15 @@ const Navbar = ({ Container, history, currentUser }) => {
       }
       windowOffset = window.pageYOffset;
     };
-  }, []);
+    //TODO: profile image i need to change this image later
+    currentUser
+      ? setProfileImage(currentUser.photoURL)
+      : setProfileImage('https://image.flaticon.com/icons/png/512/64/64572.png');
+  }, [currentUser]);
 
   return (
     <Fragment>
-      <NavbarContainer getShowNav={getShowNav} getNavScrollDown={getNavScrollDown}>
+      <NavbarContainer getshownav={getShowNav ? 1 : 0} getnavscrolldown={getNavScrollDown ? 1 : 0}>
         <Container>
           <ToolbarContainer>
             <Hamburger edge='start'>
@@ -75,7 +80,13 @@ const Navbar = ({ Container, history, currentUser }) => {
               {currentUser ? (
                 currentUser.photoURL ? (
                   <Profile disableRipple disableFocusRipple aria-label='Current User'>
-                    <img src={currentUser.photoURL} alt='User' />
+                    <img
+                      src={profileImage}
+                      alt='User'
+                      onError={() =>
+                        setProfileImage('https://image.flaticon.com/icons/png/512/64/64572.png')
+                      }
+                    />
                     <MenuContainer>
                       <Menu>
                         <li onClick={() => history.push('/profile')}>MY PROFILE</li>
