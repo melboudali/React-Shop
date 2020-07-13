@@ -1,20 +1,24 @@
-.CartIconContainer{
-  padding: 0;
-  margin: 0;
-  width: fit-content;
-  height: fit-content;
+.CartIconContainer {
   background: none;
+  padding: 0 !important;
+  margin: 0 10px !important;
+  width: 24px !important;
 }
 
 .MuiBadge-badge {
   color: rgb(255, 255, 255) !important;
   background-color: rgb(51, 51, 51) !important;
+  font-size: 0.8rem !important;
 }
 
-.Cart:hover {
-  background: none !important;
+.Cart {
+  width: 100%;
+  &:hover {
+    background: none !important;
+  }
 }
 
-.NavIcons {
-  color: rgb(85, 85, 85);
+.cartIcon {
+  stroke: rgb(85, 85, 85) !important;
+  width: 24px !important;
 }

@@ -16,14 +16,13 @@ const grayColor = css`
 
 const IconButtonStyle = css`
   padding: 0 !important;
-  margin: 0 12px !important;
-  width: 30px !important;
+  margin: 0 10px !important;
+  width: 24px !important;
 `;
 
 const svgStyle = css`
   stroke: rgb(85, 85, 85) !important;
-  height: 30px !important;
-  width: 30px !important;
+  width: 24px !important;
 `;
 
 const backgroundNone = css`
@@ -60,7 +59,6 @@ export const Hamburger = styled(IconButton)`
   &:hover {
     ${backgroundNone}
   }
-
   .HamburgerIcon {
     ${svgStyle}
   }
@@ -69,7 +67,7 @@ export const Hamburger = styled(IconButton)`
   }
   ${extraLargeDevices} {
     ${hideComponent}
-  } 
+  }
 `;
 
 export const Logo = styled.img`
