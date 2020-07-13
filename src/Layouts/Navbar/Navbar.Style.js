@@ -118,15 +118,11 @@ export const Profile = styled(IconButton)`
   margin: 0 12px !important;
   width: 30px;
   position: relative;
-
   &:hover {
     ${backgroundNone}
     ${MenuContainer} {
       visibility: visible;
       opacity: 1;
-      -webkit-transform: translateY(-10px);
-      -moz-transform: translateY(-10px);
-      -ms-transform: translateY(-10px);
       transform: translateY(-10px);
     }
   }

@@ -19,7 +19,7 @@ import {
   Profile,
   MenuContainer,
   Menu
-} from './Style';
+} from './Navbar.Style';
 import PropTypes from 'prop-types';
 // scss modules in order to use same classes and ids with other component
 // import {classe1, class2 ... } from './Navbar.module.scss';
@@ -68,7 +68,7 @@ const Navbar = ({ Container, history, currentUser }) => {
                 HOME
               </NavbarMenu>
               <NavbarMenu>NEW ARRIVALS</NavbarMenu>
-              <NavbarMenu component={Link} to='/shop'>
+              <NavbarMenu variant='h6' component={Link} to='/shop'>
                 SHOP
               </NavbarMenu>
               <NavbarMenu>ABOUT</NavbarMenu>
@@ -96,7 +96,7 @@ const Navbar = ({ Container, history, currentUser }) => {
                   </Profile>
                 ) : (
                   <Profile disableRipple disableFocusRipple aria-label='Current User'>
-                    <i className='fal fa-user' />
+                    <img src='https://image.flaticon.com/icons/png/512/64/64572.png' alt='User' />
                     <MenuContainer>
                       <Menu>
                         <li onClick={() => history.push('/profile')}>MY PROFILE</li>
