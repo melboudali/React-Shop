@@ -10,8 +10,20 @@ const {
   extraLargeDevices
 } = MediaQueries;
 
-export const grayColor = css`
-  color: rgb(85, 85, 85);
+const grayColor = css`
+  color: rgb(85, 85, 85) !important;
+`;
+
+const IconButtonStyle = css`
+  padding: 0 !important;
+  margin: 0 12px !important;
+  width: 30px !important;
+`;
+
+const svgStyle = css`
+  stroke: rgb(85, 85, 85) !important;
+  height: 30px !important;
+  width: 30px !important;
 `;
 
 const backgroundNone = css`
@@ -44,17 +56,20 @@ export const ToolbarContainer = styled(Toolbar)`
 
 export const Hamburger = styled(IconButton)`
   display: block !important;
-
-  &::hover {
+  ${IconButtonStyle}
+  &:hover {
     ${backgroundNone}
   }
 
+  .HamburgerIcon {
+    ${svgStyle}
+  }
   ${largeDevices} {
     ${hideComponent}
   }
   ${extraLargeDevices} {
     ${hideComponent}
-  }
+  } 
 `;
 
 export const Logo = styled.img`
@@ -85,22 +100,6 @@ export const NavbarMenu = styled(Typography)`
   }
 `;
 
-export const Signin = styled(IconButton)`
-  ${grayColor}
-  padding: 0 !important;
-  margin: 0 12px !important;
-  width: 30px !important;
-  &:hover {
-    ${backgroundNone}
-  }
-`;
-
-export const Search = styled(IconButton)`
-  &:hover {
-    ${backgroundNone}
-  }
-`;
-
 export const MenuContainer = styled.div`
   ${backgroundNone};
   visibility: hidden;
@@ -113,11 +112,30 @@ export const MenuContainer = styled.div`
   transition-duration: 0.3s;
 `;
 
+export const Search = styled(IconButton)`
+  ${grayColor}
+  ${IconButtonStyle}
+  &:hover {
+    ${backgroundNone}
+  }
+  .SearchIcon {
+    ${svgStyle}
+  }
+`;
+
+export const Signin = styled(IconButton)`
+  ${grayColor}
+  ${IconButtonStyle}
+  &:hover {
+    ${backgroundNone}
+  }
+  .SigninIcon {
+    ${svgStyle}
+  }
+`;
+
 export const Profile = styled(IconButton)`
-  padding: 0 !important;
-  margin: 0 12px !important;
-  width: 30px;
-  position: relative;
+  ${IconButtonStyle}
   &:hover {
     ${backgroundNone}
     ${MenuContainer} {

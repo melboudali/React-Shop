@@ -58,8 +58,20 @@ const Navbar = ({ Container, history, currentUser }) => {
       <NavbarContainer getshownav={getShowNav ? 1 : 0} getnavscrolldown={getNavScrollDown ? 1 : 0}>
         <Container>
           <ToolbarContainer>
-            <Hamburger edge='start'>
-              <i className='fal fa-bars'></i>
+            <Hamburger disableRipple disableFocusRipple aria-label='Menu' edge='start'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                class='HamburgerIcon'
+                viewBox='0 0 24 24'
+                stroke-width='1.5'
+                fill='none'
+                stroke-linecap='round'
+                stroke-linejoin='round'>
+                <path stroke='none' d='M0 0h24v24H0z' />
+                <line x1='4' y1='6' x2='20' y2='6' />
+                <line x1='4' y1='12' x2='20' y2='12' />
+                <line x1='4' y1='18' x2='20' y2='18' />
+              </svg>
             </Hamburger>
             <Logo src={LogoImage} alt='logo' />
             <Grow />
@@ -74,8 +86,19 @@ const Navbar = ({ Container, history, currentUser }) => {
               <NavbarMenu>ABOUT</NavbarMenu>
               <NavbarMenu>FAQS</NavbarMenu>
               <NavbarMenu>CONTACT</NavbarMenu>
-              <Search disableRipple disableFocusRipple aria-label='Search'>
-                <i className='fal fa-search NavIcons'></i>
+              <Search disableRipple disableFocusRipple aria-label='Search' title='Search'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  class='SearchIcon'
+                  viewBox='0 0 24 24'
+                  stroke-width='1.5'
+                  fill='none'
+                  stroke-linecap='round'
+                  stroke-linejoin='round'>
+                  <path stroke='none' d='M0 0h24v24H0z' />
+                  <circle cx='10' cy='10' r='7' />
+                  <line x1='21' y1='21' x2='15' y2='15' />
+                </svg>
               </Search>
               {currentUser ? (
                 currentUser.photoURL ? (
@@ -112,7 +135,18 @@ const Navbar = ({ Container, history, currentUser }) => {
                   aria-label='Signin'
                   component={Link}
                   to='/signin'>
-                  <i className='fal fa-user'></i>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    className='SigninIcon'
+                    viewBox='0 0 24 24'
+                    stroke-width='1.5'
+                    fill='none'
+                    stroke-linecap='round'
+                    stroke-linejoin='round'>
+                    <path stroke='none' d='M0 0h24v24H0z' />
+                    <circle cx='12' cy='7' r='4' />
+                    <path d='M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2' />
+                  </svg>
                 </Signin>
               )}
               <CartIcon getShowNav={getShowNav} getNavScrollDown={getNavScrollDown} />
