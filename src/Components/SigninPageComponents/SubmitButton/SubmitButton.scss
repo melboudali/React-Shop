@@ -3,23 +3,50 @@
   width: auto !important;
   height: 50px;
   margin: 5px 1% !important;
-  letter-spacing: 1px !important;
+  letter-spacing: 2px !important;
   line-height: 50px;
   padding: 0 35px;
-  font-size: 12px !important;
-  background-color: rgb(39, 39, 39) !important;
-  color: rgb(241, 241, 241) !important;
+  font-size: 0.7rem !important;
+  background-color: black !important;
+  color: rgb(255, 255, 255) !important;
   text-transform: uppercase;
-  border: 1px solid rgb(39, 39, 39) !important;
-  border-radius: 0 !important;
   cursor: pointer !important;
-  transition: all 0.6s !important;
-  &:hover {
-    background-color: rgb(241, 241, 241) !important;
-    color: rgb(39, 39, 39) !important;
-    border: 1px solid rgb(39, 39, 39) !important;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transition: all 2s !important;
+  &:after,
+  &:before {
+    content: ' ';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border: 0px solid #fff;
+    transition: all 1s;
   }
-  img{
+  &:after {
+    top: -1px;
+    left: -1px;
+    border-top: 4px solid rgb(202, 202, 202);
+    border-left: 4px solid black;
+  }
+  &:before {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 4px solid rgb(202, 202, 202);
+    border-right: 4px solid black;
+  }
+  &:hover {
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: white !important;
+    color: rgb(39, 39, 39) !important;
+    &:before,
+    &:after {
+      width: 101%;
+      height: 101%;
+    }
+  }
+  img {
     width: 15px;
     margin: -2px 5px 0 0;
   }

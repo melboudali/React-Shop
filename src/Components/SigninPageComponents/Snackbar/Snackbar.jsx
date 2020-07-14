@@ -34,7 +34,11 @@ const SnackbarComponent = ({ message = null }) => {
       }
       action={
         <div className='CloseBtn' onClick={handleClose}>
-          <i className='fal fa-times' />
+          <svg viewBox='0 0 24 24'>
+            <path stroke='none' d='M0 0h24v24H0z' />
+            <rect x='4' y='4' width='16' height='16' rx='2' />
+            <path d='M10 10l4 4m0 -4l-4 4' />
+          </svg>
         </div>
       }
     />

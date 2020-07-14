@@ -11,10 +11,19 @@
 }
 
 .CloseBtn {
-  width: 30px;
-  text-align: center;
-  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &:hover {
     cursor: pointer;
+  }
+  svg {
+    stroke: rgb(255, 255, 255);
+    width: 30px;
+    height: 30px;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
   }
 }
