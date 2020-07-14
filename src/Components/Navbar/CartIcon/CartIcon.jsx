@@ -1,11 +1,11 @@
-import React, { useState, Fragment } from 'react';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import CartDropdown from '../CartDropdown/CartDropdown';
-import IconButton from '@material-ui/core/IconButton';
-import Badge from '@material-ui/core/Badge';
+import { createStructuredSelector } from 'reselect';
 import { SelectCartItemsCount } from '../../../Redux/Cart/CartSelectors';
+import CartDropdown from '../CartDropdown/CartDropdown';
 import { CartIconContainer, Cart, CartSvg } from './CartIcon.style';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import Badge from '@material-ui/core/Badge';
 import PropTypes from 'prop-types';
 
 const CartIcon = ({ getShowNav, getNavScrollDown, cartCount }) => {
@@ -22,13 +22,7 @@ const CartIcon = ({ getShowNav, getNavScrollDown, cartCount }) => {
           aria-label='Cart Items'
           onClick={() => setShowDropdown(!getShowDropdown)}>
           <Badge badgeContent={cartCount} max={9}>
-            <CartSvg
-              xmlns='http://www.w3.org/2000/svg'
-              viewBox='0 0 24 24'
-              strokeWidth='1.5'
-              fill='none'
-              strokeLinecap='round'
-              strokeLinejoin='round'>
+            <CartSvg viewBox='0 0 24 24'>
               <path stroke='none' d='M0 0h24v24H0z' />
               <circle cx='9' cy='19' r='2' />
               <circle cx='17' cy='19' r='2' />
@@ -36,18 +30,27 @@ const CartIcon = ({ getShowNav, getNavScrollDown, cartCount }) => {
             </CartSvg>
           </Badge>
         </Cart>
-        {(getShowNav || getNavScrollDown) && getShowDropdown && (
-          <CartDropdown closeCart={closeCart} />
-        )}
+        {/* {(getShowNav || getNavScrollDown) && getShowDropdown && ( */}
+          <CartDropdown
+            getShowNav={getShowNav}
+            getNavScrollDown={getNavScrollDown}
+            getShowDropdown={getShowDropdown}
+            closeCart={closeCart}
+          />
+        {/* )} */}
       </CartIconContainer>
     </ClickAwayListener>
   );
 };
 
-CartIcon.propTypes = {};
+CartIcon.propTypes = {
+  getShowNav: PropTypes.bool,
+  getNavScrollDown: PropTypes.bool,
+  cartCount: PropTypes.number
+};
 
-const mapStateToProps = state => ({
-  cartCount: SelectCartItemsCount(state)
+const mapStateToProps = createStructuredSelector({
+  cartCount: SelectCartItemsCount
 });
 
 export default connect(mapStateToProps)(CartIcon);
