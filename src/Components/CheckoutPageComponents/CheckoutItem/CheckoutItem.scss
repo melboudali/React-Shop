@@ -31,17 +31,20 @@
   .quantityControls {
     color: rgb(71, 71, 71);
     font-weight: 300;
-    font-size: 15px;
     padding: 0 10px;
     &:hover {
       cursor: pointer;
     }
   }
 
+  .react-icons {
+    vertical-align: middle;
+  }
+
   .disabledReducer {
+    vertical-align: middle;
     color: rgb(155, 155, 155);
     font-weight: 300;
-    font-size: 15px;
     padding: 0 10px;
     &:hover {
       cursor: not-allowed;

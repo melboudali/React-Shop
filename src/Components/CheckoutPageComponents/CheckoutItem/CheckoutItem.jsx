@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { addItemToCart, deleteItem } from '../../../Redux/Cart/CartActions';
 import PropTypes from 'prop-types';
 import './CheckoutItem.scss';
-
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+import { IconContext } from 'react-icons';
 const CheckoutItem = ({ iid, id, name, price, imageUrl, quantity, addItemToCart, deleteItem }) => {
   return (
     <div className='CheckoutItem' style={{ backgroundColor: iid % 2 === 0 ? '#eee' : '#fff' }}>
@@ -15,7 +16,9 @@ const CheckoutItem = ({ iid, id, name, price, imageUrl, quantity, addItemToCart,
         <span
           className={quantity > 1 ? `quantityControls` : `disabledReducer`}
           onClick={() => quantity > 1 && deleteItem(id, quantity)}>
-          <i className='fal fa-less-than' />
+          <IconContext.Provider value={{ size: '1.5rem', className: 'react-icons' }}>
+            <MdKeyboardArrowLeft />
+          </IconContext.Provider>
         </span>
         {quantity}
         <span
@@ -28,7 +31,9 @@ const CheckoutItem = ({ iid, id, name, price, imageUrl, quantity, addItemToCart,
               imageUrl
             })
           }>
-          <i className='fal fa-greater-than' />
+          <IconContext.Provider value={{ size: '1.5rem', className: 'react-icons' }}>
+            <MdKeyboardArrowRight />
+          </IconContext.Provider>
         </span>
       </span>
       <span className='price'>${price}.00</span>
