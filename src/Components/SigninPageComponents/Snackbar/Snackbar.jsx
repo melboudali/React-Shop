@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 import Snackbar from '@material-ui/core/Snackbar';
 import PropTypes from 'prop-types';
 import './Snackbar.scss';
+import { clearAuthError } from '../../../Redux/User/UserActions';
 
-const SnackbarComponent = ({ message = null }) => {
+const SnackbarComponent = ({ message = null, clearAuthError }) => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     if (message) setOpen(true);
-  }, [message]);
+    setTimeout(() => {
+      clearAuthError();
+    }, 5000);
+  }, [message, clearAuthError]);
 
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -24,7 +29,7 @@ const SnackbarComponent = ({ message = null }) => {
         horizontal: 'left'
       }}
       open={open}
-      autoHideDuration={8000}
+      autoHideDuration={5000}
       onClose={handleClose}
       message={
         <div className='ErrorMessage'>
@@ -47,4 +52,4 @@ const SnackbarComponent = ({ message = null }) => {
 
 SnackbarComponent.propTypes = { message: PropTypes.string };
 
-export default SnackbarComponent;
+export default connect(null, { clearAuthError })(SnackbarComponent);
