@@ -15,15 +15,7 @@ const Checkout = ({ CartItems, CartTotal }) => {
   return (
     <div className='CheckoutPage'>
       <h1 className='CheckoutTitle'>
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          class='icon icon-tabler icon-tabler-credit-card'
-          viewBox='0 0 24 24'
-          strokeWidth='1.5'
-          stroke='#2c3e50'
-          fill='none'
-          strokeLinecap='round'
-          strokeLinejoin='round'>
+        <svg className='SvgIcon' viewBox='0 0 24 24'>
           <path stroke='none' d='M0 0h24v24H0z' />
           <rect x='3' y='5' width='18' height='14' rx='3' />
           <line x1='3' y1='10' x2='21' y2='10' />
@@ -53,7 +45,12 @@ const Checkout = ({ CartItems, CartTotal }) => {
         CartItems.map((CartItem, id) => <CheckoutItem key={id} iid={id} {...CartItem} />)
       ) : (
         <div className='noItemsFound'>
-          <i className='fad fa-person-dolly-empty icon' />
+          <svg className='SvgIcon' viewBox='0 0 24 24'>
+            <path stroke='none' d='M0 0h24v24H0z' />
+            <polyline points='7 10 12 4 17 10' />
+            <path d='M21 10l-2 8a2 2.5 0 0 1 -2 2h-10a2 2.5 0 0 1 -2 -2l-2 -8Z' />
+            <circle cx='12' cy='15' r='2' />
+          </svg>
           no roducts in the cart.
         </div>
       )}
@@ -66,11 +63,10 @@ const Checkout = ({ CartItems, CartTotal }) => {
   );
 };
 
-Checkout.propTypes = {};
+Checkout.propTypes = { CartItems: PropTypes.array, CartTotal: PropTypes.number };
 
 const mapStateToProps = createStructuredSelector({
   CartItems: SelectCartItems,
-  CartCount: SelectCartItemsCount,
   CartTotal: SelectCartTotal
 });
 

@@ -6,6 +6,7 @@ export const CartIconContainer = styled.div`
   padding: 0 !important;
   display: flex;
   align-items: center;
+  justify-content: center;
   .MuiBadge-badge {
     color: rgb(255, 255, 255) !important;
     background-color: rgb(51, 51, 51) !important;
@@ -21,6 +22,6 @@ export const Cart = styled(IconButton)`
 `;
 export const CartSvg = styled.svg`
   stroke: rgb(85, 85, 85) !important;
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
 `;

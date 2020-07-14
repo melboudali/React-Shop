@@ -10,22 +10,6 @@ const {
   extraLargeDevices
 } = MediaQueries;
 
-const grayColor = css`
-  color: rgb(85, 85, 85) !important;
-`;
-
-const IconButtonStyle = css`
-  /* padding: 0 !important;
-  margin: 0 10px !important;
-  width: 24px !important; */
-`;
-
-const svgStyle = css`
-  stroke: rgb(85, 85, 85) !important;
-  width: 24px !important;
-  height: 24px;
-`;
-
 const backgroundNone = css`
   background: none !important;
 `;
@@ -56,12 +40,8 @@ export const ToolbarContainer = styled(Toolbar)`
 
 export const Hamburger = styled(IconButton)`
   display: block !important;
-  ${IconButtonStyle}
   &:hover {
     ${backgroundNone}
-  }
-  .HamburgerIcon {
-    ${svgStyle}
   }
   ${largeDevices} {
     ${hideComponent}
@@ -87,12 +67,15 @@ export const Grow = styled.div`
 `;
 
 export const NavbarMenu = styled(Typography)`
-  ${grayColor}
+  color: rgb(85, 85, 85) !important;
   font-size: 0.9rem !important;
-  padding: 13px !important;
-  letter-spacing: 1px;
+  padding: 0 10px !important;
+  letter-spacing: 2px !important;
   text-decoration: none !important;
   font-weight: 400 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   &:focus,
   &:active {
     border: none !important;
@@ -111,21 +94,19 @@ export const MenuContainer = styled.div`
   transition-duration: 0.3s;
 `;
 
-export const Search = styled(IconButton)`
-  &:hover {
-    ${backgroundNone}
-  }
-  .SearchIcon {
-    ${svgStyle}
-  }
+export const SvgIcon = styled.svg`
+  stroke: rgb(85, 85, 85);
+  width: 30px;
+  height: 30px;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
 `;
 
-export const Signin = styled(IconButton)`
+export const SearchSignin = styled(IconButton)`
   &:hover {
     ${backgroundNone}
-  }
-  .SigninIcon {
-    ${svgStyle}
   }
 `;
 
@@ -138,7 +119,6 @@ export const Profile = styled(IconButton)`
       transform: translateY(-10px);
     }
   }
-
   img {
     width: 30px;
     height: 30px;
@@ -161,14 +141,14 @@ export const Menu = styled.ul`
     font-size: 0.8rem;
     font-weight: 400;
     letter-spacing: 1px;
-    font-family: 'Roboto';
     padding: 12px 8px;
     margin: 0;
     list-style: none;
     text-align: left;
+    transition: all 0.6s !important;
     &:hover {
-      color: #b3b3b3;
-      background-color: #fdfdfd;
+      color: #f4f4f4;
+      background-color: #000000;
     }
   }
 `;

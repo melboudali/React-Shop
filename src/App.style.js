@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     min-height: '100%';
     scroll-behavior: smooth;
-    overflow-y: overlay;
+    overflow-y: scroll;
   };
 
   * {
@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto';
+    font-family: 'Roboto' !important;
     background-color: rgb(249, 249, 249);
   };
 

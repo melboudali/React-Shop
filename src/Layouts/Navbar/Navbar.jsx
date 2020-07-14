@@ -14,17 +14,13 @@ import {
   DesktopMenu,
   Grow,
   NavbarMenu,
-  Signin,
-  Search,
+  SvgIcon,
+  SearchSignin,
   Profile,
   MenuContainer,
   Menu
 } from './Navbar.Style';
 import PropTypes from 'prop-types';
-// scss modules in order to use same classes and ids with other component
-// import {classe1, class2 ... } from './Navbar.module.scss';
-// OR
-// import moduleClass from './Navbar.module.scss';
 
 const Navbar = ({ Container, history, currentUser }) => {
   const [getShowNav, setShowNav] = useState(true);
@@ -59,19 +55,12 @@ const Navbar = ({ Container, history, currentUser }) => {
         <Container>
           <ToolbarContainer>
             <Hamburger disableRipple disableFocusRipple aria-label='Menu' edge='start'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='HamburgerIcon'
-                viewBox='0 0 24 24'
-                stroke-width='1.5'
-                fill='none'
-                strokeLinecap='round'
-                strokeLinejoin='round'>
+              <SvgIcon viewBox='0 0 24 24'>
                 <path stroke='none' d='M0 0h24v24H0z' />
                 <line x1='4' y1='6' x2='20' y2='6' />
                 <line x1='4' y1='12' x2='20' y2='12' />
                 <line x1='4' y1='18' x2='20' y2='18' />
-              </svg>
+              </SvgIcon>
             </Hamburger>
             <Logo src={LogoImage} alt='logo' />
             <Grow />
@@ -86,20 +75,13 @@ const Navbar = ({ Container, history, currentUser }) => {
               <NavbarMenu>ABOUT</NavbarMenu>
               <NavbarMenu>FAQS</NavbarMenu>
               <NavbarMenu>CONTACT</NavbarMenu>
-              <Search disableRipple disableFocusRipple aria-label='Search' title='Search'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  className='SearchIcon'
-                  viewBox='0 0 24 24'
-                  stroke-width='1.5'
-                  fill='none'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'>
+              <SearchSignin disableRipple disableFocusRipple aria-label='Search' title='Search'>
+                <SvgIcon viewBox='0 0 24 24'>
                   <path stroke='none' d='M0 0h24v24H0z' />
                   <circle cx='10' cy='10' r='7' />
                   <line x1='21' y1='21' x2='15' y2='15' />
-                </svg>
-              </Search>
+                </SvgIcon>
+              </SearchSignin>
               {currentUser ? (
                 currentUser.photoURL ? (
                   <Profile disableRipple disableFocusRipple aria-label='Current User'>
@@ -129,25 +111,18 @@ const Navbar = ({ Container, history, currentUser }) => {
                   </Profile>
                 )
               ) : (
-                <Signin
+                <SearchSignin
                   disableRipple
                   disableFocusRipple
                   aria-label='Signin'
                   component={Link}
                   to='/signin'>
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    className='SigninIcon'
-                    viewBox='0 0 24 24'
-                    stroke-width='1.5'
-                    fill='none'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'>
+                  <SvgIcon viewBox='0 0 24 24'>
                     <path stroke='none' d='M0 0h24v24H0z' />
                     <circle cx='12' cy='7' r='4' />
                     <path d='M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2' />
-                  </svg>
-                </Signin>
+                  </SvgIcon>
+                </SearchSignin>
               )}
               <CartIcon getShowNav={getShowNav} getNavScrollDown={getNavScrollDown} />
             </DesktopMenu>
