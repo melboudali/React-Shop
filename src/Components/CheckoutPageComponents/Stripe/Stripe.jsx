@@ -27,12 +27,7 @@ const Stripe = ({ CurrentUser, CartTotal }) => {
       ComponentClass='StripeCheckouts'
       stripeKey='pk_test_FrJ9GSBiXNyC8vKmMf3u20Rk'
       // TODO: change this to string latter
-      label={
-        <div>
-          <i className='fab fa-cc-visa icon' />
-          PAY WITH CARD
-        </div>
-      } // text inside the Stripe button
+      label='PAY WITH CARD'
       panelLabel='PAY NOW' // prepended to the amount in the bottom pay button
       amount={CartTotal * 100} // cents
       currency='USD'

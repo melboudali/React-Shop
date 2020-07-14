@@ -8,8 +8,6 @@ import {
 } from '../../Redux/Cart/CartSelectors';
 import CheckoutItem from '../../Components/CheckoutPageComponents/CheckoutItem/CheckoutItem';
 import Stripe from '../../Components/CheckoutPageComponents/Stripe/Stripe';
-import { FaRegCreditCard } from 'react-icons/fa';
-import { IconContext } from 'react-icons';
 import './Checkout.scss';
 import PropTypes from 'prop-types';
 
