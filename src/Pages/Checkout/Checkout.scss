@@ -9,9 +9,15 @@
     color: rgb(209, 209, 209);
     font-weight: 300;
     margin-bottom: 20px;
-    .icon {
-      margin-right: 10px !important;
-      color: rgb(207, 207, 207) !important;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    svg {
+      margin-right: 10px;
+      stroke: rgb(134, 134, 134);
+      width: 26px;
+      height: 26px;
     }
   }
 
@@ -38,7 +44,9 @@
     justify-content: space-between;
     border-bottom: 2px dashed rgb(216, 216, 216);
     text-align: center;
+    letter-spacing: 1px;
     font-weight: 500;
+    font-size: 0.9rem;
 
     .HeaderBlock {
       text-transform: capitalize;
@@ -63,10 +71,10 @@
       background: rgb(53, 53, 53) !important;
       letter-spacing: 2px;
     }
-    span{
+    span {
       font-size: 0.9rem !important;
       background: none !important;
-      .icon{
+      .icon {
         margin-right: 10px;
       }
     }

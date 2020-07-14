@@ -7,15 +7,31 @@ import {
   SelectCartTotal
 } from '../../Redux/Cart/CartSelectors';
 import CheckoutItem from '../../Components/CheckoutPageComponents/CheckoutItem/CheckoutItem';
-import PropTypes from 'prop-types';
-import './Checkout.scss';
 import Stripe from '../../Components/CheckoutPageComponents/Stripe/Stripe';
+import { FaRegCreditCard } from 'react-icons/fa';
+import { IconContext } from 'react-icons';
+import './Checkout.scss';
+import PropTypes from 'prop-types';
 
-const Checkout = ({ CartItems, CartCount, CartTotal }) => {
+const Checkout = ({ CartItems, CartTotal }) => {
   return (
     <div className='CheckoutPage'>
       <h1 className='CheckoutTitle'>
-        <i className='fad fa-credit-card-front icon' />
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          class='icon icon-tabler icon-tabler-credit-card'
+          viewBox='0 0 24 24'
+          strokeWidth='1.5'
+          stroke='#2c3e50'
+          fill='none'
+          strokeLinecap='round'
+          strokeLinejoin='round'>
+          <path stroke='none' d='M0 0h24v24H0z' />
+          <rect x='3' y='5' width='18' height='14' rx='3' />
+          <line x1='3' y1='10' x2='21' y2='10' />
+          <line x1='7' y1='15' x2='7.01' y2='15' />
+          <line x1='11' y1='15' x2='13' y2='15' />
+        </svg>
         Checkout Page
       </h1>
       <div className='CheckoutHeader'>

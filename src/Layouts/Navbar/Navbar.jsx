@@ -61,12 +61,12 @@ const Navbar = ({ Container, history, currentUser }) => {
             <Hamburger disableRipple disableFocusRipple aria-label='Menu' edge='start'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
-                class='HamburgerIcon'
+                className='HamburgerIcon'
                 viewBox='0 0 24 24'
                 stroke-width='1.5'
                 fill='none'
-                stroke-linecap='round'
-                stroke-linejoin='round'>
+                strokeLinecap='round'
+                strokeLinejoin='round'>
                 <path stroke='none' d='M0 0h24v24H0z' />
                 <line x1='4' y1='6' x2='20' y2='6' />
                 <line x1='4' y1='12' x2='20' y2='12' />
@@ -89,12 +89,12 @@ const Navbar = ({ Container, history, currentUser }) => {
               <Search disableRipple disableFocusRipple aria-label='Search' title='Search'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
-                  class='SearchIcon'
+                  className='SearchIcon'
                   viewBox='0 0 24 24'
                   stroke-width='1.5'
                   fill='none'
-                  stroke-linecap='round'
-                  stroke-linejoin='round'>
+                  strokeLinecap='round'
+                  strokeLinejoin='round'>
                   <path stroke='none' d='M0 0h24v24H0z' />
                   <circle cx='10' cy='10' r='7' />
                   <line x1='21' y1='21' x2='15' y2='15' />
@@ -141,8 +141,8 @@ const Navbar = ({ Container, history, currentUser }) => {
                     viewBox='0 0 24 24'
                     stroke-width='1.5'
                     fill='none'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'>
+                    strokeLinecap='round'
+                    strokeLinejoin='round'>
                     <path stroke='none' d='M0 0h24v24H0z' />
                     <circle cx='12' cy='7' r='4' />
                     <path d='M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2' />

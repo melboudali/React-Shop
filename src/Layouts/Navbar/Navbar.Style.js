@@ -15,14 +15,15 @@ const grayColor = css`
 `;
 
 const IconButtonStyle = css`
-  padding: 0 !important;
+  /* padding: 0 !important;
   margin: 0 10px !important;
-  width: 24px !important;
+  width: 24px !important; */
 `;
 
 const svgStyle = css`
   stroke: rgb(85, 85, 85) !important;
   width: 24px !important;
+  height: 24px;
 `;
 
 const backgroundNone = css`
@@ -111,8 +112,6 @@ export const MenuContainer = styled.div`
 `;
 
 export const Search = styled(IconButton)`
-  ${grayColor}
-  ${IconButtonStyle}
   &:hover {
     ${backgroundNone}
   }
@@ -122,8 +121,6 @@ export const Search = styled(IconButton)`
 `;
 
 export const Signin = styled(IconButton)`
-  ${grayColor}
-  ${IconButtonStyle}
   &:hover {
     ${backgroundNone}
   }
@@ -133,7 +130,6 @@ export const Signin = styled(IconButton)`
 `;
 
 export const Profile = styled(IconButton)`
-  ${IconButtonStyle}
   &:hover {
     ${backgroundNone}
     ${MenuContainer} {

@@ -1,7 +1,6 @@
 .CheckoutItem {
   width: 100%;
   display: flex;
-  font-size: 16px;
   align-items: center;
   font-weight: 300;
   border-bottom: 2px dashed rgb(216, 216, 216);
@@ -29,22 +28,20 @@
   }
 
   .quantityControls {
-    color: rgb(71, 71, 71);
-    font-weight: 300;
     padding: 0 10px;
     &:hover {
       cursor: pointer;
     }
   }
 
-  .react-icons {
+  .CheckoutItemIcons {
+    color: rgb(71, 71, 71);
     vertical-align: middle;
+    font-size: 1.2rem;
   }
 
   .disabledReducer {
-    vertical-align: middle;
-    color: rgb(155, 155, 155);
-    font-weight: 300;
+    opacity: 0.5;
     padding: 0 10px;
     &:hover {
       cursor: not-allowed;
