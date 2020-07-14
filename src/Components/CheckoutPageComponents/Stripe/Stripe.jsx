@@ -19,6 +19,7 @@ const Stripe = ({ CurrentUser, CartTotal }) => {
     // });
     console.log(token);
   };
+
   return (
     <StripeCheckout
       name='REACT SHOP' // the pop-in header title
@@ -26,32 +27,26 @@ const Stripe = ({ CurrentUser, CartTotal }) => {
       image={StripeLogo} // the pop-in header image (default none)
       ComponentClass='StripeCheckouts'
       stripeKey='pk_test_FrJ9GSBiXNyC8vKmMf3u20Rk'
-      // TODO: change this to string latter
       label='PAY WITH CARD'
       panelLabel='PAY NOW' // prepended to the amount in the bottom pay button
       amount={CartTotal * 100} // cents
       currency='USD'
       locale='en'
       email={CurrentUser && CurrentUser.email}
-      // Note: Enabling either address option will give the user the ability to
-      // fill out both. Addresses are sent as a second parameter in the token callback.
       shippingAddress
       billingAddress
-      // Note: enabling both zipCode checks and billing or shipping address will
-      // cause zipCheck to be pulled from billing address (set to shipping if none provided).
       zipCode={false}
       allowRememberMe // "Remember Me" option (default true)
       token={onToken} // submit callback
-      // Note: `reconfigureOnUpdate` should be set to true IFF, for some reason
-      // you are using multiple stripe keys
       reconfigureOnUpdate={false}
-      // Note: you can change the event to `onTouchTap`, `onClick`, `onTouchStart`
-      // useful if you're using React-Tap-Event-Plugin
-    ></StripeCheckout>
+    />
   );
 };
 
-Stripe.propTypes = {};
+Stripe.propTypes = {
+  CurrentUser: PropTypes.object,
+  CartTotal: PropTypes.number
+};
 
 const mapStateToProps = createStructuredSelector({
   CurrentUser: SelectCurrentUser,

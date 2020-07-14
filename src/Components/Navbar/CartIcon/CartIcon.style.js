@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import IconButton from '@material-ui/core/IconButton';
 
 export const CartIconContainer = styled.div`
@@ -15,13 +15,16 @@ export const CartIconContainer = styled.div`
 `;
 
 export const Cart = styled(IconButton)`
-  width: 100%;
   &:hover {
     background: none !important;
   }
 `;
 export const CartSvg = styled.svg`
-  stroke: rgb(85, 85, 85) !important;
+  stroke: rgb(85, 85, 85);
   width: 30px;
   height: 30px;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
 `;

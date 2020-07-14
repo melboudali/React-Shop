@@ -7,7 +7,6 @@ import Badge from '@material-ui/core/Badge';
 import { SelectCartItemsCount } from '../../../Redux/Cart/CartSelectors';
 import { CartIconContainer, Cart, CartSvg } from './CartIcon.style';
 import PropTypes from 'prop-types';
-import './CartIcon.scss';
 
 const CartIcon = ({ getShowNav, getNavScrollDown, cartCount }) => {
   const [getShowDropdown, setShowDropdown] = useState(false);
