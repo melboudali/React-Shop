@@ -12,7 +12,6 @@ import ShopPage from './Pages/Shop/Shop';
 import SigninSignupPage from './Pages/SignIn-SingUp/SignInSignUp';
 import CheckoutPage from './Pages/Checkout/Checkout';
 import NotFoundPage from './Pages/404/NotFound';
-import './App.scss';
 import GlobalStyle from './App.style';
 import Styled from 'styled-components';
 
