@@ -1,12 +1,11 @@
 import React, { Fragment } from 'react';
-import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { SelectCartItems } from '../../../Redux/Cart/CartSelectors';
+import { withRouter } from 'react-router-dom';
 import { createStructuredSelector } from 'reselect';
-import Button from '../../SigninPageComponents/SubmitButton/SubmitButton';
+import { SelectCartItems } from '../../../Redux/Cart/CartSelectors';
 import CartItem from '../CartItem/CartItem';
+import Button from '../../SigninPageComponents/SubmitButton/SubmitButton';
 import PropTypes from 'prop-types';
-
 import { CartDropdownContainer, CartContainer, ClassItems, NoItems } from './CartDropdown.Style';
 
 const CartDropdown = ({

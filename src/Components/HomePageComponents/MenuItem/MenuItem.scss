@@ -13,11 +13,11 @@
   }
 
   &::before {
-    background-color: black;
+    background-image: linear-gradient(to top, #000000, #00000000);
     content: '';
-    height: 97%;
+    height: 100%;
     position: absolute;
-    width: 97%;
+    width: 100%;
     z-index: 2;
     opacity: 0;
     -webkit-transition: opacity 0.4s ease-in;
@@ -27,22 +27,21 @@
 
   &:hover {
     cursor: pointer;
-
-    .background-image {
+    .BackgroundImage {
       transform: scale(1.5);
       transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
       // transition: transform 6s cubic-bezier(0, 1.31, 1, 1);
     }
 
-    .content {
+    .Content {
       background-position: 0 0;
     }
 
-    .title {
+    .Title {
       color: rgb(238, 238, 238) !important;
     }
 
-    .subtitle {
+    .Sub {
       color: rgb(163, 163, 163) !important;
     }
 
@@ -51,7 +50,7 @@
     }
   }
 
-  .background-image {
+  .BackgroundImage {
     z-index: 1;
     width: 100%;
     height: 100%;
@@ -59,7 +58,7 @@
     background-size: cover;
   }
 
-  .content {
+  .Content {
     position: absolute;
     left: 1.5%;
     bottom: 1.5%;
@@ -71,7 +70,7 @@
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: none;
     background-image: linear-gradient(32deg, transparent, transparent 50%, #c4c4c4a8 50%, #c4c4c4);
     background-position: 100% 0;
     background-size: 320% 100%;
@@ -79,20 +78,22 @@
     -ms-transition: background 0.5s ease-in;
     transition: background 0.5s ease-in;
 
-    .title {
+    .Title {
       font-weight: bold;
       margin-bottom: 6px;
       font-size: 22px;
       color: #4d4d4d;
+      letter-spacing: 2px;
       -webkit-transition: color 0.5s ease-in;
       -ms-transition: color 0.5s ease-in;
       transition: color 0.5s ease-in;
     }
 
-    .subtitle {
+    .Sub {
       font-weight: lighter;
       font-size: 16px;
       color: rgb(116, 116, 116);
+      letter-spacing: 2px;
       -webkit-transition: color 0.5s ease-in;
       -ms-transition: color 0.5s ease-in;
       transition: color 0.5s ease-in;

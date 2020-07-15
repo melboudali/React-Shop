@@ -31,9 +31,8 @@ export const CheckoutItemContainer = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  width: 16.6%;
+  ${PriceAndQuantity}
   padding: 15px;
-  text-align: center;
   margin: 0;
   img {
     width: 60%;

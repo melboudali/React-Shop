@@ -2,12 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { SelectCurrentCollection } from '../../Redux/Shop/ShopSelectors';
-import CollectionItem from '../../Components/ShopPageComponents/CollectionItem/CollectionItem';
-import NotFound from '../404/NotFound';
 import Grid from '@material-ui/core/Grid';
-import PropTypes from 'prop-types';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from '@material-ui/core/Link';
+import CollectionItem from '../../Components/ShopPageComponents/CollectionItem/CollectionItem';
+import NotFound from '../404/NotFound';
+import PropTypes from 'prop-types';
 import './Collection.scss';
 
 const Collection = ({ CurrentCollection, history }) => {
@@ -22,7 +22,7 @@ const Collection = ({ CurrentCollection, history }) => {
             <polyline points='9 6 15 12 9 18' />
           </svg>
         }
-        aria-label='breadcrumb'>
+        aria-label='Breadcrumb'>
         <Link href='/'>
           <svg viewBox='0 0 24 24'>
             <path stroke='none' d='M0 0h24v24H0z' />
@@ -35,7 +35,7 @@ const Collection = ({ CurrentCollection, history }) => {
         <Link href={`/${paths[1].toLowerCase()}`}>{paths[1]}</Link>
         <span>{CurrentCollection.title.toUpperCase()}</span>
       </Breadcrumbs>
-      <h1 className='title'>
+      <h1 className='Title'>
         <span>{CurrentCollection.title.toUpperCase()}</span>
       </h1>
       <Grid container direction='row' justify='center' alignItems='baseline' spacing={3}>

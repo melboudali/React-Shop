@@ -1,14 +1,14 @@
 import React from 'react';
 import CollectionItem from '../CollectionItem/CollectionItem';
 import { Button, Grid } from '@material-ui/core';
-import { withRouter ,Link } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './CollectionPreview.scss';
 
 const CollectionPreview = ({ title, items, routeName, match }) => {
   return (
     <div className='CollectionPreview'>
-      <h1 className='title'>
+      <h1 className='Title'>
         <span>{title.toUpperCase()}</span>
       </h1>
       <Grid container direction='row' justify='center' alignItems='flex-start' spacing={3}>
@@ -27,7 +27,9 @@ const CollectionPreview = ({ title, items, routeName, match }) => {
 
 CollectionPreview.propTypes = {
   title: PropTypes.string.isRequired,
-  items: PropTypes.array.isRequired
+  items: PropTypes.array.isRequired,
+  routeName: PropTypes.string,
+  match: PropTypes.object
 };
 
 export default withRouter(CollectionPreview);

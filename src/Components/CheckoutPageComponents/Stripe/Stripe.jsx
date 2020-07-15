@@ -17,27 +17,26 @@ const Stripe = ({ CurrentUser, CartTotal }) => {
     //     alert(`We are in business, ${data.email}`);
     //   });
     // });
-    console.log(token);
   };
 
   return (
     <StripeCheckout
-      name='REACT SHOP' // the pop-in header title
+      name='REACT SHOP'
       description={`Your Total is: $${CartTotal}.00`}
-      image={StripeLogo} // the pop-in header image (default none)
+      image={StripeLogo}
       ComponentClass='StripeCheckouts'
-      stripeKey='pk_test_FrJ9GSBiXNyC8vKmMf3u20Rk'
+      stripeKey={process.env.REACT_APP_STRIPE_KEY}
       label='PAY WITH CARD'
-      panelLabel='PAY NOW' // prepended to the amount in the bottom pay button
-      amount={CartTotal * 100} // cents
+      panelLabel='PAY NOW'
+      amount={CartTotal * 100}
       currency='USD'
       locale='en'
       email={CurrentUser && CurrentUser.email}
       shippingAddress
       billingAddress
       zipCode={false}
-      allowRememberMe // "Remember Me" option (default true)
-      token={onToken} // submit callback
+      allowRememberMe
+      token={onToken}
       reconfigureOnUpdate={false}
     />
   );
