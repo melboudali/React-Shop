@@ -7,7 +7,7 @@
   background-color: rgb(245, 245, 245);
   color: rgb(95, 95, 95);
 
-  .imgContainer {
+  .ImgContainer {
     width: 30%;
     background-position: center;
     background-size: cover;
@@ -23,7 +23,7 @@
     padding: 4px;
     text-align: left;
 
-    .closeButton {
+    .CloseButton {
       position: absolute;
       top: 0;
       right: 0;
@@ -41,7 +41,7 @@
       }
     }
 
-    .name {
+    .Name {
       width: 100%;
       font-size: 0.9rem;
       white-space: nowrap;
@@ -49,11 +49,11 @@
       text-overflow: ellipsis;
     }
 
-    .price {
+    .Price {
       font-size: 0.7rem;
     }
 
-    .priceToPay {
+    .Total {
       position: absolute;
       font-size: 0.7rem;
       bottom: 0;

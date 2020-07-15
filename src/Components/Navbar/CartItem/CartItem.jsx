@@ -5,14 +5,11 @@ import './CartItem.scss';
 import PropTypes from 'prop-types';
 
 const CartItem = ({ Item: { id, name, imageUrl, price, quantity }, deleteItem }) => {
-  const deletingItem = () => {
-    deleteItem(id, quantity);
-  };
   return (
     <div className='CartItem'>
-      <div className='imgContainer' style={{ backgroundImage: `url(${imageUrl})` }} />
+      <div className='ImgContainer' style={{ backgroundImage: `url(${imageUrl})` }} />
       <div className='ItemDetails'>
-        <span className='closeButton' onClick={deletingItem}>
+        <span className='CloseButton' onClick={() => deleteItem(id, quantity)}>
           <svg viewBox='0 0 24 24'>
             <path stroke='none' d='M0 0h24v24H0z' />
             <line x1='4' y1='7' x2='20' y2='7' />
@@ -22,11 +19,11 @@ const CartItem = ({ Item: { id, name, imageUrl, price, quantity }, deleteItem })
             <path d='M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3' />
           </svg>
         </span>
-        <span className='name'>{name}</span>
-        <span className='price'>
+        <span className='Name'>{name}</span>
+        <span className='Price'>
           {quantity} x ${price}.00
         </span>
-        <span className='priceToPay'>${quantity * price}.00</span>
+        <span className='Total'>${quantity * price}.00</span>
       </div>
     </div>
   );
