@@ -1,15 +1,16 @@
 import React from 'react';
+import { withRouter, Link } from 'react-router-dom';
 import CollectionItem from '../CollectionItem/CollectionItem';
 import { Button, Grid } from '@material-ui/core';
-import { withRouter, Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import './CollectionPreview.scss';
+import PropTypes from 'prop-types';
 
 const CollectionPreview = ({ title, items, routeName, match }) => {
+  // FIXME: i need to edit this component later.
   return (
     <div className='CollectionPreview'>
       <h1 className='Title'>
-        <span>{title.toUpperCase()}</span>
+        <span>{title}</span>
       </h1>
       <Grid container direction='row' justify='center' alignItems='flex-start' spacing={3}>
         {items
@@ -26,8 +27,8 @@ const CollectionPreview = ({ title, items, routeName, match }) => {
 };
 
 CollectionPreview.propTypes = {
-  title: PropTypes.string.isRequired,
-  items: PropTypes.array.isRequired,
+  title: PropTypes.string,
+  items: PropTypes.array,
   routeName: PropTypes.string,
   match: PropTypes.object
 };

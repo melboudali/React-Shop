@@ -1,5 +1,5 @@
-$sub-color: rgb(73, 73, 73);
 $main-color: rgb(167, 167, 167);
+$sub-color: rgb(73, 73, 73);
 
 @mixin shrinkLabel {
   top: -14px;
@@ -7,11 +7,11 @@ $main-color: rgb(167, 167, 167);
   color: $main-color;
 }
 
-.group {
+.Group {
   position: relative;
   margin: 40px 0;
 
-  .formInput {
+  .FormInput {
     background: none;
     background-color: rgb(249, 249, 249);
     color: $sub-color;
@@ -29,7 +29,7 @@ $main-color: rgb(167, 167, 167);
       outline: none;
     }
 
-    &:focus ~ .formInputLabel {
+    &:focus ~ .FormInputLabel {
       @include shrinkLabel();
     }
   }
@@ -38,7 +38,7 @@ $main-color: rgb(167, 167, 167);
     letter-spacing: 0.3em;
   }
 
-  .formInputLabel {
+  .FormInputLabel {
     color: $sub-color;
     font-size: 16px;
     font-weight: normal;
@@ -48,7 +48,7 @@ $main-color: rgb(167, 167, 167);
     top: 10px;
     transition: 300ms ease all;
 
-    &.shrink {
+    &.Shrink {
       @include shrinkLabel();
     }
   }
