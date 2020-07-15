@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { SelectCartItemsCount } from '../../../Redux/Cart/CartSelectors';
-import CartDropdown from '../CartDropdown/CartDropdown';
-import { CartIconContainer, Cart, CartSvg } from './CartIcon.style';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Badge from '@material-ui/core/Badge';
+import CartDropdown from '../CartDropdown/CartDropdown';
+import { CartIconContainer, Cart, CartSvg } from './CartIcon.style';
 import PropTypes from 'prop-types';
 
 const CartIcon = ({ getShowNav, getNavScrollDown, cartCount }) => {
@@ -19,7 +19,8 @@ const CartIcon = ({ getShowNav, getNavScrollDown, cartCount }) => {
         <Cart
           disableRipple
           disableFocusRipple
-          aria-label='Cart Items'
+          aria-label='Cart'
+          title='Cart'
           onClick={() => setShowDropdown(!getShowDropdown)}>
           <Badge badgeContent={cartCount} max={9}>
             <CartSvg viewBox='0 0 24 24'>
@@ -30,14 +31,12 @@ const CartIcon = ({ getShowNav, getNavScrollDown, cartCount }) => {
             </CartSvg>
           </Badge>
         </Cart>
-        {/* {(getShowNav || getNavScrollDown) && getShowDropdown && ( */}
-          <CartDropdown
-            getShowNav={getShowNav}
-            getNavScrollDown={getNavScrollDown}
-            getShowDropdown={getShowDropdown}
-            closeCart={closeCart}
-          />
-        {/* )} */}
+        <CartDropdown
+          getShowNav={getShowNav}
+          getNavScrollDown={getNavScrollDown}
+          getShowDropdown={getShowDropdown}
+          closeCart={closeCart}
+        />
       </CartIconContainer>
     </ClickAwayListener>
   );

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import IconButton from '@material-ui/core/IconButton';
+import Badge from '@material-ui/core/Badge';
 
 export const CartIconContainer = styled.div`
   background: none;
