@@ -18,7 +18,7 @@ const CheckoutItem = ({ iid, id, name, price, imageUrl, quantity, addItemToCart,
   return (
     <CheckoutItemContainer id={iid}>
       <ImageContainer>
-        <img alt='Item Image' src={imageUrl} />
+        <img alt='Item' src={imageUrl} />
       </ImageContainer>
       <ItemName>{name}</ItemName>
       <ItemQuantity>

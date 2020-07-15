@@ -7,7 +7,6 @@ import NotFound from '../404/NotFound';
 import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
-import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import './Collection.scss';
 
@@ -44,8 +43,9 @@ Collection.propTypes = {
   CurrentCollection: PropTypes.object
 };
 
-const mapStateToProps = (state, otherProps) => ({
-  CurrentCollection: SelectCurrentCollection(otherProps.match.params.collectionRouteName)(state)
+const mapStateToProps = createStructuredSelector({
+  CurrentCollection: (state, otherProps) =>
+    SelectCurrentCollection(otherProps.match.params.collectionRouteName)(state)
 });
 
 export default connect(mapStateToProps)(Collection);

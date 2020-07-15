@@ -10,13 +10,11 @@ import RootReducer from './RootReducer';
 const middlewares = [ReduxThunk];
 
 // remove redux-logger & redux-devtools-extension from production
-const Store = createStore(
+export const Store = createStore(
   RootReducer,
   process.env.NODE_ENV === 'production'
     ? applyMiddleware(...middlewares)
     : composeWithDevTools(applyMiddleware(...middlewares, logger))
 );
 
-const Persistor = persistStore(Store);
-
-export default { Store, Persistor };
+export const Persistor = persistStore(Store);

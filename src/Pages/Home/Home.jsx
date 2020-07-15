@@ -1,31 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { SelectSections } from '../../Redux/Home/HomeSelectors';
 import MenuItem from '../../Components/HomePageComponents/MenuItem/MenuItem';
 import Grid from '@material-ui/core/Grid';
-import './Home.scss';
+import PropTypes from 'prop-types';
 
-const Home = ({ Sections }) => {
-  return (
-    <div className='Home'>
-      <Grid container direction='row' justify='center' alignItems='flex-start'>
-        {Sections.map(({ id, ...Sections }) => (
-          <Grid
-            item
-            key={id}
-            xs={12}
-            sm={id > 2 ? 12 : 6}
-            md={id > 2 ? 12 : 6}
-            lg={id > 3 ? 6 : 4}
-            xl={id > 3 ? 6 : 4}>
-            <MenuItem {...Sections} />
-          </Grid>
-        ))}
+const Home = ({ Sections }) => (
+  <Grid container direction='row' justify='center' alignItems='flex-start'>
+    {Sections.map(({ id, ...Sections }) => (
+      <Grid
+        item
+        key={id}
+        xs={12}
+        sm={id > 2 ? 12 : 6}
+        md={id > 2 ? 12 : 6}
+        lg={id > 3 ? 6 : 4}
+        xl={id > 3 ? 6 : 4}>
+        <MenuItem {...Sections} />
       </Grid>
-    </div>
-  );
-};
+    ))}
+  </Grid>
+);
+
+Home.prototype = { Section: PropTypes.array };
 
 const mapStateToProps = createStructuredSelector({
   Sections: SelectSections

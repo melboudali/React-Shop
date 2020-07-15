@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
-import myStore from '../Redux/Store';
+import { Store } from '../Redux/Store';
 import { setAuthError } from '../Redux/User/UserActions';
 
 const Config = {
@@ -14,8 +14,6 @@ const Config = {
   appId: process.env.REACT_APP_APPID,
   measurementId: process.env.REACT_APP_MESUREMENTID
 };
-
-const { Store } = myStore;
 
 firebase.initializeApp(Config);
 
