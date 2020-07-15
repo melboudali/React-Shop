@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import Snackbar from '@material-ui/core/Snackbar';
-import PropTypes from 'prop-types';
-import './Snackbar.scss';
 import { clearAuthError } from '../../../Redux/User/UserActions';
+import Snackbar from '@material-ui/core/Snackbar';
+import './Snackbar.scss';
+import PropTypes from 'prop-types';
 
 const SnackbarComponent = ({ message = null, clearAuthError }) => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    if (message) setOpen(true);
+    message && setOpen(true);
     setTimeout(() => {
       clearAuthError();
     }, 5000);
   }, [message, clearAuthError]);
 
-  const handleClose = (event, reason) => {
+  const handleClose = (e, reason) => {
     if (reason === 'clickaway') {
       return;
     }
@@ -31,12 +31,7 @@ const SnackbarComponent = ({ message = null, clearAuthError }) => {
       open={open}
       autoHideDuration={5000}
       onClose={handleClose}
-      message={
-        <div className='ErrorMessage'>
-          <i className='fad fa-times-circle errorIcon' />
-          {`${message}`}
-        </div>
-      }
+      message={<div className='ErrorMessage'>{`${message}`}</div>}
       action={
         <div className='CloseBtn' onClick={handleClose}>
           <svg viewBox='0 0 24 24'>
@@ -50,6 +45,6 @@ const SnackbarComponent = ({ message = null, clearAuthError }) => {
   );
 };
 
-SnackbarComponent.propTypes = { message: PropTypes.string };
+SnackbarComponent.propTypes = { message: PropTypes.string, clearAuthError: PropTypes.func };
 
 export default connect(null, { clearAuthError })(SnackbarComponent);

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { setAuthError } from '../../../Redux/User/UserActions';
 import { auth, createUserProfileDoc } from '../../../Utils/Firebase';
+import { setAuthError } from '../../../Redux/User/UserActions';
 import FormInput from '../FormInput/FormInput';
 import SubmitBtn from '../SubmitButton/SubmitButton';
 import './SignUp.scss';
@@ -17,8 +17,8 @@ const SignUp = ({ setAuthError }) => {
 
   const onSubmit = async e => {
     e.preventDefault();
-    const { displayName, email, password, confirmPassword } = getUser;
-    if (password !== confirmPassword) {
+    const { name, email, password, confirm_password } = getUser;
+    if (password !== confirm_password) {
       setUser(null);
       setAuthError("Passwods don't match!");
       return;
@@ -26,25 +26,27 @@ const SignUp = ({ setAuthError }) => {
 
     try {
       const { user } = await auth.createUserWithEmailAndPassword(email, password);
-      await createUserProfileDoc(user, { displayName });
+      await createUserProfileDoc(user, { name });
       setUser(null);
     } catch (err) {
       setUser(null);
-      setAuthError('The email address is already in use by another account.');
+      setAuthError(err.message);
     }
   };
 
   return (
     <div className='SignUp'>
-      <h2 className='title'>I do not have an account</h2>
-      <span className='subtitle'>Sign up with your email and password</span>
-      <form className='SignUpForm' onSubmit={onSubmit}>
+      <h2 className='Title'>i do not have an account</h2>
+      <span className='Subtitle'>sign up with your email and password</span>
+      <form onSubmit={onSubmit}>
         <FormInput
           type='text'
-          id='displayName'
-          name='displayName'
-          label='Display Name'
-          value={(getUser && getUser.displayName) || ''}
+          id='name'
+          name='name'
+          label='Name'
+          value={(getUser && getUser.name) || ''}
+          autoComplete='on'
+          required
           handleChange={onHandlechange}
         />
         <FormInput
@@ -53,6 +55,8 @@ const SignUp = ({ setAuthError }) => {
           name='email'
           label='Email'
           value={(getUser && getUser.email) || ''}
+          autoComplete='on'
+          required
           handleChange={onHandlechange}
         />
         <FormInput
@@ -61,18 +65,30 @@ const SignUp = ({ setAuthError }) => {
           name='password'
           label='Password'
           value={(getUser && getUser.password) || ''}
+          autoComplete='on'
+          required
           handleChange={onHandlechange}
         />
         <FormInput
           type='password'
-          id='confirmPassword'
-          name='confirmPassword'
+          id='confirm_password'
+          name='confirm_password'
           label='Confirm Password'
-          value={(getUser && getUser.confirmPassword) || ''}
+          value={(getUser && getUser.confirm_password) || ''}
+          autoComplete='on'
+          required
           handleChange={onHandlechange}
         />
-        <div className='buttons'>
-          <SubmitBtn type='submit'>Sign Up</SubmitBtn>
+        <div className='Buttons'>
+          <SubmitBtn type='submit'>
+            <svg viewBox='0 0 24 24'>
+              <path stroke='none' d='M0 0h24v24H0z' />
+              <circle cx='9' cy='7' r='4' />
+              <path d='M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2' />
+              <path d='M16 11h6m-3 -3v6' />
+            </svg>
+            sign up with email
+          </SubmitBtn>
         </div>
       </form>
     </div>

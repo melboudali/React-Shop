@@ -26,9 +26,9 @@ const AnnouncementContainer = styled.div`
     position: absolute;
     margin: 0;
     padding: 0;
+    font-size: 0.9rem;
     top: 50%;
     left: 50%;
-    font-size: 0.9rem;
     color: rgb(243, 243, 243);
     transform: translate(-50%, -50%);
   }

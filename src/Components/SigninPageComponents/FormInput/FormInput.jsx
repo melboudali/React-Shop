@@ -1,30 +1,23 @@
 import React from 'react';
-import './FormInput.scss';
+import { Group, Input, InputLabel } from './FormInput.Style';
 import PropTypes from 'prop-types';
 
 const FormInput = ({ handleChange, label, value, id, ...otherProps }) => (
-  <div className='Group' title={label}>
-    <input
-      className='FormInput'
-      value={value}
-      onChange={handleChange}
-      autoComplete='on'
-      required
-      {...otherProps}
-    />
-    {label ? (
-      <label htmlFor={id} className={`${value ? 'Shrink' : ''} FormInputLabel`}>
+  <Group title={label}>
+    <Input value={value} onChange={handleChange} {...otherProps} />
+    {label && (
+      <InputLabel htmlFor={id} value={value}>
         {label}
-      </label>
-    ) : null}
-  </div>
+      </InputLabel>
+    )}
+  </Group>
 );
 
 FormInput.propTypes = {
-  handleChange: PropTypes.func.isRequired,
-  label: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired
+  handleChange: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired
 };
 
 export default FormInput;

@@ -88,6 +88,7 @@ const Navbar = ({ Container, history, currentUser }) => {
                     <img
                       src={profileImage}
                       alt='User'
+                      title={currentUser.displayName}
                       onError={() =>
                         setProfileImage('https://image.flaticon.com/icons/png/512/64/64572.png')
                       }
