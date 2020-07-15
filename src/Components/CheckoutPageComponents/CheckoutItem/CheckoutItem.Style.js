@@ -22,8 +22,8 @@ export const CheckoutItemContainer = styled.div`
   background-color: ${({ id }) => (id % 2 === 0 ? '#eee' : '#fff')};
   width: 100%;
   display: flex;
-  font-size: 1rem;
   align-items: center;
+  font-size: 1rem;
   font-weight: 300;
   border-bottom: 2px dashed rgb(216, 216, 216);
   border-right: 2px dashed rgb(216, 216, 216);

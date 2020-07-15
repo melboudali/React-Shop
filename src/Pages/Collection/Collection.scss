@@ -2,18 +2,32 @@
   margin-bottom: 50px;
 
   .Breadcrumbs {
-    margin-top: 10px;
+    margin: 20px 0 30px;
     color: rgb(85, 85, 85);
     font-size: 0.7rem;
     font-weight: 500;
     letter-spacing: 3px;
     text-decoration: none;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      stroke: rgb(143, 143, 143);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      &:nth-child(1) {
+        margin-right: 5px;
+        width: 16px;
+        height: 16px;
+      }
+    }
     a {
       color: rgb(143, 143, 143);
       text-decoration: none;
-      .icon{
-        margin-right: 5px;
-      }
+      display: flex;
+      vertical-align: middle;
     }
   }
 
