@@ -1,8 +1,7 @@
 import React from 'react';
 import './NotFound.scss';
-import PropTypes from 'prop-types';
 
-const NotFound = props => {
+const NotFound = () => {
   return (
     <div className='NotFound'>
       <h1 className='ErrorNumber'>404</h1>
@@ -10,7 +9,5 @@ const NotFound = props => {
     </div>
   );
 };
-
-NotFound.propTypes = {};
 
 export default NotFound;
