@@ -1,5 +1,8 @@
 .CollectionPreview {
   margin-bottom: 50px;
+  &:last-child {
+    margin-bottom: 10px;
+  }
 
   .Title {
     margin: 20px 0 40px;

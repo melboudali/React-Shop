@@ -12,6 +12,7 @@ import ShopPage from './Pages/Shop/Shop';
 import SigninSignupPage from './Pages/SignIn-SingUp/SignInSignUp';
 import CheckoutPage from './Pages/Checkout/Checkout';
 import NotFoundPage from './Pages/404/NotFound';
+import Footer from './Layouts/Footer/Footer';
 import GlobalStyle from './App.style';
 import Styled from 'styled-components';
 
@@ -54,6 +55,7 @@ const App = ({ setCurrentUser }) => {
           <Route exact path='*' component={NotFoundPage} />
         </Switch>
       </Container>
+      <Footer/>
     </Fragment>
   );
 };

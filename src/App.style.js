@@ -2,7 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   html {
-    min-height: '100%';
+    position: relative;
+    min-height: 100%;
     scroll-behavior: smooth;
     overflow-y: scroll;
   };
@@ -13,7 +14,8 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    padding: 0;
+    /* Footer height */
+    padding: 0 0 60px 0;
     font-family: 'Roboto' !important;
     background-color: rgb(249, 249, 249);
   };
