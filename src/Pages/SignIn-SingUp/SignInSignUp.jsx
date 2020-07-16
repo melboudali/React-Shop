@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import Grid from '@material-ui/core/Grid';
 import SignIn from '../../Components/SigninPageComponents/SignIn/SignIn';
 import SignUp from '../../Components/SigninPageComponents/SignUP/SignUp';
@@ -29,8 +30,8 @@ SignInSignUp.propTypes = {
   authErrors: PropTypes.array.isRequired
 };
 
-const mapStateToProps = state => ({
-  authErrors: SelectAuthErrors(state)
+const mapStateToProps = createStructuredSelector({
+  authErrors: SelectAuthErrors
 });
 
 export default connect(mapStateToProps)(SignInSignUp);

@@ -1,13 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import {
-  SelectCartItems,
-  SelectCartItemsCount,
-  SelectCartTotal
-} from '../../Redux/Cart/CartSelectors';
-import CheckoutItem from '../../Components/CheckoutPageComponents/CheckoutItem/CheckoutItem';
+import { SelectCartItems, SelectCartTotal } from '../../Redux/Cart/CartSelectors';
 import Stripe from '../../Components/CheckoutPageComponents/Stripe/Stripe';
+import CheckoutItem from '../../Components/CheckoutPageComponents/CheckoutItem/CheckoutItem';
 import './Checkout.scss';
 import PropTypes from 'prop-types';
 
@@ -42,9 +38,17 @@ const Checkout = ({ CartItems, CartTotal }) => {
         </div>
       </div>
       {CartItems.length ? (
-        CartItems.map((CartItem, id) => <CheckoutItem key={id} iid={id} {...CartItem} />)
+        <Fragment>
+          {CartItems.map((CartItem, id) => (
+            <CheckoutItem key={id} iid={id} {...CartItem} />
+          ))}
+          <div className='Stripe'>
+            <Stripe />
+          </div>
+          <div className='Total'>total: ${CartTotal}.00</div>
+        </Fragment>
       ) : (
-        <div className='noItemsFound'>
+        <div className='NoItemsFound'>
           <svg className='SvgIcon' viewBox='0 0 24 24'>
             <path stroke='none' d='M0 0h24v24H0z' />
             <polyline points='7 10 12 4 17 10' />
@@ -54,11 +58,6 @@ const Checkout = ({ CartItems, CartTotal }) => {
           no roducts in the cart.
         </div>
       )}
-      <div className='Stripe'>
-        <Stripe />
-      </div>
-
-      <div className='total'>Total: ${CartTotal}.00</div>
     </div>
   );
 };

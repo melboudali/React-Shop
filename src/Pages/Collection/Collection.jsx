@@ -2,13 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { SelectCurrentCollection } from '../../Redux/Shop/ShopSelectors';
-import Grid from '@material-ui/core/Grid';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import CollectionItem from '../../Components/ShopPageComponents/CollectionItem/CollectionItem';
 import NotFound from '../404/NotFound';
-import PropTypes from 'prop-types';
 import './Collection.scss';
+import PropTypes from 'prop-types';
 
 const Collection = ({ CurrentCollection, history }) => {
   const paths = history.location.pathname.toUpperCase().split('/');
@@ -30,13 +30,13 @@ const Collection = ({ CurrentCollection, history }) => {
             <path d='M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7' />
             <path d='M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6' />
           </svg>
-          HOME
+          home
         </Link>
         <Link href={`/${paths[1].toLowerCase()}`}>{paths[1]}</Link>
-        <span>{CurrentCollection.title.toUpperCase()}</span>
+        <span>{CurrentCollection.title}</span>
       </Breadcrumbs>
       <h1 className='Title'>
-        <span>{CurrentCollection.title.toUpperCase()}</span>
+        <span>{CurrentCollection.title}</span>
       </h1>
       <Grid container direction='row' justify='center' alignItems='baseline' spacing={3}>
         {CurrentCollection.items.map(item => (
