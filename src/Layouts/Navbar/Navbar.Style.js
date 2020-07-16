@@ -1,14 +1,6 @@
 import styled, { css } from 'styled-components';
 import { AppBar, Typography, IconButton, Toolbar } from '@material-ui/core';
-import MediaQueries from '../../Config/StyledComponents';
-
-const {
-  extraSmallDevices,
-  smallDevices,
-  mediumDevices,
-  largeDevices,
-  extraLargeDevices
-} = MediaQueries;
+import { largeDevices, extraLargeDevices } from '../../Config/StyledComponents';
 
 const backgroundNone = css`
   background: none !important;
