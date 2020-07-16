@@ -5,7 +5,8 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     min-height: 100%;
     scroll-behavior: smooth;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
+    overflow-y: overlay;
   };
 
   * {
@@ -15,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     /* Footer height */
-    padding: 0 0 60px 0;
+    padding: 0 0 50px 0;
     font-family: 'Roboto' !important;
     background-color: rgb(249, 249, 249);
   };

@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { SelectSections } from '../../Redux/Home/HomeSelectors';
-import MenuItem from '../../Components/HomePageComponents/MenuItem/MenuItem';
 import Grid from '@material-ui/core/Grid';
+import MenuItem from '../../Components/HomePageComponents/MenuItem/MenuItem';
 import PropTypes from 'prop-types';
 
 const Home = ({ Sections }) => (
@@ -23,7 +23,7 @@ const Home = ({ Sections }) => (
   </Grid>
 );
 
-Home.prototype = { Section: PropTypes.array };
+Home.prototype = { Sections: PropTypes.array };
 
 const mapStateToProps = createStructuredSelector({
   Sections: SelectSections

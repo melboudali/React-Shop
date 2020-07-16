@@ -13,7 +13,7 @@ import PropTypes from 'prop-types';
 const Collection = ({ CurrentCollection, history }) => {
   const paths = history.location.pathname.toUpperCase().split('/');
   return CurrentCollection ? (
-    <div className='CollectionPreview'>
+    <div className='Collection'>
       <Breadcrumbs
         className='Breadcrumbs'
         separator={

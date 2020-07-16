@@ -1,5 +1,5 @@
-.CollectionPreview {
-  margin-bottom: 50px;
+.Collection {
+  margin-bottom: 30px;
 
   .Breadcrumbs {
     margin: 20px 0 30px;
@@ -7,6 +7,7 @@
     font-size: 0.7rem;
     font-weight: 500;
     letter-spacing: 3px;
+    text-transform: uppercase;
     text-decoration: none;
 
     svg {
@@ -36,7 +37,8 @@
     text-align: center;
     position: relative;
     width: 100%;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
     &::after {
       content: '';
       width: 100%;
@@ -63,13 +65,13 @@
     }
     span {
       color: rgb(249, 249, 249) !important;
-      font-weight: 600;
+      font-weight: bold;
       padding: 0 20px;
+      background-color: rgb(49, 49, 49) !important;
+      max-width: 70%;
       position: relative;
       z-index: 1;
-      background-color: rgb(49, 49, 49) !important;
       display: inline-block;
-      max-width: 70%;
       border-radius: 5px;
       -webkit-box-shadow: 3px 3px 0px 2px rgb(173, 173, 173);
       -moz-box-shadow: 3px 3px 0px 2px rgb(173, 173, 173);
