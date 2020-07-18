@@ -25,7 +25,9 @@ import PropTypes from 'prop-types';
 const Navbar = ({ Container, history, currentUser }) => {
   const [getShowNav, setShowNav] = useState(true);
   const [getNavScrollDown, setNavScrollDown] = useState(false);
-  const [profileImage, setProfileImage] = useState('');
+  const [profileImage, setProfileImage] = useState(
+    'https://image.flaticon.com/icons/png/512/64/64572.png'
+  );
 
   useEffect(() => {
     let windowOffset = 0;
@@ -43,10 +45,7 @@ const Navbar = ({ Container, history, currentUser }) => {
       }
       windowOffset = window.pageYOffset;
     };
-    //TODO: profile image i need to change this image later
-    currentUser
-      ? setProfileImage(currentUser.photoURL)
-      : setProfileImage('https://image.flaticon.com/icons/png/512/64/64572.png');
+    currentUser && setProfileImage(currentUser.imageURL);
   }, [currentUser]);
 
   return (
@@ -83,34 +82,22 @@ const Navbar = ({ Container, history, currentUser }) => {
                 </SvgIcon>
               </SearchSignin>
               {currentUser ? (
-                currentUser.photoURL ? (
-                  <Profile disableRipple disableFocusRipple aria-label='Current User'>
-                    <img
-                      src={profileImage}
-                      alt='User'
-                      title={currentUser.displayName}
-                      onError={() =>
-                        setProfileImage('https://image.flaticon.com/icons/png/512/64/64572.png')
-                      }
-                    />
-                    <MenuContainer>
-                      <Menu>
-                        <li onClick={() => history.push('/profile')}>MY PROFILE</li>
-                        <li onClick={() => auth.signOut()}>SIGN OUT</li>
-                      </Menu>
-                    </MenuContainer>
-                  </Profile>
-                ) : (
-                  <Profile disableRipple disableFocusRipple aria-label='Current User'>
-                    <img src='https://image.flaticon.com/icons/png/512/64/64572.png' alt='User' />
-                    <MenuContainer>
-                      <Menu>
-                        <li onClick={() => history.push('/profile')}>MY PROFILE</li>
-                        <li onClick={() => auth.signOut()}>SIGN OUT</li>
-                      </Menu>
-                    </MenuContainer>
-                  </Profile>
-                )
+                <Profile disableRipple disableFocusRipple aria-label='Current User'>
+                  <img
+                    src={profileImage}
+                    alt='User'
+                    title={currentUser.displayName}
+                    onError={() =>
+                      setProfileImage('https://image.flaticon.com/icons/png/512/64/64572.png')
+                    }
+                  />
+                  <MenuContainer>
+                    <Menu>
+                      <li onClick={() => history.push('/profile')}>MY PROFILE</li>
+                      <li onClick={() => auth.signOut()}>SIGN OUT</li>
+                    </Menu>
+                  </MenuContainer>
+                </Profile>
               ) : (
                 <SearchSignin
                   disableRipple

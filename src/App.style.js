@@ -5,8 +5,8 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     min-height: 100%;
     scroll-behavior: smooth;
-    /* overflow-y: scroll; */
-    overflow-y: overlay;
+    overflow-y: scroll;
+    /* overflow-y: overlay; */
   };
 
   * {

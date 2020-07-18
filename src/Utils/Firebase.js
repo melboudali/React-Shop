@@ -63,7 +63,9 @@ export const createUserProfileDoc = async (userAuth, additionalData) => {
       await userRef.set({
         displayName,
         email,
-        photoURL,
+        imageURL: photoURL
+          ? photoURL
+          : 'https://cactusthemes.com/blog/wp-content/uploads/2018/01/tt_avatar_small.jpg',
         createdAt: new Date(),
         ...additionalData
       });
