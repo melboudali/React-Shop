@@ -35,6 +35,9 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "resolutions": {
+    "**/**/lodash": "^4.17.19"
+  },
   "browserslist": {
     "production": [
       ">0.2%",

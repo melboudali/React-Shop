@@ -10,4 +10,14 @@ const AddCollectionAndDocs = async (CollectionKey, CollectionObject) => {
   return await Batch.commit();
 };
 
+// To use the function above you need this
+//  useEffect(() => {
+//    (async function () {
+//      AddCollectionAndDocs(
+//        'Collections',
+//        Collections.map(({ title, items }) => ({ title, items }))
+//      );
+//    })();
+//  });
+
 export default AddCollectionAndDocs;
