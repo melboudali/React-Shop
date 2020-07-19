@@ -1,8 +1,13 @@
 import { firestore } from './Firebase';
 
-const AddCollectionAndDocs = (CollectionKey, CollectionObject) => {
+const AddCollectionAndDocs = async (CollectionKey, CollectionObject) => {
   const CollectionRef = firestore.collection(CollectionKey);
-  console.log(CollectionRef);
+  const Batch = firestore.batch();
+  CollectionObject.forEach(Obj => {
+    const ObjectRef = CollectionRef.doc();
+    Batch.set(ObjectRef, Obj);
+  });
+  return await Batch.commit();
 };
 
 export default AddCollectionAndDocs;

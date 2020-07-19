@@ -9,7 +9,16 @@ import CollectionPreview from '../CollectionPreview/CollectionPreview';
 import PropTypes from 'prop-types';
 
 const CollectionOverview = ({ Collections }) => {
-  useEffect(() => AddCollectionAndDocs('Collections', Collections), []);
+  useEffect(() => {
+    // Create an scoped async function in the hook
+    (async function () {
+      AddCollectionAndDocs(
+        'Collections',
+        Collections.map(({ title, items }) => ({ title, items }))
+      );
+    })();
+  });
+
   return (
     <div style={{ width: '100%' }}>
       {Collections.map(({ id, ...Collections }) => (
