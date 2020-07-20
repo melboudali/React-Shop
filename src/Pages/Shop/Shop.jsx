@@ -9,7 +9,6 @@ const Shop = ({ match }) => {
   useEffect(() => {
     (async () => {
       ConvertCollectionsToMap();
-      console.log(await ConvertCollectionsToMap());
     })();
   }, []);
   return (
