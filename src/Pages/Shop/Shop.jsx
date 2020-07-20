@@ -22,7 +22,10 @@ const Shop = ({ match, updateCollections, isLoading }) => {
   return (
     <Fragment>
       <Route exact path={`${match.path}`} component={isLoading ? Loading : CollectionOverview} />
-      <Route path={`${match.path}/:collectionRouteName`} component={Collection} />
+      <Route
+        path={`${match.path}/:collectionRouteName`}
+        component={isLoading ? Loading : Collection}
+      />
     </Fragment>
   );
 };

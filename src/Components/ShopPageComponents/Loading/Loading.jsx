@@ -20,10 +20,10 @@ const AnimatedSvg = styled.svg`
 `;
 
 const Header = styled.h1`
-  font-size: 1.2rem;
-  color: rgb(49, 49, 49);
-  font-weight: bold;
-  letter-spacing: 3px;
+  font-size: 1.3rem;
+  color: #afafaf;
+  font-weight: 300;
+  letter-spacing: 5px;
   text-transform: uppercase;
 `;
 
@@ -71,7 +71,7 @@ const Loading = () => {
           />
         </circle>
       </AnimatedSvg>
-      <Header>loading ...</Header>
+      <Header>loading</Header>
     </LoadingContainer>
   );
 };
