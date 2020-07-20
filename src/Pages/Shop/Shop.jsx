@@ -8,7 +8,8 @@ import PropTypes from 'prop-types';
 const Shop = ({ match }) => {
   useEffect(() => {
     (async () => {
-      ConvertCollectionsToMap();
+      const coco = ConvertCollectionsToMap();
+      console.log(coco);
     })();
   }, []);
   return (

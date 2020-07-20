@@ -1,6 +1,6 @@
 import { firestore } from './Firebase';
 
-const ConvertCollectionsToMap = async () => {
+const ConvertCollectionsToMap = () => {
   const CollectionRef = firestore.collection('Collections');
   CollectionRef.onSnapshot(async snapShot => {
     const ConvertedCollection = snapShot.docs.map(doc => {
@@ -12,10 +12,9 @@ const ConvertCollectionsToMap = async () => {
         items
       };
     });
-    return ConvertedCollection.reduce((accumulator, collection) => {
-      accumulator[collection.title.toLowerCase()] = collection;
-      console.log(accumulator);
-      return accumulator;
+    return ConvertedCollection.reduce((Accumulator, Collection) => {
+      Accumulator[Collection.title.toLowerCase()] = Collection;
+      return Accumulator;
     }, {});
   });
 };
