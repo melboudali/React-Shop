@@ -11,8 +11,8 @@ const LoadingContainer = styled.div`
 `;
 
 const AnimatedSvg = styled.svg`
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   margin: auto;
   display: block;
   background: none;
@@ -20,8 +20,8 @@ const AnimatedSvg = styled.svg`
 `;
 
 const Header = styled.h1`
-  font-size: 1.3rem;
-  color: #afafaf;
+  font-size: 0.9rem;
+  color: rgb(49, 49, 49);
   font-weight: 300;
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -36,7 +36,7 @@ const Loading = () => {
           cy='50'
           r='32'
           strokeWidth='3'
-          stroke='#000000'
+          stroke='rgb(49, 49, 49)'
           strokeDasharray='50.26548245743669 50.26548245743669'
           fill='none'
           strokeLinecap='round'
@@ -55,7 +55,7 @@ const Loading = () => {
           cy='50'
           r='28'
           strokeWidth='3'
-          stroke='#aeaeae'
+          stroke='rgb(173, 173, 173)'
           strokeDasharray='43.982297150257104 43.982297150257104'
           strokeDashoffset='43.982297150257104'
           fill='none'
