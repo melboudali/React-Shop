@@ -1,7 +1,6 @@
 import { firestore } from '../../Utils/Firebase';
 import {
   SET_COLLECTIONS_LOADING,
-  ADD_DATA_TO_FIREBASE,
   UPDATE_COLLECTIONS,
   SET_COLLECTIONS_ERROR
 } from './ShopTypes';
