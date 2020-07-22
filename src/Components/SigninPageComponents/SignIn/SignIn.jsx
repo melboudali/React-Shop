@@ -19,18 +19,18 @@ const SignIn = ({ setAuthError }) => {
   const onEmailChange = e => setEmail(e.target.value);
   const onPasswordChange = e => setPassword(e.target.value);
 
-  const ClearInputs = () => {
-    setEmail('');
-    setPassword('');
-  };
+  // const ClearInputs = () => {
+  //   setEmail('');
+  //   setPassword('');
+  // };
 
   const onSubmitHandler = async e => {
     e.preventDefault();
     try {
       await auth.signInWithEmailAndPassword(getEmail, getPassword);
-      ClearInputs();
+      // ClearInputs();
     } catch (error) {
-      ClearInputs();
+      // ClearInputs();
       setAuthError(error.message);
     }
   };
@@ -46,7 +46,7 @@ const SignIn = ({ setAuthError }) => {
           label='Email'
           id='email'
           value={getEmail}
-          autoComplete='true'
+          autoComplete='email'
           required
           handleChange={onEmailChange}
         />
@@ -56,7 +56,7 @@ const SignIn = ({ setAuthError }) => {
           label='Password'
           id='password'
           value={getPassword}
-          autoComplete='true'
+          autoComplete='new-password'
           required
           handleChange={onPasswordChange}
         />

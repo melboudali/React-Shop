@@ -2,9 +2,9 @@ import React from 'react';
 import { Group, Input, InputLabel } from './FormInput.Style';
 import PropTypes from 'prop-types';
 
-const FormInput = ({ handleChange, label, value, id, autoComplete, ...otherProps }) => (
+const FormInput = ({ id, label, value, handleChange, ...others }) => (
   <Group title={label}>
-    <Input value={value} onChange={handleChange} autoComplete={autoComplete} {...otherProps} />
+    <Input id={id} label={label} value={value} onChange={handleChange} {...others} />
     {label && (
       <InputLabel htmlFor={id} value={value}>
         {label}
