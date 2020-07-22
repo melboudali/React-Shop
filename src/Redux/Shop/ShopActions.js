@@ -1,5 +1,10 @@
 import { firestore } from '../../Utils/Firebase';
-import { SET_COLLECTIONS_LOADING, UPDATE_COLLECTIONS, SET_COLLECTIONS_ERROR } from './ShopTypes';
+import {
+  SET_COLLECTIONS_LOADING,
+  ADD_DATA_TO_FIREBASE,
+  UPDATE_COLLECTIONS,
+  SET_COLLECTIONS_ERROR
+} from './ShopTypes';
 
 const setLoading = loading => ({ type: SET_COLLECTIONS_LOADING, payload: loading });
 const setError = errorMessage => ({ type: SET_COLLECTIONS_ERROR, payload: errorMessage });
