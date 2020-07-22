@@ -2,6 +2,7 @@ import { SET_CURRENT_USER, SET_AUTH_ERROR, CLEAR_AUTH_ERROR } from './UserTypes'
 
 const INITIAL_STATE = {
   currentUser: null,
+  authLoading: false,
   authErrors: []
 };
 

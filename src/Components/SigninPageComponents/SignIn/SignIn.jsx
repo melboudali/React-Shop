@@ -46,7 +46,7 @@ const SignIn = ({ setAuthError }) => {
           label='Email'
           id='email'
           value={getEmail}
-          autoComplete
+          autoComplete='true'
           required
           handleChange={onEmailChange}
         />
@@ -56,7 +56,7 @@ const SignIn = ({ setAuthError }) => {
           label='Password'
           id='password'
           value={getPassword}
-          autoComplete
+          autoComplete='true'
           required
           handleChange={onPasswordChange}
         />

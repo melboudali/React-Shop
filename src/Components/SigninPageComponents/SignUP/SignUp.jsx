@@ -45,7 +45,7 @@ const SignUp = ({ setAuthError }) => {
           name='name'
           label='Name'
           value={(getUser && getUser.name) || ''}
-          autoComplete='on'
+          autoComplete='true'
           required
           handleChange={onHandlechange}
         />
@@ -55,7 +55,7 @@ const SignUp = ({ setAuthError }) => {
           name='email'
           label='Email'
           value={(getUser && getUser.email) || ''}
-          autoComplete='on'
+          autoComplete='true'
           required
           handleChange={onHandlechange}
         />
@@ -65,7 +65,7 @@ const SignUp = ({ setAuthError }) => {
           name='password'
           label='Password'
           value={(getUser && getUser.password) || ''}
-          autoComplete='on'
+          autoComplete='true'
           required
           handleChange={onHandlechange}
         />
@@ -75,7 +75,7 @@ const SignUp = ({ setAuthError }) => {
           name='confirm_password'
           label='Confirm Password'
           value={(getUser && getUser.confirm_password) || ''}
-          autoComplete='on'
+          autoComplete='true'
           required
           handleChange={onHandlechange}
         />
