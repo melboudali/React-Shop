@@ -19,18 +19,11 @@ const SignIn = ({ setAuthError }) => {
   const onEmailChange = e => setEmail(e.target.value);
   const onPasswordChange = e => setPassword(e.target.value);
 
-  // const ClearInputs = () => {
-  //   setEmail('');
-  //   setPassword('');
-  // };
-
   const onSubmitHandler = async e => {
     e.preventDefault();
     try {
       await auth.signInWithEmailAndPassword(getEmail, getPassword);
-      // ClearInputs();
     } catch (error) {
-      // ClearInputs();
       setAuthError(error.message);
     }
   };

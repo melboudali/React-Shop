@@ -19,7 +19,6 @@ const SignUp = ({ setAuthError }) => {
     e.preventDefault();
     const { name, email, password, confirm_password } = getUser;
     if (password !== confirm_password) {
-      // setUser(null);
       setAuthError("Passwods don't match!");
       return;
     }
@@ -27,9 +26,7 @@ const SignUp = ({ setAuthError }) => {
     try {
       const { user } = await auth.createUserWithEmailAndPassword(email, password);
       await createUserProfileDoc(user, { name });
-      // setUser(null);
     } catch (err) {
-      // setUser(null);
       setAuthError(err.message);
     }
   };
