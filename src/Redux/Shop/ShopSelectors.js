@@ -4,7 +4,7 @@ const SelectShop = state => state.Shop;
 
 export const SelectCollections = createSelector([SelectShop], Shop => Shop.Collections);
 
-export const SelectLoading = createSelector([SelectShop], Shop => Shop.loading);
+export const SelectLoading = createSelector([SelectShop], Shop => Shop.Loading);
 
 export const SelectCollectionPreview = createSelector([SelectCollections], Collections =>
   Object.keys(Collections).map(key => Collections[key])
