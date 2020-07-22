@@ -26,6 +26,7 @@ export const updateCollections = () => async dispatch => {
     }, {});
     dispatch({ type: UPDATE_COLLECTIONS, payload: CollectionsObject });
   } catch (error) {
+    // TODO: handle this later (show error)
     dispatch(setError(error.message));
     console.log(error.message);
   }
