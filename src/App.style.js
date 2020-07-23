@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
     /* Footer height */
     padding: 0 0 50px 0;
     font-family: 'Roboto' !important;
-    background-color: rgb(249, 249, 249);
+    background-color: rgb(244, 244, 244);
   };
 
   /* ScrollBar */

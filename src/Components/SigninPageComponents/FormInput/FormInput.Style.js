@@ -49,6 +49,6 @@ export const Input = styled.input`
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active {
-    box-shadow: 0 0 0 30px rgb(249, 249, 249) inset !important;
+    box-shadow: 0 0 0 30px rgb(244, 244, 244) inset !important;
   }
 `;
