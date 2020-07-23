@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 const CollectionItem = ({ item, item: { name, price, imageUrl }, addItemToCart }) => {
   //FIXME: i need to edit this component later
   return (
-    <Grid item xs={12} sm={6} md={3} lg={3} xl={3}>
+    <Grid item xs={12} sm={6} md={3} lg={2} xl={2}>
       <div className='CollectionItem'>
         <div className='ImageContainer'>
           <Button className='AddToCart' onClick={() => addItemToCart(item)}>
