@@ -52,15 +52,54 @@
   }
 
   .SeeMore {
-    margin: 30px 40% 0 40%;
-    width: 20%;
+    margin: 50px 35% 0 35%;
+    width: 30%;
+    height: 40px;
+    letter-spacing: 10px;
     text-align: center;
-    background-color: rgb(160, 160, 160);
-    color: #fff;
-    transition: all 0.6s;
+    background-color: rgb(66, 66, 66);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: all 2s;
+    &:after,
+    &:before {
+      content: ' ';
+      width: 50px;
+      height: 10px;
+      position: absolute;
+      transition: all 1s;
+    }
+    &:after {
+      top: -1px;
+      left: -1px;
+      border-top: 4px solid rgb(255, 255, 255);
+      border-left: 4px solid black;
+    }
+    &:before {
+      bottom: -1px;
+      right: -1px;
+      border-bottom: 4px solid rgb(255, 255, 255);
+      border-right: 4px solid black;
+    }
     &:hover {
-      background-color: rgb(231, 231, 231);
-      color: rgb(116, 116, 116);
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      background-color: white;
+      color: rgb(39, 39, 39);
+      letter-spacing: 5px;
+      &:after {
+        border-top: 4px solid rgb(0, 0, 0);
+      }
+      &:before {
+        border-bottom: 4px solid rgb(0, 0, 0);
+      }
+      &:before,
+      &:after {
+        width: 101%;
+        height: 101%;
+      }
     }
   }
 }
