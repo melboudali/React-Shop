@@ -2,13 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { SelectAllCollections } from '../../../Redux/Shop/ShopSelectors';
-import CollectionItemsContainer from '../CollectionItemContainer/CollectionItemsContainer';
+import CollectionsContainer from './CollectionsContainer/CollectionsContainer';
 import PropTypes from 'prop-types';
 
 const Collections = ({ AllCollections }) => (
   <div style={{ width: '100%' }}>
     {AllCollections.map(({ id, ...AllCollections }) => (
-      <CollectionItemsContainer key={id} {...AllCollections} />
+      <CollectionsContainer key={id} {...AllCollections} />
     ))}
   </div>
 );

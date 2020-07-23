@@ -1,14 +1,14 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import CollectionItem from '../CollectionItem/CollectionItem';
+import CollectionItem from '../../CollectionItem/CollectionItem';
 import { Button, Grid } from '@material-ui/core';
-import './CollectionItemsContainer.scss';
+import './CollectionsContainer.scss';
 import PropTypes from 'prop-types';
 
-const CollectionItemsContainer = ({ title, items, routeName, match }) => {
+const CollectionsContainer = ({ title, items, routeName, match }) => {
   // FIXME: i need to edit this component later.
   return (
-    <div className='CollectionItemsContainer'>
+    <div className='CollectionsContainer'>
       <h1 className='Title'>
         <span>{title}</span>
       </h1>
@@ -26,11 +26,11 @@ const CollectionItemsContainer = ({ title, items, routeName, match }) => {
   );
 };
 
-CollectionItemsContainer.propTypes = {
+CollectionsContainer.propTypes = {
   title: PropTypes.string,
   items: PropTypes.array,
   routeName: PropTypes.string,
   match: PropTypes.object
 };
 
-export default withRouter(CollectionItemsContainer);
+export default withRouter(CollectionsContainer);
