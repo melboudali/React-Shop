@@ -1,18 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { SelectCurrentCollection } from '../../Redux/Shop/ShopSelectors';
+import { SelectCurrentCollection } from '../../../Redux/Shop/ShopSelectors';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
-import CollectionItem from '../../Components/ShopPageComponents/CollectionItem/CollectionItem';
-import NotFound from '../404/NotFound';
-import './Collection.scss';
+import CollectionItem from '../CollectionItem/CollectionItem';
+import NotFound from '../../../Pages/404/NotFound';
+import './CurrentCollection.scss';
 import PropTypes from 'prop-types';
 
-const Collection = ({ CurrentCollection, history }) => {
+const CurrentCollection = ({ Collection, history }) => {
   const paths = history.location.pathname.toUpperCase().split('/');
-  return CurrentCollection ? (
+  return Collection ? (
     <div className='Collection'>
       <Breadcrumbs
         className='Breadcrumbs'
@@ -33,13 +33,13 @@ const Collection = ({ CurrentCollection, history }) => {
           home
         </Link>
         <Link href={`/${paths[1].toLowerCase()}`}>{paths[1]}</Link>
-        <span>{CurrentCollection.title}</span>
+        <span>{Collection.title}</span>
       </Breadcrumbs>
       <h1 className='Title'>
-        <span>{CurrentCollection.title}</span>
+        <span>{Collection.title}</span>
       </h1>
       <Grid container direction='row' justify='center' alignItems='baseline' spacing={3}>
-        {CurrentCollection.items.map(item => (
+        {Collection.items.map(item => (
           <CollectionItem key={item.id} item={item} />
         ))}
       </Grid>
@@ -49,14 +49,14 @@ const Collection = ({ CurrentCollection, history }) => {
   );
 };
 
-Collection.propTypes = {
-  CurrentCollection: PropTypes.object,
+CurrentCollection.propTypes = {
+  Collection: PropTypes.object,
   history: PropTypes.object
 };
 
 const mapStateToProps = createStructuredSelector({
-  CurrentCollection: (state, otherProps) =>
+  Collection: (state, otherProps) =>
     SelectCurrentCollection(otherProps.match.params.collectionRouteName)(state)
 });
 
-export default connect(mapStateToProps)(Collection);
+export default connect(mapStateToProps)(CurrentCollection);

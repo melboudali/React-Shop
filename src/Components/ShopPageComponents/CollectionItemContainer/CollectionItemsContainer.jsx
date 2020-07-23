@@ -2,13 +2,13 @@ import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import CollectionItem from '../CollectionItem/CollectionItem';
 import { Button, Grid } from '@material-ui/core';
-import './CollectionPreview.scss';
+import './CollectionItemsContainer.scss';
 import PropTypes from 'prop-types';
 
-const CollectionPreview = ({ title, items, routeName, match }) => {
+const CollectionItemsContainer = ({ title, items, routeName, match }) => {
   // FIXME: i need to edit this component later.
   return (
-    <div className='CollectionPreview'>
+    <div className='CollectionItemsContainer'>
       <h1 className='Title'>
         <span>{title}</span>
       </h1>
@@ -26,11 +26,11 @@ const CollectionPreview = ({ title, items, routeName, match }) => {
   );
 };
 
-CollectionPreview.propTypes = {
+CollectionItemsContainer.propTypes = {
   title: PropTypes.string,
   items: PropTypes.array,
   routeName: PropTypes.string,
   match: PropTypes.object
 };
 
-export default withRouter(CollectionPreview);
+export default withRouter(CollectionItemsContainer);

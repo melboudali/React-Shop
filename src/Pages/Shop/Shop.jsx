@@ -1,24 +1,24 @@
 import React, { Fragment, useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { SelectLoading } from '../../Redux/Shop/ShopSelectors';
 import { createStructuredSelector } from 'reselect';
-import { updateCollections } from '../../Redux/Shop/ShopActions';
-import CollectionOverview from '../../Components/ShopPageComponents/CollectionsOverview/CollectionOverview';
+import { SelectLoading } from '../../Redux/Shop/ShopSelectors';
+import { FetchingCollections } from '../../Redux/Shop/ShopActions';
+import Collections from '../../Components/ShopPageComponents/Collections/Collections';
 import Loading from '../../Components/ShopPageComponents/Loading/Loading';
-import Collection from '../Collection/Collection';
+import CurrentCollection from '../../Components/ShopPageComponents/CurrentCollection/CurrentCollection';
 import PropTypes from 'prop-types';
 
-const Shop = ({ match, updateCollections, isLoading }) => {
+const Shop = ({ match, FetchingCollections, isLoading }) => {
   useEffect(() => {
-    updateCollections();
-  }, [updateCollections]);
+    FetchingCollections();
+  }, [FetchingCollections]);
   return (
     <Fragment>
-      <Route exact path={`${match.path}`} component={isLoading ? Loading : CollectionOverview} />
+      <Route exact path={`${match.path}`} component={isLoading ? Loading : Collections} />
       <Route
         path={`${match.path}/:collectionRouteName`}
-        component={isLoading ? Loading : Collection}
+        component={isLoading ? Loading : CurrentCollection}
       />
     </Fragment>
   );
@@ -30,4 +30,4 @@ const mapStateToProps = createStructuredSelector({
   isLoading: SelectLoading
 });
 
-export default connect(mapStateToProps, { updateCollections })(Shop);
+export default connect(mapStateToProps, { FetchingCollections })(Shop);
