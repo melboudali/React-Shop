@@ -13,6 +13,12 @@ const CollectionItem = ({ item, item: { name, price, imageUrl }, addItemToCart }
         <div className='ImageContainer'>
           <span className='Discount'>100%</span>
           <div className='ItemImage' style={{ backgroundImage: `url(${imageUrl})` }} />
+          <div
+            className='SecItemImage'
+            style={{
+              backgroundImage: `url(https://images.unsplash.com/photo-1515886657613-9f3515b0c78f)`
+            }}
+          />
         </div>
         <div className='CollectionFooter'>
           <div className='CollectionFooterContainer'>
