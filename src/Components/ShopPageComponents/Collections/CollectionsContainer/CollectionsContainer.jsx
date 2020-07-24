@@ -14,7 +14,7 @@ const CollectionsContainer = ({ title, items, routeName, match }) => {
       </h1>
       <Grid container direction='row' justify='center' alignItems='flex-start' spacing={3}>
         {items
-          .filter((item, idx) => idx < 4)
+          .filter((item, idx) => idx < 6)
           .map(item => (
             <CollectionItem key={item.id} item={item} />
           ))}
