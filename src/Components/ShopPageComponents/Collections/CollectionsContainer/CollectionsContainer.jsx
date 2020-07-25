@@ -14,9 +14,9 @@ const CollectionsContainer = ({ title, items, routeName, match }) => {
       </h1>
       <Grid container direction='row' justify='center' alignItems='flex-start' spacing={3}>
         {items
-          .filter((item, idx) => idx < 6)
+          .filter((item, idx) => idx < 5)
           .map(item => (
-            <CollectionItem key={item.id} item={item} />
+            <CollectionItem key={item.id} item={item} title={title.toLowerCase()} />
           ))}
       </Grid>
       <Button className='SeeMore' to={`${match.path}/${routeName}`} component={Link}>

@@ -6,7 +6,13 @@ import { addItemToCart } from '../../../Redux/Cart/CartActions';
 import './CollectionItem.scss';
 import PropTypes from 'prop-types';
 
-const CollectionItem = ({ item, item: { name, price, imageUrl }, addItemToCart }) => {
+const CollectionItem = ({
+  item,
+  title,
+  item: { name, price, imageUrl },
+  addItemToCart,
+  history
+}) => {
   return (
     <Grid item xs={6} sm={4} md={3} lg={2} xl={2}>
       <div className='CollectionItem'>
@@ -42,9 +48,15 @@ const CollectionItem = ({ item, item: { name, price, imageUrl }, addItemToCart }
                 </svg>
                 add to cart
               </Button>
-              <Button className='MoreDetails' onClick={() => addItemToCart(item)}>
-                <svg viewBox='0 0 64 64' enable-background='new 0 0 64 64'>
-                  <g id='MORE_2_1_' enable-background='new    '>
+              <Button
+                className='MoreDetails'
+                onClick={() =>
+                  history.push(
+                    `${history.location.pathname}${title ? `/${title.toLowerCase()}/` : `/`}${name}`
+                  )
+                }>
+                <svg viewBox='0 0 64 64' enableBackground='new 0 0 64 64'>
+                  <g id='MORE_2_1_' enableBackground='new    '>
                     <g id='MORE_2'>
                       <g>
                         <path d='M31.998,26c-3.314,0-6.001,2.687-6.001,6.001c0,3.313,2.687,6.001,6.001,6.001c3.314,0,6.002-2.688,6.002-6.001     C38,28.687,35.312,26,31.998,26z M31.998,19.001C35.312,19.001,38,16.314,38,13c0-3.313-2.688-6-6.002-6     c-3.314,0-6.001,2.686-6.001,6.001C25.997,16.315,28.684,19.001,31.998,19.001z M31.998,45c-3.314,0-6.001,2.688-6.001,6.001     s2.687,6.001,6.001,6.001c3.314,0,6.002-2.688,6.002-6.001S35.312,45,31.998,45z' />

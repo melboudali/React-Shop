@@ -22,7 +22,7 @@ const Collections = ({ AllCollections, history }) => {
           </svg>
         }
         aria-label='Breadcrumb'>
-        <Link href='/'>
+        <Link to='/'>
           <svg viewBox='0 0 24 24'>
             <path stroke='none' d='M0 0h24v24H0z' />
             <polyline points='5 12 3 12 12 3 21 12 19 12' />
@@ -48,4 +48,4 @@ const mapStateToProps = createStructuredSelector({
   AllCollections: SelectAllCollections
 });
 
-export default connect(mapStateToProps)(withRouter(Collections));
+export default withRouter(connect(mapStateToProps)(Collections));

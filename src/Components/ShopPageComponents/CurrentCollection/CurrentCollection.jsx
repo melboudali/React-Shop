@@ -40,7 +40,7 @@ const CurrentCollection = ({ Collection, history }) => {
       </h1>
       <Grid container direction='row' justify='center' alignItems='baseline' spacing={3}>
         {Collection.items.map(item => (
-          <CollectionItem key={item.id} item={item} />
+          <CollectionItem key={item.id} item={item} title={null} />
         ))}
       </Grid>
     </div>
