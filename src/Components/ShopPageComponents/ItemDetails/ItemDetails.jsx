@@ -1,16 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { SelectCurrentItem } from '../../../Redux/Shop/ShopSelectors';
 import PropTypes from 'prop-types';
 
-const ItemDetails = ({
-  CurrentItem,
-  match: {
-    params: { itemName }
-  }
-}) => {
-  const { name, imageUrl } = CurrentItem.items.find(item => itemName === item.name);
+const ItemDetails = ({ CurrentItem }) => {
+  const { name, imageUrl } = CurrentItem;
   return (
     <div>
       Item Name: {name}

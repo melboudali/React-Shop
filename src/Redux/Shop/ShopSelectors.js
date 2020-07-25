@@ -21,4 +21,6 @@ export const SelectIsCollectionsLoaded = createSelector(
 );
 
 export const SelectCurrentItem = (ItemName, collectionRouteName) =>
-  createSelector([SelectCollections], Collections => Collections[collectionRouteName]);
+  createSelector([SelectCollections], Collections =>
+    Collections[collectionRouteName].items.find(item => ItemName === item.name)
+  );
