@@ -13,13 +13,6 @@ export const SelectAllCollections = createSelector([SelectCollections], Collecti
 export const SelectCurrentCollection = collectionRouteName =>
   createSelector([SelectCollections], Collections => Collections[collectionRouteName]);
 
-//   need selectcurrentitem like above i need to change items from array to object
-
-export const SelectIsCollectionsLoaded = createSelector(
-  [SelectCollections],
-  Collections => !!Collections
-);
-
 export const SelectCurrentItem = (ItemName, collectionRouteName) =>
   createSelector([SelectCollections], Collections =>
     Collections[collectionRouteName].items.find(item => ItemName === item.name)
