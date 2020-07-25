@@ -22,7 +22,7 @@ const CollectionItem = ({
           <div
             className='SecItemImage'
             style={{
-              backgroundImage: `url(https://images.unsplash.com/photo-1515886657613-9f3515b0c78f)`
+              backgroundImage: `url(https://images.unsplash.com/photo-1517423568366-8b83523034fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80)`
             }}
           />
         </div>

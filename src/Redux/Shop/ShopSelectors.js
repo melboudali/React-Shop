@@ -7,8 +7,8 @@ export const SelectCollections = createSelector([SelectShop], Shop => Shop.Colle
 export const SelectLoading = createSelector([SelectShop], Shop => Shop.Loading);
 
 export const SelectAllCollections = createSelector([SelectCollections], Collections =>
-         Object.keys(Collections).map(key => Collections[key])
-       );
+  Object.keys(Collections).map(key => Collections[key])
+);
 
 export const SelectCurrentCollection = collectionRouteName =>
   createSelector([SelectCollections], Collections => Collections[collectionRouteName]);
@@ -19,3 +19,6 @@ export const SelectIsCollectionsLoaded = createSelector(
   [SelectCollections],
   Collections => !!Collections
 );
+
+export const SelectCurrentItem = (ItemName, collectionRouteName) =>
+  createSelector([SelectCollections], Collections => Collections[collectionRouteName]);

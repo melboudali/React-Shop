@@ -24,7 +24,7 @@ const Shop = ({ match, FetchingCollections, isLoading }) => {
       />
       <Route
         path={`${match.path}/:collectionRouteName/:itemName`}
-        component={ItemDetails}
+        component={isLoading ? Loading : ItemDetails}
       />
     </Fragment>
   );
