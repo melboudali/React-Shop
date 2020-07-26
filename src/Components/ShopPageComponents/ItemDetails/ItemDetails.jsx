@@ -5,12 +5,14 @@ import { SelectCurrentItem } from '../../../Redux/Shop/ShopSelectors';
 import PropTypes from 'prop-types';
 
 const ItemDetails = ({ CurrentItem }) => {
-  const { name, imageUrl } = CurrentItem;
+  // const { name = '', imageUrl = '' } = CurrentItem;
   return (
-    <div>
-      Item Name: {name}
-      <img src={imageUrl} alt='' />
-    </div>
+    CurrentItem ? (
+      <div>
+        Item Name: {CurrentItem.name}
+        <img src={CurrentItem.imageUrl} alt='' />
+      </div>
+    ):<h1>Not Found</h1>
   );
 };
 
