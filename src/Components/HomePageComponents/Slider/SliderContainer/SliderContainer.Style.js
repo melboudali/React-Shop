@@ -4,9 +4,9 @@ import { ArrowContainer } from '../Arrow/Arrow.Style';
 export const Slider = styled.div`
   position: relative;
   height: 500px;
-  width: 100%;
+  width: calc(100% - 15px);
   overflow: hidden;
-  margin-bottom: 19px;
+  margin: 0 7.5px 19px;
   &:hover {
     ${ArrowContainer} {
       opacity: 1;
