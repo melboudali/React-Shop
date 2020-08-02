@@ -45,6 +45,7 @@ export const Hamburger = styled(IconButton)`
 
 export const Logo = styled.img`
   height: 50px;
+  padding: 0 12px;
 `;
 
 export const DesktopMenu = styled.div`

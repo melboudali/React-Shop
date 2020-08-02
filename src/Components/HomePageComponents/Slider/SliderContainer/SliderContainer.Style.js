@@ -3,7 +3,7 @@ import { ArrowContainer } from '../Arrow/Arrow.Style';
 
 export const Slider = styled.div`
   position: relative;
-  height: 500px;
+  height: 450px;
   /* width: calc(100% - 15px); */
   width: ${({ width }) => `${width}px`};
   overflow: hidden;
