@@ -11,11 +11,10 @@ const SliderContainer = () => {
   const [SlideAnimation, setSlideAnimation] = useState(true);
 
   const Images = [
-    'https://cocainemodels.com/storage/2017/02/curved-models-plus-size-agency-new-york-modeling-girl-woman-fashion-online-shop-blonde-hair-posing-photo.jpg',
-    'https://images.unsplash.com/photo-1562478899-f8bca5c85ca8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
-    'https://images.unsplash.com/photo-1580813089076-7a92471e7074?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1424&q=80',
-    'https://images.unsplash.com/photo-1566664022077-4dc1446dd619?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1510&q=80',
-    'https://images.unsplash.com/photo-1577134351686-c6dca1c59964?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1535&q=80'
+    'https://images.unsplash.com/photo-1492447105260-2e947425b5cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
+    'https://images.unsplash.com/photo-1557907430-116f58e8ac28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1401&q=80',
+    'https://images.unsplash.com/photo-1475293831741-1b69e67acb72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80',
+    'https://images.unsplash.com/photo-1566664022077-4dc1446dd619?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1510&q=80'
   ];
   const imagesLength = Images.length;
 
