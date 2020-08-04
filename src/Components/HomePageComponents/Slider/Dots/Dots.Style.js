@@ -5,7 +5,7 @@ export const Dot = styled.span`
   margin-right: 5px;
   cursor: pointer;
   border-radius: 50%;
-  opacity: 0.8;
+  opacity: 0.7;
   background: ${({ active }) => (active ? '#000' : '#E0E0E0')};
   border: 2px solid #e0e0e0;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
