@@ -19,7 +19,7 @@ export const Slider = styled.div`
 export const SliderWrapper = styled.div`
   height: 100%;
   transform: ${({ translate }) => `translateX(-${translate}px)`};
-  transition: transform 1.6s cubic-bezier(0.57, 0.78, 0.8, -0.45);
+  transition: transform 1.7s cubic-bezier(0.57, 0.78, 0.8, -0.45);
   width: ${({ width }) => `${width}px`};
   display: flex;
 `;
