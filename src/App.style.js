@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     position: relative;
     min-height: 100%;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
     overflow-y: scroll;
     /* overflow-y: overlay; */
   };
