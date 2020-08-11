@@ -3,7 +3,9 @@ import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { SelectLoading } from '../../Redux/Shop/ShopSelectors';
+// import { FetchingCollections } from '../../Redux/Shop/ShopActions';
 import { FetchingCollections } from '../../Redux/Shop/ShopActions';
+
 import Collections from '../../Components/ShopPageComponents/Collections/Collections';
 import Loading from '../../Components/ShopPageComponents/Loading/Loading';
 import CurrentCollection from '../../Components/ShopPageComponents/CurrentCollection/CurrentCollection';
