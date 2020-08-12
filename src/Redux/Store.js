@@ -16,7 +16,7 @@ import RootReducer from './RootReducer';
 
 // Redux Saga
 const SagaMidleware = createSagaMiddleware();
-const middlewares = [SagaMidleware];
+const middlewares = [ReduxThunk, SagaMidleware];
 
 // remove redux-logger & redux-devtools-extension from production
 export const Store = createStore(

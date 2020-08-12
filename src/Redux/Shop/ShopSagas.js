@@ -2,7 +2,6 @@ import { takeEvery, call, put } from 'redux-saga/effects';
 import { firestore } from '../../Utils/Firebase';
 import { UPDATE_COLLECTIONS, SET_COLLECTIONS_ERROR } from './ShopTypes';
 
-
 const setError = errorMessage => ({ type: SET_COLLECTIONS_ERROR, payload: errorMessage });
 
 // Generators function
@@ -33,5 +32,7 @@ function* NestedFunc() {
 }
 
 export function* FetchingCollections() {
-  yield takeEvery(UPDATE_COLLECTIONS, NestedFunc);
+  yield takeEvery(UPDATE_COLLECTIONS, function* () {
+    yield console.log('Im running');
+  });
 }
