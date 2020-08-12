@@ -21,6 +21,7 @@ const NavbarDivider = Styled.div`
 `;
 
 const App = ({ setCurrentUser }) => {
+  // FIXME: switching this async func to redux saga
   // useEffect(() => {
   //   auth.onAuthStateChanged(async userAuth => {
   //     if (userAuth) {
