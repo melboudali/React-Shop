@@ -1,4 +1,4 @@
-import { UPDATE_COLLECTIONS, SET_COLLECTIONS_ERROR } from './ShopTypes';
+import { FETCH_COLLECTIONS_SUCCESS, FETCH_COLLECTIONS_FAILURE } from './ShopTypes';
 
 const INITIAL_STATE = {
   Loading: true,
@@ -8,9 +8,9 @@ const INITIAL_STATE = {
 
 const ShopReducers = (state = INITIAL_STATE, { type, payload }) => {
   switch (type) {
-    case UPDATE_COLLECTIONS:
+    case FETCH_COLLECTIONS_SUCCESS:
       return { ...state, Collections: payload, Loading: false, Error: undefined };
-    case SET_COLLECTIONS_ERROR:
+    case FETCH_COLLECTIONS_FAILURE:
       return { ...state, Loading: false, Collections: {}, Error: payload };
     default:
       return state;

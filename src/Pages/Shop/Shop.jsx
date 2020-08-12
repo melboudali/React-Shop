@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { SelectLoading } from '../../Redux/Shop/ShopSelectors';
 // import { FetchingCollections } from '../../Redux/Shop/ShopActions';
-import { FetchingCollections } from '../../Redux/Shop/ShopActions';
+import { fetchCollectionsStart } from '../../Redux/Shop/ShopActions';
 
 import Collections from '../../Components/ShopPageComponents/Collections/Collections';
 import Loading from '../../Components/ShopPageComponents/Loading/Loading';
@@ -12,10 +12,10 @@ import CurrentCollection from '../../Components/ShopPageComponents/CurrentCollec
 import ItemDetails from '../../Components/ShopPageComponents/ItemDetails/ItemDetails';
 import PropTypes from 'prop-types';
 
-const Shop = ({ match, FetchingCollections, isLoading }) => {
+const Shop = ({ match, fetchCollectionsStart, isLoading }) => {
   useEffect(() => {
-    FetchingCollections();
-  }, [FetchingCollections]);
+    fetchCollectionsStart();
+  }, [fetchCollectionsStart]);
   return (
     <Fragment>
       <Route exact path={`${match.path}`} component={isLoading ? Loading : Collections} />
@@ -38,4 +38,4 @@ const mapStateToProps = createStructuredSelector({
   isLoading: SelectLoading
 });
 
-export default connect(mapStateToProps, { FetchingCollections })(Shop);
+export default connect(mapStateToProps, { fetchCollectionsStart })(Shop);

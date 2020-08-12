@@ -21,21 +21,21 @@ const NavbarDivider = Styled.div`
 `;
 
 const App = ({ setCurrentUser }) => {
-  useEffect(() => {
-    auth.onAuthStateChanged(async userAuth => {
-      if (userAuth) {
-        const userRef = await createUserProfileDoc(userAuth);
-        userRef.onSnapshot(snapShot => {
-          setCurrentUser({
-            id: snapShot.id,
-            ...snapShot.data()
-          });
-        });
-      } else {
-        setCurrentUser(null);
-      }
-    });
-  }, [setCurrentUser]);
+  // useEffect(() => {
+  //   auth.onAuthStateChanged(async userAuth => {
+  //     if (userAuth) {
+  //       const userRef = await createUserProfileDoc(userAuth);
+  //       userRef.onSnapshot(snapShot => {
+  //         setCurrentUser({
+  //           id: snapShot.id,
+  //           ...snapShot.data()
+  //         });
+  //       });
+  //     } else {
+  //       setCurrentUser(null);
+  //     }
+  //   });
+  // }, [setCurrentUser]);
 
   return (
     <Fragment>
