@@ -56,7 +56,7 @@ const App = ({ setCurrentUser }) => {
           <Route exact path='*' component={NotFoundPage} />
         </Switch>
       </Container>
-      <Footer/>
+      <Footer />
     </Fragment>
   );
 };

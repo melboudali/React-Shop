@@ -6,13 +6,13 @@ import {
   signInWithFacebook,
   signInWithGithub
 } from '../../../Utils/Firebase';
-import { setAuthError } from '../../../Redux/User/UserActions';
+import { GoogleSignInStart, setAuthError } from '../../../Redux/User/UserActions';
 import FormInput from '../FormInput/FormInput';
 import Submit from '../SubmitButton/SubmitButton';
 import PropTypes from 'prop-types';
 import './SignIn.scss';
 
-const SignIn = ({ setAuthError }) => {
+const SignIn = ({ GoogleSignInStart, setAuthError }) => {
   const [getEmail, setEmail] = useState('');
   const [getPassword, setPassword] = useState('');
 
@@ -62,7 +62,7 @@ const SignIn = ({ setAuthError }) => {
             </svg>
             sign in with email
           </Submit>
-          <Submit type='button' onClick={signInWithGoogle}>
+          <Submit type='button' onClick={GoogleSignInStart}>
             <svg viewBox='0 0 24 24'>
               <path stroke='none' d='M0 0h24v24H0z' />
               <path d='M17.788 5.108A9 9 0 1021 12h-8' />
@@ -95,4 +95,4 @@ SignIn.propTypes = {
   setAuthError: PropTypes.func.isRequired
 };
 
-export default connect(null, { setAuthError })(SignIn);
+export default connect(null, { GoogleSignInStart, setAuthError })(SignIn);

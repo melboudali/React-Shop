@@ -2,7 +2,12 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 import { Store } from '../Redux/Store';
-import { GoogleSignInFail, FacebookSignInFail, GithubSignInFail } from '../Redux/User/UserActions';
+import {
+  setAuthError,
+  GoogleSignInFail,
+  FacebookSignInFail,
+  GithubSignInFail
+} from '../Redux/User/UserActions';
 
 const Config = {
   apiKey: process.env.REACT_APP_APIKEY,
@@ -21,36 +26,36 @@ export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
 // Google Signin method
-const GGLProvider = new firebase.auth.GoogleAuthProvider();
-GGLProvider.setCustomParameters({ prompt: 'select_account' });
-export const signInWithGoogle = async () => {
-  try {
-    await auth.signInWithPopup(GGLProvider);
-  } catch (err) {
-    Store.dispatch(GoogleSignInFail(err.message));
-  }
-};
+export const GGLProvider = new firebase.auth.GoogleAuthProvider();
+// GGLProvider.setCustomParameters({ prompt: 'select_account' });
+// export const signInWithGoogle = async () => {
+//   try {
+//     await auth.signInWithPopup(GGLProvider);
+//   } catch (err) {
+//     Store.dispatch(GoogleSignInFail(err.message));
+//   }
+// };
 
 // Facebook Signin method
 const FBProvider = new firebase.auth.FacebookAuthProvider();
 FBProvider.setCustomParameters({ prompt: 'select_account' });
 export const signInWithFacebook = async () => {
-  try {
-    await auth.signInWithPopup(FBProvider);
-  } catch (err) {
-    Store.dispatch(FacebookSignInFail(err.message));
-  }
+  // try {
+  //   await auth.signInWithPopup(FBProvider);
+  // } catch (err) {
+  //   Store.dispatch(FacebookSignInFail(err.message));
+  // }
 };
 
 // Github Signin method
 const GHProvider = new firebase.auth.GithubAuthProvider();
 GHProvider.setCustomParameters({ prompt: 'select_account' });
 export const signInWithGithub = async () => {
-  try {
-    await auth.signInWithPopup(GHProvider);
-  } catch (err) {
-    Store.dispatch(GithubSignInFail(err.message));
-  }
+  // try {
+  //   await auth.signInWithPopup(GHProvider);
+  // } catch (err) {
+  //   Store.dispatch(GithubSignInFail(err.message));
+  // }
 };
 
 // get Date from firestore
