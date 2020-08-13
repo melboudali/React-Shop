@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 import { Store } from '../Redux/Store';
-import { setAuthError } from '../Redux/User/UserActions';
+import { GoogleSignInFail, FacebookSignInFail, GithubSignInFail } from '../Redux/User/UserActions';
 
 const Config = {
   apiKey: process.env.REACT_APP_APIKEY,
@@ -27,7 +27,7 @@ export const signInWithGoogle = async () => {
   try {
     await auth.signInWithPopup(GGLProvider);
   } catch (err) {
-    Store.dispatch(setAuthError(err.message));
+    Store.dispatch(GoogleSignInFail(err.message));
   }
 };
 
@@ -38,7 +38,7 @@ export const signInWithFacebook = async () => {
   try {
     await auth.signInWithPopup(FBProvider);
   } catch (err) {
-    Store.dispatch(setAuthError(err.message));
+    Store.dispatch(FacebookSignInFail(err.message));
   }
 };
 
@@ -49,7 +49,7 @@ export const signInWithGithub = async () => {
   try {
     await auth.signInWithPopup(GHProvider);
   } catch (err) {
-    Store.dispatch(setAuthError(err.message));
+    Store.dispatch(GithubSignInFail(err.message));
   }
 };
 
