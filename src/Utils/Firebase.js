@@ -1,15 +1,10 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
+import { setAuthError } from '../Redux/User/UserActions';
 import { Store } from '../Redux/Store';
-import {
-  setAuthError,
-  GoogleSignInFail,
-  FacebookSignInFail,
-  GithubSignInFail
-} from '../Redux/User/UserActions';
 
-const Config = {
+firebase.initializeApp({
   apiKey: process.env.REACT_APP_APIKEY,
   authDomain: process.env.REACT_APP_AUTHDOMAIN,
   databaseURL: process.env.REACT_APP_DATABASEURL,
@@ -18,47 +13,17 @@ const Config = {
   messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
   appId: process.env.REACT_APP_APPID,
   measurementId: process.env.REACT_APP_MESUREMENTID
-};
-
-firebase.initializeApp(Config);
+});
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
-// Google Signin method
+// Providers for Sagas
 export const GGLProvider = new firebase.auth.GoogleAuthProvider();
-// GGLProvider.setCustomParameters({ prompt: 'select_account' });
-// export const signInWithGoogle = async () => {
-//   try {
-//     await auth.signInWithPopup(GGLProvider);
-//   } catch (err) {
-//     Store.dispatch(GoogleSignInFail(err.message));
-//   }
-// };
+export const FBProvider = new firebase.auth.FacebookAuthProvider();
+export const GHProvider = new firebase.auth.GithubAuthProvider();
 
-// Facebook Signin method
-const FBProvider = new firebase.auth.FacebookAuthProvider();
-FBProvider.setCustomParameters({ prompt: 'select_account' });
-export const signInWithFacebook = async () => {
-  // try {
-  //   await auth.signInWithPopup(FBProvider);
-  // } catch (err) {
-  //   Store.dispatch(FacebookSignInFail(err.message));
-  // }
-};
-
-// Github Signin method
-const GHProvider = new firebase.auth.GithubAuthProvider();
-GHProvider.setCustomParameters({ prompt: 'select_account' });
-export const signInWithGithub = async () => {
-  // try {
-  //   await auth.signInWithPopup(GHProvider);
-  // } catch (err) {
-  //   Store.dispatch(GithubSignInFail(err.message));
-  // }
-};
-
-// get Date from firestore
+// if user not found create one
 export const createUserProfileDoc = async (userAuth, additionalData) => {
   const userRef = firestore.collection('users').doc(`${userAuth.uid}`);
   const snapShot = await userRef.get();

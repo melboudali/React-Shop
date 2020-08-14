@@ -1,10 +1,8 @@
 import { ADD_ITEM_TO_CART, REDUCE_ITEM_QUANTITY, DELETE_ITEM_FROM_CART } from './CartTypes';
 
-export const addItemToCart = item => dispatch =>
-  dispatch({ type: ADD_ITEM_TO_CART, payload: item });
+export const addItemToCart = item => ({ type: ADD_ITEM_TO_CART, payload: item });
 
-export const deleteItem = (id, quantity) => dispatch => {
+export const deleteItem = (id, quantity) =>
   quantity > 1
-    ? dispatch({ type: REDUCE_ITEM_QUANTITY, payload: id })
-    : dispatch({ type: DELETE_ITEM_FROM_CART, payload: id });
-};
+    ? { type: REDUCE_ITEM_QUANTITY, payload: id }
+    : { type: DELETE_ITEM_FROM_CART, payload: id };
