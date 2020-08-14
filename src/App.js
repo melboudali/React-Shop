@@ -2,7 +2,6 @@ import React, { useEffect, Fragment } from 'react';
 import { auth, createUserProfileDoc } from './Utils/Firebase';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { setCurrentUser } from './Redux/User/UserActions';
 import AuthPrivateRoute from './Routes/AuthPrivateRoute';
 import Container from '@material-ui/core/Container';
 import Announcement from './Layouts/Announcement/Announcement';
@@ -20,7 +19,7 @@ const NavbarDivider = Styled.div`
   padding-top: 75px;
 `;
 
-const App = ({ setCurrentUser }) => {
+const App = () => {
   // FIXME: switching this async func to redux saga
   // useEffect(() => {
   //   auth.onAuthStateChanged(async userAuth => {
@@ -61,4 +60,4 @@ const App = ({ setCurrentUser }) => {
   );
 };
 
-export default connect(null, { setCurrentUser })(App);
+export default connect(null, {})(App);

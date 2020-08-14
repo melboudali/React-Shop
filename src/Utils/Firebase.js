@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
-import { setAuthError } from '../Redux/User/UserActions';
+import { SignInFail } from '../Redux/User/UserActions';
 import { Store } from '../Redux/Store';
 
 firebase.initializeApp({
@@ -40,7 +40,7 @@ export const createUserProfileDoc = async (userAuth, additionalData) => {
         ...additionalData
       });
     } catch (err) {
-      Store.dispatch(setAuthError(err.message));
+      Store.dispatch(SignInFail(err.message));
     }
   }
   return userRef;

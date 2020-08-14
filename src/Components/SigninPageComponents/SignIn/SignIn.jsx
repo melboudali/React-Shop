@@ -1,31 +1,31 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { auth } from '../../../Utils/Firebase';
 import {
+  EmailSignInStart,
   GoogleSignInStart,
   FacebookSignInStart,
-  GithubSignInStart,
-  setAuthError
+  GithubSignInStart
 } from '../../../Redux/User/UserActions';
 import FormInput from '../FormInput/FormInput';
 import Submit from '../SubmitButton/SubmitButton';
 import PropTypes from 'prop-types';
 import './SignIn.scss';
 
-const SignIn = ({ GoogleSignInStart, FacebookSignInStart, GithubSignInStart, setAuthError }) => {
+const SignIn = ({
+  EmailSignInStart,
+  GoogleSignInStart,
+  FacebookSignInStart,
+  GithubSignInStart
+}) => {
   const [getEmail, setEmail] = useState('');
   const [getPassword, setPassword] = useState('');
 
   const onEmailChange = e => setEmail(e.target.value);
   const onPasswordChange = e => setPassword(e.target.value);
 
-  const onSubmitHandler = async e => {
+  const onSubmitHandler = e => {
     e.preventDefault();
-    try {
-      await auth.signInWithEmailAndPassword(getEmail, getPassword);
-    } catch (error) {
-      setAuthError(error.message);
-    }
+    EmailSignInStart({ getEmail, getPassword });
   };
 
   return (
@@ -92,12 +92,12 @@ const SignIn = ({ GoogleSignInStart, FacebookSignInStart, GithubSignInStart, set
 };
 
 SignIn.propTypes = {
-  setAuthError: PropTypes.func.isRequired
+  EmailSignInStart: PropTypes.func.isRequired
 };
 
 export default connect(null, {
+  EmailSignInStart,
   GoogleSignInStart,
   FacebookSignInStart,
-  GithubSignInStart,
-  setAuthError
+  GithubSignInStart
 })(SignIn);

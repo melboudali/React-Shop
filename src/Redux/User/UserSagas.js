@@ -6,55 +6,55 @@ import {
   GHProvider,
   createUserProfileDoc
 } from '../../Utils/Firebase';
+import { SignInSuccess, SignInFail } from './UserActions';
 import {
-  GoogleSignInSuccess,
-  GoogleSignInFail,
-  FacebookSignInSuccess,
-  FacebookSignInFail,
-  GithubSignInSuccess,
-  GithubSignInFail
-} from './UserActions';
-import { GOOGLE_SIGN_IN_START, FACEBOOK_SIGN_IN_START, GITHUB_SIGN_IN_START } from './UserTypes';
+  EMAIL_SIGN_IN_START,
+  GOOGLE_SIGN_IN_START,
+  FACEBOOK_SIGN_IN_START,
+  GITHUB_SIGN_IN_START
+} from './UserTypes';
 
-function* OnGoogleSignInStart() {
-  yield takeLatest(GOOGLE_SIGN_IN_START, function* () {
+function* OnEmailSignInStart() {
+  yield takeLatest(EMAIL_SIGN_IN_START, function* ({ payload: { getEmail, getPassword } }) {
     try {
-      const { user } = yield auth.signInWithPopup(GGLProvider);
+      const { user } = yield auth.signInWithEmailAndPassword(getEmail, getPassword);
       const userRef = yield call(createUserProfileDoc, user);
       const snapShot = yield userRef.get();
-      yield put(GoogleSignInSuccess({ id: snapShot.id, ...snapShot.data() }));
+      yield put(SignInSuccess({ id: snapShot.id, ...snapShot.data() }));
     } catch (error) {
-      yield put(GoogleSignInFail(error.message));
+      yield put(SignInFail(error.message));
     }
   });
+}
+
+function* OnGoogleSignInStart() {
+  yield takeLatest(GOOGLE_SIGN_IN_START, SigninWithProvider, GGLProvider);
 }
 
 function* OnFacebookSignInStart() {
-  yield takeLatest(FACEBOOK_SIGN_IN_START, function* () {
-    try {
-      const { user } = yield auth.signInWithPopup(FBProvider);
-      const userRef = yield call(createUserProfileDoc, user);
-      const snapShot = yield userRef.get();
-      yield put(FacebookSignInSuccess({ id: snapShot.id, ...snapShot.data() }));
-    } catch (error) {
-      yield put(FacebookSignInFail(error.message));
-    }
-  });
+  yield takeLatest(FACEBOOK_SIGN_IN_START, SigninWithProvider, FBProvider);
 }
 
 function* OnGithubSignInStart() {
-  yield takeLatest(GITHUB_SIGN_IN_START, function* () {
-    try {
-      const { user } = yield auth.signInWithPopup(GHProvider);
-      const userRef = yield call(createUserProfileDoc, user);
-      const snapShot = yield userRef.get();
-      yield put(GithubSignInSuccess({ id: snapShot.id, ...snapShot.data() }));
-    } catch (error) {
-      yield put(GithubSignInFail(error.message));
-    }
-  });
+  yield takeLatest(GITHUB_SIGN_IN_START, SigninWithProvider, GHProvider);
+}
+
+function* SigninWithProvider(Provider) {
+  try {
+    const { user } = yield auth.signInWithPopup(Provider);
+    const userRef = yield call(createUserProfileDoc, user);
+    const snapShot = yield userRef.get();
+    yield put(SignInSuccess({ id: snapShot.id, ...snapShot.data() }));
+  } catch (error) {
+    yield put(SignInFail(error.message));
+  }
 }
 
 export function* UserSagas() {
-  yield all([call(OnGoogleSignInStart), call(OnFacebookSignInStart), call(OnGithubSignInStart)]);
+  yield all([
+    call(OnEmailSignInStart),
+    call(OnGoogleSignInStart),
+    call(OnFacebookSignInStart),
+    call(OnGithubSignInStart)
+  ]);
 }

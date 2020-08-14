@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { auth, createUserProfileDoc } from '../../../Utils/Firebase';
-import { setAuthError } from '../../../Redux/User/UserActions';
+import { SignInFail } from '../../../Redux/User/UserActions';
 import FormInput from '../FormInput/FormInput';
 import SubmitBtn from '../SubmitButton/SubmitButton';
 import './SignUp.scss';
 import PropTypes from 'prop-types';
 
-const SignUp = ({ setAuthError }) => {
+const SignUp = ({ SignInFail }) => {
   const [getUser, setUser] = useState(null);
 
   const onHandlechange = e => {
@@ -19,7 +19,7 @@ const SignUp = ({ setAuthError }) => {
     e.preventDefault();
     const { name, email, password, confirm_password } = getUser;
     if (password !== confirm_password) {
-      setAuthError("Passwods don't match!");
+      SignInFail("Passwods don't match!");
       return;
     }
 
@@ -27,7 +27,7 @@ const SignUp = ({ setAuthError }) => {
       const { user } = await auth.createUserWithEmailAndPassword(email, password);
       await createUserProfileDoc(user, { name });
     } catch (err) {
-      setAuthError(err.message);
+      SignInFail(err.message);
     }
   };
 
@@ -92,6 +92,6 @@ const SignUp = ({ setAuthError }) => {
   );
 };
 
-SignUp.propTypes = { setAuthError: PropTypes.func.isRequired };
+SignUp.propTypes = { SignInFail: PropTypes.func.isRequired };
 
-export default connect(null, { setAuthError })(SignUp);
+export default connect(null, { SignInFail })(SignUp);
