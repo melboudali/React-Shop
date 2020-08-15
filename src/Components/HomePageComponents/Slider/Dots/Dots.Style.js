@@ -1,20 +1,20 @@
 import styled from 'styled-components';
 
 export const Dot = styled.span`
-  padding: 4px;
-  margin-right: 5px;
+  padding: 1px 15px;
+  margin-right: 15px;
   cursor: pointer;
-  border-radius: 50%;
-  opacity: 0.7;
+  /* opacity: 0.8; */
   background: ${({ active }) => (active ? '#000' : '#E0E0E0')};
-  border: 2px solid #e0e0e0;
+  /* border: 1px solid #e0e0e0; */
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
 `;
 
 export const DotsContainer = styled.div`
   position: absolute;
   bottom: 15px;
-  width: 100%;
+  /* width: 100%; */
+  right: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
