@@ -1,11 +1,11 @@
 import React from 'react';
-import { DotsContainer, Dot } from './Dots.Style';
+import { DashContainer, Dash } from './Dashs.Style';
 import PropTypes from 'prop-types';
 
-const Dots = ({ Images, CurrentIndex, setCurrentIndex, setTranslate, width }) => (
-  <DotsContainer>
+const Dashes = ({ Images, CurrentIndex, setCurrentIndex, setTranslate, width }) => (
+  <DashContainer>
     {Images.map((Image, i) => (
-      <Dot
+      <Dash
         key={i}
         active={CurrentIndex === i}
         onClick={() => {
@@ -14,10 +14,10 @@ const Dots = ({ Images, CurrentIndex, setCurrentIndex, setTranslate, width }) =>
         }}
       />
     ))}
-  </DotsContainer>
+  </DashContainer>
 );
 
-Dots.prototype = {
+Dashes.prototype = {
   Images: PropTypes.array.isRequired,
   CurrentIndex: PropTypes.number.isRequired,
   setCurrentIndex: PropTypes.func.isRequired,
@@ -25,4 +25,4 @@ Dots.prototype = {
   width: PropTypes.number.isRequired
 };
 
-export default Dots;
+export default Dashes;

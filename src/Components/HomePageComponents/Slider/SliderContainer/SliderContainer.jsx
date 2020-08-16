@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Slider, SliderWrapper, SliderItem } from './SliderContainer.Style';
 import Arrow from '../Arrow/Arrow';
-import Dots from '../Dots/Dots';
+import Dots from '../Dashs/Dashs';
 
 const SliderContainer = () => {
   const SliderRef = useRef(0);

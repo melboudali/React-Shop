@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Dot = styled.span`
+export const Dash = styled.span`
   padding: 1px 15px;
   margin-right: 15px;
   cursor: pointer;
@@ -10,7 +10,7 @@ export const Dot = styled.span`
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
 `;
 
-export const DotsContainer = styled.div`
+export const DashContainer = styled.div`
   position: absolute;
   bottom: 15px;
   /* width: 100%; */
