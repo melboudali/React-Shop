@@ -17,15 +17,16 @@ const SignUp = ({ SignInFail }) => {
 
   const onSubmit = async e => {
     e.preventDefault();
-    const { name, email, password, confirm_password } = getUser;
-    if (password !== confirm_password) {
+    const { name, email, password, confirmPassword } = getUser;
+    if (password !== confirmPassword) {
       SignInFail("Passwods don't match!");
       return;
     }
 
     try {
       const { user } = await auth.createUserWithEmailAndPassword(email, password);
-      await createUserProfileDoc(user, { name });
+      await createUserProfileDoc({ ...user, displayName: name });
+      console.log(typeof user);
     } catch (err) {
       SignInFail(err.message);
     }
@@ -38,7 +39,7 @@ const SignUp = ({ SignInFail }) => {
       <form onSubmit={onSubmit}>
         <FormInput
           type='text'
-          id='name'
+          id='new_name'
           name='name'
           label='Name'
           value={(getUser && getUser.name) || ''}
@@ -69,9 +70,9 @@ const SignUp = ({ SignInFail }) => {
         <FormInput
           type='password'
           id='confirm_password'
-          name='confirm_password'
+          name='confirmPassword'
           label='Confirm Password'
-          value={(getUser && getUser.confirm_password) || ''}
+          value={(getUser && getUser.confirmPassword) || ''}
           autoComplete='new-password'
           required
           handleChange={onHandlechange}

@@ -23,8 +23,7 @@ export const GGLProvider = new firebase.auth.GoogleAuthProvider();
 export const FBProvider = new firebase.auth.FacebookAuthProvider();
 export const GHProvider = new firebase.auth.GithubAuthProvider();
 
-// if user not found create one
-export const createUserProfileDoc = async (userAuth, additionalData) => {
+export const createUserProfileDoc = async userAuth => {
   const userRef = firestore.collection('users').doc(`${userAuth.uid}`);
   const snapShot = await userRef.get();
   if (!snapShot.exists) {
@@ -36,8 +35,7 @@ export const createUserProfileDoc = async (userAuth, additionalData) => {
         imageURL: photoURL
           ? photoURL
           : 'https://cactusthemes.com/blog/wp-content/uploads/2018/01/tt_avatar_small.jpg',
-        createdAt: new Date(),
-        ...additionalData
+        createdAt: new Date()
       });
     } catch (err) {
       Store.dispatch(SignInFail(err.message));
@@ -46,4 +44,11 @@ export const createUserProfileDoc = async (userAuth, additionalData) => {
   return userRef;
 };
 
-export default firebase;
+export const GetCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = auth.onAuthStateChanged(userAuth => {
+      unsubscribe();
+      resolve(userAuth);
+    }, reject);
+  });
+};

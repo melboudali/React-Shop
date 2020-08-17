@@ -4,14 +4,16 @@ import {
   GGLProvider,
   FBProvider,
   GHProvider,
-  createUserProfileDoc
+  createUserProfileDoc,
+  GetCurrentUser
 } from '../../Utils/Firebase';
 import { SignInSuccess, SignInFail } from './UserActions';
 import {
   EMAIL_SIGN_IN_START,
   GOOGLE_SIGN_IN_START,
   FACEBOOK_SIGN_IN_START,
-  GITHUB_SIGN_IN_START
+  GITHUB_SIGN_IN_START,
+  CHECK_USER_SESSION
 } from './UserTypes';
 
 function* OnEmailSignInStart() {
@@ -50,11 +52,27 @@ function* SigninWithProvider(Provider) {
   }
 }
 
+function* CheckUserSession() {
+  yield takeLatest(CHECK_USER_SESSION, function* () {
+    try {
+      const userAuth = yield GetCurrentUser();
+      if (userAuth) {
+        const userRef = yield call(createUserProfileDoc, userAuth);
+        const snapShot = yield userRef.get();
+        yield put(SignInSuccess({ id: snapShot.id, ...snapShot.data() }));
+      }
+    } catch (error) {
+      yield put(SignInFail(error.message));
+    }
+  });
+}
+
 export function* UserSagas() {
   yield all([
     call(OnEmailSignInStart),
     call(OnGoogleSignInStart),
     call(OnFacebookSignInStart),
-    call(OnGithubSignInStart)
+    call(OnGithubSignInStart),
+    call(CheckUserSession)
   ]);
 }

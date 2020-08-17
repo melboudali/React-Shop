@@ -1,7 +1,7 @@
 import React, { useEffect, Fragment } from 'react';
-import { auth, createUserProfileDoc } from './Utils/Firebase';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { CheckUserSession } from './Redux/User/UserActions';
 import AuthPrivateRoute from './Routes/AuthPrivateRoute';
 import Container from '@material-ui/core/Container';
 import Announcement from './Layouts/Announcement/Announcement';
@@ -12,30 +12,12 @@ import SigninSignupPage from './Pages/SignIn-SingUp/SignInSignUp';
 import CheckoutPage from './Pages/Checkout/Checkout';
 import NotFoundPage from './Pages/404/NotFound';
 import Footer from './Layouts/Footer/Footer';
-import GlobalStyle from './App.style';
-import Styled from 'styled-components';
+import { NavbarDivider, GlobalStyle } from './App.style';
 
-const NavbarDivider = Styled.div`
-  padding-top: 75px;
-`;
-
-const App = () => {
-  // FIXME: switching this async func to redux saga
-  // useEffect(() => {
-  //   auth.onAuthStateChanged(async userAuth => {
-  //     if (userAuth) {
-  //       const userRef = await createUserProfileDoc(userAuth);
-  //       userRef.onSnapshot(snapShot => {
-  //         setCurrentUser({
-  //           id: snapShot.id,
-  //           ...snapShot.data()
-  //         });
-  //       });
-  //     } else {
-  //       setCurrentUser(null);
-  //     }
-  //   });
-  // }, [setCurrentUser]);
+const App = ({ CheckUserSession }) => {
+  useEffect(() => {
+    CheckUserSession();
+  }, [CheckUserSession]);
 
   return (
     <Fragment>
@@ -60,4 +42,4 @@ const App = () => {
   );
 };
 
-export default connect(null, {})(App);
+export default connect(null, { CheckUserSession })(App);

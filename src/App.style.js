@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
+import Styled, { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   html {
     position: relative;
     min-height: 100%;
@@ -43,4 +43,6 @@ const GlobalStyle = createGlobalStyle`
   };
 `;
 
-export default GlobalStyle;
+export const NavbarDivider = Styled.div`
+  padding-top: 75px;
+`;
