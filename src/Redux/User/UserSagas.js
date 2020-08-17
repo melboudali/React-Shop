@@ -7,13 +7,14 @@ import {
   createUserProfileDoc,
   GetCurrentUser
 } from '../../Utils/Firebase';
-import { SignInSuccess, SignInFail } from './UserActions';
+import { SignInSuccess, SignInFail, SignOutSuccess, SignOutFail } from './UserActions';
 import {
   EMAIL_SIGN_IN_START,
   GOOGLE_SIGN_IN_START,
   FACEBOOK_SIGN_IN_START,
   GITHUB_SIGN_IN_START,
-  CHECK_USER_SESSION
+  CHECK_USER_SESSION,
+  SIGN_OUT_START
 } from './UserTypes';
 
 function* OnEmailSignInStart() {
@@ -67,12 +68,24 @@ function* CheckUserSession() {
   });
 }
 
+function* SignOutStart() {
+  yield takeLatest(SIGN_OUT_START, function* () {
+    try {
+      yield auth.signOut();
+      yield put(SignOutSuccess());
+    } catch (error) {
+      yield put(SignOutFail(error.message));
+    }
+  });
+}
+
 export function* UserSagas() {
   yield all([
     call(OnEmailSignInStart),
     call(OnGoogleSignInStart),
     call(OnFacebookSignInStart),
     call(OnGithubSignInStart),
+    call(SignOutStart),
     call(CheckUserSession)
   ]);
 }

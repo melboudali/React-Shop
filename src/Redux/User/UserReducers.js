@@ -1,4 +1,10 @@
-import { SIGN_IN_SUCCESS, SIGN_IN_ERROR, CLEAR_AUTH_ERROR } from './UserTypes';
+import {
+  SIGN_IN_SUCCESS,
+  SIGN_IN_ERROR,
+  SIGN_OUT_SUCCESS,
+  SIGN_OUT_ERROR,
+  CLEAR_AUTH_ERROR
+} from './UserTypes';
 
 const INITIAL_STATE = {
   currentUser: null,
@@ -10,6 +16,9 @@ const UserReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case SIGN_IN_SUCCESS:
       return { ...state, currentUser: action.payload, authLoading: false, authErrors: [] };
+    case SIGN_OUT_SUCCESS:
+      return { ...state, currentUser: null, authLoading: false, authErrors: [] };
+    case SIGN_OUT_ERROR:
     case SIGN_IN_ERROR:
       return {
         ...state,

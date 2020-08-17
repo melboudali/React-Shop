@@ -7,6 +7,9 @@ import {
   CHECK_USER_SESSION,
   SIGN_IN_SUCCESS,
   SIGN_IN_ERROR,
+  SIGN_OUT_START,
+  SIGN_OUT_SUCCESS,
+  SIGN_OUT_ERROR,
   CLEAR_AUTH_ERROR
 } from './UserTypes';
 
@@ -23,5 +26,9 @@ export const CheckUserSession = () => ({ type: CHECK_USER_SESSION });
 
 export const SignInSuccess = user => ({ type: SIGN_IN_SUCCESS, payload: user });
 export const SignInFail = error => ({ type: SIGN_IN_ERROR, payload: error });
+
+export const SignOutStart = () => ({ type: SIGN_OUT_START });
+export const SignOutSuccess = () => ({ type: SIGN_OUT_SUCCESS });
+export const SignOutFail = error => ({ type: SIGN_OUT_ERROR, paymoad: error });
 
 export const clearAuthError = () => ({ type: CLEAR_AUTH_ERROR });

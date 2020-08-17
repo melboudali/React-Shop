@@ -1,6 +1,6 @@
 import React, { useEffect, useState, Fragment } from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import { auth } from '../../Utils/Firebase';
+import { SignOutStart } from '../../Redux/User/UserActions';
 import { connect } from 'react-redux';
 import CartIcon from '../../Components/Navbar/CartIcon/CartIcon';
 import { createStructuredSelector } from 'reselect';
@@ -22,7 +22,7 @@ import {
 } from './Navbar.Style';
 import PropTypes from 'prop-types';
 
-const Navbar = ({ Container, history, currentUser }) => {
+const Navbar = ({ Container, history, currentUser, SignOutStart }) => {
   const [getShowNav, setShowNav] = useState(true);
   const [getNavScrollDown, setNavScrollDown] = useState(false);
   const [profileImage, setProfileImage] = useState(
@@ -94,7 +94,7 @@ const Navbar = ({ Container, history, currentUser }) => {
                   <MenuContainer>
                     <Menu>
                       <li onClick={() => history.push('/profile')}>MY PROFILE</li>
-                      <li onClick={() => auth.signOut()}>SIGN OUT</li>
+                      <li onClick={() => SignOutStart()}>SIGN OUT</li>
                     </Menu>
                   </MenuContainer>
                 </Profile>
@@ -140,4 +140,4 @@ const mapStateToProps = createStructuredSelector({
 //   currentUser
 // });
 
-export default withRouter(connect(mapStateToProps)(Navbar));
+export default withRouter(connect(mapStateToProps, { SignOutStart })(Navbar));
