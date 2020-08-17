@@ -7,8 +7,16 @@ import {
   createUserProfileDoc,
   GetCurrentUser
 } from '../../Utils/Firebase';
-import { SignInSuccess, SignInFail, SignOutSuccess, SignOutFail } from './UserActions';
 import {
+  SingUpSuccess,
+  SingUpFail,
+  SignInSuccess,
+  SignInFail,
+  SignOutSuccess,
+  SignOutFail
+} from './UserActions';
+import {
+  SIGN_UP_START,
   EMAIL_SIGN_IN_START,
   GOOGLE_SIGN_IN_START,
   FACEBOOK_SIGN_IN_START,
@@ -17,6 +25,27 @@ import {
   SIGN_OUT_START
 } from './UserTypes';
 
+// Sign up
+function* SignUp() {
+  yield takeLatest(SIGN_UP_START, function* ({
+    payload: { name, email, password, confirmPassword }
+  }) {
+    if (password !== confirmPassword) {
+      yield put(SingUpFail("Passwods don't match!"));
+      return;
+    }
+
+    try {
+      const { user } = yield auth.createUserWithEmailAndPassword(email, password);
+      const userRef = yield call(createUserProfileDoc, { ...user, displayName: name });
+      const snapShot = yield userRef.get();
+      yield put(SingUpSuccess({ id: snapShot.id, ...snapShot.data() }));
+    } catch (error) {
+      yield put(SingUpFail(error.message));
+    }
+  });
+}
+// Sign in
 function* OnEmailSignInStart() {
   yield takeLatest(EMAIL_SIGN_IN_START, function* ({ payload: { getEmail, getPassword } }) {
     try {
@@ -68,6 +97,7 @@ function* CheckUserSession() {
   });
 }
 
+// Sign out
 function* SignOutStart() {
   yield takeLatest(SIGN_OUT_START, function* () {
     try {
@@ -81,6 +111,7 @@ function* SignOutStart() {
 
 export function* UserSagas() {
   yield all([
+    call(SignUp),
     call(OnEmailSignInStart),
     call(OnGoogleSignInStart),
     call(OnFacebookSignInStart),

@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { auth, createUserProfileDoc } from '../../../Utils/Firebase';
-import { SignInFail } from '../../../Redux/User/UserActions';
+import { SingUpStart } from '../../../Redux/User/UserActions';
 import FormInput from '../FormInput/FormInput';
 import SubmitBtn from '../SubmitButton/SubmitButton';
 import './SignUp.scss';
 import PropTypes from 'prop-types';
 
-const SignUp = ({ SignInFail }) => {
+const SignUp = ({ SingUpStart }) => {
   const [getUser, setUser] = useState(null);
 
   const onHandlechange = e => {
@@ -17,19 +16,7 @@ const SignUp = ({ SignInFail }) => {
 
   const onSubmit = async e => {
     e.preventDefault();
-    const { name, email, password, confirmPassword } = getUser;
-    if (password !== confirmPassword) {
-      SignInFail("Passwods don't match!");
-      return;
-    }
-
-    try {
-      const { user } = await auth.createUserWithEmailAndPassword(email, password);
-      await createUserProfileDoc({ ...user, displayName: name });
-      console.log(typeof user);
-    } catch (err) {
-      SignInFail(err.message);
-    }
+    SingUpStart(getUser);
   };
 
   return (
@@ -93,6 +80,6 @@ const SignUp = ({ SignInFail }) => {
   );
 };
 
-SignUp.propTypes = { SignInFail: PropTypes.func.isRequired };
+SignUp.propTypes = { SingUpStart: PropTypes.func.isRequired };
 
-export default connect(null, { SignInFail })(SignUp);
+export default connect(null, { SingUpStart })(SignUp);

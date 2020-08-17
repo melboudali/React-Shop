@@ -31,6 +31,6 @@ function* NestedFunc() {
   }
 }
 
-export function* FetchingCollections() {
+export function* ShopSagas() {
   yield takeEvery(FETCH_COLLECTIONS_START, NestedFunc);
 }

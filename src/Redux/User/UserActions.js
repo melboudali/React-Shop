@@ -5,6 +5,9 @@ import {
   FACEBOOK_SIGN_IN_START,
   GITHUB_SIGN_IN_START,
   CHECK_USER_SESSION,
+  SIGN_UP_START,
+  SIGN_UP_SUCCESS,
+  SIGN_UP_ERROR,
   SIGN_IN_SUCCESS,
   SIGN_IN_ERROR,
   SIGN_OUT_START,
@@ -26,6 +29,10 @@ export const CheckUserSession = () => ({ type: CHECK_USER_SESSION });
 
 export const SignInSuccess = user => ({ type: SIGN_IN_SUCCESS, payload: user });
 export const SignInFail = error => ({ type: SIGN_IN_ERROR, payload: error });
+
+export const SingUpStart = user => ({ type: SIGN_UP_START, payload: user });
+export const SingUpSuccess = user => ({ type: SIGN_UP_SUCCESS, payload: user });
+export const SingUpFail = error => ({ type: SIGN_UP_ERROR, payload: error });
 
 export const SignOutStart = () => ({ type: SIGN_OUT_START });
 export const SignOutSuccess = () => ({ type: SIGN_OUT_SUCCESS });
