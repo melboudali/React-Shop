@@ -45,7 +45,7 @@ function* SignUp() {
     }
   });
 }
-// Sign in
+// Sign in 
 function* OnEmailSignInStart() {
   yield takeLatest(EMAIL_SIGN_IN_START, function* ({ payload: { getEmail, getPassword } }) {
     try {
