@@ -7,16 +7,16 @@ import './SignUp.scss';
 import PropTypes from 'prop-types';
 
 const SignUp = ({ SingUpStart }) => {
-  const [getUser, setUser] = useState(null);
+  const [userCredentials, setUserCredentials] = useState(null);
 
   const onHandlechange = e => {
     e.preventDefault();
-    setUser({ ...getUser, [e.target.name]: e.target.value });
+    setUserCredentials({ ...userCredentials, [e.target.name]: e.target.value });
   };
 
-  const onSubmit = async e => {
+  const onSubmit = e => {
     e.preventDefault();
-    SingUpStart(getUser);
+    SingUpStart(userCredentials);
   };
 
   return (
@@ -26,40 +26,40 @@ const SignUp = ({ SingUpStart }) => {
       <form onSubmit={onSubmit}>
         <FormInput
           type='text'
-          id='new_name'
+          id='name'
           name='name'
           label='Name'
-          value={(getUser && getUser.name) || ''}
-          autoComplete='name'
+          value={(userCredentials && userCredentials.name) || ''}
+          // autoComplete='new_name'
           required
           handleChange={onHandlechange}
         />
         <FormInput
           type='email'
-          id='new_email'
+          id='email'
           name='email'
           label='Email'
-          value={(getUser && getUser.email) || ''}
-          autoComplete='email'
+          value={(userCredentials && userCredentials.email) || ''}
+          autoComplete='new_email'
           required
           handleChange={onHandlechange}
         />
         <FormInput
           type='password'
-          id='new_password'
+          id='password'
           name='password'
           label='Password'
-          value={(getUser && getUser.password) || ''}
+          value={(userCredentials && userCredentials.password) || ''}
           autoComplete='new-password'
           required
           handleChange={onHandlechange}
         />
         <FormInput
           type='password'
-          id='confirm_password'
+          id='confirmPassword'
           name='confirmPassword'
           label='Confirm Password'
-          value={(getUser && getUser.confirmPassword) || ''}
+          value={(userCredentials && userCredentials.confirmPassword) || ''}
           autoComplete='new-password'
           required
           handleChange={onHandlechange}

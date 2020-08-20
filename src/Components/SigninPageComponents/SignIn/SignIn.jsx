@@ -17,15 +17,15 @@ const SignIn = ({
   FacebookSignInStart,
   GithubSignInStart
 }) => {
-  const [getEmail, setEmail] = useState('');
-  const [getPassword, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const onEmailChange = e => setEmail(e.target.value);
   const onPasswordChange = e => setPassword(e.target.value);
 
   const onSubmitHandler = e => {
     e.preventDefault();
-    EmailSignInStart({ getEmail, getPassword });
+    EmailSignInStart({ email, password });
   };
 
   return (
@@ -38,8 +38,8 @@ const SignIn = ({
           name='email'
           label='Email'
           id='email'
-          value={getEmail}
-          autoComplete='email'
+          value={email}
+          autoComplete='new_email'
           required
           handleChange={onEmailChange}
         />
@@ -48,7 +48,7 @@ const SignIn = ({
           name='password'
           label='Password'
           id='password'
-          value={getPassword}
+          value={password}
           autoComplete='new-password'
           required
           handleChange={onPasswordChange}
