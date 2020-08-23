@@ -1,20 +1,23 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const path = require('path');
 const app = express();
 
-if (process.env.NODE_ENV !== 'production') require('dotenv').config();
+process.env.NODE_ENV !== 'production' && require('dotenv').config();
 
-app.get('/', (req, res) => {
-  if (process.env.NODE_ENV !== 'production') {
-    console.log('dev');
-  } else {
-    console.log('production');
-  }
-  res.json({
-    code: 200,
-    message: 'Welcome'
+const port = process.env.PORT || 5000;
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(cors());
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'client/build')));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
   });
-});
+}
 
-app.listen(5000, () => console.log('Server Connected'));
+app.listen(port, err => (err ? console.log(err) : console.log(`Server running on port: ${port}`)));
