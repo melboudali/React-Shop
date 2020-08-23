@@ -1,0 +1,8 @@
+{
+  "name": "react-shop-server-side",
+  "version": "1.0.0",
+  "main": "Server.js",
+  "repository": "https://github.com/MedElBoudali/React-Ecommerce-App.git",
+  "author": "MedEBoudali <med.sneaky@gmail.com>",
+  "license": "MIT"
+}
