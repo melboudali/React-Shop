@@ -6,6 +6,11 @@ const app = express();
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
 app.get('/', (req, res) => {
+  if (process.env.NODE_ENV !== 'production') {
+    console.log('dev');
+  } else {
+    console.log('production');
+  }
   res.json({
     code: 200,
     message: 'Welcome'
