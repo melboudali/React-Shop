@@ -14,6 +14,7 @@ app.use(cors());
 
 // @Routes
 app.use('/payment', require('./routes/Payment.Route'));
+app.use('/cart', require('./routes/Cart.Route'));
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')));

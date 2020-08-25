@@ -3,12 +3,12 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { SelectCurrentUser } from '../../../Redux/User/UserSelectors';
-import { SelectCartTotal } from '../../../Redux/Cart/CartSelectors';
+import { SelectCartItems, SelectCartTotal } from '../../../Redux/Cart/CartSelectors';
 import StripeCheckout from 'react-stripe-checkout';
 import StripeLogo from '../../../Assets/Images/stripe-logo.jpg';
 import PropTypes from 'prop-types';
 
-const Stripe = ({ CurrentUser, CartTotal }) => {
+const Stripe = ({ CurrentUser, CartItems, CartTotal }) => {
   const publishableKey = process.env.REACT_APP_STRIPE_KEY;
   const amount = CartTotal * 100;
 
@@ -19,6 +19,7 @@ const Stripe = ({ CurrentUser, CartTotal }) => {
         method: 'post',
         data: { amount, token }
       });
+      const Cart = await axios({ url: 'cart', method: 'post', data: CartItems });
       console.log('Payment Successful Data: ', response);
     } catch (error) {
       console.log('Payment error: ', error);
@@ -55,6 +56,7 @@ Stripe.propTypes = {
 
 const mapStateToProps = createStructuredSelector({
   CurrentUser: SelectCurrentUser,
+  CartItems: SelectCartItems,
   CartTotal: SelectCartTotal
 });
 

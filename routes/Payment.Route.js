@@ -4,7 +4,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 //@route    POST /payment
 //@desc     Payment route for stripe
-//@access   Public
+//@access   Private
 router.post('/', (req, res) => {
   const body = {
     source: req.body.token.id,
