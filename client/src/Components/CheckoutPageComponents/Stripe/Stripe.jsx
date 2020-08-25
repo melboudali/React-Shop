@@ -7,9 +7,9 @@ import { SelectCartItems, SelectCartTotal } from '../../../Redux/Cart/CartSelect
 import StripeCheckout from 'react-stripe-checkout';
 import StripeLogo from '../../../Assets/Images/stripe-logo.jpg';
 import PropTypes from 'prop-types';
+const publishableKey = process.env.REACT_APP_STRIPE_KEY;
 
 const Stripe = ({ CurrentUser, CartItems, CartTotal }) => {
-  const publishableKey = process.env.REACT_APP_STRIPE_KEY;
   const amount = CartTotal * 100;
 
   const onToken = async token => {
