@@ -9,14 +9,14 @@ import PropTypes from 'prop-types';
 
 const Stripe = ({ CurrentUser, CartTotal }) => {
   const onToken = token => {
-    // fetch('/save-stripe-token', {
-    //   method: 'POST',
-    //   body: JSON.stringify(token)
-    // }).then(response => {
-    //   response.json().then(data => {
-    //     alert(`We are in business, ${data.email}`);
-    //   });
-    // });
+    fetch('/payment', {
+      method: 'POST',
+      body: JSON.stringify(token)
+    }).then(response => {
+      response.json().then(data => {
+        alert(`We are in business, ${data.email}`);
+      });
+    });
   };
 
   return (

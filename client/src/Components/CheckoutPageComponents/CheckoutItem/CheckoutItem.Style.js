@@ -18,7 +18,7 @@ const disabledQuantityIcons = css`
   }
 `;
 
-export const checkoutItemContainer = styled.div`
+export const CheckoutItemContainer = styled.div`
   background-color: ${({ id }) => (id % 2 === 0 ? '#eee' : '#fff')};
   width: 100%;
   display: flex;
@@ -30,7 +30,7 @@ export const checkoutItemContainer = styled.div`
   border-left: 2px dashed rgb(216, 216, 216);
 `;
 
-export const imageContainer = styled.div`
+export const ImageContainer = styled.div`
   ${priceAndQuantity}
   padding: 15px;
   margin: 0;
@@ -39,23 +39,23 @@ export const imageContainer = styled.div`
   }
 `;
 
-export const itemName = styled.span`
+export const ItemName = styled.span`
   width: 40%;
   text-align: center;
 `;
 
-export const itemQuantity = styled.span`
+export const ItemQuantity = styled.span`
   ${priceAndQuantity}
 `;
 
-export const quantityControls = styled.span`
+export const QuantityControls = styled.span`
   ${({ quantity }) => (quantity > 1 ? quantityIcons : disabledQuantityIcons)}
   padding: 0 10px;
   display: inline-flex;
   vertical-align: middle;
 `;
 
-export const svgIcon = styled.svg`
+export const SvgIcon = styled.svg`
   width: 24px;
   height: 24px;
   stroke: rgb(71, 71, 71);
@@ -65,15 +65,15 @@ export const svgIcon = styled.svg`
   fill: none;
 `;
 
-export const quantityCount = styled.span`
+export const QuantityCount = styled.span`
   vertical-align: middle;
 `;
 
-export const itemPrice = styled.span`
+export const ItemPrice = styled.span`
   ${priceAndQuantity}
 `;
 
-export const removeBtn = styled.div`
+export const RemoveBtn = styled.div`
   width: 10%;
   text-align: center;
   cursor: pointer;
