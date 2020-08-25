@@ -14,13 +14,12 @@ const Stripe = ({ CurrentUser, CartItems, CartTotal }) => {
 
   const onToken = async token => {
     try {
-      const response = await axios({
+      await axios({
         url: 'payment',
         method: 'post',
         data: { amount, token }
       });
-      const Cart = await axios({ url: 'cart', method: 'post', data: CartItems });
-      console.log('Payment Successful Data: ', response);
+      // await axios({ url: 'cart', method: 'post', data: CartItems });
     } catch (error) {
       console.log('Payment error: ', error);
     }
