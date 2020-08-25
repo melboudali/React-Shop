@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
-
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 //@route    POST /payment
-//@desc     make a stripe payment
+//@desc     Payment route for stripe
 //@access   Public
 router.post('/', (req, res) => {
   const body = {

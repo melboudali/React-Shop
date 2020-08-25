@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 // @Routes
-app.use('/payment', require('./routes/Payment'));
+app.use('/payment', require('./routes/Payment.Route'));
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')));
