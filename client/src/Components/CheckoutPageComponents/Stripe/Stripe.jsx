@@ -19,7 +19,6 @@ const Stripe = ({ CurrentUser, CartItems, CartTotal }) => {
         method: 'post',
         data: { amount, token }
       });
-      // await axios({ url: 'cart', method: 'post', data: CartItems });
     } catch (error) {
       console.log('Payment error: ', error);
     }

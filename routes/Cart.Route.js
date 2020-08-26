@@ -5,7 +5,7 @@ const router = express.Router();
 //@desc     Get cart items after payment
 //@access   Private
 router.post('/', (req, res) => {
-  console.log(req.body);
+  // TODO: add this later
 });
 
 module.exports = router;
