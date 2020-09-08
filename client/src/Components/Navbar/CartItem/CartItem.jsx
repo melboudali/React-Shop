@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { connect } from 'react-redux';
 import { deleteItem } from '../../../Redux/Cart/CartActions';
 import './CartItem.scss';
@@ -38,4 +38,4 @@ CartItem.propTypes = {
   deleteItem: PropTypes.func
 };
 
-export default connect(null, { deleteItem })(CartItem);
+export default memo(connect(null, { deleteItem })(CartItem));

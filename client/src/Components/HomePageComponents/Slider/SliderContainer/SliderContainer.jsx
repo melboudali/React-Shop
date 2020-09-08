@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Slider, SliderWrapper, SliderItem } from './SliderContainer.Style';
 import Arrow from '../Arrow/Arrow';
-import Dots from '../Dashs/Dashs';
+import Dashs from '../Dashs/Dashs';
 
 const SliderContainer = () => {
   const SliderRef = useRef(0);
@@ -56,7 +56,7 @@ const SliderContainer = () => {
       </SliderWrapper>
       <Arrow direction='right' nextSlide={nextSlide} />
       <Arrow direction='left' prevSlide={prevSlide} />
-      <Dots
+      <Dashs
         Images={Images}
         CurrentIndex={CurrentIndex}
         setCurrentIndex={setCurrentIndex}

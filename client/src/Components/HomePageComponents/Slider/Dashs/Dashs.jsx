@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import { DashContainer, Dash } from './Dashs.Style';
 import PropTypes from 'prop-types';
 
@@ -25,4 +25,4 @@ Dashes.prototype = {
   width: PropTypes.number.isRequired
 };
 
-export default Dashes;
+export default memo(Dashes);
