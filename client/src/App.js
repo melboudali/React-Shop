@@ -1,18 +1,20 @@
-import React, { useEffect, Fragment } from 'react';
+import React, { useEffect, Fragment, lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { CheckUserSession } from './Redux/User/UserActions';
 import AuthPrivateRoute from './Routes/AuthPrivateRoute';
 import Container from '@material-ui/core/Container';
-import Announcement from './Layouts/Announcement/Announcement';
 import Navbar from './Layouts/Navbar/Navbar';
-import HomePage from './Pages/Home/Home';
-import ShopPage from './Pages/Shop/Shop';
-import SigninSignupPage from './Pages/SignIn-SingUp/SignInSignUp';
-import CheckoutPage from './Pages/Checkout/Checkout';
-import NotFoundPage from './Pages/404/NotFound';
+import Announcement from './Layouts/Announcement/Announcement';
 import Footer from './Layouts/Footer/Footer';
 import { NavbarDivider, GlobalStyle } from './App.style';
+import Loading from './Components/ShopPageComponents/Loading/Loading';
+// Code Splitting
+const HomePage = lazy(() => import('./Pages/Home/Home'));
+const ShopPage = lazy(() => import('./Pages/Shop/Shop'));
+const SigninSignupPage = lazy(() => import('./Pages/SignIn-SingUp/SignInSignUp'));
+const CheckoutPage = lazy(() => import('./Pages/Checkout/Checkout'));
+const NotFoundPage = lazy(() => import('./Pages/404/NotFound'));
 
 const App = ({ CheckUserSession }) => {
   useEffect(() => {
@@ -26,16 +28,18 @@ const App = ({ CheckUserSession }) => {
       <Navbar Container={Container} />
       <NavbarDivider />
       <Container>
-        <Switch>
-          {/* Private Routes */}
-          <AuthPrivateRoute exact path='/signin' component={SigninSignupPage} />
-          {/* Public Routes */}
-          <Route exact path='/' component={HomePage} />
-          <Route path='/shop' component={ShopPage} />
-          <Route exact path='/checkout' component={CheckoutPage} />
-          {/* 404 Not Found Route */}
-          <Route exact path='*' component={NotFoundPage} />
-        </Switch>
+        <Suspense fallback={<Loading />}>
+          <Switch>
+            {/* Private Routes */}
+            <AuthPrivateRoute exact path='/signin' component={SigninSignupPage} />
+            {/* Public Routes */}
+            <Route exact path='/' component={HomePage} />
+            <Route path='/shop' component={ShopPage} />
+            <Route exact path='/checkout' component={CheckoutPage} />
+            {/* 404 Not Found Route */}
+            <Route exact path='*' component={NotFoundPage} />
+          </Switch>
+        </Suspense>
       </Container>
       <Footer />
     </Fragment>

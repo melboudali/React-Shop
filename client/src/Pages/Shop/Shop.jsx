@@ -1,16 +1,21 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, lazy } from 'react';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { SelectLoading } from '../../Redux/Shop/ShopSelectors';
-// import { FetchingCollections } from '../../Redux/Shop/ShopActions';
 import { fetchCollectionsStart } from '../../Redux/Shop/ShopActions';
-
-import Collections from '../../Components/ShopPageComponents/Collections/Collections';
 import Loading from '../../Components/ShopPageComponents/Loading/Loading';
-import CurrentCollection from '../../Components/ShopPageComponents/CurrentCollection/CurrentCollection';
-import ItemDetails from '../../Components/ShopPageComponents/ItemDetails/ItemDetails';
 import PropTypes from 'prop-types';
+// Code Splitting
+const Collections = lazy(() =>
+  import('../../Components/ShopPageComponents/Collections/Collections')
+);
+const CurrentCollection = lazy(() =>
+  import('../../Components/ShopPageComponents/CurrentCollection/CurrentCollection')
+);
+const ItemDetails = lazy(() =>
+  import('../../Components/ShopPageComponents/ItemDetails/ItemDetails')
+);
 
 const Shop = ({ match, fetchCollectionsStart, isLoading }) => {
   useEffect(() => {
@@ -32,7 +37,11 @@ const Shop = ({ match, fetchCollectionsStart, isLoading }) => {
   );
 };
 
-Shop.prototype = { match: PropTypes.object };
+Shop.prototype = {
+  match: PropTypes.object.isRequired,
+  fetchCollectionsStart: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired
+};
 
 const mapStateToProps = createStructuredSelector({
   isLoading: SelectLoading
