@@ -40,7 +40,7 @@ const App = ({ CheckUserSession }) => {
               <Route path='/shop' component={ShopPage} />
               <Route exact path='/checkout' component={CheckoutPage} />
               {/* 404 Not Found Route */}
-              <Route path='*' component={NotFoundPage} />
+              <Route exact path='*' component={NotFoundPage} />
             </Switch>
           </Suspense>
         </ErrorBoundary>
