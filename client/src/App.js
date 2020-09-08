@@ -9,6 +9,8 @@ import Announcement from './Layouts/Announcement/Announcement';
 import Footer from './Layouts/Footer/Footer';
 import { NavbarDivider, GlobalStyle } from './App.style';
 import Loading from './Components/ShopPageComponents/Loading/Loading';
+// Error Boundary
+import ErrorBoundary from './Pages/ErrorBoundary/ErrorBoundary';
 // Code Splitting
 const HomePage = lazy(() => import('./Pages/Home/Home'));
 const ShopPage = lazy(() => import('./Pages/Shop/Shop'));
@@ -28,18 +30,20 @@ const App = ({ CheckUserSession }) => {
       <Navbar Container={Container} />
       <NavbarDivider />
       <Container>
-        <Suspense fallback={<Loading />}>
-          <Switch>
-            {/* Private Routes */}
-            <AuthPrivateRoute exact path='/signin' component={SigninSignupPage} />
-            {/* Public Routes */}
-            <Route exact path='/' component={HomePage} />
-            <Route path='/shop' component={ShopPage} />
-            <Route exact path='/checkout' component={CheckoutPage} />
-            {/* 404 Not Found Route */}
-            <Route exact path='*' component={NotFoundPage} />
-          </Switch>
-        </Suspense>
+        <ErrorBoundary>
+          <Suspense fallback={<Loading />}>
+            <Switch>
+              {/* Private Routes */}
+              <AuthPrivateRoute exact path='/signin' component={SigninSignupPage} />
+              {/* Public Routes */}
+              <Route exact path='/' component={HomePage} />
+              <Route path='/shop' component={ShopPage} />
+              <Route exact path='/checkout' component={CheckoutPage} />
+              {/* 404 Not Found Route */}
+              <Route exact path='*' component={NotFoundPage} />
+            </Switch>
+          </Suspense>
+        </ErrorBoundary>
       </Container>
       <Footer />
     </Fragment>

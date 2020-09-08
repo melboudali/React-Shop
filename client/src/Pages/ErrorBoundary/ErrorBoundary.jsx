@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NotFound from '../404/NotFound';
 
 export class ErrorBoundary extends Component {
   constructor(props) {
@@ -13,13 +14,13 @@ export class ErrorBoundary extends Component {
 
   componentDidCatch(error, errorInfo) {
     // You can also log the error to an error reporting service
-    logErrorToMyService(error, errorInfo);
+    console.log(error);
   }
 
   render() {
     if (this.state.hasError) {
       // You can render any custom fallback UI
-      return <h1>Something went wrong.</h1>;
+      return <NotFound />;
     }
 
     return this.props.children;
