@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Profiler } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { SelectSections } from '../../Redux/Home/HomeSelectors';
@@ -9,7 +9,11 @@ import PropTypes from 'prop-types';
 
 const Home = ({ Sections }) => (
   <>
-    <SliderContainer />
+    <Profiler
+      id='SliderContainer'
+      onRender={(id, phase, actualDuration) => console.log({ id, phase, actualDuration })}>
+      <SliderContainer />
+    </Profiler>
     <Grid container direction='row' justify='center' alignItems='flex-start'>
       {Sections.map(({ id, ...Sections }) => (
         <Grid
