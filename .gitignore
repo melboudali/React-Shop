@@ -10,11 +10,10 @@ node_modules
 
 # Comment start
 # production
-build
+# build
 
 #Cpanel
-.cpanel.yml
-# Comment end
+# .cpanel.yml
 
 # misc
 .DS_Store
