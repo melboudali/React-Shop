@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { CheckUserSession } from './Redux/User/UserActions';
 import AuthPrivateRoute from './Routes/AuthPrivateRoute';
 import Container from '@material-ui/core/Container';
+import Navbar from './Layouts/Navbar/Navbar';
 import Announcement from './Layouts/Announcement/Announcement';
 import Footer from './Layouts/Footer/Footer';
 import { NavbarDivider, GlobalStyle } from './App.style';
@@ -11,7 +12,6 @@ import Loading from './Components/ShopPageComponents/Loading/Loading';
 // Error Boundary
 import ErrorBoundary from './Pages/ErrorBoundary/ErrorBoundary';
 // Code Splitting
-const Navbar = lazy(() => import('./Layouts/Navbar/Navbar'));
 const HomePage = lazy(() => import('./Pages/Home/Home'));
 const ShopPage = lazy(() => import('./Pages/Shop/Shop'));
 const SigninSignupPage = lazy(() => import('./Pages/SignIn-SingUp/SignInSignUp'));
@@ -27,11 +27,11 @@ const App = ({ CheckUserSession }) => {
     <Fragment>
       <GlobalStyle />
       <Announcement />
-      <ErrorBoundary>
-        <Suspense fallback={<Loading />}>
-          <Navbar Container={Container} />
-          <NavbarDivider />
-          <Container>
+      <Navbar Container={Container} />
+      <NavbarDivider />
+      <Container>
+        <ErrorBoundary>
+          <Suspense fallback={<Loading />}>
             <Switch>
               {/* Private Routes */}
               <AuthPrivateRoute exact path='/signin' component={SigninSignupPage} />
@@ -42,9 +42,9 @@ const App = ({ CheckUserSession }) => {
               {/* 404 Not Found Route */}
               <Route exact path='*' component={NotFoundPage} />
             </Switch>
-          </Container>
-        </Suspense>
-      </ErrorBoundary>
+          </Suspense>
+        </ErrorBoundary>
+      </Container>
       <Footer />
     </Fragment>
   );
