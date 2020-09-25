@@ -1,6 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/andrrnsj/shop.react
-    - /bin/cp -R client/build/* $DEPLOYPATH
-    

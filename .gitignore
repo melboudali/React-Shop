@@ -2,7 +2,7 @@
 build
 
 # cpanel
-cpanel.yml
+.cpanel.yml
 
 # dependencies
 node_modules
