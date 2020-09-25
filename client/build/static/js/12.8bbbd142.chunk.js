@@ -1,2 +1,0 @@
-(this["webpackJsonpreact-shop"]=this["webpackJsonpreact-shop"]||[]).push([[12],{209:function(e,t,a){"use strict";a.r(t);var n=a(0),r=a.n(n),c=a(21),m=a(25),i=a(164),s=Object(m.b)({CurrentItem:function(e,t){var a=t.match.params.itemName,n=t.history.location.pathname;return Object(i.c)(a,n.split("/")[2])(e)}});t.default=Object(c.b)(s)((function(e){var t=e.CurrentItem;return t?r.a.createElement("div",null,"Item Name: ",t.name,r.a.createElement("img",{src:t.imageUrl,alt:""})):r.a.createElement("h1",null,"Not Found")}))}}]);
-//# sourceMappingURL=12.8bbbd142.chunk.js.map
