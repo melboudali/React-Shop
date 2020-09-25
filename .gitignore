@@ -1,17 +1,17 @@
+# production
+./client/build
+
+# cpanel
+./cpanel.yml
 
 # dependencies
 node_modules
-/.pnp
 .pnp.js
+/.pnp
 
 # testing
 /coverage
 
-# production
-/client/build
-
-#Cpanel
-/.cpanel.yml
 
 # misc
 .DS_Store
