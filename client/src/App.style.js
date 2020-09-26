@@ -1,4 +1,5 @@
 import Styled, { createGlobalStyle } from 'styled-components';
+import Footer from './Layouts/Footer/Footer';
 
 export const GlobalStyle = createGlobalStyle`
   html {
@@ -16,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     /* Footer height */
-    padding: 0 0 50px 0;
+    padding: 0;
     font-family: 'Roboto' !important;
     background-color: rgb(244, 244, 244);
   };
