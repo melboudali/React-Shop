@@ -29,7 +29,7 @@ const App = ({ CheckUserSession }) => {
       <Announcement />
       <Navbar Container={Container} />
       <NavbarDivider />
-      <Container style={{ margin: '0 0 30px 0', minHeight: '40vh', position: 'relative' }}>
+      <Container style={{ margin: '0 0 9px 0', minHeight: '60vh', position: 'relative' }}>
         <ErrorBoundary>
           <Suspense fallback={<Loading />}>
             <Switch>
