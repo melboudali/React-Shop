@@ -34,8 +34,53 @@ export const Title = styled.h1`
   }
 `;
 
+//Menu
+export const Ulist = styled.ul`
+  width: 100%;
+  padding: 0;
+  margin: 10% 0 0 0;
+`;
+
+export const Litem = styled.li`
+  position: relative;
+  width: fit-content;
+  margin: 0 0 10px 0;
+  list-style: none;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 0;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    background: #3f0fff;
+    transition: height 0.4s;
+    z-index: -1;
+  }
+  &:hover {
+    a {
+      color: rgb(218, 218, 218);
+    }
+    &:after {
+      height: 50%;
+    }
+  }
+  a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: rgb(126, 126, 126);
+    transition: color 0.4s;
+  }
+`;
+
+// SocialMedia Icons
 export const SvgContainer = styled.div`
-  margin: 10% 0;
+  margin: 20% 0;
 `;
 
 export const Link = styled.a`
@@ -52,7 +97,6 @@ export const Svg = styled.svg`
   stroke-linecap: round;
   stroke-linejoin: round;
   transition: all 0.2s;
-
   &:hover {
     cursor: pointer;
     stroke: ${({ color }) => color};

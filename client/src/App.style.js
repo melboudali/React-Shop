@@ -1,5 +1,5 @@
-import Styled, { createGlobalStyle } from 'styled-components';
-import Footer from './Layouts/Footer/Footer';
+import styled, { createGlobalStyle } from 'styled-components';
+import Container from '@material-ui/core/Container';
 
 export const GlobalStyle = createGlobalStyle`
   html {
@@ -44,6 +44,12 @@ export const GlobalStyle = createGlobalStyle`
   };
 `;
 
-export const NavbarDivider = Styled.div`
+export const NavbarDivider = styled.div`
   padding-top: 75px;
+`;
+
+export const StyledContainer = styled(Container)`
+  margin: 0 0 9px 0;
+  min-height: 60vh;
+  position: relative;
 `;

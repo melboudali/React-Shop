@@ -3,11 +3,10 @@ import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { CheckUserSession } from './Redux/User/UserActions';
 import AuthPrivateRoute from './Routes/AuthPrivateRoute';
-import Container from '@material-ui/core/Container';
 import Navbar from './Layouts/Navbar/Navbar';
 import Announcement from './Layouts/Announcement/Announcement';
 import Footer from './Layouts/Footer/Footer';
-import { NavbarDivider, GlobalStyle } from './App.style';
+import { GlobalStyle, NavbarDivider, StyledContainer } from './App.style';
 import Loading from './Components/ShopPageComponents/Loading/Loading';
 // Error Boundary
 import ErrorBoundary from './Pages/ErrorBoundary/ErrorBoundary';
@@ -27,9 +26,9 @@ const App = ({ CheckUserSession }) => {
     <Fragment>
       <GlobalStyle />
       <Announcement />
-      <Navbar Container={Container} />
+      <Navbar />
       <NavbarDivider />
-      <Container style={{ margin: '0 0 9px 0', minHeight: '60vh', position: 'relative' }}>
+      <StyledContainer>
         <ErrorBoundary>
           <Suspense fallback={<Loading />}>
             <Switch>
@@ -44,7 +43,7 @@ const App = ({ CheckUserSession }) => {
             </Switch>
           </Suspense>
         </ErrorBoundary>
-      </Container>
+      </StyledContainer>
       <Footer />
     </Fragment>
   );

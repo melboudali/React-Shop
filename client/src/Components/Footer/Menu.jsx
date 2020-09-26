@@ -1,18 +1,28 @@
 import React from 'react';
-import { Container, Title } from './Footer.Style';
+import { Container, Title, Ulist, Litem } from './Footer.Style';
 import PropTypes from 'prop-types';
 
 const Menu = props => {
   return (
     <Container>
       <Title>need help?</Title>
-      <ul>
-        <ul>about</ul>
-        <ul>faqs</ul>
-        <ul>privacy policy</ul>
-        <ul>terms & conditions</ul>
-        <ul>contact</ul>
-      </ul>
+      <Ulist>
+        <Litem>
+          <a href='#'>about</a>
+        </Litem>
+        <Litem>
+          <a href='#'>faqs</a>
+        </Litem>
+        <Litem>
+          <a href='#'>privacy policy</a>
+        </Litem>
+        <Litem>
+          <a href='#'>terms & conditions</a>
+        </Litem>
+        <Litem>
+          <a href='#'>contact</a>
+        </Litem>
+      </Ulist>
     </Container>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, Fragment } from 'react';
 import { withRouter, Link } from 'react-router-dom';
+import Container from '@material-ui/core/Container';
 import { SignOutStart } from '../../Redux/User/UserActions';
 import { connect } from 'react-redux';
 import CartIcon from '../../Components/Navbar/CartIcon/CartIcon';
@@ -22,7 +23,7 @@ import {
 } from './Navbar.Style';
 import PropTypes from 'prop-types';
 
-const Navbar = ({ Container, history, currentUser, SignOutStart }) => {
+const Navbar = ({ history, currentUser, SignOutStart }) => {
   const [getShowNav, setShowNav] = useState(true);
   const [getNavScrollDown, setNavScrollDown] = useState(false);
   const [profileImage, setProfileImage] = useState(
@@ -122,7 +123,6 @@ const Navbar = ({ Container, history, currentUser, SignOutStart }) => {
 };
 
 Navbar.propTypes = {
-  Container: PropTypes.object.isRequired,
   history: PropTypes.object.isRequired,
   currentUser: PropTypes.object
 };
