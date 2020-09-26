@@ -2,9 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const LoadingContainer = styled.div`
-  text-align: center;
   position: absolute;
-  text-align: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -13,7 +11,6 @@ const LoadingContainer = styled.div`
 const AnimatedSvg = styled.svg`
   width: 100px;
   height: 100px;
-  margin: auto;
   display: block;
   background: none;
   shape-rendering: auto;

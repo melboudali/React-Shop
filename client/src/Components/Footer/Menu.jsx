@@ -6,6 +6,13 @@ const Menu = props => {
   return (
     <Container>
       <Title>need help?</Title>
+      <ul>
+        <ul>about</ul>
+        <ul>faqs</ul>
+        <ul>privacy policy</ul>
+        <ul>terms & conditions</ul>
+        <ul>contact</ul>
+      </ul>
     </Container>
   );
 };

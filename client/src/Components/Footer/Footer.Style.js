@@ -51,11 +51,11 @@ export const Svg = styled.svg`
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
-  transition: all 0.4s;
+  transition: all 0.2s;
 
   &:hover {
     cursor: pointer;
     stroke: ${({ color }) => color};
-    transform: translateY(-5%);
+    transform: translateY(-6%) scale(1.1);
   }
 `;
