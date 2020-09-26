@@ -33,3 +33,29 @@ export const Title = styled.h1`
     }
   }
 `;
+
+export const SvgContainer = styled.div`
+  margin: 10% 0;
+`;
+
+export const Link = styled.a`
+  text-decoration: none;
+`;
+
+export const Svg = styled.svg`
+  width: 48px;
+  height: 48px;
+  margin: 0 15px;
+  stroke-width: 1.5;
+  stroke: rgb(126, 126, 126);
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: all 0.4s;
+
+  &:hover {
+    cursor: pointer;
+    stroke: ${({ color }) => color};
+    transform: translateY(-5%);
+  }
+`;
