@@ -9,7 +9,7 @@ const EmailSubscription = props => {
   const onEmailChange = e => setEmail(e.target.value);
   const onSubmitHandler = e => {
     e.preventDefault();
-    console.log(email);
+    // TODO: i need to add this option later
   };
   return (
     <Container>

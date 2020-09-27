@@ -27,7 +27,6 @@ function* NestedFunc() {
   } catch (error) {
     // TODO: handle this later (show error)
     yield put(fetchCollectionsError(error.message));
-    console.log(error.message);
   }
 }
 
