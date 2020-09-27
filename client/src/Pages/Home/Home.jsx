@@ -5,11 +5,14 @@ import { SelectSections } from '../../Redux/Home/HomeSelectors';
 import Grid from '@material-ui/core/Grid';
 import SliderContainer from '../../Components/HomePageComponents/Slider/SliderContainer/SliderContainer';
 import MenuItem from '../../Components/HomePageComponents/MenuItem/MenuItem';
+import Title from '../../Components/SectionTitle/SectionTitle';
+import PopularThisWeek from '../../Components/HomePageComponents/PopularThisWeek/PopularThisWeek';
 import PropTypes from 'prop-types';
 
 const Home = ({ Sections }) => (
   <Fragment>
     <SliderContainer />
+    <Title title='shop by categories' />
     <Grid container direction='row' justify='center' alignItems='flex-start'>
       {Sections.map(({ id, ...Sections }) => (
         <Grid
@@ -23,6 +26,7 @@ const Home = ({ Sections }) => (
           <MenuItem {...Sections} />
         </Grid>
       ))}
+      <Title title='popular this week' />
     </Grid>
   </Fragment>
 );

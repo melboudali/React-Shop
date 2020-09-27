@@ -6,7 +6,7 @@ export const Slider = styled.div`
   height: 450px;
   width: ${({ width }) => `${width}px`};
   overflow: hidden;
-  margin: 0 7.5px 19px;
+  margin: 0 7.5px;
   &:hover {
     ${ArrowContainer} {
       opacity: 1;

@@ -18,7 +18,7 @@ const Footer = () => (
         <SocialMediaIcons />
       </Grid>
     </Grid>
-    <p className='copyright'>Copyright © 2020 react shop. all rights reserved.</p>
+    <p className='copyright'>© 2020 react shop - all rights reserved.</p>
   </div>
 );
 
