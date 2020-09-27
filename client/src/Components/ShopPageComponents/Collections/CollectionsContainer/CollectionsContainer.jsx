@@ -19,9 +19,11 @@ const CollectionsContainer = ({ title, items, routeName, match }) => {
             <CollectionItem key={item.id} item={item} title={title.toLowerCase()} />
           ))}
       </Grid>
-      <Button className='SeeMore' to={`${match.path}/${routeName}`} component={Link}>
-        SEE MORE
-      </Button>
+      {routeName && (
+        <Button className='SeeMore' to={`${match.path}/${routeName}`} component={Link}>
+          SEE MORE
+        </Button>
+      )}
     </div>
   );
 };

@@ -8,6 +8,11 @@ import './Footer.scss';
 const Footer = () => (
   <div className='Footer'>
     <Grid container direction='row' justify='center' alignItems='flex-start'>
+      <div className='Support'>
+      <Grid item xs={12} sm={12} md={4} lg={4} xl={4}></Grid>
+      </div>
+    </Grid>
+    <Grid container direction='row' justify='center' alignItems='flex-start'>
       <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
         <EmailSubscription />
       </Grid>
