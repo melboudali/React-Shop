@@ -8,6 +8,7 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
   position: relative;
+  width: fit-content;
   margin: 0;
   padding: 0;
   color: rgb(218, 218, 218);
@@ -15,6 +16,8 @@ export const Title = styled.h1`
   font-weight: bold;
   letter-spacing: 3px;
   text-transform: uppercase;
+  left: 50%;
+  transform: translate(-50%);
   &:after {
     content: '';
     background: white;
@@ -29,7 +32,7 @@ export const Title = styled.h1`
   &:hover {
     cursor: default;
     &:after {
-      width: 100px;
+      width: 80%;
     }
   }
 `;

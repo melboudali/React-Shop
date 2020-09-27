@@ -38,8 +38,8 @@ const Footer = () => (
             </svg>
             {/* Text */}
             <div className='Text'>
-              <p className='Title'>free shipping</p>
-              <p className='Desc'>on all orders.</p>
+              <p className='Title'>dedicated support</p>
+              <p className='Desc'>quick response 24/7.</p>
             </div>
           </div>
         </Grid>
@@ -54,8 +54,8 @@ const Footer = () => (
             </svg>
             {/* Text */}
             <div className='Text'>
-              <p className='Title'>free shipping</p>
-              <p className='Desc'>on all orders.</p>
+              <p className='Title'>money-back guarantee</p>
+              <p className='Desc'>worry-free shopping.</p>
             </div>
           </div>
         </Grid>
