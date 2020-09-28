@@ -49,7 +49,7 @@ export const NavbarDivider = styled.div`
 `;
 
 export const StyledContainer = styled(Container)`
-  margin: 0 0 9px 0;
-  min-height: 60vh;
+  margin: 0 0 50px 0;
+  min-height: 70vh;
   position: relative;
 `;

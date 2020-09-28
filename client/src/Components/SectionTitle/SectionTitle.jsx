@@ -9,7 +9,7 @@ const SectionTitle = ({ title }) => (
 );
 
 const Title = styled.h1`
-  margin: 40px 0;
+  margin: 50px 0;
   padding: 0;
   text-align: center;
   position: relative;
@@ -42,14 +42,14 @@ const Title = styled.h1`
     letter-spacing: 5px;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 10px 30px;
+    padding: 8px 28px;
     background-color: rgb(49, 49, 49) !important;
     width: fit-content;
     position: relative;
     z-index: 1;
     display: inline-block;
     border-radius: 5px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     box-shadow: 3px 3px 0px 2px rgb(173, 173, 173);
   }
 `;

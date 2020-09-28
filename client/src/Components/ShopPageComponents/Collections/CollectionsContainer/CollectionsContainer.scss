@@ -1,8 +1,5 @@
 .CollectionsContainer {
   margin-bottom: 50px;
-  &:last-child {
-    margin-bottom: 20px;
-  }
 
   .Title {
     margin: 20px 0 40px;
@@ -57,7 +54,7 @@
     height: 40px;
     letter-spacing: 10px;
     text-align: center;
-    background-color: rgb(66, 66, 66);
+    background-color: rgb(107, 107, 107);
     color: rgb(255, 255, 255);
     cursor: pointer;
     border-top-right-radius: 10px;
