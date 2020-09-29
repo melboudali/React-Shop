@@ -1330,18 +1330,23 @@ const newData = {
       },
       {
         id: 3,
-        name: '',
-        description: '',
-        colors: [],
-        size: [],
-        oldPrice: 0,
-        newPrice: 0,
-        firstImageUrl: '',
-        secondImageUrl: '',
-        thirdImageUrl: '',
-        fourthImageUrl: '',
-        rate: 0,
-        orders: 0
+        name: 'Ripped holes jeans',
+        description:
+          'New Men Ripped holes jeans Casual Black Blue Skinny slim Fit Denim Pants Biker Hip Hop Jeans with sexy Holel Denim Pants',
+        colors: ['black', 'blue', 'grey'],
+        size: ['s', 'm', 'l', 'xl'],
+        oldPrice: 49.14,
+        newPrice: 38.94,
+        firstImageUrl:
+          'https://ae01.alicdn.com/kf/H0bb69c33cf824d6c816a1953914b8bafi/New-Men-Ripped-holes-jeans-Casual-Black-Blue-Skinny-slim-Fit-Denim-Pants-Biker-Hip-Hop.jpg_Q90.jpg_.webp',
+        secondImageUrl:
+          'https://ae01.alicdn.com/kf/He60c17177b2d4d43a61422ebf57a4780z/New-Men-Ripped-holes-jeans-Casual-Black-Blue-Skinny-slim-Fit-Denim-Pants-Biker-Hip-Hop.jpg_Q90.jpg_.webp',
+        thirdImageUrl:
+          'https://ae01.alicdn.com/kf/H3674d33857cb46fb935af06d7e3e008aA/New-Men-Ripped-holes-jeans-Casual-Black-Blue-Skinny-slim-Fit-Denim-Pants-Biker-Hip-Hop.jpg_Q90.jpg_.webp',
+        fourthImageUrl:
+          'https://ae01.alicdn.com/kf/H2d2df5ff2bfb4c0abdff10c7ba727977T/New-Men-Ripped-holes-jeans-Casual-Black-Blue-Skinny-slim-Fit-Denim-Pants-Biker-Hip-Hop.jpg_640x640.jpg',
+        rate: 4.8,
+        orders: 2956
       },
       {
         id: 4,
@@ -1365,18 +1370,23 @@ const newData = {
       },
       {
         id: 5,
-        name: '',
-        description: '',
-        colors: [],
-        size: [],
-        oldPrice: 0,
-        newPrice: 0,
-        firstImageUrl: '',
-        secondImageUrl: '',
-        thirdImageUrl: '',
-        fourthImageUrl: '',
-        rate: 0,
-        orders: 0
+        name: 'Hawaiian Shirt',
+        description:
+          '2020 Summer Hawaiian Shirt Men Short Sleeve Male Fashion Casual Ethnic Print Mix Color Shirt Top Clothes',
+        colors: [red],
+        size: ['s', 'm', 'l', 'xl'],
+        oldPrice: 25.73,
+        newPrice: 19.58,
+        firstImageUrl:
+          'https://ae01.alicdn.com/kf/H9c215f64dab44e169a036060bc193cb5h/2020-Summer-Hawaiian-Shirt-Men-Short-Sleeve-Male-Fashion-Casual-Ethnic-Print-Mix-Color-Shirt-Top.jpg_Q90.jpg_.webp',
+        secondImageUrl:
+          'https://ae01.alicdn.com/kf/H9cadc156e796498daa505036dd0b82c6H/2020-Summer-Hawaiian-Shirt-Men-Short-Sleeve-Male-Fashion-Casual-Ethnic-Print-Mix-Color-Shirt-Top.jpg_640x640.jpg',
+        thirdImageUrl:
+          'https://ae01.alicdn.com/kf/H680442cce35045758c2d393a130d89a44/2020-Summer-Hawaiian-Shirt-Men-Short-Sleeve-Male-Fashion-Casual-Ethnic-Print-Mix-Color-Shirt-Top.jpg_Q90.jpg_.webp',
+        fourthImageUrl:
+          'https://ae01.alicdn.com/kf/H30fb8304696546fea64268f515a8cd4d7/2020-Summer-Hawaiian-Shirt-Men-Short-Sleeve-Male-Fashion-Casual-Ethnic-Print-Mix-Color-Shirt-Top.jpg_Q90.jpg_.webp',
+        rate: 4.5,
+        orders: 3289
       },
       {
         id: 6,
@@ -1420,18 +1430,23 @@ const newData = {
       },
       {
         id: 8,
-        name: '',
-        description: '',
-        colors: [],
-        size: [],
-        oldPrice: 0,
-        newPrice: 0,
-        firstImageUrl: '',
-        secondImageUrl: '',
-        thirdImageUrl: '',
-        fourthImageUrl: '',
-        rate: 0,
-        orders: 0
+        name: 'Striped Shorts',
+        description:
+          '2020 Men Summer Beach Casual Striped Shorts Athletic Gym Sports Training Swimwear Short Pants Holiday Beach Bottom Trousers',
+        colors: ['black', 'pink', 'multi'],
+        size: ['m', 'l', 'xl'],
+        oldPrice: 40.86,
+        newPrice: 28.59,
+        firstImageUrl:
+          'https://ae01.alicdn.com/kf/Hc90c7f0e5bd6473e94cec0d46b404af0s/2020-Men-Summer-Beach-Casual-Striped-Shorts-Athletic-Gym-Sports-Training-Swimwear-Short-Pants-Holiday-Beach.jpg_Q90.jpg_.webp',
+        secondImageUrl:
+          'https://ae01.alicdn.com/kf/U5d5fa864b42042058f0c9a66f39e069eU/2020-Men-Summer-Beach-Casual-Striped-Shorts-Athletic-Gym-Sports-Training-Swimwear-Short-Pants-Holiday-Beach.jpg_640x640.jpg',
+        thirdImageUrl:
+          'https://ae01.alicdn.com/kf/Hd5f80d66b1b34ade9a13cc37bbfbe29bO/2020-Men-Summer-Beach-Casual-Striped-Shorts-Athletic-Gym-Sports-Training-Swimwear-Short-Pants-Holiday-Beach.jpg_Q90.jpg_.webp',
+        fourthImageUrl:
+          'https://ae01.alicdn.com/kf/Ud646b4c2323749378ef1d4931abd8f101/2020-Men-Summer-Beach-Casual-Striped-Shorts-Athletic-Gym-Sports-Training-Swimwear-Short-Pants-Holiday-Beach.jpg_640x640.jpg',
+        rate: 4.5,
+        orders: 2005
       },
       {
         id: 9,
@@ -1455,18 +1470,23 @@ const newData = {
       },
       {
         id: 10,
-        name: '',
-        description: '',
-        colors: [],
-        size: [],
-        oldPrice: 0,
-        newPrice: 0,
-        firstImageUrl: '',
-        secondImageUrl: '',
-        thirdImageUrl: '',
-        fourthImageUrl: '',
-        rate: 0,
-        orders: 0
+        name: 'Mens Ethnic Printed',
+        description:
+          '2020 England Style Mens Ethnic Printed Stand Collar Stripe Short Sleeve Loose Hawaiian Henley Shirt hawaiian Shirt S-3XL',
+        colors: ['orange', 'black', 'white'],
+        size: ['s', 'm', 'l', 'xl'],
+        oldPrice: 40.99,
+        newPrice: 36.99,
+        firstImageUrl:
+          'https://ae01.alicdn.com/kf/H31d5877fe36947ba8bbfdab6ff6d48a2M/2020-England-Style-Mens-Ethnic-Printed-Stand-Collar-Stripe-Short-Sleeve-Loose-Hawaiian-Henley-Shirt-hawaiian.jpg_Q90.jpg_.webp',
+        secondImageUrl:
+          'https://ae01.alicdn.com/kf/H75e996589715498b94862813b6d7cca83/2020-England-Style-Mens-Ethnic-Printed-Stand-Collar-Stripe-Short-Sleeve-Loose-Hawaiian-Henley-Shirt-hawaiian.jpg_Q90.jpg_.webp',
+        thirdImageUrl:
+          'https://ae01.alicdn.com/kf/H1e17162cc4b84d27a1a2145245c34b2fH/2020-England-Style-Mens-Ethnic-Printed-Stand-Collar-Stripe-Short-Sleeve-Loose-Hawaiian-Henley-Shirt-hawaiian.jpg_640x640.jpg',
+        fourthImageUrl:
+          'https://ae01.alicdn.com/kf/H4597ea404ca348a9b59ca22e56489729e/2020-England-Style-Mens-Ethnic-Printed-Stand-Collar-Stripe-Short-Sleeve-Loose-Hawaiian-Henley-Shirt-hawaiian.jpg_640x640.jpg',
+        rate: 4.8,
+        orders: 6330
       },
       {
         id: 11,
@@ -1490,78 +1510,102 @@ const newData = {
       },
       {
         id: 12,
-        name: '',
-        description: '',
-        colors: [],
-        size: [],
-        oldPrice: 0,
-        newPrice: 0,
-        firstImageUrl: '',
-        secondImageUrl: '',
-        thirdImageUrl: '',
-        fourthImageUrl: '',
-        rate: 0,
-        orders: 0
+        name: 'Hirigin Winter',
+        description:
+          'Hirigin Winter Men Casual Birtish Style Faux Fur Lapel Long puffy Jacket Long Thicken Parka Lot Warm Coat',
+        colors: ['black', 'brown', 'grey'],
+        size: ['m', 'l', 'xl', 'xxl'],
+        oldPrice: 65.59,
+        newPrice: 50.13,
+        firstImageUrl:
+          'https://ae01.alicdn.com/kf/Hf8380880e38842c5830e68da2f0f29acZ/Hirigin-Winter-Men-Casual-Birtish-Style-Faux-Fur-Lapel-Long-puffy-Jacket-Long-Thicken-Parka-Lot.jpg_Q90.jpg_.webp',
+        secondImageUrl:
+          'https://ae01.alicdn.com/kf/H296e63a2173a40a98e451fffa273bf8bj/Hirigin-Winter-Men-Casual-Birtish-Style-Faux-Fur-Lapel-Long-puffy-Jacket-Long-Thicken-Parka-Lot.jpg_640x640.jpg',
+        thirdImageUrl:
+          'https://ae01.alicdn.com/kf/H074c4ef626c34f4c992a776927d59643A/Hirigin-Winter-Men-Casual-Birtish-Style-Faux-Fur-Lapel-Long-puffy-Jacket-Long-Thicken-Parka-Lot.jpg_640x640.jpg',
+        fourthImageUrl:
+          'https://ae01.alicdn.com/kf/H559bc4e5f6fe4d23bbabfb4747ad1052u/Hirigin-Winter-Men-Casual-Birtish-Style-Faux-Fur-Lapel-Long-puffy-Jacket-Long-Thicken-Parka-Lot.jpg_640x640.jpg',
+        rate: 4.5,
+        orders: 4088
       },
       {
         id: 13,
-        name: '',
-        description: '',
-        colors: [],
-        size: [],
-        oldPrice: 0,
-        newPrice: 0,
-        firstImageUrl: '',
-        secondImageUrl: '',
-        thirdImageUrl: '',
-        fourthImageUrl: '',
-        rate: 0,
-        orders: 0
+        name: 'Trendyol Male T-Shirt',
+        description: 'Trendyol Male T-Shirt TMNSS20TS1297',
+        colors: ['beige'],
+        size: ['s', 'm'],
+        oldPrice: 25.48,
+        newPrice: 17.74,
+        firstImageUrl:
+          'https://ae01.alicdn.com/kf/Ua05306040eb7488792c8a667ad63d72dG/Trendyol-Male-T-Shirt-TMNSS20TS1297.jpeg_Q90.jpeg_.webp',
+        secondImageUrl:
+          'https://ae01.alicdn.com/kf/U91eb6dab83064af4b21cb525a90f0e3eC/Trendyol-Male-T-Shirt-TMNSS20TS1297.jpeg_Q90.jpeg_.webp',
+        thirdImageUrl:
+          'https://ae01.alicdn.com/kf/U5c2730664e7a43688eba4f8d78949bdbT/Trendyol-Male-T-Shirt-TMNSS20TS1297.jpeg_Q90.jpeg_.webp',
+        fourthImageUrl:
+          'https://ae01.alicdn.com/kf/U0b8c40ca3e314d50984c51fe7553ba46x/Trendyol-Male-T-Shirt-TMNSS20TS1297.jpeg_Q90.jpeg_.webp',
+        rate: 4.4,
+        orders: 2509
       },
       {
         id: 14,
-        name: '',
-        description: '',
-        colors: [],
-        size: [],
-        oldPrice: 0,
-        newPrice: 0,
-        firstImageUrl: '',
-        secondImageUrl: '',
-        thirdImageUrl: '',
-        fourthImageUrl: '',
-        rate: 0,
-        orders: 0
+        name: 'hawaiian shirt streetwear',
+        description:
+          '2020 Fashion Casual Button Hawaii Print Beach Short Sleeve Quick Dry Top Blouse M-3XL hawaiian shirt streetwear',
+        colors: ['white'],
+        size: ['s', 'm', 'l', 'xl'],
+        oldPrice: 45.42,
+        newPrice: 23.26,
+        firstImageUrl:
+          'https://ae01.alicdn.com/kf/He857640549194939a13853ebb9296903h/2020-Fashion-Casual-Button-Hawaii-Print-Beach-Short-Sleeve-Quick-Dry-Top-Blouse-M-3XL-hawaiian.jpg_Q90.jpg_.webp',
+        secondImageUrl:
+          'https://ae01.alicdn.com/kf/H453dd02200e041609b734da8d34364edn/2020-Fashion-Casual-Button-Hawaii-Print-Beach-Short-Sleeve-Quick-Dry-Top-Blouse-M-3XL-hawaiian.jpg_Q90.jpg_.webp',
+        thirdImageUrl:
+          'https://ae01.alicdn.com/kf/H5d713d37a59c43f1ba30a8cd3d40d4cez/2020-Fashion-Casual-Button-Hawaii-Print-Beach-Short-Sleeve-Quick-Dry-Top-Blouse-M-3XL-hawaiian.jpg_Q90.jpg_.webp',
+        fourthImageUrl:
+          'https://ae01.alicdn.com/kf/He9f492cb018344daac81b496dc200430g/2020-Fashion-Casual-Button-Hawaii-Print-Beach-Short-Sleeve-Quick-Dry-Top-Blouse-M-3XL-hawaiian.jpg_Q90.jpg_.webp',
+        rate: 4.6,
+        orders: 535
       },
       {
         id: 15,
-        name: '',
-        description: '',
-        colors: [],
-        size: [],
-        oldPrice: 0,
-        newPrice: 0,
-        firstImageUrl: '',
-        secondImageUrl: '',
-        thirdImageUrl: '',
-        fourthImageUrl: '',
-        rate: 0,
-        orders: 0
+        name: 'Pattern Tracksuit',
+        description:
+          "Pattern Tracksuit Men Summer Beachwear Men's Set 2020 Mens Notched T Shirts +Shorts Two Piece Sets Floral Beach Swaet Suit 5XL",
+        colors: ['gold-blue', 'orange-blue', 'blue-white'],
+        size: ['s', 'm', 'l', 'xl'],
+        oldPrice: 72.64,
+        newPrice: 53.05,
+        firstImageUrl:
+          'https://ae01.alicdn.com/kf/Hccb4a3e0a45644c7b20eded3f57d3644n/Pattern-Tracksuit-Men-Summer-Beachwear-Men-s-Set-2020-Mens-Notched-T-Shirts-Shorts-Two-Piece.jpg_Q90.jpg_.webp',
+        secondImageUrl:
+          'https://ae01.alicdn.com/kf/Ha05482fe52714a8fa5724d5cfea437f9b/Pattern-Tracksuit-Men-Summer-Beachwear-Men-s-Set-2020-Mens-Notched-T-Shirts-Shorts-Two-Piece.jpg_640x640.jpg',
+        thirdImageUrl:
+          'https://ae01.alicdn.com/kf/Hc6c62637e5a645cbabd89ec6ee45de2ba/Pattern-Tracksuit-Men-Summer-Beachwear-Men-s-Set-2020-Mens-Notched-T-Shirts-Shorts-Two-Piece.jpg_640x640.jpg',
+        fourthImageUrl:
+          'https://ae01.alicdn.com/kf/Hfbb25beb06154c48939e4cd85b18c640i/Pattern-Tracksuit-Men-Summer-Beachwear-Men-s-Set-2020-Mens-Notched-T-Shirts-Shorts-Two-Piece.jpg_640x640.jpg',
+        rate: 4.7,
+        orders: 5300
       },
       {
         id: 16,
-        name: '',
-        description: '',
-        colors: [],
-        size: [],
-        oldPrice: 0,
-        newPrice: 0,
-        firstImageUrl: '',
-        secondImageUrl: '',
-        thirdImageUrl: '',
-        fourthImageUrl: '',
-        rate: 0,
-        orders: 0
+        name: 'Jumper Male',
+        description:
+          'Autumn Casual Solid O Neck Sweater Men Pullover Sweaters Casual Jumper Male Knitted',
+        colors: ['beige', 'orange', 'black', 'white'],
+        size: ['s', 'm', 'l'],
+        oldPrice: 33.85,
+        newPrice: 23.13,
+        firstImageUrl:
+          'https://ae01.alicdn.com/kf/H260cda00f2274b7e8ce93cd05b63aa1c9/Autumn-Casual-Solid-O-Neck-Sweater-Men-Pullover-Sweaters-Casual-Jumper-Male-Knitted.jpg_Q90.jpg_.webp',
+        secondImageUrl:
+          'https://ae01.alicdn.com/kf/Hb30fe12161294cd4bb3bc55a616d7c6dV/Autumn-Casual-Solid-O-Neck-Sweater-Men-Pullover-Sweaters-Casual-Jumper-Male-Knitted.jpg_640x640.jpg',
+        thirdImageUrl:
+          'https://ae01.alicdn.com/kf/H30f32377fd2543a19e8923079bb7ce96D/Autumn-Casual-Solid-O-Neck-Sweater-Men-Pullover-Sweaters-Casual-Jumper-Male-Knitted.jpg_640x640.jpg',
+        fourthImageUrl:
+          'https://ae01.alicdn.com/kf/Hae23293057c34abe8cce43923f9037b0J/Autumn-Casual-Solid-O-Neck-Sweater-Men-Pullover-Sweaters-Casual-Jumper-Male-Knitted.jpg_Q90.jpg_.webp',
+        rate: 4.3,
+        orders: 4227
       }
     ]
   }
