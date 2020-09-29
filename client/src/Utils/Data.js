@@ -903,12 +903,16 @@ const newData = {
         size: ['m', 'l', 'xl'],
         oldPrice: 59.99,
         newPrice: 41.99,
-        firstImageUrl: '',
-        secondImageUrl: '',
-        thirdImageUrl: '',
-        fourthImageUrl: '',
-        rate: 0,
-        orders: 0
+        firstImageUrl:
+          'https://ae01.alicdn.com/kf/HTB1AfmwelCw3KVjSZR0q6zcUpXau/Men-s-Jean-Jackets-Streetwear-Hip-Hop-Bomber-Jacket-Denim-Jacket-Men-Brand-Ripped-Denim-Jackets.jpg_Q90.jpg_.webp',
+        secondImageUrl:
+          'https://ae01.alicdn.com/kf/HTB1Ek1neoWF3KVjSZPhq6xclXXaZ/Men-s-Jean-Jackets-Streetwear-Hip-Hop-Bomber-Jacket-Denim-Jacket-Men-Brand-Ripped-Denim-Jackets.jpg_Q90.jpg_.webp',
+        thirdImageUrl:
+          'https://ae01.alicdn.com/kf/HTB1H2moek9E3KVjSZFGq6A19XXah/Men-s-Jean-Jackets-Streetwear-Hip-Hop-Bomber-Jacket-Denim-Jacket-Men-Brand-Ripped-Denim-Jackets.jpg_Q90.jpg_.webp',
+        fourthImageUrl:
+          'https://ae01.alicdn.com/kf/HTB1FP5uelGw3KVjSZFDq6xWEpXaO/Men-s-Jean-Jackets-Streetwear-Hip-Hop-Bomber-Jacket-Denim-Jacket-Men-Brand-Ripped-Denim-Jackets.jpg_Q90.jpg_.webp',
+        rate: 4.9,
+        orders: 2009
       },
       {
         id: 14,
@@ -1431,18 +1435,23 @@ const newData = {
       },
       {
         id: 9,
-        name: '',
-        description: '',
-        colors: [],
-        size: [],
-        oldPrice: 0,
-        newPrice: 0,
-        firstImageUrl: '',
-        secondImageUrl: '',
-        thirdImageUrl: '',
-        fourthImageUrl: '',
-        rate: 0,
-        orders: 0
+        name: 'Streetwear Jean Jackets',
+        description:
+          "Men's Jean Jackets Streetwear Hip Hop Bomber Jacket Denim Jacket Men Brand Ripped Denim Jackets Casual Fashion Coat",
+        colors: ['blue'],
+        size: ['m', 'l', 'xl'],
+        oldPrice: 59.99,
+        newPrice: 41.99,
+        firstImageUrl:
+          'https://ae01.alicdn.com/kf/HTB1AfmwelCw3KVjSZR0q6zcUpXau/Men-s-Jean-Jackets-Streetwear-Hip-Hop-Bomber-Jacket-Denim-Jacket-Men-Brand-Ripped-Denim-Jackets.jpg_Q90.jpg_.webp',
+        secondImageUrl:
+          'https://ae01.alicdn.com/kf/HTB1Ek1neoWF3KVjSZPhq6xclXXaZ/Men-s-Jean-Jackets-Streetwear-Hip-Hop-Bomber-Jacket-Denim-Jacket-Men-Brand-Ripped-Denim-Jackets.jpg_Q90.jpg_.webp',
+        thirdImageUrl:
+          'https://ae01.alicdn.com/kf/HTB1H2moek9E3KVjSZFGq6A19XXah/Men-s-Jean-Jackets-Streetwear-Hip-Hop-Bomber-Jacket-Denim-Jacket-Men-Brand-Ripped-Denim-Jackets.jpg_Q90.jpg_.webp',
+        fourthImageUrl:
+          'https://ae01.alicdn.com/kf/HTB1FP5uelGw3KVjSZFDq6xWEpXaO/Men-s-Jean-Jackets-Streetwear-Hip-Hop-Bomber-Jacket-Denim-Jacket-Men-Brand-Ripped-Denim-Jackets.jpg_Q90.jpg_.webp',
+        rate: 4.9,
+        orders: 2009
       },
       {
         id: 10,
