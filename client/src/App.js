@@ -10,13 +10,16 @@ import { GlobalStyle, NavbarDivider, StyledContainer } from './App.style';
 import Loading from './Components/ShopPageComponents/Loading/Loading';
 // Error Boundary
 import ErrorBoundary from './Pages/ErrorBoundary/ErrorBoundary';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import { newData, ConvertCollectionsToMap } from './Utils/Data';
 // Code Splitting
 const HomePage = lazy(() => import('./Pages/Home/Home'));
 const ShopPage = lazy(() => import('./Pages/Shop/Shop'));
 const SigninSignupPage = lazy(() => import('./Pages/SignIn-SingUp/SignInSignUp'));
 const CheckoutPage = lazy(() => import('./Pages/Checkout/Checkout'));
 const NotFoundPage = lazy(() => import('./Pages/404/NotFound'));
-
+const firestore = firebase.firestore();
 const App = ({ CheckUserSession }) => {
   useEffect(() => {
     CheckUserSession();

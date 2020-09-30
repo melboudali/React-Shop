@@ -1,4 +1,4 @@
-const newData = {
+export const newData = {
   hats: {
     id: 1,
     title: 'Hats',
@@ -1393,7 +1393,7 @@ const newData = {
         name: 'Hawaiian Shirt',
         description:
           '2020 Summer Hawaiian Shirt Men Short Sleeve Male Fashion Casual Ethnic Print Mix Color Shirt Top Clothes',
-        colors: [red],
+        colors: ['red'],
         size: ['s', 'm', 'l', 'xl'],
         oldPrice: 25.73,
         newPrice: 19.58,
