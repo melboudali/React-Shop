@@ -4,10 +4,10 @@ import { deleteItem } from '../../../Redux/Cart/CartActions';
 import './CartItem.scss';
 import PropTypes from 'prop-types';
 
-const CartItem = ({ Item: { id, name, imageUrl, price, quantity }, deleteItem }) => {
+const CartItem = ({ Item: { id, name, firstImageUrl, newPrice, quantity }, deleteItem }) => {
   return (
     <div className='CartItem'>
-      <div className='ImgContainer' style={{ backgroundImage: `url(${imageUrl})` }} />
+      <div className='ImgContainer' style={{ backgroundImage: `url(${firstImageUrl})` }} />
       <div className='ItemDetails'>
         <span className='CloseButton' onClick={() => deleteItem(id, quantity)}>
           <svg viewBox='0 0 24 24'>
@@ -21,9 +21,9 @@ const CartItem = ({ Item: { id, name, imageUrl, price, quantity }, deleteItem })
         </span>
         <span className='Name'>{name}</span>
         <span className='Price'>
-          {quantity} x ${price}.00
+          {quantity} x ${parseFloat(newPrice).toFixed(2)}
         </span>
-        <span className='Total'>${quantity * price}.00</span>
+        <span className='Total'>${parseFloat(quantity * newPrice).toFixed(2)}</span>
       </div>
     </div>
   );
