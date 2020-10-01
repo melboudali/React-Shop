@@ -13,7 +13,6 @@ const CollectionsContainer = ({ title, items, routeName, match }) => {
       <Title title={title} />
       <Grid container direction='row' justify='center' alignItems='flex-start' spacing={0}>
         {items
-          .sort((a, b) => b.id - a.id)
           .filter((item, idx) => idx < 8)
           .map(item => (
             <CollectionItem key={item.id} item={item} title={title.toLowerCase()} />

@@ -1,42 +1,64 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { SelectSections } from '../../Redux/Home/HomeSelectors';
+import { SelectAllItems } from '../../Redux/Shop/ShopSelectors';
+import { SelectLoading } from '../../Redux/Shop/ShopSelectors';
+import Loading from '../../Components/ShopPageComponents/Loading/Loading';
+
 import Grid from '@material-ui/core/Grid';
 import SliderContainer from '../../Components/HomePageComponents/Slider/SliderContainer/SliderContainer';
 import MenuItem from '../../Components/HomePageComponents/MenuItem/MenuItem';
 import Title from '../../Components/SectionTitle/SectionTitle';
 import CollectionContainer from '../../Components/ShopPageComponents/Collections/CollectionsContainer/CollectionsContainer';
-import PopularThisWeek from '../../Components/HomePageComponents/PopularThisWeek/PopularThisWeek';
 import PropTypes from 'prop-types';
 
-const Home = ({ Sections }) => (
-  <Fragment>
-    <SliderContainer />
-    <Title title='shop by categories' />
-    <Grid container direction='row' justify='center' alignItems='flex-start'>
-      {Sections.map(({ id, ...Sections }) => (
-        <Grid
-          item
-          key={id}
-          xs={12}
-          sm={id > 2 ? 12 : 6}
-          md={id > 2 ? 12 : 6}
-          lg={id > 3 ? 6 : 4}
-          xl={id > 3 ? 6 : 4}>
-          <MenuItem {...Sections} />
-        </Grid>
-      ))}
-    </Grid>
-    <CollectionContainer title='popular this week' items={Data[0]} />
-    <CollectionContainer title='new arrivals' items={Data[1]} />
-  </Fragment>
-);
+const Home = ({ Sections, AllItems, isLoading }) => {
+  useEffect(() => console.log(AllItems), [AllItems]);
+  return (
+    <Fragment>
+      <SliderContainer />
+      <Title title='shop by categories' />
+      <Grid container direction='row' justify='center' alignItems='flex-start'>
+        {Sections.map(({ id, ...Sections }) => (
+          <Grid
+            item
+            key={id}
+            xs={12}
+            sm={id > 2 ? 12 : 6}
+            md={id > 2 ? 12 : 6}
+            lg={id > 3 ? 6 : 4}
+            xl={id > 3 ? 6 : 4}>
+            <MenuItem {...Sections} />
+          </Grid>
+        ))}
+      </Grid>
+      {!isLoading && AllItems && (
+        <CollectionContainer
+          title='popular this week'
+          items={[...new Map(AllItems.map(item => [item['name'], item])).values()].sort(
+            (a, b) => b.orders - a.orders
+          )}
+        />
+      )}
+      {!isLoading && AllItems && (
+        <CollectionContainer
+          title='new arrivals'
+          items={[...new Map(AllItems.map(item => [item['name'], item])).values()].sort((a, b) =>
+            a.id > b.id ? -1 : 1
+          )}
+        />
+      )}
+    </Fragment>
+  );
+};
 
 Home.prototype = { Sections: PropTypes.array };
 
 const mapStateToProps = createStructuredSelector({
-  Sections: SelectSections
+  Sections: SelectSections,
+  AllItems: SelectAllItems,
+  isLoading: SelectLoading
 });
 
 const Data = [

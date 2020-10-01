@@ -33,8 +33,12 @@ const Collections = ({ AllCollections, history }) => {
         </Link>
         <span>{paths[1]}</span>
       </Breadcrumbs>
-      {AllCollections.map(({ id, ...AllCollections }) => (
-        <CollectionsContainer key={id} {...AllCollections} />
+      {AllCollections.map(({ id, items, ...AllCollections }) => (
+        <CollectionsContainer
+          key={id}
+          items={items.sort((a, b) => b.id - a.id)}
+          {...AllCollections}
+        />
       ))}
     </div>
   );

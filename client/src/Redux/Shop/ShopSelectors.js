@@ -17,3 +17,14 @@ export const SelectCurrentItem = (ItemName, collectionRouteName) =>
   createSelector([SelectCollections], Collections =>
     Collections[collectionRouteName].items.find(item => ItemName === item.name)
   );
+
+export const SelectAllItems = createSelector([SelectCollections], Collections => {
+  let AllItems = [];
+  if (Collections) {
+    const CollectionsArray = Object.keys(Collections).map(key => Collections[key]);
+    CollectionsArray.map(Collection => {
+      AllItems = [...AllItems, ...Collection.items];
+    });
+  }
+  return AllItems;
+});
