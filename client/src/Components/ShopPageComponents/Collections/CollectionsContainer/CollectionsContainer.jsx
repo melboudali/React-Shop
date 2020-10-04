@@ -1,8 +1,8 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import CollectionItem from '../../CollectionItem/CollectionItem';
 import { Button, Grid } from '@material-ui/core';
 import Title from '../../../SectionTitle/SectionTitle';
+import CollectionItem from '../../CollectionItem/CollectionItem';
 import './CollectionsContainer.scss';
 import PropTypes from 'prop-types';
 
