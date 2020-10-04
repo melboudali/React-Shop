@@ -10,7 +10,7 @@ export const SelectCartItemsCount = createSelector([SelectCartItems], CartItems 
 
 export const SelectCartTotal = createSelector([SelectCartItems], CartItems =>
   CartItems.reduce(
-    (accumulatedQuantity, cartItem) => accumulatedQuantity + cartItem.price * cartItem.quantity,
+    (accumulatedQuantity, cartItem) => accumulatedQuantity + cartItem.newPrice * cartItem.quantity,
     0
   )
 );
