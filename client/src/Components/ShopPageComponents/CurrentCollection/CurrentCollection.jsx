@@ -38,7 +38,7 @@ const CurrentCollection = ({ Collection, history }) => {
       <h1 className='Title'>
         <span>{Collection.title}</span>
       </h1>
-      <Grid container direction='row' justify='center' alignItems='baseline' spacing={3}>
+      <Grid container direction='row' justify='center' alignItems='baseline' spacing={0}>
         {Collection.items.map(item => (
           <CollectionItem key={item.id} item={item} title={null} />
         ))}
