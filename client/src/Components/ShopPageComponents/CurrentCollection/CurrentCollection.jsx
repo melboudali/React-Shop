@@ -5,6 +5,7 @@ import { SelectCurrentCollection } from '../../../Redux/Shop/ShopSelectors';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
+import Title from '../../SectionTitle/SectionTitle';
 import CollectionItem from '../CollectionItem/CollectionItem';
 import NotFound from '../../../Pages/404/NotFound';
 import './CurrentCollection.scss';
@@ -35,10 +36,8 @@ const CurrentCollection = ({ Collection, history }) => {
         <Link href={`/${paths[1].toLowerCase()}`}>{paths[1]}</Link>
         <span>{Collection.title}</span>
       </Breadcrumbs>
-      <h1 className='Title'>
-        <span>{Collection.title}</span>
-      </h1>
-      <Grid container direction='row' justify='center' alignItems='baseline' spacing={3}>
+      <Title title={Collection.title} />
+      <Grid container direction='row' justify='center' alignItems='baseline' spacing={0}>
         {Collection.items.map(item => (
           <CollectionItem key={item.id} item={item} title={null} />
         ))}
