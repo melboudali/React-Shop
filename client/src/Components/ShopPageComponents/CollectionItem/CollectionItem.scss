@@ -1,5 +1,4 @@
 .CollectionItem {
-  height: 400px;
   background-color: white;
   box-shadow: 0 1px 2px 0 rgba(168, 182, 191, 0.6);
   border-radius: 5px;
@@ -14,6 +13,19 @@
     .ItemImage {
       transform: translateY(-100%);
     }
+  }
+
+  @media only screen and (max-width: '576px') {
+    height: 450px;
+  }
+  @media only screen and (min-width: '576px') {
+    height: 420px;
+  }
+  @media only screen and (min-width: '768px') {
+    height: 480px;
+  }
+  @media only screen and (min-width: '959px') {
+    height: 400px;
   }
 
   .ImageContainer {
@@ -149,11 +161,30 @@
           border-bottom-left-radius: 5px;
           border-right: 1px solid white;
           line-height: 18px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
           svg {
             margin-right: 10px;
             width: 18px;
             height: 18px;
             fill: white;
+          }
+          @media only screen and (max-width: '768px') {
+            font-size: 0.6rem;
+            svg {
+              margin-right: 5px;
+              width: 15px;
+              height: 15px;
+            }
+          }
+          @media only screen and (min-width: '768px') {
+            font-size: 0.6rem;
+            svg {
+              margin-right: 5px;
+              width: 15px;
+              height: 15px;
+            }
           }
         }
 

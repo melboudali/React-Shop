@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Button, Grid } from '@material-ui/core';
 import { addItemToCart } from '../../../Redux/Cart/CartActions';
+import {} from './CollectionItem';
 import './CollectionItem.scss';
 import PropTypes from 'prop-types';
 
@@ -14,7 +15,7 @@ const CollectionItem = ({
   history
 }) => {
   return (
-    <Grid item xs={6} sm={4} md={3} lg={3} xl={3}>
+    <Grid item xs={12} sm={6} md={3} lg={3} xl={3}>
       <div className='CollectionItem'>
         <div className='ImageContainer'>
           <span className='Discount'>{`-${Math.floor(

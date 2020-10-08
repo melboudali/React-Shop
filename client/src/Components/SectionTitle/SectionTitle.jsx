@@ -49,8 +49,13 @@ const Title = styled.h1`
     z-index: 1;
     display: inline-block;
     border-radius: 5px;
-    font-size: 1.3rem;
     box-shadow: 3px 3px 0px 2px rgb(173, 173, 173);
+    @media only screen and (max-width: '576px') {
+      font-size: 0.6rem;
+    }
+    @media only screen and (min-width: '576px') {
+      font-size: 1.3rem;
+    }
   }
 `;
 
