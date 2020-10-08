@@ -1,12 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { extraSmallDevices, smallDevices } from '../../Config/StyledComponents';
 import PropTypes from 'prop-types';
-
-const SectionTitle = ({ title }) => (
-  <Title>
-    <span>{title}</span>
-  </Title>
-);
 
 const Title = styled.h1`
   margin: 50px 0;
@@ -14,6 +9,7 @@ const Title = styled.h1`
   text-align: center;
   position: relative;
   width: 100%;
+
   &:after {
     content: '';
     width: 100%;
@@ -50,14 +46,20 @@ const Title = styled.h1`
     display: inline-block;
     border-radius: 5px;
     box-shadow: 3px 3px 0px 2px rgb(173, 173, 173);
-    @media only screen and (max-width: '576px') {
-      font-size: 0.6rem;
+    ${extraSmallDevices} {
+      font-size: 0.8rem;
     }
-    @media only screen and (min-width: '576px') {
+    ${smallDevices} {
       font-size: 1.3rem;
     }
   }
 `;
+
+const SectionTitle = ({ title }) => (
+  <Title>
+    <span>{title}</span>
+  </Title>
+);
 
 SectionTitle.propTypes = { title: PropTypes.string.isRequired };
 
