@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Button, Grid } from '@material-ui/core';
 import { addItemToCart } from '../../../Redux/Cart/CartActions';
-import {} from './CollectionItem';
 import './CollectionItem.scss';
 import PropTypes from 'prop-types';
 
@@ -62,9 +61,13 @@ const CollectionItem = ({
               <Button
                 className='MoreDetails'
                 onClick={() =>
-                  history.push(
-                    `${history.location.pathname}${title ? `/${title.toLowerCase()}/` : `/`}${name}`
-                  )
+                  item.url
+                    ? history.push(`${`/shop/`}${item.url.toLowerCase()}${`/`}${name}`)
+                    : history.push(
+                        `${history.location.pathname}${
+                          title ? `/${title.toLowerCase()}/` : `/`
+                        }${name}`
+                      )
                 }>
                 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
                   <path stroke='none' d='M0 0h24v24H0z' fill='none' />
