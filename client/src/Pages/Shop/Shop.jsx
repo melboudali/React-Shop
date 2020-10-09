@@ -12,9 +12,7 @@ const Collections = lazy(() =>
 const CurrentCollection = lazy(() =>
   import('../../Components/ShopPageComponents/CurrentCollection/CurrentCollection')
 );
-const ItemDetails = lazy(() =>
-  import('../../Components/ShopPageComponents/ItemDetails/ItemDetails')
-);
+const Product = lazy(() => import('../Product/Product'));
 
 const Shop = ({ match, isLoading }) => (
   <Fragment>
@@ -26,7 +24,7 @@ const Shop = ({ match, isLoading }) => (
     />
     <Route
       path={`${match.path}/:collectionRouteName/:itemName`}
-      component={isLoading ? Loading : ItemDetails}
+      component={isLoading ? Loading : Product}
     />
   </Fragment>
 );

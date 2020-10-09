@@ -4,21 +4,18 @@ import { createStructuredSelector } from 'reselect';
 import { SelectCurrentItem } from '../../../Redux/Shop/ShopSelectors';
 import PropTypes from 'prop-types';
 
-const ItemDetails = ({ CurrentItem }) => {
-  // const { name = '', imageUrl = '' } = CurrentItem;
-  return (
-    CurrentItem ? (
-      <div>
-        Item Name: {CurrentItem.name}
-        <img src={CurrentItem.imageUrl} alt='' />
-      </div>
-    ):<h1>Not Found</h1>
+const Product = ({ CurrentItem }) => {
+  return CurrentItem ? (
+    <div>
+      Item Name: {CurrentItem.name}
+      <img src={CurrentItem.imageUrl} alt='' />
+    </div>
+  ) : (
+    <h1>Not Found</h1>
   );
 };
 
-ItemDetails.propTypes = {
-  itemName: PropTypes.string
-};
+Product.propTypes = {};
 
 const mapStateToProps = createStructuredSelector({
   CurrentItem: (
@@ -34,4 +31,4 @@ const mapStateToProps = createStructuredSelector({
   ) => SelectCurrentItem(itemName, pathname.split('/')[2])(state)
 });
 
-export default connect(mapStateToProps)(ItemDetails);
+export default connect(mapStateToProps)(Product);
