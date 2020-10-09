@@ -14,16 +14,25 @@ import {
 } from './CheckoutItem.Style';
 import PropTypes from 'prop-types';
 
-const CheckoutItem = ({ iid, id, name, price, imageUrl, quantity, addItemToCart, deleteItem }) => {
+const CheckoutItem = ({
+  iId,
+  id,
+  name,
+  newPrice,
+  firstImageUrl,
+  quantity,
+  addItemToCart,
+  deleteItem
+}) => {
   return (
-    <CheckoutItemContainer id={iid}>
+    <CheckoutItemContainer id={iId}>
       <ImageContainer>
-        <img alt='Item' src={imageUrl} />
+        <img alt='Item' src={firstImageUrl} />
       </ImageContainer>
       <ItemName>{name}</ItemName>
       <ItemQuantity>
         <QuantityControls
-          quantity={quantity}
+          quantity={quantity - 1}
           onClick={() => quantity > 1 && deleteItem(id, quantity)}>
           <SvgIcon viewBox='0 0 24 24'>
             <path stroke='none' d='M0 0h24v24H0z' />
@@ -33,13 +42,13 @@ const CheckoutItem = ({ iid, id, name, price, imageUrl, quantity, addItemToCart,
         </QuantityControls>
         <QuantityCount>{quantity}</QuantityCount>
         <QuantityControls
-          quantity={2}
+          quantity={quantity}
           onClick={() =>
             addItemToCart({
               id,
               name,
-              price,
-              imageUrl
+              newPrice,
+              firstImageUrl
             })
           }>
           <SvgIcon viewBox='0 0 24 24'>
@@ -50,7 +59,7 @@ const CheckoutItem = ({ iid, id, name, price, imageUrl, quantity, addItemToCart,
           </SvgIcon>
         </QuantityControls>
       </ItemQuantity>
-      <ItemPrice>${price}.00</ItemPrice>
+      <ItemPrice>${parseFloat(newPrice).toFixed(2)}</ItemPrice>
       <RemoveBtn onClick={() => deleteItem(id, 1)}>
         <SvgIcon viewBox='0 0 24 24'>
           <path stroke='none' d='M0 0h24v24H0z' />
@@ -69,8 +78,8 @@ CheckoutItem.propTypes = {
   iid: PropTypes.number,
   id: PropTypes.number,
   name: PropTypes.string,
-  price: PropTypes.number,
-  imageUrl: PropTypes.string,
+  newPrice: PropTypes.number,
+  firstImageUrl: PropTypes.string,
   quantity: PropTypes.number,
   addItemToCart: PropTypes.func,
   deleteItem: PropTypes.func.isRequired

@@ -22,8 +22,12 @@ export const SelectAllItems = createSelector([SelectCollections], Collections =>
   let AllItems = [];
   if (Collections) {
     const CollectionsArray = Object.keys(Collections).map(key => Collections[key]);
-    CollectionsArray.map(Collection => {
-      AllItems = [...AllItems, ...Collection.items];
+    CollectionsArray.map(({ items, title }) => {
+      let customItems = items.map(item => ({
+        ...item,
+        url: title
+      }));
+      AllItems = [...AllItems, ...customItems];
     });
   }
   return AllItems;

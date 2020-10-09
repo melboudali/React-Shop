@@ -49,7 +49,7 @@ export const ItemQuantity = styled.span`
 `;
 
 export const QuantityControls = styled.span`
-  ${({ quantity }) => (quantity > 1 ? quantityIcons : disabledQuantityIcons)}
+  ${({ quantity }) => (quantity >= 1 ? quantityIcons : disabledQuantityIcons)}
   padding: 0 10px;
   display: inline-flex;
   vertical-align: middle;

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { SelectCartItems, SelectCartTotal } from '../../Redux/Cart/CartSelectors';
@@ -8,6 +8,12 @@ import './Checkout.scss';
 import PropTypes from 'prop-types';
 
 const Checkout = ({ CartItems, CartTotal }) => {
+  useEffect(() => {
+    console.log({
+      'Cart Items: ': CartItems,
+      'Cart Total: ': CartTotal
+    });
+  }, [CartItems, CartTotal]);
   return (
     <div className='CheckoutPage'>
       <h1 className='CheckoutTitle'>
@@ -40,12 +46,12 @@ const Checkout = ({ CartItems, CartTotal }) => {
       {CartItems.length ? (
         <Fragment>
           {CartItems.map((CartItem, id) => (
-            <CheckoutItem key={id} iid={id} {...CartItem} />
+            <CheckoutItem key={id} iId={id} {...CartItem} />
           ))}
           <div className='Stripe'>
             <Stripe />
           </div>
-          <div className='Total'>total: ${CartTotal}.00</div>
+          <div className='Total'>total: ${parseFloat(CartTotal).toFixed(2)}</div>
         </Fragment>
       ) : (
         <div className='NoItemsFound'>
