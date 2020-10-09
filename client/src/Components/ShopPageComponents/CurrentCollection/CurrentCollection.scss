@@ -6,13 +6,13 @@
     color: rgb(85, 85, 85);
     font-size: 0.7rem;
     font-weight: 500;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     text-decoration: none;
 
     svg {
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       stroke: rgb(143, 143, 143);
       stroke-width: 1.5;
       stroke-linecap: round;
@@ -20,8 +20,8 @@
       fill: none;
       &:nth-child(1) {
         margin-right: 5px;
-        width: 16px;
-        height: 16px;
+        width: 15px;
+        height: 15px;
       }
     }
     a {
