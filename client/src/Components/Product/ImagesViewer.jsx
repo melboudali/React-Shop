@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const ImagesViewer = props => {
   return (
     <Container style={{ backgroundColor: 'green' }}>
-      <div style={{ backgroundColor: 'black', width: '100%', height: '100%', padding: '25px' }} ><h1>hhhhhhhhhh</h1></div>
+      <div style={{ backgroundColor: 'black', width: '100%', height: '100%' }}></div>
     </Container>
   );
 };
