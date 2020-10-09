@@ -14,7 +14,7 @@ const CollectionItem = ({
   history
 }) => {
   return (
-    <Grid item xs={6} sm={4} md={3} lg={3} xl={3}>
+    <Grid item xs={12} sm={6} md={3} lg={3} xl={3}>
       <div className='CollectionItem'>
         <div className='ImageContainer'>
           <span className='Discount'>{`-${Math.floor(
@@ -61,9 +61,13 @@ const CollectionItem = ({
               <Button
                 className='MoreDetails'
                 onClick={() =>
-                  history.push(
-                    `${history.location.pathname}${title ? `/${title.toLowerCase()}/` : `/`}${name}`
-                  )
+                  item.url
+                    ? history.push(`${`/shop/`}${item.url.toLowerCase()}${`/`}${name}`)
+                    : history.push(
+                        `${history.location.pathname}${
+                          title ? `/${title.toLowerCase()}/` : `/`
+                        }${name}`
+                      )
                 }>
                 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
                   <path stroke='none' d='M0 0h24v24H0z' fill='none' />
