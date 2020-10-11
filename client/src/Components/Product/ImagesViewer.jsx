@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   Container,
   ImagesContainer,
@@ -29,17 +29,32 @@ const ImagesViewer = ({
 }) => {
   const imagesUrls = [firstImageUrl, secondImageUrl, thirdImageUrl, fourthImageUrl];
   const [mainImage, setMainImage] = useState(imagesUrls[0]);
+  const ref = useRef();
+  const [screenX, setScreenX] = useState(0);
+  const [screenY, setScreenY] = useState(0);
 
   const mainImageHandler = (e, imageUrl) => {
     e.preventDefault();
     setMainImage(imageUrl);
   };
 
+  const mainImageZoom = e => {
+    e.preventDefault();
+    setScreenX(((e.pageX - ref.current.offsetTop) / ref.current.clientHeight) * 76);
+    setScreenY(((e.pageY - ref.current.offsetLeft) / ref.current.clientWidth) * 76);
+  };
+
   return (
     <Container>
       <ImagesContainer>
         <MainImageContainer>
-          <MainImage src={mainImage} />
+          <MainImage
+            ref={ref}
+            src={mainImage}
+            onMouseMove={mainImageZoom}
+            screenX={screenX}
+            screenY={screenY}
+          />
         </MainImageContainer>
         <OtherImagesContainer>
           {imagesUrls.map((imageUrl, id) => (
