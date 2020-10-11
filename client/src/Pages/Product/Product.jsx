@@ -41,7 +41,7 @@ const Product = ({
               home
             </Link>
             <Link href={`/${paths[1].toLowerCase()}`}>{paths[1]}</Link>
-            <Link href={`/${paths[2].toLowerCase()}`}>{paths[2]}</Link>
+            <Link href={`/${paths[1].toLowerCase()}/${paths[2].toLowerCase()}`}>{paths[2]}</Link>
             <span>{CurrentItem.name}</span>
           </BreadCrumbs>
         </Grid>
