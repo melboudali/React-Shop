@@ -10,6 +10,7 @@ export const Container = styled.div`
   }
 `;
 
+// Images
 export const ImagesContainer = styled.div`
   width: 100%;
 `;
@@ -65,3 +66,7 @@ export const OtherImage = styled.div`
     outline: 2px solid rgba(0, 0, 0, 0.5);
   }
 `;
+
+// Title & Description
+
+// Comments
