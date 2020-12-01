@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { SelectSections } from '../../Redux/Home/HomeSelectors';
@@ -38,6 +38,7 @@ const Home = ({ Sections, AllItems, isLoading }) => (
       ) : (
         <CollectionContainer
           title='popular this week'
+          // the line below will delete repeated items and sort the rest by orders
           items={[...new Map(AllItems.map(item => [item['name'], item])).values()].sort(
             (a, b) => b.orders - a.orders
           )}
@@ -50,6 +51,7 @@ const Home = ({ Sections, AllItems, isLoading }) => (
       ) : (
         <CollectionContainer
           title='new arrivals'
+          // the line below will delete repeated items and sort the rest by id
           items={[...new Map(AllItems.map(item => [item['name'], item])).values()].sort((a, b) =>
             a.id > b.id ? -1 : 1
           )}
