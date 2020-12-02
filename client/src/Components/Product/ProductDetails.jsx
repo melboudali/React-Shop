@@ -1,24 +1,49 @@
-import React from 'react';
-import { Container, RateOrdersContainer, ProductTitle, Rate, Svg, Orders } from './Product.Style';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { addItemToCart } from '../../Redux/Cart/CartActions';
+import {
+  Container,
+  RateOrdersContainer,
+  ProductTitle,
+  Rate,
+  Svg,
+  Orders,
+  Hr,
+  PriceContainer,
+  Price,
+  OPrice,
+  Discount,
+  Desc,
+  Size,
+  SizeElement,
+  ImageContainer,
+  Buttons
+} from './Product.Style';
+import Colors from './Colors';
+import Checkout from '../../Assets/Images/checkout.png';
 import PropTypes from 'prop-types';
+import SubmitButton from '../SigninPageComponents/SubmitButton/SubmitButton';
 
 const ProductDetails = ({
   item: {
     id,
     name,
+    firstImageUrl,
+    secondImageUrl,
+    fourthImageUrl,
+    thirdImageUrl,
     description,
     colors,
     size,
     oldPrice,
     newPrice,
-    firstImageUrl,
-    secondImageUrl,
-    thirdImageUrl,
-    fourthImageUrl,
     rate,
-    orders
-  }
+    orders,
+    url
+  },
+  addItemToCart
 }) => {
+  const [selectedSize, setSelectedSize] = useState(size ? size[0] : null);
   return (
     <Container>
       <ProductTitle>{name}</ProductTitle>
@@ -31,22 +56,69 @@ const ProductDetails = ({
         </Rate>
         <Orders>{orders} orders</Orders>
       </RateOrdersContainer>
+      <Hr />
+      <PriceContainer>
+        <Price>US {parseFloat(newPrice).toFixed(2)}</Price>
+        <OPrice>{parseFloat(oldPrice).toFixed(2)}</OPrice>
+        <Discount>{`- ${Math.floor(((oldPrice - newPrice) / oldPrice) * 100)}%`}</Discount>
+      </PriceContainer>
 
-      <p>{description}</p>
-      {colors.map((color, cid) => (
-        <p key={cid} style={{ color: color }}>
-          {color}
-        </p>
-      ))}
-      <p>{size}</p>
-      <p>{oldPrice}</p>
-      <p>{newPrice}</p>
-      <p>{}</p>
-      <p>{}</p>
+      <Hr />
+      <Desc>
+        <span>description:</span>
+        <p>{description}</p>
+      </Desc>
+      <Colors colors={colors} />
+      {Size && selectedSize && (
+        <Size>
+          <span>
+            size: {typeof selectedSize === 'string' ? selectedSize.toUpperCase() : selectedSize}
+          </span>
+          {size.map((s, sid) => (
+            <SizeElement
+              key={sid}
+              onClick={() => setSelectedSize(s)}
+              title={typeof s === 'string' ? s.toUpperCase() : s}
+              isSelected={selectedSize === s}>
+              {s}
+            </SizeElement>
+          ))}
+        </Size>
+      )}
+      <ImageContainer>
+        <img src={Checkout} alt='Safe Checkout' />
+      </ImageContainer>
+      <Buttons>
+        <SubmitButton>Buy Now</SubmitButton>
+        <SubmitButton
+          onClick={() =>
+            addItemToCart({
+              id,
+              name,
+              firstImageUrl,
+              secondImageUrl,
+              fourthImageUrl,
+              thirdImageUrl,
+              description,
+              colors,
+              size,
+              oldPrice,
+              newPrice,
+              rate,
+              orders,
+              url
+            })
+          }>
+          Add To Cart
+        </SubmitButton>
+      </Buttons>
     </Container>
   );
 };
 
-ProductDetails.propTypes = {};
+ProductDetails.propTypes = {
+  item: PropTypes.object.isRequired,
+  addItemToCart: PropTypes.func
+};
 
-export default ProductDetails;
+export default connect(null, { addItemToCart })(ProductDetails);
