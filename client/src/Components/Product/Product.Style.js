@@ -1,5 +1,14 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { extraSmallDevices } from '../../Config/StyledComponents';
+
+const RateStyle = css`
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: rgb(107, 107, 107);
+`;
 
 export const Container = styled.div`
   width: 100%;
@@ -68,5 +77,49 @@ export const OtherImage = styled.div`
 `;
 
 // Title & Description
+export const ProductTitle = styled.h1`
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgba(66, 66, 66);
+  text-transform: uppercase;
+`;
+
+export const RateOrdersContainer = styled.div`
+  display: flex;
+`;
+
+export const Rate = styled.span`
+  ${RateStyle}
+`;
+
+export const Svg = styled.svg`
+  stroke: none;
+  width: 18px;
+  height: 18px;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: rgb(107, 107, 107);
+  margin-right: 5px;
+`;
+
+export const Orders = styled.span`
+  ${RateStyle}
+  &::before {
+    position: relative;
+    content: '';
+    height: 4px;
+    width: 4px;
+    border-radius: 5px;
+    background-color: rgb(107, 107, 107);
+    margin: 0 5px;
+  }
+`;
+
+export const ProductDesc = styled.p`
+
+`
 
 // Comments
