@@ -5,7 +5,7 @@ const RateStyle = css`
   display: inline-flex;
   align-items: center;
   vertical-align: middle;
-  font-size: 0.9rem;
+  text-transform: capitalize;
   color: rgb(107, 107, 107);
 `;
 
@@ -98,6 +98,7 @@ export const RateOrdersContainer = styled.div`
 
 export const Rate = styled.span`
   ${RateStyle}
+  font-size: 0.9rem;
 `;
 
 export const Svg = styled.svg`
@@ -113,6 +114,7 @@ export const Svg = styled.svg`
 
 export const Orders = styled.span`
   ${RateStyle}
+  font-size: 0.9rem;
   &::before {
     position: relative;
     content: '';
@@ -256,3 +258,98 @@ export const Buttons = styled.div`
 `;
 
 // Comments
+
+export const ReviewContainer = styled.div`
+  position: relative;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0 20%;
+  ${extraSmallDevices} {
+    padding: 0 1%;
+  }
+`;
+
+export const Review = styled.div`
+  width: 100%;
+  display: flex;
+`;
+
+export const CustomerImage = styled.img`
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  margin-right: 20px;
+`;
+
+export const CommentContainer = styled.div`
+  margin: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 13px -8px rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  &::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 12px solid white;
+    position: absolute;
+    margin-left: -22px;
+    top: 13px;
+  }
+`;
+
+export const CustomerName = styled.div`
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: rgb(107, 107, 107);
+`;
+
+export const RateColorSizeContainer = styled.div`
+  display: flex;
+  margin-bottom: 5px;
+`;
+
+export const CustomerRate = styled.div`
+  ${RateStyle}
+  margin: 0;
+  font-size: 0.8rem;
+  svg {
+    stroke: none;
+    width: 15px;
+    height: 15px;
+    stroke-width: 1;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: rgb(107, 107, 107);
+    margin: 0 5px 0 0;
+  }
+`;
+export const CustomerColor = styled.p`
+  ${RateStyle}
+  margin: 0;
+  font-size: 0.8rem;
+  &::before {
+    position: relative;
+    content: '';
+    height: 4px;
+    width: 4px;
+    border-radius: 5px;
+    background-color: rgb(107, 107, 107);
+    margin: 0 5px;
+  }
+`;
+
+export const CommentText = styled.p`
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 1.5rem;
+  color: rgba(66, 66, 66);
+  margin: 10px 0;
+  text-align: justify;
+`;
