@@ -41,8 +41,6 @@ const Navbar = ({ history, currentUser, SignOutStart }) => {
         } else {
           setNavScrollDown(false);
         }
-      } else {
-        setShowNav(true);
       }
       windowOffset = window.pageYOffset;
     };

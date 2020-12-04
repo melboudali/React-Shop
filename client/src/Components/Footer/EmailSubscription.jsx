@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-import FormInput from '../SigninPageComponents/FormInput/FormInput';
-import Submit from '../SigninPageComponents/SubmitButton/SubmitButton';
+import FormInput from '../SigninSignupPage/FormInput/FormInput';
+import Submit from '../SigninSignupPage/SubmitButton/SubmitButton';
 import { Container, Title } from './Footer.Style';
-import PropTypes from 'prop-types';
 
-const EmailSubscription = props => {
+const EmailSubscription = () => {
   const [email, setEmail] = useState('');
   const onEmailChange = e => setEmail(e.target.value);
   const onSubmitHandler = e => {
     e.preventDefault();
-    // TODO: i need to add this option later
+    alert(
+      `Your email: ${email}\nThank you for trying to subscribe , unfortunately this app is just a side project.`
+    );
   };
+
   return (
     <Container>
       <Title>Newsletter Subscription</Title>
@@ -37,7 +39,5 @@ const EmailSubscription = props => {
     </Container>
   );
 };
-
-EmailSubscription.propTypes = {};
 
 export default EmailSubscription;

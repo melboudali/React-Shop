@@ -8,7 +8,7 @@ import Navbar from './Layouts/Navbar/Navbar';
 import Announcement from './Layouts/Announcement/Announcement';
 import Footer from './Layouts/Footer/Footer';
 import { GlobalStyle, NavbarDivider, StyledContainer } from './App.style';
-import Loading from './Components/ShopPageComponents/Loading/Loading';
+import Loading from './Components/ShopPage/Loading/Loading';
 import PropTypes from 'prop-types';
 
 // Error Boundary

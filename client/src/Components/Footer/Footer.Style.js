@@ -37,7 +37,7 @@ export const Title = styled.h1`
   }
 `;
 
-//Menu
+// Menu
 export const Ulist = styled.ul`
   width: 100%;
   padding: 0;
@@ -81,7 +81,7 @@ export const Litem = styled.li`
   }
 `;
 
-// SocialMedia Icons
+// SocialMedia
 export const SvgContainer = styled.div`
   margin: 20% 0;
 `;

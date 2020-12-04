@@ -2,8 +2,8 @@ import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { SelectCartItems, SelectCartTotal } from '../../Redux/Cart/CartSelectors';
-import Stripe from '../../Components/CheckoutPageComponents/Stripe/Stripe';
-import CheckoutItem from '../../Components/CheckoutPageComponents/CheckoutItem/CheckoutItem';
+import Stripe from '../../Components/CheckoutPage/Stripe/Stripe';
+import CheckoutItem from '../../Components/CheckoutPage/CheckoutItem/CheckoutItem';
 import './Checkout.scss';
 import PropTypes from 'prop-types';
 

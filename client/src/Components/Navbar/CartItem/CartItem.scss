@@ -62,5 +62,33 @@
       margin: 0;
       padding: 0;
     }
+
+    .ColorAndSizeContainer {
+      position: absolute;
+      display: flex;
+      padding: 0 0 0 4px;
+      bottom: 0;
+      left: 0;
+    }
+
+    .Color,
+    .Size {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .Size::before {
+      content: '';
+      height: 4px;
+      width: 4px;
+      border-radius: 5px;
+      background-color: rgb(107, 107, 107);
+      margin: 0 5px;
+      padding: 0;
+    }
   }
 }

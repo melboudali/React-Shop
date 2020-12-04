@@ -3,14 +3,12 @@ import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { SelectLoading } from '../../Redux/Shop/ShopSelectors';
-import Loading from '../../Components/ShopPageComponents/Loading/Loading';
+import Loading from '../../Components/ShopPage/Loading/Loading';
 import PropTypes from 'prop-types';
 // Code Splitting
-const Collections = lazy(() =>
-  import('../../Components/ShopPageComponents/Collections/Collections')
-);
+const Collections = lazy(() => import('../../Components/ShopPage/Collections/Collections'));
 const CurrentCollection = lazy(() =>
-  import('../../Components/ShopPageComponents/CurrentCollection/CurrentCollection')
+  import('../../Components/ShopPage/CurrentCollection/CurrentCollection')
 );
 const Product = lazy(() => import('../Product/Product'));
 

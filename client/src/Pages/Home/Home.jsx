@@ -4,15 +4,14 @@ import { createStructuredSelector } from 'reselect';
 import { SelectSections } from '../../Redux/Home/HomeSelectors';
 import { SelectAllItems } from '../../Redux/Shop/ShopSelectors';
 import { SelectLoading } from '../../Redux/Shop/ShopSelectors';
-import Loading from '../../Components/ShopPageComponents/Loading/Loading';
-
+import Loading from '../../Components/ShopPage/Loading/Loading';
 import Grid from '@material-ui/core/Grid';
-import SliderContainer from '../../Components/HomePageComponents/Slider/SliderContainer/SliderContainer';
-import MenuItem from '../../Components/HomePageComponents/MenuItem/MenuItem';
+import SliderContainer from '../../Components/HomePage/Slider/SliderContainer/SliderContainer';
+import MenuItem from '../../Components/HomePage/MenuItem/MenuItem';
 import Title from '../../Components/SectionTitle/SectionTitle';
-import CollectionContainer from '../../Components/ShopPageComponents/Collections/CollectionsContainer/CollectionsContainer';
-import PropTypes from 'prop-types';
+import CollectionContainer from '../../Components/ShopPage/Collections/CollectionsContainer/CollectionsContainer';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Home = ({ Sections, AllItems, isLoading }) => (
   <Fragment>
@@ -38,7 +37,6 @@ const Home = ({ Sections, AllItems, isLoading }) => (
       ) : (
         <CollectionContainer
           title='popular this week'
-          // the line below will delete repeated items and sort the rest by orders
           items={[...new Map(AllItems.map(item => [item['name'], item])).values()].sort(
             (a, b) => b.orders - a.orders
           )}
@@ -51,7 +49,6 @@ const Home = ({ Sections, AllItems, isLoading }) => (
       ) : (
         <CollectionContainer
           title='new arrivals'
-          // the line below will delete repeated items and sort the rest by id
           items={[...new Map(AllItems.map(item => [item['name'], item])).values()].sort((a, b) =>
             a.id > b.id ? -1 : 1
           )}

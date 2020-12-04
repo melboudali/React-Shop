@@ -1,0 +1,26 @@
+.MuiSnackbarContent-root {
+  background-color: rgb(224, 55, 55) !important;
+}
+
+.ErrorMessage {
+  color: #eee;
+  font-size: 0.9rem;
+}
+
+.CloseBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    cursor: pointer;
+  }
+  svg {
+    stroke: rgb(255, 255, 255);
+    width: 30px;
+    height: 30px;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
+}

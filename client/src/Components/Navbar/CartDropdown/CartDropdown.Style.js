@@ -13,24 +13,24 @@ export const CartDropdownContainer = styled.div`
           opacity: 0;
         `};
   position: absolute;
+  display: flex;
+  flex-direction: column;
   width: 240px;
   max-height: 340px;
   min-height: 60px;
-  display: flex;
-  flex-direction: column;
+  padding: 23px 0 0 0;
   top: 95%;
   right: 0;
   z-index: 6;
-  padding: 23px 0 0 0;
   background-color: none;
   transition-duration: 0.3s;
 `;
 
 export const CartContainer = styled.div`
-  max-height: 317px;
-  min-height: 60px;
   position: relative;
   width: 100%;
+  max-height: 317px;
+  min-height: 60px;
   padding: 0 0 0 4px;
   text-align: center;
   background-color: white;
@@ -40,12 +40,12 @@ export const CartContainer = styled.div`
 export const NoItems = styled.span`
   position: absolute;
   width: 100%;
+  top: 50%;
+  left: 50%;
   font-size: 0.6rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: rgb(53, 53, 53);
-  top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
 `;
 

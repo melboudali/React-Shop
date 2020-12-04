@@ -10,7 +10,6 @@ import PropTypes from 'prop-types';
 
 const CartIcon = ({ getShowNav, getNavScrollDown, cartCount }) => {
   const [getShowDropdown, setShowDropdown] = useState(false);
-
   const closeCart = () => setShowDropdown(false);
 
   return (

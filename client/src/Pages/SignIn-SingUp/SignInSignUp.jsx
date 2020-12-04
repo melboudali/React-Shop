@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { SelectAuthErrors } from '../../Redux/User/UserSelectors';
 import Grid from '@material-ui/core/Grid';
-import SignIn from '../../Components/SigninPageComponents/SignIn/SignIn';
-import SignUp from '../../Components/SigninPageComponents/SignUP/SignUp';
-import Snackbar from '../../Components/SigninPageComponents/Snackbar/Snackbar';
+import SignIn from '../../Components/SigninSignupPage/SignIn/SignIn';
+import SignUp from '../../Components/SigninSignupPage/SignUP/SignUp';
+import Snackbar from '../../Components/SigninSignupPage/Snackbar/Snackbar';
 import PropTypes from 'prop-types';
 
 const SignInSignUp = ({ authErrors }) => {

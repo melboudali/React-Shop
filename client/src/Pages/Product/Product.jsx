@@ -5,9 +5,9 @@ import { SelectCurrentItem } from '../../Redux/Shop/ShopSelectors';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
-import ImagesViewer from '../../Components/Product/ImagesViewer';
-import ProductDetails from '../../Components/Product/ProductDetails';
-import Comments from '../../Components/Product/Comments';
+import ImagesViewer from '../../Components/ProductPage/ImagesViewer';
+import ProductDetails from '../../Components/ProductPage/ProductDetails';
+import Comments from '../../Components/ProductPage/Comments';
 import NotFound from '../404/NotFound';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -19,8 +19,6 @@ const Product = ({
   }
 }) => {
   const paths = pathname.toUpperCase().split('/');
-  console.log(paths);
-  console.log(CurrentItem);
   return CurrentItem ? (
     <>
       <Grid container direction='row' justify='center' alignItems='flex-start' spacing={0}>

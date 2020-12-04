@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import IconButton from '@material-ui/core/IconButton';
 
 export const CartIconContainer = styled.div`
-  background: none;
-  padding: 0 !important;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 !important;
+  background: none;
   .MuiBadge-badge {
     color: rgb(255, 255, 255) !important;
     background-color: rgb(51, 51, 51) !important;
@@ -19,6 +19,7 @@ export const Cart = styled(IconButton)`
     background: none !important;
   }
 `;
+
 export const CartSvg = styled.svg`
   stroke: rgb(85, 85, 85);
   width: 30px;
