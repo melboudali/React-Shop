@@ -19,8 +19,10 @@ const Product = ({
   }
 }) => {
   const paths = pathname.toUpperCase().split('/');
+  console.log(paths);
+  console.log(CurrentItem);
   return CurrentItem ? (
-    <ProductContainer>
+    <>
       <Grid container direction='row' justify='center' alignItems='flex-start' spacing={0}>
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
           <BreadCrumbs
@@ -55,14 +57,14 @@ const Product = ({
           <Comments item={CurrentItem} />
         </Grid>
       </Grid>
-    </ProductContainer>
+    </>
   ) : (
     <NotFound />
   );
 };
 
 Product.propTypes = {
-  CurrentItem: PropTypes.object.isRequired,
+  CurrentItem: PropTypes.object,
   history: PropTypes.object.isRequired
 };
 
@@ -79,10 +81,6 @@ const mapStateToProps = createStructuredSelector({
     }
   ) => SelectCurrentItem(itemName, pathname.split('/')[2])(state)
 });
-
-const ProductContainer = styled.div`
-  /* margin-bottom: 50px; */
-`;
 
 const BreadCrumbs = styled(Breadcrumbs)`
   margin: 25px 0 !important;

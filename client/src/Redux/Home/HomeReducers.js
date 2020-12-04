@@ -40,7 +40,7 @@ const INITIAL_STATE = {
   ]
 };
 
-const HomeReducers = (state = INITIAL_STATE, { type, payload }) => {
+const HomeReducers = (state = INITIAL_STATE, { type }) => {
   switch (type) {
     default:
       return state;

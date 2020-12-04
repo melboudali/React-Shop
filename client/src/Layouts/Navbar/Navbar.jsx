@@ -124,7 +124,8 @@ const Navbar = ({ history, currentUser, SignOutStart }) => {
 
 Navbar.propTypes = {
   history: PropTypes.object.isRequired,
-  currentUser: PropTypes.object
+  currentUser: PropTypes.object,
+  SignOutStart: PropTypes.func
 };
 
 // We will use creaTeStructuredSelector if we have more selectors to call
