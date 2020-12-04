@@ -1,12 +1,12 @@
 .CollectionItem {
   background-color: white;
-  box-shadow: 0 1px 2px 0 rgba(168, 182, 191, 0.6);
+  box-shadow: 0 1px 2px 0 rgb(168, 182, 191);
   border-radius: 5px;
   transition: all 0.4s;
   margin: 25px;
   padding: 0;
   &:hover {
-    box-shadow: 0 10px 20px 0 rgba(168, 182, 191, 0.6);
+    box-shadow: 0 10px 20px 0 rgb(168, 182, 191);
     .SecItemImage {
       transform: translateY(-100%);
     }
@@ -84,64 +84,70 @@
       width: 100%;
       font-weight: bold;
       text-align: left;
-      .Name {
-        width: 100%;
-        display: block;
-        font-size: 0.9rem;
-        letter-spacing: 1px;
-        color: rgb(44, 44, 44);
-        margin-bottom: 5px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        text-transform: uppercase;
-        padding: 0 4px;
-      }
 
-      .Price {
+      .DescriptionContainer {
         width: 100%;
-        display: block;
-        margin-bottom: 5px;
-        font-size: 0.8rem;
-        color: rgb(107, 107, 107);
-        padding: 0 4px;
-
-        .OldPrice {
-          color: rgb(172, 172, 172);
-          text-decoration: line-through;
-          margin-left: 5px;
+        &:hover {
+          cursor: pointer;
         }
-      }
-
-      .Rate {
-        width: 100%;
-        display: inline-flex;
-        align-items: center;
-        vertical-align: middle;
-        margin-bottom: 5px;
-        font-size: 0.8rem;
-        color: rgb(107, 107, 107);
-        padding: 0 4px;
-
-        svg {
-          margin-right: 5px;
-          stroke: none;
-          width: 15px;
-          height: 15px;
-          stroke-width: 1;
-          stroke-linecap: round;
-          stroke-linejoin: round;
-          fill: rgb(107, 107, 107);
+        .Name {
+          width: 100%;
+          display: block;
+          font-size: 0.9rem;
+          letter-spacing: 1px;
+          color: rgb(44, 44, 44);
+          margin-bottom: 5px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          text-transform: uppercase;
+          padding: 0 4px;
         }
-      }
+        .Price {
+          width: 100%;
+          display: block;
+          margin-bottom: 5px;
+          font-size: 0.8rem;
+          color: rgb(107, 107, 107);
+          padding: 0 4px;
 
-      .Sold {
-        width: 100%;
-        display: block;
-        font-size: 0.8rem;
-        margin-bottom: 5px;
-        color: rgb(107, 107, 107);
-        padding: 0 4px;
+          .OldPrice {
+            color: rgb(172, 172, 172);
+            text-decoration: line-through;
+            margin-left: 5px;
+          }
+        }
+
+        .Rate {
+          width: 100%;
+          display: inline-flex;
+          align-items: center;
+          vertical-align: middle;
+          margin-bottom: 5px;
+          font-size: 0.8rem;
+          color: rgb(107, 107, 107);
+          padding: 0 4px;
+
+          svg {
+            margin-right: 5px;
+            stroke: none;
+            width: 15px;
+            height: 15px;
+            stroke-width: 1;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: rgb(107, 107, 107);
+          }
+        }
+
+        .Sold {
+          width: 100%;
+          display: block;
+          font-size: 0.8rem;
+          margin-bottom: 5px;
+          color: rgb(107, 107, 107);
+          padding: 0 4px;
+        }
       }
 
       .Buttons {

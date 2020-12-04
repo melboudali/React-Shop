@@ -47,7 +47,7 @@ const ProductDetails = ({
       <PriceContainer>
         <Price>US {parseFloat(newPrice).toFixed(2)}</Price>
         <OPrice>{parseFloat(oldPrice).toFixed(2)}</OPrice>
-        <Discount>{`- ${Math.floor(((oldPrice - newPrice) / oldPrice) * 100)}%`}</Discount>
+        <Discount>{`-${Math.floor(((oldPrice - newPrice) / oldPrice) * 100)}%`}</Discount>
       </PriceContainer>
 
       <Hr />

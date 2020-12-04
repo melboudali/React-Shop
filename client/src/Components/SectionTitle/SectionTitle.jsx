@@ -1,14 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
 import { extraSmallDevices, smallDevices } from '../../Config/StyledComponents';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const Title = styled.h1`
-  margin: 50px 0;
-  padding: 0;
-  text-align: center;
   position: relative;
   width: 100%;
+  padding: 0;
+  margin: 50px 0;
+  text-align: center;
 
   &:after {
     content: '';
