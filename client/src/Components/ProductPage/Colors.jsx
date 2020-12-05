@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ColorsContainer, ColorContainer } from './Product.Style';
 import PropTypes from 'prop-types';
 
@@ -22,7 +22,9 @@ function Colors({ colors, selectedColor, setSelectedColor }) {
 }
 
 Colors.propTypes = {
-  colors: PropTypes.array.isRequired
+  colors: PropTypes.array.isRequired,
+  selectedColor: PropTypes.string.isRequired,
+  setSelectedColor: PropTypes.func.isRequired
 };
 
 export default Colors;

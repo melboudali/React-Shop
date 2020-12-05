@@ -5,7 +5,6 @@ import { createStructuredSelector } from 'reselect';
 import { SelectLoading } from '../../Redux/Shop/ShopSelectors';
 import Loading from '../../Components/ShopPage/Loading/Loading';
 import PropTypes from 'prop-types';
-// Code Splitting
 const Collections = lazy(() => import('../../Components/ShopPage/Collections/Collections'));
 const CurrentCollection = lazy(() =>
   import('../../Components/ShopPage/CurrentCollection/CurrentCollection')
@@ -29,7 +28,7 @@ const Shop = ({ match, isLoading }) => (
 
 Shop.prototype = {
   match: PropTypes.object.isRequired,
-  isLoading: PropTypes.bool.isRequired
+  isLoading: PropTypes.bool
 };
 
 const mapStateToProps = createStructuredSelector({

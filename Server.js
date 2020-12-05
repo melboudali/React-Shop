@@ -14,20 +14,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(compression());
 app.use(cors());
-app.use(enforce.HTTPS({ trustProtoHeader: true }));
+// app.use(enforce.HTTPS({ trustProtoHeader: false }));
 
-// @Routes
 app.use('/payment', require('./routes/Payment.Route'));
-app.use('/cart', require('./routes/Cart.Route'));
 
 // Service Worker
-app.get('/service-worker', (req, res) => {
+app.get('/service-worker', (_, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'build', 'service-worker.js'));
 });
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')));
-  app.get('*', (req, res) => {
+  app.get('*', (_, res) => {
     res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
   });
 }

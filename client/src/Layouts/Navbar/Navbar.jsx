@@ -41,6 +41,8 @@ const Navbar = ({ history, currentUser, SignOutStart }) => {
         } else {
           setNavScrollDown(false);
         }
+      } else {
+        setShowNav(true);
       }
       windowOffset = window.pageYOffset;
     };
@@ -60,13 +62,12 @@ const Navbar = ({ history, currentUser, SignOutStart }) => {
                 <line x1='4' y1='18' x2='20' y2='18' />
               </SvgIcon>
             </Hamburger>
-            <Logo src={LogoImage} alt='logo' />
+            <Logo src={LogoImage} alt='React Shop' />
             <Grow />
             <DesktopMenu>
               <NavbarMenu variant='h6' component={Link} to='/'>
                 HOME
               </NavbarMenu>
-              <NavbarMenu>NEW ARRIVALS</NavbarMenu>
               <NavbarMenu variant='h6' component={Link} to='/shop'>
                 SHOP
               </NavbarMenu>
@@ -126,17 +127,8 @@ Navbar.propTypes = {
   SignOutStart: PropTypes.func
 };
 
-// We will use creaTeStructuredSelector if we have more selectors to call
 const mapStateToProps = createStructuredSelector({
   currentUser: SelectCurrentUser
 });
-
-// const mapStateToProps = state => ({
-//   currentUser: SelectCurrentUser(state)
-// });
-
-// const mapStateToProps = ({ User: { currentUser } }) => ({
-//   currentUser
-// });
 
 export default withRouter(connect(mapStateToProps, { SignOutStart })(Navbar));

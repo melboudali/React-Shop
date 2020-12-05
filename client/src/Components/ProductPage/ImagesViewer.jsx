@@ -11,21 +11,7 @@ import {
 import PropTypes from 'prop-types';
 
 const ImagesViewer = ({
-  item: {
-    id,
-    name,
-    description,
-    colors,
-    size,
-    oldPrice,
-    newPrice,
-    firstImageUrl,
-    secondImageUrl,
-    thirdImageUrl,
-    fourthImageUrl,
-    rate,
-    orders
-  }
+  item: { firstImageUrl, secondImageUrl, thirdImageUrl, fourthImageUrl }
 }) => {
   const imagesUrls = [firstImageUrl, secondImageUrl, thirdImageUrl, fourthImageUrl];
   const [mainImage, setMainImage] = useState(imagesUrls[0]);
@@ -40,8 +26,8 @@ const ImagesViewer = ({
 
   const mainImageZoom = e => {
     e.preventDefault();
-    setScreenX(((e.pageX - ref.current.offsetTop) / ref.current.clientHeight) * 76);
-    setScreenY(((e.pageY - ref.current.offsetLeft) / ref.current.clientWidth) * 76);
+    setScreenX(((e.pageX - ref.current.offsetTop) / ref.current.clientHeight) * 70);
+    setScreenY(((e.pageY - ref.current.offsetLeft) / ref.current.clientWidth) * 70);
   };
 
   return (
@@ -68,6 +54,11 @@ const ImagesViewer = ({
   );
 };
 
-ImagesViewer.propTypes = {};
+ImagesViewer.propTypes = {
+  firstImageUrl: PropTypes.string,
+  secondImageUrl: PropTypes.string,
+  thirdImageUrl: PropTypes.string,
+  fourthImageUrl: PropTypes.string
+};
 
 export default ImagesViewer;

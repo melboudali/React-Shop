@@ -13,6 +13,7 @@ import PropTypes from 'prop-types';
 
 const CurrentCollection = ({ Collection, history }) => {
   const paths = history.location.pathname.toUpperCase().split('/');
+
   return Collection ? (
     <div className='Collection'>
       <Breadcrumbs
@@ -38,8 +39,8 @@ const CurrentCollection = ({ Collection, history }) => {
       </Breadcrumbs>
       <Title title={Collection.title} />
       <Grid container direction='row' justify='center' alignItems='baseline' spacing={0}>
-        {Collection.items.map(item => (
-          <CollectionItem key={item.id} item={item} title={null} />
+        {Collection.items.map((item, iId) => (
+          <CollectionItem key={iId} item={item} title={null} />
         ))}
       </Grid>
     </div>
@@ -50,7 +51,7 @@ const CurrentCollection = ({ Collection, history }) => {
 
 CurrentCollection.propTypes = {
   Collection: PropTypes.object,
-  history: PropTypes.object
+  history: PropTypes.object.isRequired
 };
 
 const mapStateToProps = createStructuredSelector({

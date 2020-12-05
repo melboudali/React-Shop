@@ -25,7 +25,6 @@ import {
   SIGN_OUT_START
 } from './UserTypes';
 
-// Sign up
 function* SignUp() {
   yield takeLatest(SIGN_UP_START, function* ({
     payload: { name, email, password, confirmPassword }
@@ -45,7 +44,7 @@ function* SignUp() {
     }
   });
 }
-// Sign in
+
 function* OnEmailSignInStart() {
   yield takeLatest(EMAIL_SIGN_IN_START, function* ({ payload: { getEmail, getPassword } }) {
     try {
@@ -97,7 +96,6 @@ function* CheckUserSession() {
   });
 }
 
-// Sign out
 function* SignOutStart() {
   yield takeLatest(SIGN_OUT_START, function* () {
     try {

@@ -44,6 +44,15 @@ export const ImageContainer = styled.div`
 export const ItemName = styled.span`
   width: 40%;
   text-align: center;
+  font-weight: 500;
+  span {
+    display: block;
+    justify-content: center;
+    margin-top: 4px;
+    font-size: 0.7rem;
+    color: rgb(71, 71, 71);
+    letter-spacing: 1px;
+  }
 `;
 
 export const ItemQuantity = styled.span`

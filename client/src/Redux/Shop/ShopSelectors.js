@@ -15,7 +15,9 @@ export const SelectCurrentCollection = collectionRouteName =>
 
 export const SelectCurrentItem = (ItemName, collectionRouteName) =>
   createSelector([SelectCollections], Collections =>
-    Collections[collectionRouteName].items.find(item => ItemName === item.name)
+    Collections[collectionRouteName].items.find(
+      item => ItemName.replace(/\s/g, '') === item.name.replace(/\s/g, '')
+    )
   );
 
 export const SelectAllItems = createSelector([SelectCollections], Collections => {
@@ -27,7 +29,7 @@ export const SelectAllItems = createSelector([SelectCollections], Collections =>
         ...item,
         url: title
       }));
-      AllItems = [...AllItems, ...customItems];
+      return (AllItems = [...AllItems, ...customItems]);
     });
   }
   return AllItems;

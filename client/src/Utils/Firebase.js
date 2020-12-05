@@ -18,7 +18,6 @@ firebase.initializeApp({
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
-// Providers for Sagas
 export const GGLProvider = new firebase.auth.GoogleAuthProvider();
 export const FBProvider = new firebase.auth.FacebookAuthProvider();
 export const GHProvider = new firebase.auth.GithubAuthProvider();

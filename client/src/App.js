@@ -10,14 +10,12 @@ import Footer from './Layouts/Footer/Footer';
 import { GlobalStyle, NavbarDivider, StyledContainer } from './App.style';
 import Loading from './Components/ShopPage/Loading/Loading';
 import PropTypes from 'prop-types';
-
-// Error Boundary
 import ErrorBoundary from './Pages/ErrorBoundary/ErrorBoundary';
-// Code Splitting
 const HomePage = lazy(() => import('./Pages/Home/Home'));
 const ShopPage = lazy(() => import('./Pages/Shop/Shop'));
 const SigninSignupPage = lazy(() => import('./Pages/SignIn-SingUp/SignInSignUp'));
 const CheckoutPage = lazy(() => import('./Pages/Checkout/Checkout'));
+const Success = lazy(() => import('./Pages/Success/Success'));
 const NotFoundPage = lazy(() => import('./Pages/404/NotFound'));
 
 const App = ({ CheckUserSession, fetchCollectionsStart }) => {
@@ -36,13 +34,11 @@ const App = ({ CheckUserSession, fetchCollectionsStart }) => {
         <ErrorBoundary>
           <Suspense fallback={<Loading />}>
             <Switch>
-              {/* Private Routes */}
               <AuthPrivateRoute exact path='/signin' component={SigninSignupPage} />
-              {/* Public Routes */}
               <Route exact path='/' component={HomePage} />
               <Route path='/shop' component={ShopPage} />
               <Route exact path='/checkout' component={CheckoutPage} />
-              {/* 404 Not Found Route */}
+              <Route exact path='/success' component={Success} />
               <Route exact path='*' component={NotFoundPage} />
             </Switch>
           </Suspense>

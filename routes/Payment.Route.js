@@ -2,10 +2,8 @@ const express = require('express');
 const router = express.Router();
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-//@route    POST /payment
-//@desc     Payment route for stripe
-//@access   Private
 router.post('/', (req, res) => {
+  console.log('server is running')
   const body = {
     source: req.body.token.id,
     amount: req.body.amount,

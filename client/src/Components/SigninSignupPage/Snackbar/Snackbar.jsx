@@ -15,7 +15,7 @@ const SnackbarComponent = ({ message = null, clearAuthError }) => {
     }, 5000);
   }, [message, clearAuthError]);
 
-  const handleClose = (e, reason) => {
+  const handleClose = (_, reason) => {
     if (reason === 'clickaway') {
       return;
     }

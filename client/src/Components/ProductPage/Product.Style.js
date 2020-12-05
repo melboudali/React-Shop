@@ -259,7 +259,7 @@ export const Buttons = styled.div`
 export const ReviewContainer = styled.div`
   position: relative;
   width: 100%;
-  margin: 40px 0;
+  margin: 45px 0;
   padding: 0 20%;
   ${extraSmallDevices} {
     padding: 0 1%;

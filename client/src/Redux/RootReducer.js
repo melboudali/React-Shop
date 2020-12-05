@@ -7,7 +7,6 @@ import UserReducers from './User/UserReducers';
 import CartReducers from './Cart/CartReducers';
 import ShopReducers from './Shop/ShopReducers';
 
-// Add Cart reducer to whitelist without User cuz firebase handle it
 const persistConfig = {
   key: 'root',
   storage,

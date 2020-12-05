@@ -15,9 +15,9 @@ const FormInput = ({ id, label, value, handleChange, ...others }) => (
 
 FormInput.propTypes = {
   id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
-  handleChange: PropTypes.func.isRequired,
-  label: PropTypes.string.isRequired
+  handleChange: PropTypes.func.isRequired
 };
 
 export default FormInput;

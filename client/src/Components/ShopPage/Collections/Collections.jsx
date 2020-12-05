@@ -45,7 +45,8 @@ const Collections = ({ AllCollections, history }) => {
 };
 
 Collections.propTypes = {
-  AllCollections: PropTypes.array
+  AllCollections: PropTypes.array,
+  history: PropTypes.object.isRequired
 };
 
 const mapStateToProps = createStructuredSelector({

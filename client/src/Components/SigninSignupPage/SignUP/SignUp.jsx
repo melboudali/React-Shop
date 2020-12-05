@@ -26,17 +26,17 @@ const SignUp = ({ SingUpStart }) => {
       <form onSubmit={onSubmit}>
         <FormInput
           type='text'
-          id='name'
+          id='signUp_name'
           name='name'
           label='Name'
           value={(userCredentials && userCredentials.name) || ''}
-          // autoComplete='new_name'
+          autoComplete='new_name'
           required
           handleChange={onHandlechange}
         />
         <FormInput
           type='email'
-          id='email'
+          id='signUp_email'
           name='email'
           label='Email'
           value={(userCredentials && userCredentials.email) || ''}
@@ -46,7 +46,7 @@ const SignUp = ({ SingUpStart }) => {
         />
         <FormInput
           type='password'
-          id='password'
+          id='signUp_password'
           name='password'
           label='Password'
           value={(userCredentials && userCredentials.password) || ''}
@@ -56,7 +56,7 @@ const SignUp = ({ SingUpStart }) => {
         />
         <FormInput
           type='password'
-          id='confirmPassword'
+          id='signUp_confirmPassword'
           name='confirmPassword'
           label='Confirm Password'
           value={(userCredentials && userCredentials.confirmPassword) || ''}
@@ -72,7 +72,7 @@ const SignUp = ({ SingUpStart }) => {
               <path d='M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2' />
               <path d='M16 11h6m-3 -3v6' />
             </svg>
-            sign up with email
+            sign up
           </SubmitBtn>
         </div>
       </form>

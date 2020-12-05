@@ -22,14 +22,19 @@ const CheckoutItem = ({
   firstImageUrl,
   quantity,
   addItemToCart,
-  deleteItem
+  deleteItem,
+  colors,
+  size
 }) => {
   return (
     <CheckoutItemContainer id={iId}>
       <ImageContainer>
         <img alt='Item' src={firstImageUrl} />
       </ImageContainer>
-      <ItemName>{name}</ItemName>
+      <ItemName>
+        {name}
+        <span>{`Color: ${colors}${size.length > 0 ? `, Size: ${size}` : ''}`}</span>
+      </ItemName>
       <ItemQuantity>
         <QuantityControls
           quantity={quantity - 1}
@@ -47,8 +52,10 @@ const CheckoutItem = ({
             addItemToCart({
               id,
               name,
+              firstImageUrl,
               newPrice,
-              firstImageUrl
+              colors,
+              size: size.length > 0 ? [size[0]] : []
             })
           }>
           <SvgIcon viewBox='0 0 24 24'>

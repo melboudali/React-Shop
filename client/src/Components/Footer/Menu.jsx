@@ -6,19 +6,19 @@ const Menu = () => (
     <Title>need help?</Title>
     <Ulist>
       <Litem>
-        <a href='#'>about</a>
+        <a href='https://elboudali.com/'>about</a>
       </Litem>
       <Litem>
-        <a href='#'>faqs</a>
+        <a href='https://elboudali.com/'>faqs</a>
       </Litem>
       <Litem>
-        <a href='#'>privacy policy</a>
+        <a href='https://elboudali.com/'>privacy policy</a>
       </Litem>
       <Litem>
-        <a href='#'>terms & conditions</a>
+        <a href='https://elboudali.com/'>terms & conditions</a>
       </Litem>
       <Litem>
-        <a href='#'>contact</a>
+        <a href='https://elboudali.com/'>contact</a>
       </Litem>
     </Ulist>
   </Container>

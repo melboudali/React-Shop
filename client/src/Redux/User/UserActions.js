@@ -1,4 +1,3 @@
-// import { auth, createUserProfileDoc } from '../../Utils/Firebase';
 import {
   EMAIL_SIGN_IN_START,
   GOOGLE_SIGN_IN_START,
@@ -16,7 +15,6 @@ import {
   CLEAR_AUTH_ERROR
 } from './UserTypes';
 
-// Firebase / ReduxSaga
 export const EmailSignInStart = emailAndPassword => ({
   type: EMAIL_SIGN_IN_START,
   payload: emailAndPassword

@@ -3,7 +3,6 @@ import { firestore } from '../../Utils/Firebase';
 import { FETCH_COLLECTIONS_START } from './ShopTypes';
 import { fetchCollectionsSuccess, fetchCollectionsError } from './ShopActions';
 
-// Generators function
 function* NestedFunc() {
   try {
     const CollectionRef = firestore.collection('Collections').orderBy('title', 'asc');
@@ -18,14 +17,12 @@ function* NestedFunc() {
         })),
       data
     );
-    // Convert Collections Array to Object
     const CollectionsObject = CollectionsArray.reduce((Accumulator, Collection) => {
       Accumulator[Collection.title.toLowerCase()] = Collection;
       return Accumulator;
     }, {});
     yield put(fetchCollectionsSuccess(CollectionsObject));
   } catch (error) {
-    // TODO: handle this later (show error)
     yield put(fetchCollectionsError(error.message));
   }
 }

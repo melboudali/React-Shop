@@ -9,6 +9,7 @@ import ImagesViewer from '../../Components/ProductPage/ImagesViewer';
 import ProductDetails from '../../Components/ProductPage/ProductDetails';
 import Comments from '../../Components/ProductPage/Comments';
 import NotFound from '../404/NotFound';
+import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
@@ -32,12 +33,12 @@ const Product = ({
             }
             aria-label='Breadcrumb'>
             <Link href='/'>
-              {/* <svg viewBox='0 0 24 24'>
+              <svg viewBox='0 0 24 24'>
                 <path stroke='none' d='M0 0h24v24H0z' />
                 <polyline points='5 12 3 12 12 3 21 12 19 12' />
                 <path d='M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7' />
                 <path d='M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6' />
-              </svg> */}
+              </svg>
               home
             </Link>
             <Link href={`/${paths[1].toLowerCase()}`}>{paths[1]}</Link>
@@ -107,8 +108,7 @@ const BreadCrumbs = styled(Breadcrumbs)`
     color: rgb(143, 143, 143) !important;
     text-decoration: none !important;
     display: flex !important;
-    vertical-align: middle !important;
   }
 `;
 
-export default connect(mapStateToProps)(Product);
+export default withRouter(connect(mapStateToProps)(Product));

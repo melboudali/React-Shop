@@ -21,7 +21,7 @@ const EmailSubscription = () => {
           type='email'
           name='email'
           label='Email'
-          id='email'
+          id='subscription_email'
           value={email}
           autoComplete='new_email'
           required

@@ -10,8 +10,8 @@ const CollectionsContainer = ({ title, items, routeName, match }) => (
   <div className='CollectionsContainer'>
     <Title title={title} />
     <Grid container direction='row' justify='center' alignItems='flex-start' spacing={0}>
-      {items.slice(0, 8).map(item => (
-        <CollectionItem key={item.id} item={item} title={title.toLowerCase()} />
+      {items.slice(0, 8).map((item, itemId) => (
+        <CollectionItem key={itemId} item={item} title={title.toLowerCase()} />
       ))}
     </Grid>
     {routeName && (
@@ -25,7 +25,7 @@ const CollectionsContainer = ({ title, items, routeName, match }) => (
 CollectionsContainer.propTypes = {
   title: PropTypes.string.isRequired,
   items: PropTypes.array.isRequired,
-  routeName: PropTypes.string.isRequired,
+  routeName: PropTypes.string,
   match: PropTypes.object.isRequired
 };
 

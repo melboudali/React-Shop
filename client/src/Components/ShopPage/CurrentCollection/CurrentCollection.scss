@@ -1,5 +1,5 @@
 .Collection {
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 
   .Breadcrumbs {
     margin: 25px 0 25px 25px;
@@ -19,16 +19,15 @@
       stroke-linejoin: round;
       fill: none;
       &:nth-child(1) {
-        margin-right: 5px;
         width: 15px;
         height: 15px;
+        margin-right: 5px;
       }
     }
     a {
+      display: flex;
       color: rgb(143, 143, 143);
       text-decoration: none;
-      display: flex;
-      vertical-align: middle;
     }
   }
 }

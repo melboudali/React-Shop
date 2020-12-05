@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import PropTypes from 'prop-types';
 import './SubmitButton.scss';
+import PropTypes from 'prop-types';
 
 function SubmitButton({ children, ...moreProps }) {
   return (

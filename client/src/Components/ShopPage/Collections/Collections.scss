@@ -1,5 +1,6 @@
 .Collections {
   width: 100%;
+  margin: 0;
   .Breadcrumbs {
     margin: 25px 0 25px 25px;
     color: rgb(85, 85, 85);
@@ -24,10 +25,9 @@
       }
     }
     a {
+      display: flex;
       color: rgb(143, 143, 143);
       text-decoration: none;
-      display: flex;
-      vertical-align: middle;
     }
   }
 }
