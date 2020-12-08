@@ -1,1 +1,1 @@
-:rocket: Live: https://react-shop-ecom.herokuapp.com
+:rocket: Live: https://react-shop2.herokuapp.com/
