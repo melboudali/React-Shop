@@ -1,8 +1,8 @@
 import React from 'react';
-import { SocialMediaContainer, Title, SvgContainer, Link, Svg } from './Footer.Style';
+import { FooterComponentsContainer, Title, SvgContainer, Link, Svg } from './Footer.Style';
 
 const SocialMedia = () => (
-  <SocialMediaContainer>
+  <FooterComponentsContainer>
     <Title>connect with us</Title>
     <SvgContainer>
       {/* Facebook */}
@@ -38,7 +38,7 @@ const SocialMedia = () => (
         </Svg>
       </Link>
     </SvgContainer>
-  </SocialMediaContainer>
+  </FooterComponentsContainer>
 );
 
 export default SocialMedia;

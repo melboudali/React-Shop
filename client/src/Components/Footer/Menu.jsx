@@ -1,8 +1,8 @@
 import React from 'react';
-import { Container, Title, Ulist, Litem } from './Footer.Style';
+import { FooterComponentsContainer, Title, Ulist, Litem } from './Footer.Style';
 
 const Menu = () => (
-  <Container>
+  <FooterComponentsContainer>
     <Title>need help?</Title>
     <Ulist>
       <Litem>
@@ -21,7 +21,7 @@ const Menu = () => (
         <a href='https://elboudali.com/'>contact</a>
       </Litem>
     </Ulist>
-  </Container>
+  </FooterComponentsContainer>
 );
 
 export default Menu;

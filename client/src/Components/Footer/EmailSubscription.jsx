@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import FormInput from '../SigninSignupPage/FormInput/FormInput';
 import Submit from '../SigninSignupPage/SubmitButton/SubmitButton';
-import { Container, Title } from './Footer.Style';
+import { FooterComponentsContainer, Title } from './Footer.Style';
 
 const EmailSubscription = () => {
   const [email, setEmail] = useState('');
@@ -14,7 +14,7 @@ const EmailSubscription = () => {
   };
 
   return (
-    <Container>
+    <FooterComponentsContainer>
       <Title>Newsletter Subscription</Title>
       <form onSubmit={onSubmitHandler}>
         <FormInput
@@ -36,7 +36,7 @@ const EmailSubscription = () => {
           subscribe now
         </Submit>
       </form>
-    </Container>
+    </FooterComponentsContainer>
   );
 };
 
