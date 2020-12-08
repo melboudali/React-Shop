@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import EmailSubscription from '../../Components/Footer/EmailSubscription';
 import Menu from '../../Components/Footer/Menu';
-import SocialMediaIcons from '../../Components/Footer/SocialMediaIcons';
+// import SocialMediaIcons from '../../Components/Footer/SocialMediaIcons';
 import './Footer.scss';
 
 const Footer = () => (
@@ -63,7 +63,7 @@ const Footer = () => (
         <Menu />
       </Grid>
       <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
-        <SocialMediaIcons />
+        {/* <SocialMediaIcons /> */}
       </Grid>
     </Grid>
     <p className='copyright'>© 2020 react shop - all rights reserved.</p>
