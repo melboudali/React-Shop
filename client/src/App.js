@@ -6,7 +6,7 @@ import { fetchCollectionsStart } from './Redux/Shop/ShopActions';
 import AuthPrivateRoute from './Routes/AuthPrivateRoute';
 import Navbar from './Layouts/Navbar/Navbar';
 import Announcement from './Layouts/Announcement/Announcement';
-import Footer from './Layouts/Footer/Footer';
+// import Footer from './Layouts/Footer/Footer';
 import { GlobalStyle, NavbarDivider, StyledContainer } from './App.style';
 import Loading from './Components/ShopPage/Loading/Loading';
 import PropTypes from 'prop-types';
@@ -44,7 +44,7 @@ const App = ({ CheckUserSession, fetchCollectionsStart }) => {
           </Suspense>
         </ErrorBoundary>
       </StyledContainer>
-      <Footer />
+      {/* <Footer /> */}
     </Fragment>
   );
 };
