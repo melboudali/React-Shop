@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const SocialMediaContainer = styled.div`
   text-align: center;
   width: 100%;
   padding: 30px;

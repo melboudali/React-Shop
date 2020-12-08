@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(compression());
 app.use(cors());
-// app.use(enforce.HTTPS({ trustProtoHeader: false }));
+app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
 app.use('/payment', require('./routes/Payment.Route'));
 
